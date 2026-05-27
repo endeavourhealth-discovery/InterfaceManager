@@ -1,0 +1,32 @@
+{
+  "name": "interface-manager",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-java": "openapi-generator-cli generate -i openapi/api.yaml -g java -o ./generated/java --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model",
+    "generate-kotlin": "openapi-generator-cli generate -i openapi/api.yaml -g kotlin -o ./generated/kotlin --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,enumPropertyNaming=original",
+    "generate-typescript": "openapi-generator-cli generate -i openapi/api.yaml -g typescript-fetch -o ./generated/typescript --additional-properties=stringEnums=true,enumPropertyNaming=original",
+    "generate-typescript-alt": "npx openapi-typescript ./openapi/api.yaml -o generated/typescript-alt/schema.d.ts",
+    "build-typescript": "tsup generated/typescript/models/index.ts --format esm --dts",
+    "prepare": "pnpm generate-typescript && pnpm build-typescript",
+    "publish-java": "cd ./generated/java && mvn clean install",
+    "publish-kotlin": "cd ./generated/kotlin && gradlew publishToMavenLocal"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.32.0",
+    "openapi-typescript": "^7.13.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.ts",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}

@@ -1,0 +1,1779 @@
+openapi: 3.1.0
+info:
+  title: Shared API Contracts
+  version: 0.0.0
+
+components:
+  schemas:
+    REPO:
+      type: string
+      enum:
+        - IMDirectory
+        - IMQueryRunner
+      x-enum-varnames:
+        - IM_DIRECTORY
+        - IM_QUERY_RUNNER
+    IMLContext:
+      type: string
+      enum:
+        - prefix
+        - match
+        - select
+        - comment
+    ListMode:
+      type: string
+      enum:
+        - ALL
+        - FIRST
+        - REST
+    TargetUpdateMode:
+      type: string
+      enum:
+        - REPLACE
+        - APPEND
+        - ADDTOLIST
+    Aggregate:
+      type: string
+      enum:
+        - SUM
+        - COUNT
+        - AVERAGE
+        - MIN
+        - MAX
+    Bool:
+      type: string
+      enum:
+        - and
+        - or
+        - rule
+    DatabaseOption:
+      type: string
+      enum:
+        - MYSQL
+        - POSTGRESQL
+        - GRAPHDB
+    DisplayMode:
+      type: string
+      enum:
+        - ORIGINAL
+        - RULES
+        - LOGICAL
+    ECLType:
+      type: string
+      enum:
+        - refined
+        - compound
+        - simple
+    Entail:
+      type: string
+      enum:
+        - descendantsOrSelfOf
+        - memberOf
+        - descendantsOf
+        - ancestorsOf
+        - equal
+    IMQType:
+      type: string
+      enum:
+        - COHORT
+        - DATASET
+        - INDICATOR
+    Operator:
+      type: string
+      enum:
+        - "="
+        - ">="
+        - ">"
+        - "<="
+        - "<"
+        - "startsWith"
+        - "notNull"
+        - "isNull"
+        - "contains"
+      x-enum-varnames:
+        - eq
+        - gte
+        - gt
+        - lte
+        - lt
+        - start
+        - notNull
+        - isNull
+        - contains
+    Order:
+      type: string
+      enum:
+        - ascending
+        - descending
+    OrderableDate:
+      type: string
+      enum:
+        - latest
+        - earliest
+    OrderableNumber:
+      type: string
+      enum:
+        - highest
+        - lowest
+    QueryType:
+      type: string
+      enum:
+        - POP
+        - LIST
+        - AGGREGATE_REPORT
+    RuleAction:
+      type: string
+      enum:
+        - SELECT
+        - REJECT
+        - NEXT
+    TextSearchStyle:
+      type: string
+      enum:
+        - autocomplete
+        - fuzzy
+        - multiword
+        - ngram
+        - exact
+        - all
+    ValidationLevel:
+      type: string
+      enum:
+        - CONCEPT
+        - ECL
+    VarType:
+      type: string
+      enum:
+        - NODE
+        - PATH
+        - LITERAL
+    Browser:
+      type: string
+      enum:
+        - CHROME
+        - FIREFOX
+        - EDGE
+        - IE
+        - OTHER
+    OperatingSystem:
+      type: string
+      enum:
+        - WINDOWS
+        - MACOS
+        - LINUX
+        - OTHER
+    Severity:
+      type: string
+      enum:
+        - CRITICAL
+        - MAJOR
+        - MINOR
+        - TRIVIAL
+        - ENHANCEMENT
+        - UNASSIGNED
+    Status:
+      type: string
+      enum:
+        - NEW
+        - FIXED
+        - ASSIGNED
+        - VERIFIED
+        - REOPENED
+        - WONT_FIX
+    TaskModule:
+      type: string
+      enum:
+        - DIRECTORY
+        - QUERY
+        - CREATOR
+        - EDITOR
+        - UPRN
+        - AUTH
+    ApprovalType:
+      type: string
+      enum:
+        - EDIT
+        - CREATE
+    UserRole:
+      type: string
+      enum:
+        - ADMIN
+        - DEVELOPER
+        - PUBLISHER
+        - CREATOR
+        - EDITOR
+        - TASK_MANAGER
+        - AUTHORISER
+        - APPROVER
+        - EXECUTOR
+        - UPRN
+    TaskState:
+      type: string
+      enum:
+        - TODO
+        - IN_PROGRESS
+        - APPROVED
+        - COMPLETE
+        - REJECTED
+        - CANCELLED
+        - UNDER_REVIEW
+    TaskType:
+      type: string
+      enum:
+        - BUG_REPORT
+        - ROLE_REQUEST
+        - GRAPH_REQUEST
+        - ENTITY_APPROVAL
+    BNF:
+      type: string
+      enum:
+        - http://bnf.info
+      x-enum-varnames:
+        - DOMAIN
+    CODE_TEMPLATE:
+      type: string
+      enum:
+        - http://endhealth.info/
+        - cTemp
+        - http://endhealth.info/codeTemplate#wrapper
+        - http://www.w3.org/2000/01/rdf-schema#label
+        - http://endhealth.info/im#definition
+        - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+        - http://endhealth.info/codeTemplate#datatypeMap
+        - http://endhealth.info/codeTemplate#extension
+        - http://endhealth.info/codeTemplate#includeComplexTypes
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+        - WRAPPER
+        - LABEL
+        - DEFINITION
+        - TYPE
+        - DATATYPE_MAP
+        - EXTENSION
+        - INCLUDE_COMPLEX_TYPES
+    COMPONENT:
+      type: string
+      enum:
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/im#Component_TabLayout"
+        - "http://endhealth.info/im#Component_textDisplay"
+        - "http://endhealth.info/im#Component_textInput"
+        - "http://endhealth.info/im#Component_htmlInput"
+        - "http://endhealth.info/im#Component_entityMultiSearch"
+        - "http://endhealth.info/im#Component_entitySearch"
+        - "http://endhealth.info/im#Component_entityComboBox"
+        - "http://endhealth.info/im#Component_entityDropdown"
+        - "http://endhealth.info/im#Component_arrayBuilder"
+        - "http://endhealth.info/im#Component_entityAutoComplete"
+        - "http://endhealth.info/im#Component_membersBuilder"
+        - "http://endhealth.info/im#Component_componentGroup"
+        - "http://endhealth.info/im#Component_propertyBuilder"
+        - "http://endhealth.info/im#Component_SetDefinitionBuilder"
+        - "http://endhealth.info/im#Component_QueryDefinitionBuilder"
+        - "http://endhealth.info/im#Component_ToggleableComponent"
+        - "http://endhealth.info/im#Component_HorizontalLayout"
+        - "http://endhealth.info/im#Component_VerticalLayout"
+        - "http://endhealth.info/im#Component_dropdownTextInputConcatenator"
+        - "http://endhealth.info/im#Component_roleGroupBuilder"
+        - "http://endhealth.info/im#Component_termCodeEditor"
+        - "http://endhealth.info/im#Component_textDropdown"
+        - "http://endhealth.info/im#Component_entityDisplay"
+        - "http://endhealth.info/im#Component_iriBuilder"
+        - "http://endhealth.info/im#Component_autocompleteSearchBarWrapper"
+        - "http://endhealth.info/im#Component_subsetBuilder"
+        - "http://endhealth.info/im#Component_checkboxDisplay"
+      x-enum-varnames:
+        - DOMAIN
+        - TAB_LAYOUT
+        - TEXT_DISPLAY
+        - TEXT_INPUT
+        - HTML_INPUT
+        - ENTITY_MULTI_SEARCH
+        - ENTITY_SEARCH
+        - ENTITY_COMBOBOX
+        - ENTITY_DROPDOWN
+        - ARRAY_BUILDER
+        - ENTITY_AUTO_COMPLETE
+        - MEMBERS_BUILDER
+        - COMPONENT_GROUP
+        - PROPERTY_BUILDER
+        - SET_DEFINITION_BUILDER
+        - QUERY_DEFINITION_BUILDER
+        - TOGGLEABLE
+        - HORIZONTAL_LAYOUT
+        - VERTICAL_LAYOUT
+        - DROPDOWN_TEXT_INPUT_CONCATENATOR
+        - ROLE_GROUP_BUILDER
+        - TERM_CODE_EDITOR
+        - TEXT_DROPDOWN
+        - ENTITY_DISPLAY
+        - IRI_BUILDER
+        - AUTOCOMPLETE_SEARCH_BAR_WRAPPER
+        - SUBSET_BUILDER
+        - CHECKBOX_DISPLAY
+    CONFIG:
+      type: string
+      enum:
+        - "http://endhealth.info/"
+        - "cfg"
+        - "http://www.w3.org/2000/01/rdf-schema#label"
+        - "http://endhealth.info/im#hasConfig"
+        - "http://www.w3.org/2000/01/rdf-schema#comment"
+        - "http://endhealth.info/config#IMDirectoryLatestRelease"
+        - "http://endhealth.info/config#IMDirectoryAllReleases"
+        - "http://endhealth.info/config#IMQueryRunnerLatestRelease"
+        - "http://endhealth.info/config#IMQueryRunnerAllReleases"
+        - "http://endhealth.info/config#monitoring"
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+        - LABEL
+        - HAS_CONFIG
+        - COMMENT
+        - IMDIRECTORY_LATEST_RELEASE
+        - IMDIRECTORY_ALL_RELEASES
+        - IMQUERY_RUNNER_LATEST_RELEASE
+        - IMQUERY_RUNNER_ALL_RELEASES
+        - MONITORING
+    EDITOR:
+      type: string
+      enum:
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/im#Editor_ConceptShape"
+        - "http://endhealth.info/im#Editor_ConceptSetShape"
+        - "http://endhealth.info/im#Editor_ValueSetShape"
+        - "http://endhealth.info/im#Editor_FolderShape"
+        - "http://endhealth.info/im#Editor_DataModelShape"
+        - "http://endhealth.info/im#Editor_CohortQueryShape"
+        - "http://endhealth.info/im#Editor_PropertyShape"
+        - "http://endhealth.info/im#Editor_IndicatorShape"
+      x-enum-varnames:
+        - DOMAIN
+        - CONCEPT_SHAPE
+        - CONCEPT_SET_SHAPE
+        - VALUE_SET_SHAPE
+        - FOLDER_SHAPE
+        - DATA_MODEL_SHAPE
+        - COHORT_QUERY_SHAPE
+        - PROPERTY_SHAPE
+        - INDICATOR_SHAPE
+    EntityType:
+      type: string
+      enum:
+        - "http://endhealth.info/im#Query"
+        - "http://www.w3.org/ns/shacl#NodeShape"
+      x-enum-varnames:
+        - QUERY
+        - NODESHAPE
+    FHIR:
+      type: string
+      enum:
+        - "fhir"
+        - "http://hl7.org/2-0/fhir/StructureDefinition#"
+        - "http://endhealth.info/im#VSET_FHIR"
+      x-enum-varnames:
+        - PREFIX
+        - DSTU2
+        - VALUESET_FOLDER
+    GRAPH:
+      type: string
+      enum:
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/prov#"
+        - "http://endhealth.info/user#"
+        - "http://endhealth.info/workflow#"
+        - "http://endhealth.info/config#"
+        - "http://smartlifehealth.info/smh#"
+      x-enum-varnames:
+        - IM
+        - PROV
+        - USER
+        - WORKFLOW
+        - CONFIG
+        - SMARTLIFE
+    IM:
+      type: string
+      enum:
+        - "http://endhealth.info/"
+        - "im"
+        - "http://endhealth.info/im#Namespace"
+        - "http://endhealth.info/im#displayLabel"
+        - "http://endhealth.info/im#hasSubtypes"
+        - "http://endhealth.info/im#hasValueSet"
+        - "http://endhealth.info/im#ValueSet"
+        - "http://endhealth.info/im#DescendantsOrSelfOf"
+        - "http://endhealth.info/im#DescendantsOf"
+        - "http://endhealth.info/im#isRelativeValue"
+        - "http://endhealth.info/im#fullySpecifiedName"
+        - "http://endhealth.info/im#AncestorsOf"
+        - "http://endhealth.info/im#entailedMember"
+        - "http://endhealth.info/im#entailment"
+        - "http://endhealth.info/im#exclude"
+        - "iri"
+        - "http://endhealth.info/im#iri"
+        - "value"
+        - "type"
+        - "http://endhealth.info/im#id"
+        - "http://endhealth.info/im#relationshipType"
+        - "http://endhealth.info/im#code"
+        - "http://endhealth.info/im#keyTerm"
+        - "http://endhealth.info/im#preferredName"
+        - "http://endhealth.info/im#scheme"
+        - "http://endhealth.info/im#defaultScheme"
+        - "http://endhealth.info/im#binding"
+        - "http://endhealth.info/im#status"
+        - "http://endhealth.info/im#Status"
+        - "http://endhealth.info/im#contentType"
+        - "http://endhealth.info/im#usageStats"
+        - "http://endhealth.info/im#inTask"
+        - "http://endhealth.info/im#definition"
+        - "http://endhealth.info/im#is"
+        - "http://endhealth.info/im#returnType"
+        - "http://endhealth.info/im#updateProcedure"
+        - "http://endhealth.info/im#Concept"
+        - "http://endhealth.info/im#Codeable"
+        - "http://endhealth.info/im#concept"
+        - "http://endhealth.info/im#ConceptSet"
+        - "http://endhealth.info/im#Folder"
+        - "http://endhealth.info/im#TextMaps"
+        - "http://endhealth.info/im#Config"
+        - "http://endhealth.info/im#FunctionClause"
+        - "http://endhealth.info/im#Query"
+        - "http://endhealth.info/im#Q_DefaultCohorts"
+        - "http://endhealth.info/im#DataUpdate"
+        - "http://endhealth.info/im#PathQuery"
+        - "http://endhealth.info/im#pathTo"
+        - "http://endhealth.info/im#OpenSearchQuery"
+        - "http://endhealth.info/im#dataModelProperty"
+        - "http://endhealth.info/im#HealthModelOntology"
+        - "http://endhealth.info/im#QueryConceptSets"
+        - "http://endhealth.info/im#Properties"
+        - "http://endhealth.info/im#Task"
+        - "http://endhealth.info/im#FieldGroup"
+        - "http://endhealth.info/im#MatchClause"
+        - "http://endhealth.info/im#FormGenerator"
+        - "http://endhealth.info/im#functionProperty"
+        - "http://endhealth.info/im#GraphMap"
+        - "http://endhealth.info/im#EntityMap"
+        - "http://endhealth.info/im#Set"
+        - "http://endhealth.info/im#isContainedIn"
+        - "http://endhealth.info/im#hasMemberParent"
+        - "http://endhealth.info/im#functionTemplate"
+        - "http://endhealth.info/im#oneOf"
+        - "http://endhealth.info/im#combinationOf"
+        - "http://endhealth.info/im#usePredicates"
+        - "http://endhealth.info/im#someOf"
+        - "http://endhealth.info/im#hasChildren"
+        - "http://endhealth.info/im#isA"
+        - "http://endhealth.info/im#contextOrder"
+        - "http://endhealth.info/im#context"
+        - "http://endhealth.info/im#isChildOf"
+        - "http://endhealth.info/im#previousEntityOf"
+        - "http://endhealth.info/im#subsumedBy"
+        - "http://endhealth.info/im#mayBeSubsumedBy"
+        - "http://endhealth.info/im#approximateSubsumedBy"
+        - "http://endhealth.info/im#localSubClassOf"
+        - "http://endhealth.info/im#hasConfig"
+        - "http://endhealth.info/im#propertyGroup"
+        - "http://endhealth.info/im#inheritedFrom"
+        - "http://endhealth.info/im#groupNumber"
+        - "http://endhealth.info/im#roleGroup"
+        - "http://endhealth.info/im#role"
+        - "http://endhealth.info/im#hasInheritedProperties"
+        - "http://endhealth.info/im#Draft"
+        - "http://endhealth.info/im#Active"
+        - "http://endhealth.info/im#Inactive"
+        - "http://endhealth.info/im#definitionalStatus"
+        - "http://endhealth.info/im#1251000252106"
+        - "http://endhealth.info/im#2771000252102"
+        - "http://endhealth.info/im#Unassigned"
+        - "http://endhealth.info/im#hasMap"
+        - "http://endhealth.info/im#entityMap"
+        - "http://endhealth.info/im#mappedTo"
+        - "http://endhealth.info/im#hasNumericValue"
+        - "http://endhealth.info/im#sourceText"
+        - "http://endhealth.info/im#targetText"
+        - "http://endhealth.info/im#hasTermCode"
+        - "http://endhealth.info/im#alternativeCode"
+        - "http://endhealth.info/im#descriptionId"
+        - "http://endhealth.info/im#codeId"
+        - "http://endhealth.info/im#matchedTo"
+        - "http://endhealth.info/im#mapPriority"
+        - "http://endhealth.info/im#assuranceLevel"
+        - "http://endhealth.info/im#mapAdvice"
+        - "http://endhealth.info/im#NationallyAssuredUK"
+        - "http://endhealth.info/im#SupplierAssured"
+        - "http://endhealth.info/im#Cohort"
+        - "http://endhealth.info/im#hasMember"
+        - "http://endhealth.info/im#isMemberOf"
+        - "http://endhealth.info/im#avoidReplacedBy"
+        - "http://endhealth.info/im#isSubsetOf"
+        - "http://endhealth.info/im#hasSubset"
+        - "http://endhealth.info/im#sourceContext"
+        - "http://endhealth.info/im#SourceContext"
+        - "http://endhealth.info/im#sourcePublisher"
+        - "http://endhealth.info/im#sourceSystem"
+        - "http://endhealth.info/im#sourceSchema"
+        - "http://endhealth.info/im#sourceTable"
+        - "http://endhealth.info/im#sourceField"
+        - "http://endhealth.info/im#TimeDifference"
+        - "http://endhealth.info/im#sourceCodeScheme"
+        - "http://endhealth.info/im#sourceValue"
+        - "http://endhealth.info/im#sourceRegex"
+        - "http://endhealth.info/im#sourceHeading"
+        - "http://endhealth.info/im#targetProperty"
+        - "http://endhealth.info/im#contextNode"
+        - "http://endhealth.info/im#ReplaceAllPredicates"
+        - "http://endhealth.info/im#AddQuads"
+        - "http://endhealth.info/im#UpdatePredicates"
+        - "http://endhealth.info/im#DeleteAll"
+        - "http://endhealth.info/im#2001000252109"
+        - "http://endhealth.info/im#1661000252106"
+        - "http://endhealth.info/im#uses"
+        - "http://endhealth.info/im#Count"
+        - "http://endhealth.info/im#Sum"
+        - "http://endhealth.info/im#Average"
+        - "http://endhealth.info/im#Min"
+        - "http://endhealth.info/im#Max"
+        - "http://endhealth.info/im#Concatenate"
+        - "http://endhealth.info/im#inResultSet"
+        - "http://endhealth.info/im#inResultSet"
+        - "http://endhealth.info/im#ProvenanceActivity"
+        - "http://endhealth.info/im#provenanceTarget"
+        - "http://endhealth.info/im#provenanceActivityType"
+        - "http://endhealth.info/im#provenanceAgent"
+        - "http://endhealth.info/im#Indicator"
+        - "http://endhealth.info/im#startTime"
+        - "http://endhealth.info/im#effectiveDate"
+        - "http://endhealth.info/im#endDate"
+        - "http://endhealth.info/im#usedEntity"
+        - "http://endhealth.info/im#1001911000252102"
+        - "http://endhealth.info/im#version"
+        - "http://endhealth.info/im#hasRoleInOrganisation"
+        - "http://endhealth.info/im#isPerson"
+        - "http://endhealth.info/im#hasContext"
+        - "http://endhealth.info/im#displayOrder"
+        - "http://endhealth.info/im#usageTotal"
+        - "http://endhealth.info/im#Descending"
+        - "http://endhealth.info/im#Ascending"
+        - "http://endhealth.info/im#pLabel"
+        - "http://endhealth.info/im#oLabel"
+        - "http://endhealth.info/im#example"
+        - "http://endhealth.info/im#privacyLevel"
+        - "http://endhealth.info/im#valueSelect"
+        - "http://endhealth.info/im#valueVariable"
+        - "http://endhealth.info/im#placeHolder"
+        - "http://endhealth.info/im#function"
+        - "http://endhealth.info/im#Address"
+        - "http://endhealth.info/im#address"
+        - "http://endhealth.info/im#addressLine1"
+        - "http://endhealth.info/im#addressLine2"
+        - "http://endhealth.info/im#addressLine3"
+        - "http://endhealth.info/im#locality"
+        - "http://endhealth.info/im#region"
+        - "http://endhealth.info/im#postCode"
+        - "http://endhealth.info/im#country"
+        - "http://endhealth.info/im#uprn"
+        - "http://endhealth.info/im#EntityTypes"
+        - "http://endhealth.info/im#ConceptSetGroup"
+        - "http://endhealth.info/im#oldCode"
+        - "http://endhealth.info/im#order"
+        - "http://endhealth.info/im#MappingTask"
+        - "http://endhealth.info/im#UpdateTask"
+        - "http://endhealth.info/im#matchedFrom"
+        - "http://endhealth.info/im#mappedFrom"
+        - "http://endhealth.info/im#select"
+        - "http://endhealth.info/im#NationallyAssuredUK"
+        - "http://endhealth.info/im#Entity"
+        - "http://endhealth.info/im#isSubIndicatorOf"
+        - "http://endhealth.info/im#QuerySet"
+        - "http://endhealth.info/im#dependentOn"
+        - "http://endhealth.info/im#CareActivity"
+        - "http://endhealth.info/im#CareTarget"
+        - "http://endhealth.info/im#QueryTemplate"
+        - "http://endhealth.info/im#numerator"
+        - "http://endhealth.info/im#denominator"
+        - "http://endhealth.info/im#dataset"
+        - "http://endhealth.info/im#RecordType"
+        - "http://endhealth.info/im#MatchClause"
+        - "http://endhealth.info/im#DataProperty"
+        - "http://endhealth.info/im#Organisation"
+        - "http://endhealth.info/im#ModellingEntityType"
+        - "http://endhealth.info/im#Profile"
+        - "http://endhealth.info/im#hasStatsReportEntry"
+        - "http://endhealth.info/im#Favourites"
+        - "http://endhealth.info/im#DiscoveryOntology"
+        - "http://endhealth.info/im#Sets"
+        - "http://endhealth.info/im#DiscoveryCommonDataModel"
+        - "http://endhealth.info/im#Catalogue"
+        - "http://endhealth.info/im#Q_Queries"
+        - "http://endhealth.info/im#InformationModel"
+        - "http://endhealth.info/im#Tasks"
+        - "http://endhealth.info/im#M_MatchClauses"
+        - "http://endhealth.info/im#ontologyOverview"
+        - "http://endhealth.info/im#ontologyConceptTypes"
+        - "http://endhealth.info/im#ontologyConceptSchemes"
+        - "http://endhealth.info/im#ontologyConceptStatus"
+        - "http://endhealth.info/im#hasValue"
+        - "http://endhealth.info/im#DataModelEntity"
+        - "http://endhealth.info/im#dataModelObjectProperty"
+        - "http://endhealth.info/im#dataModelDataProperty"
+        - "http://endhealth.info/im#functionProperty"
+        - "http://endhealth.info/im#bestMatch"
+        - "http://endhealth.info/im#entityType"
+        - "http://endhealth.info/im#valueData"
+        - "http://endhealth.info/im#valueObject"
+        - "http://endhealth.info/im#preposition"
+        - "http://endhealth.info/im#valueIri"
+        - "http://endhealth.info/im#valueIriList"
+        - "http://endhealth.info/im#valueDataList"
+        - "http://endhealth.info/im#im1Id"
+        - "http://endhealth.info/im#im1DbId"
+        - "http://endhealth.info/im#provenanceActivityType"
+        - "http://endhealth.info/im#ValueSets"
+        - "http://endhealth.info/im#Sets"
+        - "http://endhealth.info/im#QueryConceptSets"
+        - "http://endhealth.info/im#dateOfEntry"
+        - "http://endhealth.info/im#participationType"
+        - "http://endhealth.info/im#personInRole"
+        - "http://endhealth.info/im#ProvenanceSourceEntity"
+        - "http://endhealth.info/im#derivationType"
+        - "http://endhealth.info/im#entityIdentifier"
+        - "http://endhealth.info/im#codeTemplate"
+        - "http://endhealth.info/im#DataModelClasses"
+        - "http://endhealth.info/im#DateTime"
+        - "http://endhealth.info/im#TEMPLATE_NumericEventOrder"
+        - "http://endhealth.info/im#OrderBy"
+        - "http://endhealth.info/im#parameterTemplate"
+        - "http://endhealth.info/im#valueTemplate"
+        - "http://endhealth.info/im#defaultValue"
+        - "http://endhealth.info/im#loadMore"
+        - "http://endhealth.info/im#concept"
+        - "http://endhealth.info/im#NumericValue"
+        - "http://endhealth.info/im#HealthRecords"
+        - "http://endhealth.info/im#hasIncrementalFrom"
+        - "http://endhealth.info/im#ECLBuilderSchemes"
+        - "http://endhealth.info/im#inferredPredicates"
+        - "http://endhealth.info/im#inferredExcludePredicates"
+        - "http://endhealth.info/im#graphExcludePredicates"
+        - "http://endhealth.info/im#Age"
+        - "http://endhealth.info/im#Date"
+        - "http://endhealth.info/im#Time"
+        - "http://endhealth.info/im#intervalUnit"
+        - "http://endhealth.info/im#parameter"
+        - "http://endhealth.info/im#NumericDifference"
+        - "http://endhealth.info/im#FiscalYear"
+        - "http://endhealth.info/im#Quarter"
+        - "http://endhealth.info/im#Week"
+        - "http://endhealth.info/im#WeekNumber"
+        - "http://endhealth.info/im#Year"
+        - "http://endhealth.info/im#Years"
+        - "http://endhealth.info/im#Month"
+        - "http://endhealth.info/im#Months"
+        - "http://endhealth.info/im#Day"
+        - "http://endhealth.info/im#Days"
+        - "http://endhealth.info/im#Hours"
+        - "http://endhealth.info/im#Minute"
+        - "http://endhealth.info/im#Second"
+        - "http://endhealth.info/im#datatypeQualifier"
+        - "http://endhealth.info/im#TypeFilterOptions"
+        - "http://endhealth.info/im#SortFieldFilterOptions"
+        - "http://endhealth.info/im#SortDirectionFilterOptions"
+        - "http://endhealth.info/im#StatusFilterDefaultOptions"
+        - "http://endhealth.info/im#TypeFilterDefaultOptions"
+        - "http://endhealth.info/im#SortFieldFilterDefaultOptions"
+        - "http://endhealth.info/im#SortDirectionFilterDefaultOptions"
+
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+        - ROOT_NAMESPACE
+        - DISPLAY_LABEL
+        - HAS_SUBTYPES
+        - HAS_VALUESET
+        - VALUE_SET
+        - DESCENDANTS_OR_SELF_OF
+        - DESCENDANTS_OF
+        - IS_RELATIVE_VALUE
+        - FULLY_SPECIFIED_NAME
+        - ANCESTORS_OF
+        - ENTAILED_MEMBER
+        - ENTAILMENT
+        - EXCLUDE
+        - IRI
+        - IM_IRI
+        - VALUE
+        - TYPE
+        - ID
+        - RELATIONSHIP_TYPE
+        - CODE
+        - KEY_TERM
+        - PREFERRED_NAME
+        - HAS_SCHEME
+        - DEFAULT_SCHEME
+        - BINDING
+        - HAS_STATUS
+        - STATUS
+        - CONTENT_TYPE
+        - USAGE_STATS
+        - IN_TASK
+        - DEFINITION
+        - IS
+        - RETURN_TYPE
+        - UPDATE_PROCEDURE
+        - CONCEPT
+        - CODEABLE
+        - CONCEPT_PROPERTY
+        - CONCEPT_SET
+        - FOLDER
+        - TEXT_MAPS
+        - CONFIG
+        - FUNCTION
+        - QUERY
+        - DEFAULT_COHORTS
+        - DATA_UPDATE
+        - PATH_QUERY
+        - PATH_TO
+        - OPENSEARCH_QUERY
+        - DATAMODEL_PROPERTY
+        - ONTOLOGY_PARENT_FOLDER
+        - CONCEPT_SET_PARENT_FOLDER
+        - PROPERTIES_FOLDER
+        - TASK
+        - FIELD_GROUP
+        - MATCH_CLAUSE
+        - FORM_GENERATOR
+        - FUNCTION_PROPERTY
+        - MAP_GRAPH
+        - MAP_ENTITY
+        - SET
+        - IS_CONTAINED_IN
+        - HAS_MEMBER_PARENT
+        - FUNCTION_TEMPLATE
+        - ONE_OF
+        - COMBINATION_OF
+        - USE_PREDICATES
+        - SOME_OF
+        - HAS_CHILDREN
+        - IS_A
+        - CONTEXT_ORDER
+        - CONTEXT
+        - IS_CHILD_OF
+        - PREVIOUS_ENTITY_OF
+        - SUBSUMED_BY
+        - MAY_BE_SUBSUMED_BY
+        - APPROXIMATE_SUBSUMED_BY
+        - LOCAL_SUBCLASS_OF
+        - HAS_CONFIG
+        - PROPERTY_GROUP
+        - INHERITED_FROM
+        - GROUP_NUMBER
+        - ROLE_GROUP
+        - ROLE
+        - HAS_INHERITED_PROPERTIES
+        - DRAFT
+        - ACTIVE
+        - INACTIVE
+        - DEFINITIONAL_STATUS
+        - SUFFICIENTLY_DEFINED
+        - NECESSARY_NOT_SUFFICIENT
+        - UNASSIGNED
+        - HAS_MAP
+        - ENTITY_MAP
+        - MAPPED_TO
+        - HAS_NUMERIC
+        - SOURCE_TEXT
+        - TARGET_TEXT
+        - HAS_TERM_CODE
+        - ALTERNATIVE_CODE
+        - DESCRIPTION_ID
+        - CODE_ID
+        - MATCHED_TO
+        - MAP_PRIORITY
+        - ASSURANCE_LEVEL
+        - MAP_ADVICE
+        - NATIONALLY_ASSURED
+        - SUPPLIER_ASSURED
+        - COHORT
+        - HAS_MEMBER
+        - IS_MEMBER_OF
+        - AVOID_REPLACED_BY
+        - IS_SUBSET_OF
+        - HAS_SUBSET
+        - SOURCE_CONTEXT
+        - SOURCE_CONTEXT_TYPE
+        - SOURCE_PUBLISHER
+        - SOURCE_SYSTEM
+        - SOURCE_SCHEMA
+        - SOURCE_TABLE
+        - SOURCE_FIELD
+        - TIME_DIFFERENCE
+        - SOURCE_CODE_SCHEME
+        - SOURCE_VALUE
+        - SOURCE_REGEX
+        - SOURCE_HEADING
+        - TARGET_PROPERTY
+        - CONTEXT_NODE
+        - REPLACE_ALL_PREDICATES
+        - ADD_QUADS
+        - UPDATE_PREDICATES
+        - DELETE_ALL
+        - PROV_CREATION
+        - PROV_UPDATE
+        - USES
+        - COUNT
+        - SUM
+        - AVERAGE
+        - MIN
+        - MAX
+        - CONCATENATE
+        - IN_RESULT_SET
+        - HAS_PROFILE
+        - PROVENANCE_ACTIVITY
+        - PROVENANCE_TARGET
+        - PROVENANCE_ACTIVITY_TYPE
+        - PROVENANCE_AGENT
+        - INDICATOR
+        - START_TIME
+        - EFFECTIVE_DATE
+        - END_DATE
+        - PROVENANCE_USED
+        - AUTHOR_ROLE
+        - VERSION
+        - HAS_ROLE_IN
+        - IS_PERSON
+        - HAS_CONTEXT
+        - DISPLAY_ORDER
+        - USAGE_TOTAL
+        - DESCENDING
+        - ASCENDING
+        - PLABEL
+        - OLABEL
+        - EXAMPLE
+        - PRIVACY_LEVEL
+        - VALUE_SELECT
+        - VALUE_VARIABLE
+        - PLACEHOLDER
+        - FUNCTION_DEFINITION
+        - ADDRESS_CLASS
+        - ADDRESS
+        - ADDRESS_LINE_1
+        - ADDRESS_LINE_2
+        - ADDRESS_LINE_3
+        - LOCALITY
+        - REGION
+        - POST_CODE
+        - COUNTRY
+        - UPRN
+        - ENTITY_TYPES
+        - CONCEPT_SET_GROUP
+        - OLD_CODE
+        - ORDER
+        - MAPPING_TASK
+        - UPDATE_TASK
+        - MATCHED_FROM
+        - MAPPED_FROM
+        - SELECT
+        - NATIONALLY_ASSURED_UK
+        - ENTITY
+        - IS_SUBINDICATOR_OF
+        - QUERY_SET
+        - DEPENDENT_ON
+        - CARE_ACTIVITY
+        - CARE_TARGET
+        - QUERY_TEMPLATE
+        - NUMERATOR
+        - DENOMINATOR
+        - HAS_DATASET
+        - RECORD_TYPE
+        - FEATURE
+        - DATA_PROPERTY
+        - ORGANISATION
+        - MODELLING_ENTITY_TYPE
+        - PROFILE
+        - STATS_REPORT_ENTRY
+        - FAVOURITES
+        - MODULE_ONTOLOGY
+        - MODULE_SETS
+        - MODULE_DATA_MODEL
+        - MODULE_CATALOGUE
+        - MODULE_QUERIES
+        - MODULE_IM
+        - MODULE_TASKS
+        - MODULE_FEATURES
+        - CONCEPT_CATEGORY
+        - CONCEPT_TYPES
+        - CONCEPT_SCHEMES
+        - CONCEPT_STATUS
+        - HAS_VALUE
+        - DATAMODEL_ENTITY
+        - DATAMODEL_OBJECTPROPERTY
+        - DATAMODEL_DATAPROPERTY
+        - DATAMODEL_FUNCTIONPROPERTY
+        - BEST_MATCH
+        - ENTITY_TYPE
+        - VALUE_DATA
+        - VALUE_OBJECT
+        - PREPOSITION
+        - VALUE_IRI
+        - VALUE_IRI_LIST
+        - VALUE_DATA_LIST
+        - IM_1_ID
+        - IM_1_DBID
+        - PROV_ACTIVITY_TYPE
+        - FOLDER_VALUESETS
+        - FOLDER_SETS
+        - FOLDER_QUERY_CONCEPT_SETS
+        - DATE_OF_ENTRY
+        - PARTICIPATION_TYPE
+        - PERSON_IN_ROLE
+        - PROVENANCE_SOURCE_ENTITY
+        - DERIVATION_TYPE
+        - ENTITY_IDENTIFIER
+        - CODE_TEMPLATE
+        - DATAMODEL_CLASSES
+        - DATE_TIME
+        - TEMPLATE_NUMERIC_EVENT_ORDER
+        - ORDER_BY
+        - PARAMETER_TEMPLATE
+        - VALUE_TEMPLATE
+        - DEFAULT_VALUE
+        - LOAD_MORE
+        - DATA_MODEL_PROPERTY_CONCEPT
+        - NUMERIC_VALUE
+        - HEALTH_RECORDS
+        - HAS_INCREMENTAL_FROM
+        - ECL_BUILDER_SCHEMES
+        - INFERRED_PREDICATES
+        - INFERRED_EXCLUDE_PREDICATES
+        - GRAPH_EXCLUDE_PREDICATES
+        - AGE
+        - DATE
+        - TIME
+        - INTERVAL_UNIT
+        - PARAMETER
+        - NUMERIC_DIFFERENCE
+        - FISCAL_YEAR
+        - QUARTER
+        - WEEK
+        - WEEK_NUMBER
+        - YEAR
+        - YEARS
+        - MONTH
+        - MONTHS
+        - DAY
+        - DAYS
+        - HOURS
+        - MINUTES
+        - SECONDS
+        - DATATYPE_QUALIFIER
+        - TYPE_FILTER_OPTIONS
+        - SORT_FIELD_FILTER_OPTIONS
+        - SORT_DIRECTION_FILTER_OPTIONS
+        - STATUS_FILTER_DEFAULTS
+        - TYPE_FILTER_DEFAULTS
+        - SORT_FIELD_FILTER_DEFAULTS
+        - SORT_DIRECTION_FILTER_DEFAULTS
+    IMPORT_TYPE:
+      type: string
+      enum:
+        - "snomed"
+        - "tct"
+        - "search"
+        - "fhir"
+        - "smartlifequery"
+        - "smartlifeindicators"
+        - "qof"
+        - "core"
+        - "singlefile"
+        - "bnf"
+        - "icd10"
+        - "emis"
+        - "cprd"
+        - "opcs4"
+        - "tpp"
+        - "ods"
+        - "prsb"
+        - "kingsapex"
+        - "kingswinpath"
+        - "vision"
+        - "barts"
+        - "imv1"
+        - "encounters"
+        - "config"
+        - "ceg"
+        - "nhstfc"
+        - "deltas"
+        - "corequery"
+        - "qcodegroups"
+
+      x-enum-varnames:
+        - SNOMED
+        - SKIP_TCT
+        - SKIP_SEARCH
+        - FHIR
+        - SMARTLIFE
+        - SMARTLIFEINDICATOR
+        - QOF
+        - CORE
+        - SINGLE_FILE
+        - BNF
+        - ICD10
+        - EMIS
+        - CPRD_MED
+        - OPCS4
+        - TPP
+        - ODS
+        - PRSB
+        - KINGS_APEX
+        - KINGS_WINPATH
+        - VISION
+        - BARTS_CERNER
+        - IM1
+        - ENCOUNTERS
+        - CONFIG
+        - CEG
+        - NHS_TFC
+        - DELTAS
+        - QUERY
+        - QR
+    IM_FUNCTION:
+      type: string
+      enum:
+        - "http://endhealth.info/"
+        - "http://endhealth.info/im#Function_SnomedConceptGenerator"
+        - "http://endhealth.info/im#Function_LocalNameRetriever"
+        - "http://endhealth.info/im#Function_GetAdditionalAllowableTypes"
+        - "http://endhealth.info/im#Function_GetLogicOptions"
+        - "http://endhealth.info/im#Function_GetSetEditorIriSchemes"
+        - "http://endhealth.info/im#Function_IM1SchemeOptions"
+        - "http://endhealth.info/im#Function_SchemeFromIri"
+        - "http://endhealth.info/im#Function_GetUserEditableSchemes"
+        - "http://endhealth.info/im#Function_IsType"
+        - "http://endhealth.info/im#Function_AllowableProperties"
+        - "http://endhealth.info/im#Function_AllowableRanges"
+        - "http://endhealth.info/im#Function_AllowablePropertyValues"
+
+      x-enum-varnames:
+        - DOMAIN
+        - SNOMED_CONCEPT_GENERATOR
+        - LOCAL_NAME_RETRIEVER
+        - GET_ADDITIONAL_ALLOWABLE_TYPES
+        - GET_LOGIC_OPTIONS
+        - GET_SET_EDITOR_IRI_SCHEMES
+        - IM1_SCHEME_OPTIONS
+        - SCHEME_FROM_IRI
+        - GET_USER_EDITABLE_SCHEMES
+        - IS_TYPE
+        - ALLOWABLE_PROPERTIES
+        - ALLOWABLE_RANGES
+        - ALLOWABLE_PROPERTY_VALUES
+    MAP:
+      type: string
+      enum:
+        - "http://endhealth.info/"
+        - "map"
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+    NAMESPACE:
+      type: string
+      enum:
+        - "http://endhealth.info/lnwhsy#"
+        - "http://endhealth.info/lnwhsl#"
+        - "http://endhealth.info/thhsl#"
+        - "http://endhealth.info/kingsp#"
+        - "http://endhealth.info/impc#"
+        - "http://endhealth.info/cwhcc#"
+        - "http://endhealth.info/bhrutm#"
+        - "http://endhealth.info/ods#"
+        - "http://endhealth.info/ceg#"
+        - "http://endhealth.info/qof#"
+        - "http://smartlifehealth.info/smh#"
+        - "http://endhealth.info/config#"
+        - "http://endhealth.info/imq#"
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/im1#"
+        - "http://endhealth.info/emis#"
+        - "http://endhealth.info/im#Function_"
+        - "http://endhealth.info/map#"
+        - "http://www.w3.org/2002/07/owl#"
+        - "http://prsb.info/rs#"
+        - "http://bnf.info/bnf#"
+        - "http://apiqcodes.org/qcodes#"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        - "http://www.w3.org/2000/01/rdf-schema#"
+        - "http://www.w3.org/ns/shacl#"
+        - "http://snomed.info/sct#"
+        - "http://endhealth.info/user#"
+        - "http://endhealth.info/workflow#"
+        - "http://www.w3.org/2001/XMLSchema#"
+        - "http://endhealth.info/im#Component_"
+        - "http://endhealth.info/im#Editor_"
+        - "http://endhealth.info/im#Query_"
+        - "http://endhealth.info/im#Validation_"
+        - "http://endhealth.info/codeTemplate#"
+        - "http://endhealth.info/tpp#"
+        - "http://endhealth.info/enc#"
+        - "http://endhealth.info/icd10#"
+        - "http://endhealth.info/vis#"
+        - "http://endhealth.info/opcs4#"
+        - "http://endhealth.info/bc#"
+        - "http://org.endhealth.info/im#"
+        - "http://loc.endhealth.info/im#"
+        - "http://hl7.org/fhir/"
+        - "http://sys.endhealth.info/im#"
+        - "http://endhealth.info/kpax#"
+        - "http://endhealth.info/nhsethnic2001#"
+        - "http://endhealth.info/cprdm#"
+        - "http://endhealth.info/cprdp#"
+        - "http://endhealth.info/nhstfc#"
+        - "http://endhealth.info/kwp#"
+
+      x-enum-varnames:
+        - LNWH_SY
+        - LNWH_SL
+        - THH_SL
+        - KINGS_PIMS
+        - IMPERIAL
+        - CWH
+        - BHRUT
+        - ODS
+        - CEG
+        - QOF
+        - SMARTLIFE
+        - CONFIG
+        - IMQ
+        - IM
+        - IM1
+        - EMIS
+        - FUNCTION
+        - MAP
+        - OWL
+        - PRSB
+        - BNF
+        - QR
+        - RDF
+        - RDFS
+        - SHACL
+        - SNOMED
+        - USER
+        - WORKFLOW
+        - XSD
+        - IM_COMPONENT
+        - IM_EDITOR
+        - IM_QUERY
+        - IM_VALIDATION
+        - IM_CODE_TEMPLATE
+        - TPP
+        - ENCOUNTERS
+        - ICD10
+        - VISION
+        - OPCS4
+        - BARTS_CERNER
+        - ORGANISATION
+        - LOCATION
+        - FHIR
+        - SYSTEM
+        - KINGS_APEX
+        - NHSDD_ETHNIC_2001
+        - CPRD_MED
+        - CPRD_PROD
+        - NHS_TFC
+        - KINGS_WINPATH
+    ODS:
+      type: string
+      enum:
+        - "https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-"
+        - "https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRole-1#ODS_RoleType"
+        - "https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRelationship-1#ODS_Relationship"
+        - "https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1#ODS_RecordClass"
+
+      x-enum-varnames:
+        - BASE_NAMESPACE
+        - ORGANISATION_ROLE_TYPE
+        - ORGANISATION_RELATIONSHIP
+        - ORGANISATION_RECORD_CLASS
+    OPEN_SEARCH:
+      type: string
+      enum:
+        - "http://www.w3.org/2000/01/rdf-schema#label"
+        - "http://www.w3.org/2000/01/rdf-schema#comment"
+        - "http://endhealth.info/im#code"
+        - "http://endhealth.info/im#status"
+        - "http://endhealth.info/im#alternativeCode"
+        - "http://endhealth.info/im#scheme"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        - "http://endhealth.info/im#usageTotal"
+        - "http://endhealth.info/im#binding"
+        - "http://endhealth.info/im#hasTermCode"
+        - "http://www.w3.org/2000/01/rdf-schema#domain"
+
+      x-enum-varnames:
+        - NAME
+        - DESCRIPTION
+        - CODE
+        - STATUS
+        - ALTERNATIVE_CODE
+        - SCHEME
+        - TYPE
+        - USAGE_TOTAL
+        - BINDING
+        - TERM_CODE
+        - DOMAIN
+    ORG:
+      type: string
+      enum:
+        - "http://endhealth.info/im#organisationRecordClass"
+        - "http://endhealth.info/im#organisationRelationship"
+        - "http://endhealth.info/im#targetOrganisation"
+        - "http://endhealth.info/im#organisationRole"
+        - "http://endhealth.info/im#odsCode"
+
+      x-enum-varnames:
+        - ORGANISATION_RECORD_CLASS
+        - RELATED_ORGANISATION
+        - TARGET
+        - ROLE
+        - ODS_CODE
+    OWL:
+      type: string
+      enum:
+        - "owl"
+        - "http://www.w3.org/2002/07/owl#Thing"
+        - "http://www.w3.org/2002/07/owl#Class"
+        - "http://www.w3.org/2002/07/owl#equivalentClass"
+        - "http://www.w3.org/2002/07/owl#intersectionOf"
+        - "http://www.w3.org/2002/07/owl#unionOf"
+        - "http://www.w3.org/2002/07/owl#Restriction"
+        - "http://www.w3.org/2002/07/owl#onProperty"
+        - "http://www.w3.org/2002/07/owl#onClass"
+        - "http://www.w3.org/2002/07/owl#someValuesFrom"
+        - "http://www.w3.org/2002/07/owl#allValuesFrom"
+        - "http://www.w3.org/2002/07/owl#ObjectProperty"
+        - "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        - "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        - "http://www.w3.org/2002/07/owl#inverseOf"
+        - "http://www.w3.org/2002/07/owl#inverseOf"
+        - "http://www.w3.org/2002/07/owl#propertyChainAxiom"
+        - "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        - "http://www.w3.org/2002/07/owl#FunctionalProperty"
+        - "http://www.w3.org/2002/07/owl#SymmetricProperty"
+        - "http://www.w3.org/2002/07/owl#ReflexiveProperty"
+        - "http://www.w3.org/2002/07/owl#onDatatype"
+        - "http://www.w3.org/2002/07/owl#withRestrictions"
+        - "http://www.w3.org/2002/07/owl#maxCardinality"
+        - "http://www.w3.org/2002/07/owl#minCardinality"
+        - "http://www.w3.org/2002/07/owl#onDataRange"
+        - "http://www.w3.org/2002/07/owl#hasValue"
+        - "http://www.w3.org/2002/07/owl#complementOf"
+        - "http://www.w3.org/2002/07/owl#oneOf"
+        - "http://www.w3.org/2002/07/owl#NamedIndividual"
+
+      x-enum-varnames:
+        - PREFIX
+        - THING
+        - CLASS
+        - EQUIVALENT_CLASS
+        - INTERSECTION_OF
+        - UNION_OF
+        - RESTRICTION
+        - ON_PROPERTY
+        - ON_CLASS
+        - SOME_VALUES_FROM
+        - ALL_VALUES_FROM
+        - OBJECT_PROPERTY
+        - DATATYPE_PROPERTY
+        - ANNOTATION_PROPERTY
+        - INVERSE_OF
+        - INVERSE_OBJECT_PROPERTY
+        - PROPERTY_CHAIN
+        - TRANSITIVE
+        - FUNCTIONAL
+        - SYMMETRIC
+        - REFLEXIVE
+        - ON_DATATYPE
+        - WITH_RESTRICTIONS
+        - MAX_CARDINALITY
+        - MIN_CARDINALITY
+        - ON_DATA_RANGE
+        - HAS_VALUE
+        - COMPLEMENT_OF
+        - ONE_OF
+        - NAMED_INDIVIDUAL
+    PRSB:
+      type: string
+      enum:
+        - "rs"
+
+      x-enum-varnames:
+        - PREFIX
+    QR:
+      type: string
+      enum:
+        - "http://apiqcodes.org/"
+        - "qc"
+
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+    QUERY:
+      type: string
+      enum:
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/im#Query_IsAllowableRange"
+        - "http://endhealth.info/im#Query_AllowableRangeSuggestions"
+        - "http://endhealth.info/im#Query_GetSubClasses"
+        - "http://endhealth.info/im#Query_GetDescendants"
+        - "http://endhealth.info/im#Query_IsValidDescendant"
+        - "http://endhealth.info/im#Query_GetAncestors"
+        - "http://endhealth.info/im#Query_SearchContainedIn"
+        - "http://endhealth.info/im#Query_AllowableChildTypes"
+        - "http://endhealth.info/im#Query_PropertyRange"
+        - "http://endhealth.info/im#Query_ObjectPropertyRangeSuggestions"
+        - "http://endhealth.info/im#Query_DataPropertyRangeSuggestions"
+        - "http://endhealth.info/im#Query_AllowableProperties"
+        - "http://endhealth.info/im#Query_AllowablePropertyAncestors"
+        - "http://endhealth.info/im#Query_IsValidProperty"
+        - "http://endhealth.info/im#Query_IsValidType"
+        - "http://endhealth.info/im#Query_EntityFilter"
+        - "http://endhealth.info/im#Query_SearchEntities"
+        - "http://endhealth.info/im#Query_SearchFolders"
+        - "http://endhealth.info/im#Query_SearchAllowableContainedIn"
+        - "http://endhealth.info/im#Query_SearchmainTypes"
+        - "http://endhealth.info/im#Query_DataModelPropertyByShape"
+        - "http://endhealth.info/im#Query_SearchAllowableSubclass"
+        - "http://endhealth.info/im#Query_SearchAllowableChildOf"
+        - "http://endhealth.info/im#Query_GetValuesFromPropertyRange"
+        - "http://endhealth.info/im#Query_GetSubsets"
+
+      x-enum-varnames:
+        - DOMAIN
+        - IS_ALLOWABLE_RANGE
+        - ALLOWABLE_RANGE_SUGGESTIONS
+        - GET_SUBCLASSES
+        - GET_DESCENDANTS
+        - IS_VALID_DESCENDANT
+        - GET_ANCESTORS
+        - SEARCH_CONTAINED_IN
+        - ALLOWABLE_CHILD_TYPES
+        - PROPERTY_RANGE
+        - OBJECT_PROPERTY_RANGE_SUGGESTIONS
+        - DATA_PROPERTY_RANGE_SUGGESTIONS
+        - ALLOWABLE_PROPERTIES
+        - ALLOWABLE_PROPERTY_ANCESTORS
+        - IS_VALID_PROPERTY
+        - IS_VALID_TYPE
+        - ENTITY_FILTER
+        - SEARCH_ENTITIES
+        - SEARCH_FOLDERS
+        - SEARCH_ALLOWABLE_CONTAINED_IN
+        - SEARCH_MAIN_TYPES
+        - DM_PROPERTY
+        - SEARCH_ALLOWABLE_SUBCLASS
+        - SEARCH_ALLOWABLE_CHILD_OF
+        - GET_VALUES_FROM_PROPERTY_RANGE
+        - GET_SUBSETS
+    RDF:
+      type: string
+      enum:
+        - "rdf"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+        - "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+
+      x-enum-varnames:
+        - PREFIX
+        - TYPE
+        - PROPERTY
+        - LIST
+        - PREDICATE
+        - SUBJECT
+        - OBJECT
+    RDFS:
+      type: string
+      enum:
+        - "rdfs"
+        - "http://www.w3.org/2000/01/rdf-schema#label"
+        - "http://www.w3.org/2000/01/rdf-schema#comment"
+        - "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+        - "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+        - "http://www.w3.org/2000/01/rdf-schema#domain"
+        - "http://www.w3.org/2000/01/rdf-schema#range"
+        - "http://www.w3.org/2000/01/rdf-schema#Resource"
+        - "http://www.w3.org/2000/01/rdf-schema#Class"
+        - "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        - "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+
+      x-enum-varnames:
+        - PREFIX
+        - LABEL
+        - COMMENT
+        - SUBCLASS_OF
+        - SUB_PROPERTY_OF
+        - DOMAIN
+        - RANGE
+        - RESOURCE
+        - CLASS
+        - DATATYPE
+        - IS_DEFINED_BY
+    SHACL:
+      type: string
+      enum:
+        - "sh"
+        - "http://www.w3.org/ns/shacl#path"
+        - "http://www.w3.org/ns/shacl#minInclusive"
+        - "http://www.w3.org/ns/shacl#minExclusive"
+        - "http://www.w3.org/ns/shacl#maxInclusive"
+        - "http://www.w3.org/ns/shacl#maxExclusive"
+        - "http://www.w3.org/ns/shacl#property"
+        - "http://www.w3.org/ns/shacl#PropertyGroup"
+        - "http://www.w3.org/ns/shacl#minCount"
+        - "http://www.w3.org/ns/shacl#maxCount"
+        - "http://www.w3.org/ns/shacl#value"
+        - "http://www.w3.org/ns/shacl#pattern"
+        - "http://www.w3.org/ns/shacl#inversePath"
+        - "http://www.w3.org/ns/shacl#class"
+        - "http://www.w3.org/ns/shacl#datatype"
+        - "http://www.w3.org/ns/shacl#sparql"
+        - "http://www.w3.org/ns/shacl#select"
+        - "http://www.w3.org/ns/shacl#parameter"
+        - "http://www.w3.org/ns/shacl#IRI"
+        - "http://www.w3.org/ns/shacl#optional"
+        - "http://www.w3.org/ns/shacl#NodeShape"
+        - "http://www.w3.org/ns/shacl#targetClass"
+        - "http://www.w3.org/ns/shacl#node"
+        - "http://www.w3.org/ns/shacl#order"
+        - "http://www.w3.org/ns/shacl#or"
+        - "http://www.w3.org/ns/shacl#not"
+        - "http://www.w3.org/ns/shacl#nodeKind"
+        - "http://www.w3.org/ns/shacl#PropertyShape"
+        - "http://www.w3.org/ns/shacl#and"
+        - "http://www.w3.org/ns/shacl#nodes"
+        - "http://www.w3.org/ns/shacl#targetType"
+        - "http://www.w3.org/ns/shacl#target"
+        - "http://www.w3.org/ns/shacl#SPARQLTarget"
+        - "http://www.w3.org/ns/shacl#Function"
+        - "http://www.w3.org/ns/shacl#returnType"
+        - "http://www.w3.org/ns/shacl#group"
+        - "http://www.w3.org/ns/shacl#name"
+        - "http://www.w3.org/ns/shacl#expression"
+        - "http://www.w3.org/ns/shacl#hasValue"
+
+      x-enum-varnames:
+        - PREFIX
+        - PATH
+        - MININCLUSIVE
+        - MINEXCLUSIVE
+        - MAXINCLUSIVE
+        - MAXEXCLUSIVE
+        - PROPERTY
+        - PROPERTY_GROUP
+        - MINCOUNT
+        - MAXCOUNT
+        - VALUE
+        - PATTERN
+        - INVERSEPATH
+        - CLASS
+        - DATATYPE
+        - SPARQL
+        - SELECT
+        - PARAMETER
+        - IRI
+        - OPTIONAL
+        - NODESHAPE
+        - TARGETCLASS
+        - NODE
+        - ORDER
+        - OR
+        - NOT
+        - NODE_KIND
+        - PROPERTYSHAPE
+        - AND
+        - NODES
+        - TARGET_TYPE
+        - TARGET
+        - SPARQL_TARGET
+        - FUNCTION
+        - RETURN_TYPE
+        - GROUP
+        - NAME
+        - EXPRESSION
+        - HAS_VALUE
+    SNOMED:
+      type: string
+      description: SNOMED CT identifiers and concepts
+      enum:
+        - "http://snomed.info/"
+        - "sn"
+        - "http://snomed.info/sct#246061005"
+        - "http://snomed.info/sct#*"
+
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+        - ATTRIBUTE
+        - ANY
+    TRANSFORM_FUNCTION:
+      type: string
+      description: Transformation function identifiers
+      enum:
+        - "http://endhealth.info/im#Concatenate"
+        - "http://endhealth.info/im#StringJoin"
+        - "http://endhealth.info/im#SchemedCodeConceptMap"
+
+      x-enum-varnames:
+        - CONCATENATE
+        - STRING_JOIN
+        - SNOMED_CODE_CONCEPT_MAP
+    USER:
+      type: string
+      description: User configuration and preference identifiers
+      enum:
+        - "http://endhealth.info/"
+        - "usr"
+        - "http://endhealth.info/user#UserPreset"
+        - "http://endhealth.info/user#UserPrimaryColor"
+        - "http://endhealth.info/user#UserSurfaceColor"
+        - "http://endhealth.info/user#UserDarkMode"
+        - "http://endhealth.info/user#UserFontSize"
+        - "http://endhealth.info/user#UserMRU"
+        - "http://endhealth.info/user#UserFavourites"
+        - "http://endhealth.info/user#Organisations"
+        - "http://endhealth.info/user#Graphs"
+
+      x-enum-varnames:
+        - DOMAIN
+        - PREFIX
+        - USER_PRESET
+        - USER_PRIMARY_COLOR
+        - USER_SURFACE_COLOR
+        - USER_DARK_MODE
+        - USER_FONT_SIZE
+        - USER_MRU
+        - USER_FAVOURITES
+        - ORGANISATIONS
+        - GRAPHS
+    VALIDATION:
+      type: string
+      description: Validation rule identifiers
+      enum:
+        - "http://endhealth.info/im#"
+        - "http://endhealth.info/im#Validation_isDefinition"
+        - "http://endhealth.info/im#Validation_hasParent"
+        - "http://endhealth.info/im#Validation_isIri"
+        - "http://endhealth.info/im#Validation_isTermcode"
+        - "http://endhealth.info/im#Validation_isProperty"
+        - "http://endhealth.info/im#Validation_isScheme"
+        - "http://endhealth.info/im#Validation_isStatus"
+        - "http://endhealth.info/im#Validation_isRoleGroup"
+
+      x-enum-varnames:
+        - DOMAIN
+        - IS_DEFINITION
+        - HAS_PARENT
+        - IS_IRI
+        - IS_TERMCODE
+        - IS_PROPERTY
+        - IS_SCHEME
+        - IS_STATUS
+        - IS_ROLE_GROUP
+    WORKFLOW:
+      type: string
+      enum:
+        - "http://endhealth.info/"
+        - "http://endhealth.info/workflow#bugReport"
+        - "http://endhealth.info/workflow#dateCreated"
+        - "http://endhealth.info/workflow#createdBy"
+        - "http://endhealth.info/workflow#assignedTo"
+        - "http://endhealth.info/workflow#state"
+        - "http://endhealth.info/workflow#hostUrl"
+        - "http://endhealth.info/workflow#relatedProduct"
+        - "http://endhealth.info/workflow#relatedModule"
+        - "http://endhealth.info/workflow#operatingSystem"
+        - "http://endhealth.info/workflow#operatingSystemOther"
+        - "http://endhealth.info/workflow#browser"
+        - "http://endhealth.info/workflow#browserOther"
+        - "http://endhealth.info/workflow#severity"
+        - "http://endhealth.info/workflow#errorDetails"
+        - "http://endhealth.info/workflow#reproduceSteps"
+        - "http://endhealth.info/workflow#expectedResult"
+        - "http://endhealth.info/workflow#actualResult"
+        - "http://endhealth.info/workflow#relatedVersion"
+        - "http://endhealth.info/workflow#requestedRole"
+        - "http://endhealth.info/workflow#requestedNAMESPACE"
+        - "http://endhealth.info/workflow#approvalType"
+        - "http://endhealth.info/workflow#history"
+        - "http://endhealth.info/workflow#historyPredicate"
+        - "http://endhealth.info/workflow#historyOriginalObject"
+        - "http://endhealth.info/workflow#historyNewObject"
+        - "http://endhealth.info/workflow#historyChangeDate"
+        - "http://endhealth.info/workflow#modifiedBy"
+
+      x-enum-varnames:
+        - DOMAIN
+        - BUG_REPORT
+        - DATE_CREATED
+        - CREATED_BY
+        - ASSIGNED_TO
+        - STATE
+        - HOST_URL
+        - RELATED_PRODUCT
+        - RELATED_MODULE
+        - OPERATING_SYSTEM
+        - OPERATING_SYSTEM_OTHER
+        - BROWSER
+        - BROWSER_OTHER
+        - SEVERITY
+        - ERROR
+        - REPRODUCE_STEPS
+        - EXPECTED_RESULT
+        - ACTUAL_RESULT
+        - RELATED_VERSION
+        - REQUESTED_ROLE
+        - REQUESTED_NAMESPACE
+        - APPROVAL_TYPE
+        - HISTORY
+        - HISTORY_PREDICATE
+        - HISTORY_ORIGINAL_OBJECT
+        - HISTORY_NEW_OBJECT
+        - HISTORY_CHANGE_DATE
+        - MODIFIED_BY
+    XSD:
+      type: string
+      enum:
+        - "xsd"
+        - "http://www.w3.org/2001/XMLSchema#pattern"
+        - "http://www.w3.org/2001/XMLSchema#minInclusive"
+        - "http://www.w3.org/2001/XMLSchema#minExclusive"
+        - "http://www.w3.org/2001/XMLSchema#maxInclusive"
+        - "http://www.w3.org/2001/XMLSchema#maxExclusive"
+        - "http://www.w3.org/2001/XMLSchema#integer"
+        - "http://www.w3.org/2001/XMLSchema#string"
+        - "http://www.w3.org/2001/XMLSchema#boolean"
+        - "http://www.w3.org/2001/XMLSchema#long"
+        - "http://www.w3.org/2001/XMLSchema#double"
+        - "http://www.w3.org/2001/XMLSchema#dateTime"
+        - "http://www.w3.org/2001/XMLSchema#number"
+        - "http://www.w3.org/2001/XMLSchema#decimal"
+
+      x-enum-varnames:
+        - PREFIX
+        - PATTERN
+        - MIN_INCLUSIVE
+        - MIN_EXCLUSIVE
+        - MAX_INCLUSIVE
+        - MAX_EXCLUSIVE
+        - INTEGER
+        - STRING
+        - BOOLEAN
+        - LONG
+        - DOUBLE
+        - DATE_TIME
+        - NUMBER
+        - DECIMAL
+    PrimeVuePresetThemes:
+      type: string
+      description: PrimeVue preset theme options
+      enum:
+        - "Aura"
+        - "Lara"
+        - "Nora"
+        - "Material"
+
+      x-enum-varnames:
+        - AURA
+        - LARA
+        - NORA
+        - MATERIAL
+    PrimeVueColors:
+      type: string
+      description: PrimeVue color palette options
+      enum:
+        - "emerald"
+        - "green"
+        - "lime"
+        - "red"
+        - "orange"
+        - "amber"
+        - "yellow"
+        - "teal"
+        - "cyan"
+        - "sky"
+        - "blue"
+        - "indigo"
+        - "violet"
+        - "purple"
+        - "fuchsia"
+        - "pink"
+        - "rose"
+        - "slate"
+        - "gray"
+        - "zinc"
+        - "neutral"
+        - "stone"
+
+      x-enum-varnames:
+        - EMERALD
+        - GREEN
+        - LIME
+        - RED
+        - ORANGE
+        - AMBER
+        - YELLOW
+        - TEAL
+        - CYAN
+        - SKY
+        - BLUE
+        - INDIGO
+        - VIOLET
+        - PURPLE
+        - FUCHSIA
+        - PINK
+        - ROSE
+        - SLATE
+        - GRAY
+        - ZINC
+        - NEUTRAL
+        - STONE
+    FontSize:
+      type: string
+      description: Font size options (CSS values)
+      enum:
+        - "12px"
+        - "14px"
+        - "16px"
+        - "18px"
+
+      x-enum-varnames:
+        - SMALL
+        - MEDIUM
+        - LARGE
+        - XL
+    TTIriRefDTO:
+      allOf:
+        - $ref: "#/components/schemas/TTValueDTO"
+        - type: object
+          required:
+            - iri
+          properties:
+            iri:
+              type: string
+            name:
+              type:
+                - string
+                - "null"
+            description:
+              type:
+                - string
+                - "null"
+    TTValueDTO:
+      description: Base value type (extends Serializable)
+      type: object
+      properties:
+        tests:
+          type: string
