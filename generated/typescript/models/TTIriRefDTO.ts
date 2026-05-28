@@ -16,64 +16,72 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface TTIriRef
+ * @interface TTIriRefDTO
  */
-export interface TTIriRef {
+export interface TTIriRefDTO {
     /**
      * 
      * @type {string}
-     * @memberof TTIriRef
+     * @memberof TTIriRefDTO
+     */
+    tests?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TTIriRefDTO
      */
     iri: string;
     /**
      * 
      * @type {string}
-     * @memberof TTIriRef
+     * @memberof TTIriRefDTO
      */
     name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof TTIriRef
+     * @memberof TTIriRefDTO
      */
     description?: string | null;
 }
 
 /**
- * Check if a given object implements the TTIriRef interface.
+ * Check if a given object implements the TTIriRefDTO interface.
  */
-export function instanceOfTTIriRef(value: object): value is TTIriRef {
+export function instanceOfTTIriRefDTO(value: object): value is TTIriRefDTO {
     if (!('iri' in value) || value['iri'] === undefined) return false;
     return true;
 }
 
-export function TTIriRefFromJSON(json: any): TTIriRef {
-    return TTIriRefFromJSONTyped(json, false);
+export function TTIriRefDTOFromJSON(json: any): TTIriRefDTO {
+    return TTIriRefDTOFromJSONTyped(json, false);
 }
 
-export function TTIriRefFromJSONTyped(json: any, ignoreDiscriminator: boolean): TTIriRef {
+export function TTIriRefDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): TTIriRefDTO {
     if (json == null) {
         return json;
     }
     return {
         
+        'tests': json['tests'] == null ? undefined : json['tests'],
         'iri': json['iri'],
         'name': json['name'] == null ? undefined : json['name'],
         'description': json['description'] == null ? undefined : json['description'],
     };
 }
 
-export function TTIriRefToJSON(json: any): TTIriRef {
-    return TTIriRefToJSONTyped(json, false);
+export function TTIriRefDTOToJSON(json: any): TTIriRefDTO {
+    return TTIriRefDTOToJSONTyped(json, false);
 }
 
-export function TTIriRefToJSONTyped(value?: TTIriRef | null, ignoreDiscriminator: boolean = false): any {
+export function TTIriRefDTOToJSONTyped(value?: TTIriRefDTO | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
 
     return {
         
+        'tests': value['tests'],
         'iri': value['iri'],
         'name': value['name'],
         'description': value['description'],

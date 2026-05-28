@@ -1,32 +1,21 @@
 
-# User
+# USER
 
+User configuration and preference identifiers
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`id` | string
-`username` | string
-`email` | string
-`displayName` | string
-`password` | string
-`avatar` | string
 
 ## Example
 
 ```typescript
-import type { User } from ''
+import type { USER } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "id": null,
-  "username": null,
-  "email": null,
-  "displayName": null,
-  "password": null,
-  "avatar": null,
-} satisfies User
+} satisfies USER
 
 console.log(example)
 
@@ -35,7 +24,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as User
+const exampleParsed = JSON.parse(exampleJSON) as USER
 console.log(exampleParsed)
 ```
 

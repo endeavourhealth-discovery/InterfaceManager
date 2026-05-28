@@ -1,5 +1,5 @@
 {
-  "name": "interface-manager",
+  "name": "@endeavour/interface-manager",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

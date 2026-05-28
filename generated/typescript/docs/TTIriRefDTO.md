@@ -1,21 +1,28 @@
 
-# TTValue
+# TTIriRefDTO
 
-Base value type (extends Serializable)
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`tests` | string
+`iri` | string
+`name` | string
+`description` | string
 
 ## Example
 
 ```typescript
-import type { TTValue } from ''
+import type { TTIriRefDTO } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-} satisfies TTValue
+  "tests": null,
+  "iri": null,
+  "name": null,
+  "description": null,
+} satisfies TTIriRefDTO
 
 console.log(example)
 
@@ -24,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TTValue
+const exampleParsed = JSON.parse(exampleJSON) as TTIriRefDTO
 console.log(exampleParsed)
 ```
 

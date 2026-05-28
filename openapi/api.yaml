@@ -1518,7 +1518,7 @@ components:
         - PREFIX
         - ATTRIBUTE
         - ANY
-    TRANSFORM_FUNCTION:
+    TransformFunction:
       type: string
       description: Transformation function identifiers
       enum:

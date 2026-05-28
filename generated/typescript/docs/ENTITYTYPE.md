@@ -1,5 +1,5 @@
 
-# ENTITYTYPE
+# EntityType
 
 
 ## Properties
@@ -10,11 +10,11 @@ Name | Type
 ## Example
 
 ```typescript
-import type { ENTITYTYPE } from ''
+import type { EntityType } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-} satisfies ENTITYTYPE
+} satisfies EntityType
 
 console.log(example)
 
@@ -23,7 +23,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ENTITYTYPE
+const exampleParsed = JSON.parse(exampleJSON) as EntityType
 console.log(exampleParsed)
 ```
 

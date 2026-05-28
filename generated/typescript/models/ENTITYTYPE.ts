@@ -17,16 +17,16 @@
  * @export
  * @enum {string}
  */
-export enum ENTITYTYPE {
+export enum EntityType {
     QUERY = 'http://endhealth.info/im#Query',
     NODESHAPE = 'http://www.w3.org/ns/shacl#NodeShape'
 }
 
 
-export function instanceOfENTITYTYPE(value: any): boolean {
-    for (const key in ENTITYTYPE) {
-        if (Object.prototype.hasOwnProperty.call(ENTITYTYPE, key)) {
-            if (ENTITYTYPE[key as keyof typeof ENTITYTYPE] === value) {
+export function instanceOfEntityType(value: any): boolean {
+    for (const key in EntityType) {
+        if (Object.prototype.hasOwnProperty.call(EntityType, key)) {
+            if (EntityType[key as keyof typeof EntityType] === value) {
                 return true;
             }
         }
@@ -34,19 +34,19 @@ export function instanceOfENTITYTYPE(value: any): boolean {
     return false;
 }
 
-export function ENTITYTYPEFromJSON(json: any): ENTITYTYPE {
-    return ENTITYTYPEFromJSONTyped(json, false);
+export function EntityTypeFromJSON(json: any): EntityType {
+    return EntityTypeFromJSONTyped(json, false);
 }
 
-export function ENTITYTYPEFromJSONTyped(json: any, ignoreDiscriminator: boolean): ENTITYTYPE {
-    return json as ENTITYTYPE;
+export function EntityTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityType {
+    return json as EntityType;
 }
 
-export function ENTITYTYPEToJSON(value?: ENTITYTYPE | null): any {
+export function EntityTypeToJSON(value?: EntityType | null): any {
     return value as any;
 }
 
-export function ENTITYTYPEToJSONTyped(value: any, ignoreDiscriminator: boolean): ENTITYTYPE {
-    return value as ENTITYTYPE;
+export function EntityTypeToJSONTyped(value: any, ignoreDiscriminator: boolean): EntityType {
+    return value as EntityType;
 }
 

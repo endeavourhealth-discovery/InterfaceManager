@@ -34,7 +34,7 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class TRANSFORMFUNCTION(val value: kotlin.String) {
+enum class TransformFunction(val value: kotlin.String) {
 
     @Json(name = "http://endhealth.info/im#Concatenate")
     CONCATENATE("http://endhealth.info/im#Concatenate"),
@@ -58,12 +58,12 @@ enum class TRANSFORMFUNCTION(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TRANSFORMFUNCTION) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TransformFunction) "$data" else null
 
         /**
-         * Returns a valid [TRANSFORMFUNCTION] for [data], null otherwise.
+         * Returns a valid [TransformFunction] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): TRANSFORMFUNCTION? = data?.let {
+        fun decode(data: kotlin.Any?): TransformFunction? = data?.let {
           val normalizedData = "$it".lowercase()
           entries.firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

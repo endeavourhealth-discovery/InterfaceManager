@@ -17,7 +17,7 @@
  * @export
  * @enum {string}
  */
-export enum OPERATOR {
+export enum Operator {
     eq = '=',
     gte = '>=',
     gt = '>',
@@ -30,10 +30,10 @@ export enum OPERATOR {
 }
 
 
-export function instanceOfOPERATOR(value: any): boolean {
-    for (const key in OPERATOR) {
-        if (Object.prototype.hasOwnProperty.call(OPERATOR, key)) {
-            if (OPERATOR[key as keyof typeof OPERATOR] === value) {
+export function instanceOfOperator(value: any): boolean {
+    for (const key in Operator) {
+        if (Object.prototype.hasOwnProperty.call(Operator, key)) {
+            if (Operator[key as keyof typeof Operator] === value) {
                 return true;
             }
         }
@@ -41,19 +41,19 @@ export function instanceOfOPERATOR(value: any): boolean {
     return false;
 }
 
-export function OPERATORFromJSON(json: any): OPERATOR {
-    return OPERATORFromJSONTyped(json, false);
+export function OperatorFromJSON(json: any): Operator {
+    return OperatorFromJSONTyped(json, false);
 }
 
-export function OPERATORFromJSONTyped(json: any, ignoreDiscriminator: boolean): OPERATOR {
-    return json as OPERATOR;
+export function OperatorFromJSONTyped(json: any, ignoreDiscriminator: boolean): Operator {
+    return json as Operator;
 }
 
-export function OPERATORToJSON(value?: OPERATOR | null): any {
+export function OperatorToJSON(value?: Operator | null): any {
     return value as any;
 }
 
-export function OPERATORToJSONTyped(value: any, ignoreDiscriminator: boolean): OPERATOR {
-    return value as OPERATOR;
+export function OperatorToJSONTyped(value: any, ignoreDiscriminator: boolean): Operator {
+    return value as Operator;
 }
 

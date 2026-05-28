@@ -1,5 +1,5 @@
 
-# TRANSFORMFUNCTION
+# TransformFunction
 
 Transformation function identifiers
 
@@ -11,11 +11,11 @@ Name | Type
 ## Example
 
 ```typescript
-import type { TRANSFORMFUNCTION } from ''
+import type { TransformFunction } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-} satisfies TRANSFORMFUNCTION
+} satisfies TransformFunction
 
 console.log(example)
 
@@ -24,7 +24,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TRANSFORMFUNCTION
+const exampleParsed = JSON.parse(exampleJSON) as TransformFunction
 console.log(exampleParsed)
 ```
 

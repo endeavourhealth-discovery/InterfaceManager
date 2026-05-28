@@ -17,17 +17,17 @@
  * @export
  * @enum {string}
  */
-export enum TRANSFORMFUNCTION {
+export enum TransformFunction {
     CONCATENATE = 'http://endhealth.info/im#Concatenate',
     STRING_JOIN = 'http://endhealth.info/im#StringJoin',
     SNOMED_CODE_CONCEPT_MAP = 'http://endhealth.info/im#SchemedCodeConceptMap'
 }
 
 
-export function instanceOfTRANSFORMFUNCTION(value: any): boolean {
-    for (const key in TRANSFORMFUNCTION) {
-        if (Object.prototype.hasOwnProperty.call(TRANSFORMFUNCTION, key)) {
-            if (TRANSFORMFUNCTION[key as keyof typeof TRANSFORMFUNCTION] === value) {
+export function instanceOfTransformFunction(value: any): boolean {
+    for (const key in TransformFunction) {
+        if (Object.prototype.hasOwnProperty.call(TransformFunction, key)) {
+            if (TransformFunction[key as keyof typeof TransformFunction] === value) {
                 return true;
             }
         }
@@ -35,19 +35,19 @@ export function instanceOfTRANSFORMFUNCTION(value: any): boolean {
     return false;
 }
 
-export function TRANSFORMFUNCTIONFromJSON(json: any): TRANSFORMFUNCTION {
-    return TRANSFORMFUNCTIONFromJSONTyped(json, false);
+export function TransformFunctionFromJSON(json: any): TransformFunction {
+    return TransformFunctionFromJSONTyped(json, false);
 }
 
-export function TRANSFORMFUNCTIONFromJSONTyped(json: any, ignoreDiscriminator: boolean): TRANSFORMFUNCTION {
-    return json as TRANSFORMFUNCTION;
+export function TransformFunctionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransformFunction {
+    return json as TransformFunction;
 }
 
-export function TRANSFORMFUNCTIONToJSON(value?: TRANSFORMFUNCTION | null): any {
+export function TransformFunctionToJSON(value?: TransformFunction | null): any {
     return value as any;
 }
 
-export function TRANSFORMFUNCTIONToJSONTyped(value: any, ignoreDiscriminator: boolean): TRANSFORMFUNCTION {
-    return value as TRANSFORMFUNCTION;
+export function TransformFunctionToJSONTyped(value: any, ignoreDiscriminator: boolean): TransformFunction {
+    return value as TransformFunction;
 }
 

@@ -1,5 +1,5 @@
 
-# TRANSFORMFUNCTION
+# TransformFunction
 
 ## Enum
 

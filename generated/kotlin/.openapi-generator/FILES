@@ -49,7 +49,6 @@ docs/SHACL.md
 docs/SNOMED.md
 docs/Severity.md
 docs/Status.md
-docs/TRANSFORMFUNCTION.md
 docs/TTIriRefDTO.md
 docs/TTValueDTO.md
 docs/TargetUpdateMode.md
@@ -57,6 +56,7 @@ docs/TaskModule.md
 docs/TaskState.md
 docs/TaskType.md
 docs/TextSearchStyle.md
+docs/TransformFunction.md
 docs/USER.md
 docs/UserRole.md
 docs/VALIDATION.md
@@ -117,7 +117,6 @@ src/main/kotlin/org/endeavourhealth/interfacemanager/model/SHACL.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/SNOMED.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/Severity.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/Status.kt
-src/main/kotlin/org/endeavourhealth/interfacemanager/model/TRANSFORMFUNCTION.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TTIriRefDTO.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TTValueDTO.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TargetUpdateMode.kt
@@ -125,6 +124,7 @@ src/main/kotlin/org/endeavourhealth/interfacemanager/model/TaskModule.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TaskState.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TaskType.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/TextSearchStyle.kt
+src/main/kotlin/org/endeavourhealth/interfacemanager/model/TransformFunction.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/USER.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/UserRole.kt
 src/main/kotlin/org/endeavourhealth/interfacemanager/model/VALIDATION.kt
@@ -197,7 +197,6 @@ src/test/kotlin/org/endeavourhealth/interfacemanager/model/SHACLTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/SNOMEDTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/SeverityTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/StatusTest.kt
-src/test/kotlin/org/endeavourhealth/interfacemanager/model/TRANSFORMFUNCTIONTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TTIriRefDTOTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TTValueDTOTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TargetUpdateModeTest.kt
@@ -205,6 +204,7 @@ src/test/kotlin/org/endeavourhealth/interfacemanager/model/TaskModuleTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TaskStateTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TaskTypeTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/TextSearchStyleTest.kt
+src/test/kotlin/org/endeavourhealth/interfacemanager/model/TransformFunctionTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/USERTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/UserRoleTest.kt
 src/test/kotlin/org/endeavourhealth/interfacemanager/model/VALIDATIONTest.kt

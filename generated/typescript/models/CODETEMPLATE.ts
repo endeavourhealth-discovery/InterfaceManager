@@ -17,7 +17,7 @@
  * @export
  * @enum {string}
  */
-export enum CodeTemplate {
+export enum CODETEMPLATE {
     DOMAIN = 'http://endhealth.info/',
     PREFIX = 'cTemp',
     WRAPPER = 'http://endhealth.info/codeTemplate#wrapper',
@@ -30,10 +30,10 @@ export enum CodeTemplate {
 }
 
 
-export function instanceOfCodeTemplate(value: any): boolean {
-    for (const key in CodeTemplate) {
-        if (Object.prototype.hasOwnProperty.call(CodeTemplate, key)) {
-            if (CodeTemplate[key as keyof typeof CodeTemplate] === value) {
+export function instanceOfCODETEMPLATE(value: any): boolean {
+    for (const key in CODETEMPLATE) {
+        if (Object.prototype.hasOwnProperty.call(CODETEMPLATE, key)) {
+            if (CODETEMPLATE[key as keyof typeof CODETEMPLATE] === value) {
                 return true;
             }
         }
@@ -41,19 +41,19 @@ export function instanceOfCodeTemplate(value: any): boolean {
     return false;
 }
 
-export function CodeTemplateFromJSON(json: any): CodeTemplate {
-    return CodeTemplateFromJSONTyped(json, false);
+export function CODETEMPLATEFromJSON(json: any): CODETEMPLATE {
+    return CODETEMPLATEFromJSONTyped(json, false);
 }
 
-export function CodeTemplateFromJSONTyped(json: any, ignoreDiscriminator: boolean): CodeTemplate {
-    return json as CodeTemplate;
+export function CODETEMPLATEFromJSONTyped(json: any, ignoreDiscriminator: boolean): CODETEMPLATE {
+    return json as CODETEMPLATE;
 }
 
-export function CodeTemplateToJSON(value?: CodeTemplate | null): any {
+export function CODETEMPLATEToJSON(value?: CODETEMPLATE | null): any {
     return value as any;
 }
 
-export function CodeTemplateToJSONTyped(value: any, ignoreDiscriminator: boolean): CodeTemplate {
-    return value as CodeTemplate;
+export function CODETEMPLATEToJSONTyped(value: any, ignoreDiscriminator: boolean): CODETEMPLATE {
+    return value as CODETEMPLATE;
 }
 

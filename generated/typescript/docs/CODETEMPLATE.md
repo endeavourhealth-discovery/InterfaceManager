@@ -1,5 +1,5 @@
 
-# CodeTemplate
+# CODETEMPLATE
 
 
 ## Properties
@@ -10,11 +10,11 @@ Name | Type
 ## Example
 
 ```typescript
-import type { CodeTemplate } from ''
+import type { CODETEMPLATE } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-} satisfies CodeTemplate
+} satisfies CODETEMPLATE
 
 console.log(example)
 
@@ -23,7 +23,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CodeTemplate
+const exampleParsed = JSON.parse(exampleJSON) as CODETEMPLATE
 console.log(exampleParsed)
 ```
 

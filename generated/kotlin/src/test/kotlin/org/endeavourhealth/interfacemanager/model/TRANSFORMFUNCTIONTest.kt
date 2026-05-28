@@ -26,12 +26,12 @@ package org.endeavourhealth.interfacemanager.model
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import org.endeavourhealth.interfacemanager.model.TRANSFORMFUNCTION
+import org.endeavourhealth.interfacemanager.model.TransformFunction
 
-class TRANSFORMFUNCTIONTest : ShouldSpec() {
+class TransformFunctionTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of TRANSFORMFUNCTION
-        //val modelInstance = TRANSFORMFUNCTION()
+        // uncomment below to create an instance of TransformFunction
+        //val modelInstance = TransformFunction()
 
     }
 }
