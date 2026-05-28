@@ -8,7 +8,7 @@
     "generate-typescript": "openapi-generator-cli generate -i openapi/api.yaml -g typescript-fetch -o ./generated/typescript --additional-properties=stringEnums=true,enumPropertyNaming=original",
     "generate-typescript-alt": "npx openapi-typescript ./openapi/api.yaml -o generated/typescript-alt/schema.d.ts",
     "build-typescript": "tsup generated/typescript/models/index.ts --format esm --dts",
-    "prepare": "pnpm generate-typescript && pnpm build-typescript",
+    "prepare": "pnpm build-typescript",
     "publish-java": "cd ./generated/java && mvn clean install",
     "publish-kotlin": "cd ./generated/kotlin && gradlew publishToMavenLocal"
   },
