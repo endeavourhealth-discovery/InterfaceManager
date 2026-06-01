@@ -1,6 +1,6 @@
 
 
-# OPERATOR
+# Operator
 
 ## Enum
 

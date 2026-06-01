@@ -18,15 +18,15 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for TRANSFORMFUNCTION
+ * Model tests for TransformFunction
  */
-public class TRANSFORMFUNCTIONTest {
+public class TransformFunctionTest {
     /**
-     * Model tests for TRANSFORMFUNCTION
+     * Model tests for TransformFunction
      */
     @Test
-    public void testTRANSFORMFUNCTION() {
-        // TODO: test TRANSFORMFUNCTION
+    public void testTransformFunction() {
+        // TODO: test TransformFunction
     }
 
 }

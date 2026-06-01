@@ -24,10 +24,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets ENTITY_TYPE
+ * Gets or Sets EntityType
  */
-@JsonAdapter(ENTITYTYPE.Adapter.class)
-public enum ENTITYTYPE {
+@JsonAdapter(EntityType.Adapter.class)
+public enum EntityType {
   
   QUERY("http://endhealth.info/im#Query"),
   
@@ -35,7 +35,7 @@ public enum ENTITYTYPE {
 
   private String value;
 
-  ENTITYTYPE(String value) {
+  EntityType(String value) {
     this.value = value;
   }
 
@@ -48,8 +48,8 @@ public enum ENTITYTYPE {
     return String.valueOf(value);
   }
 
-  public static ENTITYTYPE fromValue(String value) {
-    for (ENTITYTYPE b : ENTITYTYPE.values()) {
+  public static EntityType fromValue(String value) {
+    for (EntityType b : EntityType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -57,22 +57,22 @@ public enum ENTITYTYPE {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<ENTITYTYPE> {
+  public static class Adapter extends TypeAdapter<EntityType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final ENTITYTYPE enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final EntityType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public ENTITYTYPE read(final JsonReader jsonReader) throws IOException {
+    public EntityType read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return ENTITYTYPE.fromValue(value);
+      return EntityType.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    ENTITYTYPE.fromValue(value);
+    EntityType.fromValue(value);
   }
 }
 

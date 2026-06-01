@@ -79,7 +79,7 @@ components:
       - DATASET
       - INDICATOR
       type: string
-    OPERATOR:
+    Operator:
       enum:
       - =
       - '>='
@@ -359,7 +359,7 @@ components:
       - COHORT_QUERY_SHAPE
       - PROPERTY_SHAPE
       - INDICATOR_SHAPE
-    ENTITY_TYPE:
+    EntityType:
       enum:
       - http://endhealth.info/im#Query
       - http://www.w3.org/ns/shacl#NodeShape
@@ -528,6 +528,162 @@ components:
       - http://endhealth.info/im#AddQuads
       - http://endhealth.info/im#UpdatePredicates
       - http://endhealth.info/im#DeleteAll
+      - http://endhealth.info/im#2001000252109
+      - http://endhealth.info/im#1661000252106
+      - http://endhealth.info/im#uses
+      - http://endhealth.info/im#Count
+      - http://endhealth.info/im#Sum
+      - http://endhealth.info/im#Average
+      - http://endhealth.info/im#Min
+      - http://endhealth.info/im#Max
+      - http://endhealth.info/im#Concatenate
+      - http://endhealth.info/im#inResultSet
+      - http://endhealth.info/im#inResultSet
+      - http://endhealth.info/im#ProvenanceActivity
+      - http://endhealth.info/im#provenanceTarget
+      - http://endhealth.info/im#provenanceActivityType
+      - http://endhealth.info/im#provenanceAgent
+      - http://endhealth.info/im#Indicator
+      - http://endhealth.info/im#startTime
+      - http://endhealth.info/im#effectiveDate
+      - http://endhealth.info/im#endDate
+      - http://endhealth.info/im#usedEntity
+      - http://endhealth.info/im#1001911000252102
+      - http://endhealth.info/im#version
+      - http://endhealth.info/im#hasRoleInOrganisation
+      - http://endhealth.info/im#isPerson
+      - http://endhealth.info/im#hasContext
+      - http://endhealth.info/im#displayOrder
+      - http://endhealth.info/im#usageTotal
+      - http://endhealth.info/im#Descending
+      - http://endhealth.info/im#Ascending
+      - http://endhealth.info/im#pLabel
+      - http://endhealth.info/im#oLabel
+      - http://endhealth.info/im#example
+      - http://endhealth.info/im#privacyLevel
+      - http://endhealth.info/im#valueSelect
+      - http://endhealth.info/im#valueVariable
+      - http://endhealth.info/im#placeHolder
+      - http://endhealth.info/im#function
+      - http://endhealth.info/im#Address
+      - http://endhealth.info/im#address
+      - http://endhealth.info/im#addressLine1
+      - http://endhealth.info/im#addressLine2
+      - http://endhealth.info/im#addressLine3
+      - http://endhealth.info/im#locality
+      - http://endhealth.info/im#region
+      - http://endhealth.info/im#postCode
+      - http://endhealth.info/im#country
+      - http://endhealth.info/im#uprn
+      - http://endhealth.info/im#EntityTypes
+      - http://endhealth.info/im#ConceptSetGroup
+      - http://endhealth.info/im#oldCode
+      - http://endhealth.info/im#order
+      - http://endhealth.info/im#MappingTask
+      - http://endhealth.info/im#UpdateTask
+      - http://endhealth.info/im#matchedFrom
+      - http://endhealth.info/im#mappedFrom
+      - http://endhealth.info/im#select
+      - http://endhealth.info/im#NationallyAssuredUK
+      - http://endhealth.info/im#Entity
+      - http://endhealth.info/im#isSubIndicatorOf
+      - http://endhealth.info/im#QuerySet
+      - http://endhealth.info/im#dependentOn
+      - http://endhealth.info/im#CareActivity
+      - http://endhealth.info/im#CareTarget
+      - http://endhealth.info/im#QueryTemplate
+      - http://endhealth.info/im#numerator
+      - http://endhealth.info/im#denominator
+      - http://endhealth.info/im#dataset
+      - http://endhealth.info/im#RecordType
+      - http://endhealth.info/im#MatchClause
+      - http://endhealth.info/im#DataProperty
+      - http://endhealth.info/im#Organisation
+      - http://endhealth.info/im#ModellingEntityType
+      - http://endhealth.info/im#Profile
+      - http://endhealth.info/im#hasStatsReportEntry
+      - http://endhealth.info/im#Favourites
+      - http://endhealth.info/im#DiscoveryOntology
+      - http://endhealth.info/im#Sets
+      - http://endhealth.info/im#DiscoveryCommonDataModel
+      - http://endhealth.info/im#Catalogue
+      - http://endhealth.info/im#Q_Queries
+      - http://endhealth.info/im#InformationModel
+      - http://endhealth.info/im#Tasks
+      - http://endhealth.info/im#M_MatchClauses
+      - http://endhealth.info/im#ontologyOverview
+      - http://endhealth.info/im#ontologyConceptTypes
+      - http://endhealth.info/im#ontologyConceptSchemes
+      - http://endhealth.info/im#ontologyConceptStatus
+      - http://endhealth.info/im#hasValue
+      - http://endhealth.info/im#DataModelEntity
+      - http://endhealth.info/im#dataModelObjectProperty
+      - http://endhealth.info/im#dataModelDataProperty
+      - http://endhealth.info/im#functionProperty
+      - http://endhealth.info/im#bestMatch
+      - http://endhealth.info/im#entityType
+      - http://endhealth.info/im#valueData
+      - http://endhealth.info/im#valueObject
+      - http://endhealth.info/im#preposition
+      - http://endhealth.info/im#valueIri
+      - http://endhealth.info/im#valueIriList
+      - http://endhealth.info/im#valueDataList
+      - http://endhealth.info/im#im1Id
+      - http://endhealth.info/im#im1DbId
+      - http://endhealth.info/im#provenanceActivityType
+      - http://endhealth.info/im#ValueSets
+      - http://endhealth.info/im#Sets
+      - http://endhealth.info/im#QueryConceptSets
+      - http://endhealth.info/im#dateOfEntry
+      - http://endhealth.info/im#participationType
+      - http://endhealth.info/im#personInRole
+      - http://endhealth.info/im#ProvenanceSourceEntity
+      - http://endhealth.info/im#derivationType
+      - http://endhealth.info/im#entityIdentifier
+      - http://endhealth.info/im#codeTemplate
+      - http://endhealth.info/im#DataModelClasses
+      - http://endhealth.info/im#DateTime
+      - http://endhealth.info/im#TEMPLATE_NumericEventOrder
+      - http://endhealth.info/im#OrderBy
+      - http://endhealth.info/im#parameterTemplate
+      - http://endhealth.info/im#valueTemplate
+      - http://endhealth.info/im#defaultValue
+      - http://endhealth.info/im#loadMore
+      - http://endhealth.info/im#concept
+      - http://endhealth.info/im#NumericValue
+      - http://endhealth.info/im#HealthRecords
+      - http://endhealth.info/im#hasIncrementalFrom
+      - http://endhealth.info/im#ECLBuilderSchemes
+      - http://endhealth.info/im#inferredPredicates
+      - http://endhealth.info/im#inferredExcludePredicates
+      - http://endhealth.info/im#graphExcludePredicates
+      - http://endhealth.info/im#Age
+      - http://endhealth.info/im#Date
+      - http://endhealth.info/im#Time
+      - http://endhealth.info/im#intervalUnit
+      - http://endhealth.info/im#parameter
+      - http://endhealth.info/im#NumericDifference
+      - http://endhealth.info/im#FiscalYear
+      - http://endhealth.info/im#Quarter
+      - http://endhealth.info/im#Week
+      - http://endhealth.info/im#WeekNumber
+      - http://endhealth.info/im#Year
+      - http://endhealth.info/im#Years
+      - http://endhealth.info/im#Month
+      - http://endhealth.info/im#Months
+      - http://endhealth.info/im#Day
+      - http://endhealth.info/im#Days
+      - http://endhealth.info/im#Hours
+      - http://endhealth.info/im#Minute
+      - http://endhealth.info/im#Second
+      - http://endhealth.info/im#datatypeQualifier
+      - http://endhealth.info/im#TypeFilterOptions
+      - http://endhealth.info/im#SortFieldFilterOptions
+      - http://endhealth.info/im#SortDirectionFilterOptions
+      - http://endhealth.info/im#StatusFilterDefaultOptions
+      - http://endhealth.info/im#TypeFilterDefaultOptions
+      - http://endhealth.info/im#SortFieldFilterDefaultOptions
+      - http://endhealth.info/im#SortDirectionFilterDefaultOptions
       type: string
       x-enum-varnames:
       - DOMAIN
@@ -663,6 +819,162 @@ components:
       - ADD_QUADS
       - UPDATE_PREDICATES
       - DELETE_ALL
+      - PROV_CREATION
+      - PROV_UPDATE
+      - USES
+      - COUNT
+      - SUM
+      - AVERAGE
+      - MIN
+      - MAX
+      - CONCATENATE
+      - IN_RESULT_SET
+      - HAS_PROFILE
+      - PROVENANCE_ACTIVITY
+      - PROVENANCE_TARGET
+      - PROVENANCE_ACTIVITY_TYPE
+      - PROVENANCE_AGENT
+      - INDICATOR
+      - START_TIME
+      - EFFECTIVE_DATE
+      - END_DATE
+      - PROVENANCE_USED
+      - AUTHOR_ROLE
+      - VERSION
+      - HAS_ROLE_IN
+      - IS_PERSON
+      - HAS_CONTEXT
+      - DISPLAY_ORDER
+      - USAGE_TOTAL
+      - DESCENDING
+      - ASCENDING
+      - PLABEL
+      - OLABEL
+      - EXAMPLE
+      - PRIVACY_LEVEL
+      - VALUE_SELECT
+      - VALUE_VARIABLE
+      - PLACEHOLDER
+      - FUNCTION_DEFINITION
+      - ADDRESS_CLASS
+      - ADDRESS
+      - ADDRESS_LINE_1
+      - ADDRESS_LINE_2
+      - ADDRESS_LINE_3
+      - LOCALITY
+      - REGION
+      - POST_CODE
+      - COUNTRY
+      - UPRN
+      - ENTITY_TYPES
+      - CONCEPT_SET_GROUP
+      - OLD_CODE
+      - ORDER
+      - MAPPING_TASK
+      - UPDATE_TASK
+      - MATCHED_FROM
+      - MAPPED_FROM
+      - SELECT
+      - NATIONALLY_ASSURED_UK
+      - ENTITY
+      - IS_SUBINDICATOR_OF
+      - QUERY_SET
+      - DEPENDENT_ON
+      - CARE_ACTIVITY
+      - CARE_TARGET
+      - QUERY_TEMPLATE
+      - NUMERATOR
+      - DENOMINATOR
+      - HAS_DATASET
+      - RECORD_TYPE
+      - FEATURE
+      - DATA_PROPERTY
+      - ORGANISATION
+      - MODELLING_ENTITY_TYPE
+      - PROFILE
+      - STATS_REPORT_ENTRY
+      - FAVOURITES
+      - MODULE_ONTOLOGY
+      - MODULE_SETS
+      - MODULE_DATA_MODEL
+      - MODULE_CATALOGUE
+      - MODULE_QUERIES
+      - MODULE_IM
+      - MODULE_TASKS
+      - MODULE_FEATURES
+      - CONCEPT_CATEGORY
+      - CONCEPT_TYPES
+      - CONCEPT_SCHEMES
+      - CONCEPT_STATUS
+      - HAS_VALUE
+      - DATAMODEL_ENTITY
+      - DATAMODEL_OBJECTPROPERTY
+      - DATAMODEL_DATAPROPERTY
+      - DATAMODEL_FUNCTIONPROPERTY
+      - BEST_MATCH
+      - ENTITY_TYPE
+      - VALUE_DATA
+      - VALUE_OBJECT
+      - PREPOSITION
+      - VALUE_IRI
+      - VALUE_IRI_LIST
+      - VALUE_DATA_LIST
+      - IM_1_ID
+      - IM_1_DBID
+      - PROV_ACTIVITY_TYPE
+      - FOLDER_VALUESETS
+      - FOLDER_SETS
+      - FOLDER_QUERY_CONCEPT_SETS
+      - DATE_OF_ENTRY
+      - PARTICIPATION_TYPE
+      - PERSON_IN_ROLE
+      - PROVENANCE_SOURCE_ENTITY
+      - DERIVATION_TYPE
+      - ENTITY_IDENTIFIER
+      - CODE_TEMPLATE
+      - DATAMODEL_CLASSES
+      - DATE_TIME
+      - TEMPLATE_NUMERIC_EVENT_ORDER
+      - ORDER_BY
+      - PARAMETER_TEMPLATE
+      - VALUE_TEMPLATE
+      - DEFAULT_VALUE
+      - LOAD_MORE
+      - DATA_MODEL_PROPERTY_CONCEPT
+      - NUMERIC_VALUE
+      - HEALTH_RECORDS
+      - HAS_INCREMENTAL_FROM
+      - ECL_BUILDER_SCHEMES
+      - INFERRED_PREDICATES
+      - INFERRED_EXCLUDE_PREDICATES
+      - GRAPH_EXCLUDE_PREDICATES
+      - AGE
+      - DATE
+      - TIME
+      - INTERVAL_UNIT
+      - PARAMETER
+      - NUMERIC_DIFFERENCE
+      - FISCAL_YEAR
+      - QUARTER
+      - WEEK
+      - WEEK_NUMBER
+      - YEAR
+      - YEARS
+      - MONTH
+      - MONTHS
+      - DAY
+      - DAYS
+      - HOURS
+      - MINUTES
+      - SECONDS
+      - DATATYPE_QUALIFIER
+      - TYPE_FILTER_OPTIONS
+      - SORT_FIELD_FILTER_OPTIONS
+      - SORT_DIRECTION_FILTER_OPTIONS
+      - STATUS_FILTER_DEFAULTS
+      - TYPE_FILTER_DEFAULTS
+      - SORT_FIELD_FILTER_DEFAULTS
+      - SORT_DIRECTION_FILTER_DEFAULTS
     IMPORT_TYPE:
       enum:
       - snomed
@@ -1192,7 +1504,7 @@ components:
       - PREFIX
       - ATTRIBUTE
       - ANY
-    TRANSFORM_FUNCTION:
+    TransformFunction:
       description: Transformation function identifiers
       enum:
       - http://endhealth.info/im#Concatenate
@@ -1420,9 +1732,9 @@ components:
       - MEDIUM
       - LARGE
       - XL
-    TTIriRef:
+    ITTIriRef:
       allOf:
-      - $ref: "#/components/schemas/TTValue"
+      - $ref: "#/components/schemas/ITTValue"
       - properties:
           iri:
             type: string
@@ -1434,11 +1746,2105 @@ components:
             type: string
         required:
         - iri
-    TTValue:
+    ITTValue:
       description: Base value type (extends Serializable)
       properties:
         tests:
           type: string
-    Serializable:
+    IConceptContextMap:
+      properties:
+        id:
+          type: string
+        node:
+          type: string
+        value:
+          type: string
+        regex:
+          type: string
+        property:
+          type: string
+        context:
+          items:
+            $ref: "#/components/schemas/IContext"
+          type: array
+    IDataModelProperty:
+      properties:
+        property:
+          $ref: "#/components/schemas/ITTIriRef"
+        type:
+          $ref: "#/components/schemas/ITTIriRef"
+        minInclusive:
+          type: string
+        minExclusive:
+          type: string
+        maxInclusive:
+          type: string
+        maxExclusive:
+          type: string
+        pattern:
+          type: string
+        inheritedFrom:
+          $ref: "#/components/schemas/ITTIriRef"
+        order:
+          format: int32
+          type: integer
+    IDownloadEntityOptions:
+      properties:
+        entityIri:
+          type: string
+        format:
+          type: string
+        includeHasSubtypes:
+          type: boolean
+        includeInferred:
+          type: boolean
+        includeProperties:
+          type: boolean
+        includeMembers:
+          type: boolean
+        expandMembers:
+          type: boolean
+        expandSubsets:
+          type: boolean
+        includeTerms:
+          type: boolean
+        includeIsChildOf:
+          type: boolean
+        includeHasChildren:
+          type: boolean
+        includeInactive:
+          type: boolean
+    IEntityReferenceNode:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          parents:
+            items:
+              $ref: "#/components/schemas/IEntityReferenceNode"
+            type: array
+          children:
+            items:
+              $ref: "#/components/schemas/IEntityReferenceNode"
+            type: array
+          moduleId:
+            type: string
+          hasChildren:
+            type: boolean
+          hasGrandChildren:
+            type: boolean
+          type:
+            $ref: "#/components/schemas/ITTArray"
+          orderNumber:
+            type: number
+    INamespace:
+      properties:
+        iri:
+          type: string
+        prefix:
+          type: string
+        name:
+          type: string
+    IPageable:
+      properties:
+        totalCount:
+          format: int64
+          type: integer
+        currentPage:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        result:
+          items: {}
+          type: array
+    ICodeGenDto:
+      properties:
+        name:
+          type: string
+        extension:
+          type: string
+        collectionWrapper:
+          type: string
+        datatypeMap:
+          additionalProperties:
+            type: string
+        template:
+          type: string
+        complexTypes:
+          type: boolean
+    IArrayButtons:
+      properties:
+        up:
+          type: boolean
+        down:
+          type: boolean
+        plus:
+          type: boolean
+        minus:
+          type: boolean
+        addOnlyIfLast:
+          type: boolean
+    IBinding:
+      properties:
+        predicateBinding:
+          additionalProperties:
+            type: string
+        predicateObject:
+          additionalProperties:
+            $ref: "#/components/schemas/IBinding"
+    IConcept:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          subClassOf:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          code:
+            type: string
+          im1Id:
+            type: string
+          matchedFrom:
+            items:
+              $ref: "#/components/schemas/IConcept"
+            type: array
+          usage:
+            format: int32
+            type: integer
+          codeId:
+            type: string
+          alternativeCode:
+            type: string
+          subsumed:
+            type: boolean
+    IConceptSet:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          definition:
+            $ref: "#/components/schemas/IQuery"
+          hasMember:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          usedIn:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          avoidReplacedBy:
+            type: boolean
+    IEntity:
+      properties:
+        iri:
+          type: string
+        type:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        status:
+          $ref: "#/components/schemas/ITTIriRef"
+        scheme:
+          $ref: "#/components/schemas/ITTIriRef"
+        isContainedIn:
+          items:
+            $ref: "#/components/schemas/ITTEntity"
+          type: array
+        name:
+          type: string
+        description:
+          type: string
+    IFormGenerator:
+      properties:
+        iri:
+          type: string
+        status:
+          $ref: "#/components/schemas/ITTIriRef"
+        label:
+          type: string
+        comment:
+          type: string
+        targetShape:
+          $ref: "#/components/schemas/ITTIriRef"
+        type:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        isContainedIn:
+          items:
+            $ref: "#/components/schemas/ITTEntity"
+          type: array
+        subClassOf:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        scheme:
+          $ref: "#/components/schemas/ITTIriRef"
+        property:
+          items:
+            $ref: "#/components/schemas/IPropertyShape"
+          type: array
+    FunctionTemplate:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          function:
+            $ref: "#/components/schemas/ITTIriRef"
+          parameterTemplate:
+            items:
+              $ref: "#/components/schemas/IParameterTemplate"
+            type: array
+    IIMLLanguage:
+      additionalProperties: {}
+      properties:
+        text:
+          type: string
+        lang:
+          type: string
+        info:
+          additionalProperties:
+            type: string
+          default: {}
+        definitions:
+          additionalProperties:
+            type: string
+          default: {}
+        prefixes:
+          additionalProperties:
+            type: string
+          default: {}
+        keywords:
+          default: []
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        booleans:
+          default: []
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        alerts:
+          default: []
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        iriVariables:
+          additionalProperties:
+            items:
+              type: string
+          default: {}
+    IIndicator:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          isSubIndicatorOf:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          numerator:
+            $ref: "#/components/schemas/ITTIriRef"
+          dataset:
+            $ref: "#/components/schemas/ITTIriRef"
+          actionIfFalse:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          actionIfTrue:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          denominator:
+            $ref: "#/components/schemas/ITTIriRef"
+    IMapFunction:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          argument:
+            default: []
+            items:
+              $ref: "#/components/schemas/IArgument"
+            type: array
+          conceptMap:
+            additionalProperties:
+              type: string
+            default: {}
+          defaultValue:
+            $ref: "#/components/schemas/ITTIriRef"
+    IModelDocument:
+      properties:
+        context:
+          $ref: "#/components/schemas/ITTContext"
+        query:
+          items:
+            $ref: "#/components/schemas/IQueryEntity"
+          type: array
+        folder:
+          items:
+            $ref: "#/components/schemas/IEntity"
+          type: array
+        conceptSet:
+          items:
+            $ref: "#/components/schemas/IConceptSet"
+          type: array
+        function:
+          items:
+            $ref: "#/components/schemas/IMapFunction"
+          type: array
+    INodeShape:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          property:
+            items:
+              $ref: "#/components/schemas/IPropertyShape"
+            type: array
+          subType:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          definingProperty:
+            $ref: "#/components/schemas/ITTIriRef"
+          inverseProperty:
+            $ref: "#/components/schemas/ITTIriRef"
+          folder:
+            items:
+              $ref: "#/components/schemas/INodeShape"
+            type: array
+          type:
+            items:
+              $ref: "#/components/schemas/INodeShape"
+            type: array
+    IPage:
+      properties:
+        pageNumber:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        offset:
+          format: int64
+          type: integer
+    IParameterShape:
+      properties:
+        label:
+          type: string
+        type:
+          $ref: "#/components/schemas/ITTIriRef"
+        parameterSubType:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+    IParameterTemplate:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          label:
+            type: string
+          order:
+            format: int32
+            type: integer
+          valueTemplate:
+            items:
+              $ref: "#/components/schemas/IValueTemplate"
+            type: array
+    IPropertyRange:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          pattern:
+            type: string
+          intervalUnit:
+            $ref: "#/components/schemas/ITTIriRef"
+          qualifier:
+            items:
+              $ref: "#/components/schemas/IPropertyRange"
+            type: array
+          type:
+            $ref: "#/components/schemas/ITTIriRef"
+          units:
+            $ref: "#/components/schemas/ITTIriRef"
+          operator:
+            $ref: "#/components/schemas/ITTIriRef"
+          relativeValue:
+            type: boolean
+    IPropertyShape:
+      properties:
+        label:
+          type: string
+        comment:
+          type: string
+        name:
+          type: string
+        order:
+          format: int32
+          type: integer
+        minCount:
+          format: int32
+          type: integer
+        maxCount:
+          format: int32
+          type: integer
+        componentType:
+          $ref: "#/components/schemas/ITTIriRef"
+        path:
+          $ref: "#/components/schemas/ITTIriRef"
+        datatype:
+          $ref: "#/components/schemas/IPropertyRange"
+        node:
+          $ref: "#/components/schemas/IPropertyRange"
+        validation:
+          $ref: "#/components/schemas/ITTIriRef"
+        search:
+          $ref: "#/components/schemas/ITTIriRef"
+        select:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        argument:
+          items:
+            $ref: "#/components/schemas/IArgument"
+          type: array
+        valueVariable:
+          type: string
+        isIri:
+          $ref: "#/components/schemas/ITTIriRef"
+        isTextValue:
+          type: string
+        isNumericValue:
+          type: string
+        forceIsValue:
+          type: boolean
+        builderChild:
+          type: boolean
+        showTitle:
+          type: boolean
+        group:
+          $ref: "#/components/schemas/ITTIriRef"
+        property:
+          items:
+            $ref: "#/components/schemas/IPropertyShape"
+          type: array
+        clazz:
+          $ref: "#/components/schemas/IPropertyRange"
+        validationErrorMessage:
+          type: string
+        function:
+          $ref: "#/components/schemas/ITTIriRef"
+        parameter:
+          items:
+            $ref: "#/components/schemas/IParameterShape"
+          type: array
+        valueIri:
+          $ref: "#/components/schemas/ITTIriRef"
+        expression:
+          $ref: "#/components/schemas/INodeShape"
+        arrayButtons:
+          $ref: "#/components/schemas/IArrayButtons"
+        hasValue:
+          additionalProperties: true
+          type: object
+        hasValueType:
+          $ref: "#/components/schemas/ITTIriRef"
+        definition:
+          type: string
+        ascending:
+          type: string
+        descending:
+          type: string
+        orderable:
+          type: boolean
+        hasValueSet:
+          $ref: "#/components/schemas/ITTIriRef"
+        definingProperty:
+          type: boolean
+        isValidEntity:
+          $ref: "#/components/schemas/ITTIriRef"
+        highCardinality:
+          type: boolean
+        isValidArguments:
+          items:
+            $ref: "#/components/schemas/IArgument"
+          type: array
+        inversePath:
+          $ref: "#/components/schemas/ITTIriRef"
+        generic:
+          type: boolean
+      required:
+      - componentType
+      - order
+      - path
+    ISetContent:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+        version:
+          type: number
+        setDefinition:
+          type: string
+        subsets:
+          items:
+            type: string
+          type: array
+        concepts:
+          items:
+            $ref: "#/components/schemas/IConcept"
+          type: array
+    IUIProperty:
+      properties:
+        iri:
+          type: string
+        name:
+          type: string
+        propertyType:
+          type: string
+        valueType:
+          type: string
+        valueTypeName:
+          type: string
+        maxCount:
+          format: int32
+          type: integer
+        number:
+          format: int32
+          type: integer
+        intervalUnitIri:
+          type: string
+        intervalUnitOptions:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        unitIri:
+          type: string
+        unitOptions:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        operatorIri:
+          type: string
+        operatorOptions:
+          items:
+            type: string
+          type: array
+        qualifierOptions:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        setMemberCount:
+          format: int32
+          type: integer
+    IValueTemplate:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          label:
+            type: string
+          parameter:
+            type: string
+          order:
+            format: int32
+            type: integer
+          valueType:
+            $ref: "#/components/schemas/ITTIriRef"
+          defaultValue:
+            additionalProperties: true
+            type: object
+          valueOption:
+            items:
+              additionalProperties: true
+              type: object
+            type: array
+    IArgument:
+      properties:
+        parameter:
+          type: string
+        valueData:
+          type: string
+        valueParameter:
+          type: string
+        valueIri:
+          $ref: "#/components/schemas/ITTIriRef"
+        valueIriList:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        valueDataList:
+          items:
+            type: string
+          type: array
+        valuePath:
+          $ref: "#/components/schemas/IPath"
+        valueNodeRef:
+          type: string
+        dataType:
+          $ref: "#/components/schemas/ITTIriRef"
+        valueObject:
+          additionalProperties: true
+          type: object
+        valueVariable:
+          type: string
+        qualifier:
+          $ref: "#/components/schemas/ITTIriRef"
+    IArgumentReference:
+      properties:
+        parameter:
+          type: string
+        referenceIri:
+          $ref: "#/components/schemas/ITTIriRef"
+        dataType:
+          $ref: "#/components/schemas/ITTIriRef"
+    IAssignable:
+      properties:
+        valueTerm:
+          type: string
+        valueLabel:
+          type: string
+        units:
+          $ref: "#/components/schemas/ITTIriRef"
+        compare:
+          $ref: "#/components/schemas/ICompare"
+        description:
+          type: string
+        operator:
+          $ref: "#/components/schemas/Operator"
+        value:
+          type: string
+        invalid:
+          type: boolean
+    ICase:
+      properties:
+        when:
+          items:
+            $ref: "#/components/schemas/IWhen"
+          type: array
+        else:
+          type: string
+    ICompare:
+      properties:
+        left:
+          $ref: "#/components/schemas/IValueSource"
+        right:
+          $ref: "#/components/schemas/IValueSource"
+        units:
+          $ref: "#/components/schemas/ITTIriRef"
+    IContextMap:
+      properties:
+        context:
+          additionalProperties:
+            type: string
+    IDelete:
+      properties:
+        property:
+          $ref: "#/components/schemas/IWhere"
+        subject:
+          $ref: "#/components/schemas/INode"
+        inverse:
+          type: boolean
+        predicate:
+          $ref: "#/components/schemas/INode"
+        object:
+          $ref: "#/components/schemas/INode"
+        delete:
+          items:
+            $ref: "#/components/schemas/IDelete"
+          type: array
+    IECLQueryRequest:
+      properties:
+        ecl:
+          type: string
+        query:
+          $ref: "#/components/schemas/IQuery"
+        showNames:
+          type: boolean
+        status:
+          $ref: "#/components/schemas/IECLStatus"
+        includeLegacy:
+          type: boolean
+        limit:
+          format: int32
+          type: integer
+        statusFilter:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        page:
+          format: int32
+          type: integer
+        size:
+          format: int32
+          type: integer
+    IECLStatus:
+      properties:
+        valid:
+          type: boolean
+        line:
+          format: int32
+          type: integer
+        offset:
+          format: int32
+          type: integer
+        message:
+          type: string
+    IElement:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IEntailment"
+    IEntailment:
+      properties:
+        memberOf:
+          type: boolean
+        ancestorsOf:
+          type: boolean
+        descendantsOrSelfOf:
+          type: boolean
+        descendantsOf:
+          type: boolean
+    IFunctionClause:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - properties:
+          argument:
+            items:
+              $ref: "#/components/schemas/IArgument"
+            type: array
+    IGroupBy:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - properties:
+          nodeRef:
+            type: string
+          valueRef:
+            type: string
+          propertyRef:
+            type: string
+    IHasPaths:
+      properties:
+        path:
+          items:
+            $ref: "#/components/schemas/IPath"
+          type: array
+        node:
+          type: string
+    IHaving:
+      properties:
+        function:
+          $ref: "#/components/schemas/Aggregate"
+        identifier:
+          type: string
+        range:
+          $ref: "#/components/schemas/IRange"
+        operator:
+          $ref: "#/components/schemas/Operator"
+        value:
+          type: string
+        and:
+          items:
+            $ref: "#/components/schemas/IHaving"
+          type: array
+        or:
+          items:
+            $ref: "#/components/schemas/IHaving"
+          type: array
+        not:
+          type: boolean
+    IInstance:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - properties:
+          entailment:
+            $ref: "#/components/schemas/ITTIriRef"
+    IIriLD:
+      properties:
+        iri:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        uuid:
+          type: string
+    IMatch:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IHasPaths"
+      - $ref: "#/components/schemas/IReturnable"
+      - properties:
+          notExists:
+            type: boolean
+          ifTrue:
+            $ref: "#/components/schemas/RuleAction"
+          ifFalse:
+            $ref: "#/components/schemas/RuleAction"
+          nodeRef:
+            type: string
+          typeOf:
+            $ref: "#/components/schemas/INode"
+          is:
+            $ref: "#/components/schemas/INode"
+          and:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          or:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          where:
+            $ref: "#/components/schemas/IWhere"
+          then:
+            $ref: "#/components/schemas/IWhere"
+          graph:
+            $ref: "#/components/schemas/INode"
+          optional:
+            type: boolean
+          parameter:
+            type: string
+          function:
+            $ref: "#/components/schemas/IFunctionClause"
+          entailment:
+            $ref: "#/components/schemas/Entail"
+          baseRule:
+            type: boolean
+          ruleNumber:
+            format: int32
+            type: integer
+          inverse:
+            type: boolean
+          activeOnly:
+            type: boolean
+          rule:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          any:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          libraryItem:
+            type: string
+          invalid:
+            type: boolean
+          groupBy:
+            items:
+              $ref: "#/components/schemas/IGroupBy"
+            type: array
+          orderBy:
+            $ref: "#/components/schemas/IOrderLimit"
+          asDescription:
+            type: string
+          errorMessage:
+            type: string
+          draft:
+            type: boolean
+          having:
+            $ref: "#/components/schemas/IHaving"
+    INode:
+      allOf:
+      - $ref: "#/components/schemas/IElement"
+      - properties:
+          parameter:
+            type: string
+          type:
+            type: string
+          qualifier:
+            type: string
+          match:
+            $ref: "#/components/schemas/IMatch"
+          childOrSelfOf:
+            type: boolean
+          childOf:
+            type: boolean
+          cohort:
+            type: boolean
+          nodeRef:
+            type: string
+          invalid:
+            type: boolean
+          resultSet:
+            type: boolean
+          exclude:
+            type: boolean
+          code:
+            type: string
+          inverse:
+            type: boolean
+          node:
+            type: string
+          isResultSet:
+            type: boolean
+          isCohort:
+            type: boolean
+    IOrderDirection:
+      allOf:
+      - $ref: "#/components/schemas/IIriLD"
+      - properties:
+          direction:
+            $ref: "#/components/schemas/Order"
+          function:
+            $ref: "#/components/schemas/IFunctionClause"
+          nodeRef:
+            type: string
+          variable:
+            type: string
+    IOrderLimit:
+      properties:
+        property:
+          items:
+            $ref: "#/components/schemas/IOrderDirection"
+          type: array
+        limit:
+          format: int32
+          type: integer
+        description:
+          type: string
+    IPath:
+      allOf:
+      - $ref: "#/components/schemas/IElement"
+      - $ref: "#/components/schemas/IHasPaths"
+      - properties:
+          parameter:
+            type: string
+          childOrSelfOf:
+            type: boolean
+          childOf:
+            type: boolean
+          cohort:
+            type: boolean
+          nodeRef:
+            type: string
+          invalid:
+            type: boolean
+          resultSet:
+            type: boolean
+          inverse:
+            type: boolean
+          optional:
+            type: boolean
+          pathVariable:
+            type: string
+          typeOf:
+            $ref: "#/components/schemas/INode"
+          qualifier:
+            $ref: "#/components/schemas/ITTIriRef"
+          isResultSet:
+            type: boolean
+          isCohort:
+            type: boolean
+    IPathDocument:
+      properties:
+        match:
+          items:
+            $ref: "#/components/schemas/IMatch"
+          type: array
+    IPathQuery:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          source:
+            $ref: "#/components/schemas/ITTIriRef"
+          target:
+            $ref: "#/components/schemas/ITTIriRef"
+          depth:
+            format: int32
+            type: integer
+    IPrefix:
+      properties:
+        prefix:
+          type: string
+        namespace:
+          type: string
+    IQuery:
+      allOf:
+      - $ref: "#/components/schemas/IMatch"
+      - properties:
+          prefixes:
+            items:
+              $ref: "#/components/schemas/IPrefix"
+            type: array
+          columnGroup:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          imQuery:
+            type: string
+          parentResult:
+            additionalProperties: true
+            type: object
+          persistentIri:
+            $ref: "#/components/schemas/ITTIriRef"
+          bindAs:
+            type: string
+          queryType:
+            $ref: "#/components/schemas/IMQType"
+    IQueryEntity:
+      allOf:
+      - $ref: "#/components/schemas/IEntity"
+      - properties:
+          definition:
+            $ref: "#/components/schemas/IQuery"
+    IQueryException:
+      allOf:
+      - $ref: "#/components/schemas/IException"
+    IRange:
+      properties:
+        from:
+          $ref: "#/components/schemas/IValue"
+        to:
+          $ref: "#/components/schemas/IValue"
+      required:
+      - from
+      - to
+    IRequeueQueryRequest:
+      properties:
+        queueId:
+          type: string
+        queryRequest:
+          $ref: "#/components/schemas/IQueryRequest"
+    IReturn:
+      allOf:
+      - $ref: "#/components/schemas/IReturnable"
+      - properties:
+          iri:
+            type: string
+          name:
+            type: string
+          function:
+            $ref: "#/components/schemas/IFunctionClause"
+          as:
+            type: string
+          nodeRef:
+            type: string
+          propertyRef:
+            type: string
+          pathRef:
+            type: string
+          inverse:
+            type: boolean
+          units:
+            $ref: "#/components/schemas/ITTIriRef"
+          dataType:
+            $ref: "#/components/schemas/ITTIriRef"
+          description:
+            type: string
+          case:
+            $ref: "#/components/schemas/ICase"
+          value:
+            type: string
+    IReturnable:
+      properties:
+        return:
+          items:
+            $ref: "#/components/schemas/IReturn"
+          type: array
+    IUpdate:
+      allOf:
+      - $ref: "#/components/schemas/ITTIriRef"
+      - properties:
+          match:
+            items:
+              $ref: "#/components/schemas/IMatch"
+            type: array
+          delete:
+            items:
+              $ref: "#/components/schemas/IDelete"
+            type: array
+    IValue:
+      allOf:
+      - $ref: "#/components/schemas/IAssignable"
+      - properties:
+          valueParameter:
+            type: string
+          isInvalid:
+            type: boolean
+    IValueSource:
+      properties:
+        parameter:
+          type: string
+        iri:
+          type: string
+        name:
+          type: string
+        nodeRef:
+          type: string
+        propertyRef:
+          type: string
+    IWhen:
+      properties:
+        where:
+          $ref: "#/components/schemas/IWhere"
+        then:
+          type: string
+        exists:
+          type: boolean
+        case:
+          $ref: "#/components/schemas/ICase"
+    IWhere:
+      allOf:
+      - $ref: "#/components/schemas/IElement"
+      - $ref: "#/components/schemas/IAssignable"
+      - properties:
+          nodeRef:
+            type: string
+          range:
+            $ref: "#/components/schemas/IRange"
+          isNull:
+            type: boolean
+          is:
+            items:
+              $ref: "#/components/schemas/INode"
+            type: array
+          anyRoleGroup:
+            type: boolean
+          parameter:
+            type: string
+          childOrSelfOf:
+            type: boolean
+          childOf:
+            type: boolean
+          cohort:
+            type: boolean
+          resultSet:
+            type: boolean
+          inverse:
+            type: boolean
+          typeOf:
+            $ref: "#/components/schemas/INode"
+          subjectVariable:
+            type: string
+          subjectParameter:
+            type: string
+          not:
+            type: boolean
+          roleGroup:
+            type: boolean
+          isNotNull:
+            type: boolean
+          or:
+            items:
+              $ref: "#/components/schemas/IWhere"
+            type: array
+          and:
+            items:
+              $ref: "#/components/schemas/IWhere"
+            type: array
+          propertyRef:
+            type: string
+          shortLabel:
+            type: string
+          qualifier:
+            $ref: "#/components/schemas/ITTIriRef"
+          propertyList:
+            items:
+              $ref: "#/components/schemas/INode"
+            type: array
+          propertyVariable:
+            type: string
+          node:
+            type: string
+          excludeProperty:
+            items:
+              $ref: "#/components/schemas/IIriLD"
+            type: array
+          exists:
+            type: boolean
+          linked:
+            type: boolean
+          notNull:
+            type: boolean
+          isInvalid:
+            type: boolean
+          isResultSet:
+            type: boolean
+          isCohort:
+            type: boolean
+    ICognitoGroupRequest:
+      properties:
+        username:
+          type: string
+        groupName:
+          $ref: "#/components/schemas/UserRole"
+    IEditRequest:
+      properties:
+        entity:
+          $ref: "#/components/schemas/ITTEntity"
+        hostUrl:
+          type: string
+        namespace:
+          $ref: "#/components/schemas/NAMESPACE"
+        crud:
+          type: string
+    IEntityValidationRequest:
+      properties:
+        entity:
+          $ref: "#/components/schemas/ITTEntity"
+        validationIri:
+          type: string
+        graph:
+          $ref: "#/components/schemas/GRAPH"
+    IFileDocumentRequest:
+      properties:
+        document:
+          $ref: "#/components/schemas/ITTDocument"
+        insertNamespace:
+          $ref: "#/components/schemas/NAMESPACE"
+    IFunctionRequest:
+      properties:
+        functionIri:
+          type: string
+        arguments:
+          items:
+            $ref: "#/components/schemas/IArgument"
+          type: array
+        page:
+          $ref: "#/components/schemas/IPage"
+        graph:
+          $ref: "#/components/schemas/GRAPH"
+    IMatchDisplayRequest:
+      properties:
+        match:
+          $ref: "#/components/schemas/IMatch"
+        graph:
+          $ref: "#/components/schemas/GRAPH"
+    IQueryDisplayRequest:
+      properties:
+        query:
+          $ref: "#/components/schemas/IQuery"
+        displayMode:
+          $ref: "#/components/schemas/DisplayMode"
+        graph:
+          $ref: "#/components/schemas/ITTIriRef"
+    IQueryRequest:
+      allOf:
+      - $ref: "#/components/schemas/IContextMap"
+      - properties:
+          textSearch:
+            type: string
+          argument:
+            items:
+              $ref: "#/components/schemas/IArgument"
+            type: array
+          query:
+            $ref: "#/components/schemas/IQuery"
+          pathQuery:
+            $ref: "#/components/schemas/IPathQuery"
+          update:
+            $ref: "#/components/schemas/IUpdate"
+          name:
+            type: string
+          page:
+            $ref: "#/components/schemas/IPage"
+          queryStringDefinition:
+            type: string
+          askIri:
+            type: string
+          timings:
+            items:
+              additionalProperties:
+                type: string
+            type: array
+          cohort:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          includeNames:
+            type: boolean
+          textSearchStyle:
+            $ref: "#/components/schemas/TextSearchStyle"
+          language:
+            $ref: "#/components/schemas/DatabaseOption"
+        required:
+        - query
+    ISearchRequest:
+      properties:
+        termFilter:
+          description: "Plain text, space separated list of terms"
+          type: string
+        index:
+          type: string
+        statusFilter:
+          description: List of entity status IRI's
+          items:
+            type: string
+          type: array
+        typeFilter:
+          description: List of entity type IRI's
+          items:
+            type: string
+          type: array
+        schemeFilter:
+          description: List of code scheme IRI's
+          items:
+            type: string
+          type: array
+        bindingFilter:
+          description: List of binding node and path IRI's
+          items:
+            $ref: "#/components/schemas/ISearchBinding"
+          type: array
+        markIfDescendentOf:
+          description: "Marks the results if they are descendants of any of these\
+            \ entities, but does not filter by them"
+          items:
+            type: string
+          type: array
+        isA:
+          description: List of IRIs that must be supertypes of the matches
+          items:
+            type: string
+          type: array
+        memberOf:
+          description: List of set IRIs that the match must be a member of
+          items:
+            type: string
+          type: array
+        page:
+          description: The search result page number to retrieve
+          format: int32
+          type: integer
+        size:
+          description: The number of results to retrieve per page
+          format: int32
+          type: integer
+        from:
+          format: int32
+          type: integer
+        select:
+          description: list of fields or property paths from search result summary
+            to return
+          items:
+            type: string
+          type: array
+        orderBy:
+          items:
+            $ref: "#/components/schemas/IOrderBy"
+          type: array
+        filter:
+          items:
+            $ref: "#/components/schemas/IFilter"
+          type: array
+        timings:
+          items:
+            additionalProperties:
+              type: string
+          type: array
+    ISetDistillationRequest:
+      properties:
+        conceptList:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        graph:
+          $ref: "#/components/schemas/GRAPH"
+    ISetExportRequest:
+      properties:
+        ownRow:
+          type: boolean
+        format:
+          type: string
+        options:
+          $ref: "#/components/schemas/ISetOptions"
+    ISuperiorPropertiesBoolFocusPagedRequest:
+      properties:
+        ecl:
+          type: string
+        page:
+          format: int32
+          type: integer
+        size:
+          format: int32
+          type: integer
+        schemeFilters:
+          items:
+            type: string
+          type: array
+        inactive:
+          type: boolean
+    ITransformRequest:
+      properties:
+        transformMap:
+          $ref: "#/components/schemas/ITTIriRef"
+        sourceFormat:
+          type: string
+        targetFormat:
+          type: string
+        source:
+          additionalProperties:
+            items:
+              additionalProperties: true
+              type: object
+    IValidatedEntitiesRequest:
+      properties:
+        snomedCodes:
+          items:
+            type: string
+          type: array
+    IWorkflowRequest:
+      properties:
+        securityService:
+          additionalProperties: true
+          type: object
+        page:
+          format: int32
+          type: integer
+        size:
+          format: int32
+          type: integer
+        userId:
+          type: string
+    IEntityValidationResponse:
+      properties:
+        valid:
+          type: boolean
+        message:
+          type: string
+    ILoginResponse:
+      properties:
+        user:
+          $ref: "#/components/schemas/IUserJava"
+        state:
+          type: string
+    ILoginResponseES:
+      properties:
+        sessionId:
+          type: string
+        user:
+          $ref: "#/components/schemas/IUserJava"
+        state:
+          type: string
+    IOdsResponse:
+      properties:
+        Organisation:
+          $ref: "#/components/schemas/IOrganisation"
+        Roles:
+          items:
+            $ref: "#/components/schemas/IOrgRole"
+          type: array
+    ISearchResponse:
+      properties:
+        page:
+          format: int32
+          type: integer
+        count:
+          format: int32
+          type: integer
+        totalCount:
+          format: int32
+          type: integer
+        highestUsage:
+          format: int32
+          type: integer
+        term:
+          type: string
+        entities:
+          items:
+            $ref: "#/components/schemas/ISearchResultSummary"
+          type: array
+        exactMatch:
+          type: boolean
+    IWorkflowResponse:
+      properties:
+        page:
+          format: int32
+          type: integer
+        count:
+          format: int32
+          type: integer
+        tasks:
+          items:
+            $ref: "#/components/schemas/ITask"
+          type: array
+    IDownloadByQueryOptions:
+      properties:
+        queryRequest:
+          $ref: "#/components/schemas/IQueryRequest"
+        eclSearchRequest:
+          $ref: "#/components/schemas/IECLQueryRequest"
+        totalCount:
+          format: int32
+          type: integer
+        format:
+          type: string
+        includeDefinition:
+          type: boolean
+        includeCore:
+          type: boolean
+        includeLegacy:
+          type: boolean
+        includeSubsets:
+          type: boolean
+        subsetsOnOwnRow:
+          type: boolean
+        im1id:
+          type: boolean
+    IEntityDocument:
+      properties:
+        id:
+          format: int64
+          type: integer
+        iri:
+          type: string
+        name:
+          type: string
+        length:
+          format: int32
+          type: integer
+        preferredName:
+          type: string
+        code:
+          type: string
+        alternativeCode:
+          type: string
+        scheme:
+          $ref: "#/components/schemas/ITTIriRef"
+        type:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        status:
+          $ref: "#/components/schemas/ITTIriRef"
+        termCode:
+          items:
+            $ref: "#/components/schemas/ISearchTermCode"
+          type: array
+        usageTotal:
+          format: int32
+          type: integer
+        match:
+          type: string
+        isA:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        memberOf:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        subsumptionCount:
+          format: int32
+          type: integer
+        binding:
+          items:
+            type: string
+          type: array
+        isDescendentOf:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+    IFilter:
+      properties:
+        field:
+          type: string
+        iriValue:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        and:
+          items:
+            $ref: "#/components/schemas/IFilter"
+          type: array
+        not:
+          type: boolean
+        textValue:
+          items:
+            type: string
+          type: array
+        startsWithTerm:
+          type: boolean
+    IOrderBy:
+      properties:
+        field:
+          type: string
+        direction:
+          $ref: "#/components/schemas/Order"
+        iriValue:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        and:
+          items:
+            $ref: "#/components/schemas/IOrderBy"
+          type: array
+        textValue:
+          items:
+            type: string
+          type: array
+        not:
+          type: boolean
+        startsWithTerm:
+          type: boolean
+    ISearchBinding:
+      properties:
+        path:
+          $ref: "#/components/schemas/ITTIriRef"
+        node:
+          $ref: "#/components/schemas/ITTIriRef"
+    ISearchResultSummary:
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        description:
+          type: string
+        status:
+          $ref: "#/components/schemas/ITTIriRef"
+        scheme:
+          $ref: "#/components/schemas/ITTIriRef"
+        type:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        usageTotal:
+          format: int32
+          type: integer
+        bestMatch:
+          type: string
+        preferredName:
+          type: string
+        key:
+          items:
+            type: string
+          type: array
+        isA:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        termCode:
+          items:
+            $ref: "#/components/schemas/ISearchTermCode"
+          type: array
+        unit:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        qualifier:
+          items:
+            $ref: "#/components/schemas/ITTIriRef"
+          type: array
+        iri:
+          type: string
+      required:
+      - iri
+      - scheme
+      - status
+      - type
+    ISearchTermCode:
+      properties:
+        term:
+          type: string
+        code:
+          type: string
+        status:
+          $ref: "#/components/schemas/ITTIriRef"
+        length:
+          format: int32
+          type: integer
+        keyTerm:
+          type: string
+    ISetOptions:
+      properties:
+        setIri:
+          type: string
+        schemes:
+          items:
+            type: string
+          type: array
+        includeIM1id:
+          type: boolean
+        subsumptions:
+          items:
+            type: string
+          type: array
+        includeDefinition:
+          type: boolean
+        includeCore:
+          type: boolean
+        includeLegacy:
+          type: boolean
+        includeSubsets:
+          type: boolean
+    ISubQueryDependency:
+      properties:
+        iri:
+          type: string
+        label:
+          type: string
+        depth:
+          format: int32
+          type: integer
+    ITTDocument:
+      allOf:
+      - $ref: "#/components/schemas/ITTNode"
+      - properties:
+          context:
+            $ref: "#/components/schemas/ITTContext"
+          entities:
+            items:
+              $ref: "#/components/schemas/ITTEntity"
+            type: array
+          crud:
+            $ref: "#/components/schemas/ITTIriRef"
+          predicates:
+            additionalProperties:
+              type: string
+          prefixes:
+            items:
+              $ref: "#/components/schemas/ITTPrefix"
+            type: array
+    ITTEntity:
+      allOf:
+      - $ref: "#/components/schemas/ITTNode"
+      - properties:
+          context:
+            $ref: "#/components/schemas/ITTContext"
+          crud:
+            $ref: "#/components/schemas/ITTIriRef"
+          description:
+            type: string
+          version:
+            format: int32
+            type: integer
+          types:
+            items:
+              $ref: "#/components/schemas/ITTIriRef"
+            type: array
+          code:
+            type: string
+          prefixes:
+            items:
+              $ref: "#/components/schemas/ITTPrefix"
+            type: array
+          scheme:
+            $ref: "#/components/schemas/ITTIriRef"
+          name:
+            type: string
+          type:
+            $ref: "#/components/schemas/ITTArray"
+          status:
+            $ref: "#/components/schemas/ITTIriRef"
+    IBugReport:
+      allOf:
+      - $ref: "#/components/schemas/ITask"
+      - properties:
+          product:
+            type: string
+          version:
+            type: string
+          module:
+            $ref: "#/components/schemas/TaskModule"
+          os:
+            $ref: "#/components/schemas/OperatingSystem"
+          osOther:
+            type: string
+          browser:
+            $ref: "#/components/schemas/Browser"
+          browserOther:
+            type: string
+          severity:
+            $ref: "#/components/schemas/Severity"
+          status:
+            $ref: "#/components/schemas/Status"
+          error:
+            type: string
+          description:
+            type: string
+          reproduceSteps:
+            type: string
+          expectedResult:
+            type: string
+          actualResult:
+            type: string
+    IEntityApproval:
+      allOf:
+      - $ref: "#/components/schemas/ITask"
+      - properties:
+          entityIri:
+            $ref: "#/components/schemas/ITTIriRef"
+          approvalType:
+            $ref: "#/components/schemas/ApprovalType"
+    INamespaceRequest:
+      allOf:
+      - $ref: "#/components/schemas/ITask"
+      - properties:
+          namespacePermission:
+            $ref: "#/components/schemas/INamespacePermissionJava"
+    IRoleRequest:
+      allOf:
+      - $ref: "#/components/schemas/ITask"
+      - properties:
+          role:
+            $ref: "#/components/schemas/UserRole"
+    ITask:
+      properties:
+        id:
+          $ref: "#/components/schemas/ITTIriRef"
+        createdBy:
+          type: string
+        type:
+          $ref: "#/components/schemas/TaskType"
+        state:
+          $ref: "#/components/schemas/TaskState"
+        assignedTo:
+          type: string
+        dateCreated:
+          format: date-time
+          type: string
+        history:
+          items:
+            $ref: "#/components/schemas/ITaskHistory"
+          type: array
+        hostUrl:
+          type: string
+    ITaskHistory:
+      properties:
+        predicate:
+          type: string
+        originalObject:
+          type: string
+        newObject:
+          type: string
+        changeDate:
+          format: date-time
+          type: string
+        modifiedBy:
+          type: string
+        dateTime:
+          format: date-time
+          type: string
+    IContext:
+      properties:
+        publisher:
+          type: string
+        system:
+          type: string
+        schema:
+          type: string
+        table:
+          type: string
+        field:
+          type: string
+    ITTArray:
+      properties:
+        elements:
+          items:
+            $ref: "#/components/schemas/ITTValue"
+          type: array
+        list:
+          type: boolean
+    ITTContext:
+      properties:
+        nameSpaces:
+          items:
+            $ref: "#/components/schemas/ITTPrefix"
+          type: array
+        prefixes:
+          items:
+            $ref: "#/components/schemas/ITTPrefix"
+          type: array
+    IThrowable:
+      properties:
+        cause:
+          $ref: "#/components/schemas/IThrowable"
+        stackTrace:
+          items:
+            $ref: "#/components/schemas/IStackTraceElement"
+          type: array
+        message:
+          type: string
+        suppressed:
+          items:
+            $ref: "#/components/schemas/IThrowable"
+          type: array
+        localizedMessage:
+          type: string
+    IStackTraceElement:
+      properties:
+        classLoaderName:
+          type: string
+        moduleName:
+          type: string
+        moduleVersion:
+          type: string
+        methodName:
+          type: string
+        fileName:
+          type: string
+        lineNumber:
+          format: int32
+          type: integer
+        className:
+          type: string
+        nativeMethod:
+          type: boolean
+    IException:
+      allOf:
+      - $ref: "#/components/schemas/IThrowable"
+      - type: object
+    ISecurityService:
+      additionalProperties: true
       type: object
+    IUserJava:
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        displayName:
+          type: string
+        password:
+          type: string
+        avatar:
+          type: string
+        roles:
+          items:
+            $ref: "#/components/schemas/UserRole"
+          type: array
+        organisations:
+          items:
+            type: string
+          type: array
+        theme:
+          $ref: "#/components/schemas/PrimeVuePresetThemes"
+        primaryColor:
+          $ref: "#/components/schemas/PrimeVueColors"
+        surfaceColor:
+          $ref: "#/components/schemas/PrimeVueColors"
+        darkMode:
+          type: boolean
+        fontSize:
+          $ref: "#/components/schemas/FontSize"
+        favourites:
+          items:
+            type: string
+          type: array
+        recentActivity:
+          items:
+            $ref: "#/components/schemas/IRecentActivityItemDto"
+          type: array
+        namespaces:
+          items:
+            $ref: "#/components/schemas/INamespacePermissionJava"
+          type: array
+    IOrganisation:
+      properties:
+        Name:
+          type: string
+        OrgId:
+          $ref: "#/components/schemas/IOrgId"
+        Status:
+          type: string
+        orgRecordClass:
+          type: string
+        GeoLoc:
+          $ref: "#/components/schemas/IOrgGeoLocation"
+        Roles:
+          $ref: "#/components/schemas/IOrgRoles"
+        Rels:
+          $ref: "#/components/schemas/IOrgRelationships"
+    IOrgRole:
+      properties:
+        id:
+          type: string
+        Status:
+          type: string
+        code:
+          type: string
+        displayName:
+          type: string
+    ITTPrefix:
+      properties:
+        iri:
+          type: string
+        prefix:
+          type: string
+        name:
+          type: string
+    ITTNode:
+      allOf:
+      - $ref: "#/components/schemas/ITTValue"
+      - properties:
+          iri:
+            type: string
+          predicateMap:
+            additionalProperties:
+              $ref: "#/components/schemas/ITTArray"
+    INamespacePermissionJava:
+      properties:
+        iri:
+          $ref: "#/components/schemas/NAMESPACE"
+        read:
+          type: boolean
+        write:
+          type: boolean
+    IRecentActivityItemDto:
+      properties:
+        iri:
+          type: string
+        dateTime:
+          format: date-time
+          type: string
+        action:
+          type: string
+    IOrgId:
+      properties:
+        extension:
+          type: string
+    IOrgGeoLocation:
+      properties:
+        Location:
+          $ref: "#/components/schemas/IOrgLocation"
+    IOrgRoles:
+      properties:
+        Role:
+          items:
+            $ref: "#/components/schemas/IOrgRole"
+          type: array
+    IOrgRelationships:
+      properties:
+        Rel:
+          items:
+            $ref: "#/components/schemas/IOrgRelationship"
+          type: array
+    IComparable:
+      additionalProperties: {}
+      description: Generic marker interface (not representable in OpenAPI)
+    IOrgLocation:
+      properties:
+        AddrLn1:
+          type: string
+        AddrLn2:
+          type: string
+        AddrLn3:
+          type: string
+        Town:
+          type: string
+        County:
+          type: string
+        PostCode:
+          type: string
+        Country:
+          type: string
+        UPRN:
+          type: string
+    IOrgRelationship:
+      properties:
+        Status:
+          type: string
+        Target:
+          $ref: "#/components/schemas/IOrgRelTarget"
+        id:
+          type: string
+    IOrgRelTarget:
+      properties:
+        OrgId:
+          $ref: "#/components/schemas/IOrgId"
 

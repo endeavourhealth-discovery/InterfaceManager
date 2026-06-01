@@ -24,10 +24,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets OPERATOR
+ * Gets or Sets Operator
  */
-@JsonAdapter(OPERATOR.Adapter.class)
-public enum OPERATOR {
+@JsonAdapter(Operator.Adapter.class)
+public enum Operator {
   
   eq("="),
   
@@ -49,7 +49,7 @@ public enum OPERATOR {
 
   private String value;
 
-  OPERATOR(String value) {
+  Operator(String value) {
     this.value = value;
   }
 
@@ -62,8 +62,8 @@ public enum OPERATOR {
     return String.valueOf(value);
   }
 
-  public static OPERATOR fromValue(String value) {
-    for (OPERATOR b : OPERATOR.values()) {
+  public static Operator fromValue(String value) {
+    for (Operator b : Operator.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -71,22 +71,22 @@ public enum OPERATOR {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<OPERATOR> {
+  public static class Adapter extends TypeAdapter<Operator> {
     @Override
-    public void write(final JsonWriter jsonWriter, final OPERATOR enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final Operator enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public OPERATOR read(final JsonReader jsonReader) throws IOException {
+    public Operator read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return OPERATOR.fromValue(value);
+      return Operator.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    OPERATOR.fromValue(value);
+    Operator.fromValue(value);
   }
 }
 

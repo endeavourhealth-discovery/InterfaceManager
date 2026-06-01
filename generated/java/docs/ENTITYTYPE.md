@@ -1,6 +1,6 @@
 
 
-# ENTITYTYPE
+# EntityType
 
 ## Enum
 

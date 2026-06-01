@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate-java": "openapi-generator-cli generate -i openapi/api.yaml -g java -o ./generated/java --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model",
+    "generate-java": "openapi-generator-cli generate -i openapi/api.yaml -g java -o ./generated/java --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,useBeanValidation=false,useOptional=false,hideGenerationTimestamp=true,useJsonNullable=false,openApiNullable=false,useBeanValidation=false,useFluentBuilders=false",
     "generate-kotlin": "openapi-generator-cli generate -i openapi/api.yaml -g kotlin -o ./generated/kotlin --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,enumPropertyNaming=original",
     "generate-typescript": "openapi-generator-cli generate -i openapi/api.yaml -g typescript-fetch -o ./generated/typescript --additional-properties=stringEnums=true,enumPropertyNaming=original",
     "generate-typescript-alt": "npx openapi-typescript ./openapi/api.yaml -o generated/typescript-alt/schema.d.ts",

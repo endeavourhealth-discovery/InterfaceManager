@@ -18,15 +18,15 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ENTITYTYPE
+ * Model tests for EntityType
  */
-public class ENTITYTYPETest {
+public class EntityTypeTest {
     /**
-     * Model tests for ENTITYTYPE
+     * Model tests for EntityType
      */
     @Test
-    public void testENTITYTYPE() {
-        // TODO: test ENTITYTYPE
+    public void testEntityType() {
+        // TODO: test EntityType
     }
 
 }

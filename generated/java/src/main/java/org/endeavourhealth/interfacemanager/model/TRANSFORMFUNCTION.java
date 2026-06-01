@@ -26,8 +26,8 @@ import com.google.gson.stream.JsonWriter;
 /**
  * Transformation function identifiers
  */
-@JsonAdapter(TRANSFORMFUNCTION.Adapter.class)
-public enum TRANSFORMFUNCTION {
+@JsonAdapter(TransformFunction.Adapter.class)
+public enum TransformFunction {
   
   CONCATENATE("http://endhealth.info/im#Concatenate"),
   
@@ -37,7 +37,7 @@ public enum TRANSFORMFUNCTION {
 
   private String value;
 
-  TRANSFORMFUNCTION(String value) {
+  TransformFunction(String value) {
     this.value = value;
   }
 
@@ -50,8 +50,8 @@ public enum TRANSFORMFUNCTION {
     return String.valueOf(value);
   }
 
-  public static TRANSFORMFUNCTION fromValue(String value) {
-    for (TRANSFORMFUNCTION b : TRANSFORMFUNCTION.values()) {
+  public static TransformFunction fromValue(String value) {
+    for (TransformFunction b : TransformFunction.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -59,22 +59,22 @@ public enum TRANSFORMFUNCTION {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<TRANSFORMFUNCTION> {
+  public static class Adapter extends TypeAdapter<TransformFunction> {
     @Override
-    public void write(final JsonWriter jsonWriter, final TRANSFORMFUNCTION enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final TransformFunction enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public TRANSFORMFUNCTION read(final JsonReader jsonReader) throws IOException {
+    public TransformFunction read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return TRANSFORMFUNCTION.fromValue(value);
+      return TransformFunction.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    TRANSFORMFUNCTION.fromValue(value);
+    TransformFunction.fromValue(value);
   }
 }
 

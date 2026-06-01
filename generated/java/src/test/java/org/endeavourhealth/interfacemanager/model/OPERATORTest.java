@@ -18,15 +18,15 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for OPERATOR
+ * Model tests for Operator
  */
-public class OPERATORTest {
+public class OperatorTest {
     /**
-     * Model tests for OPERATOR
+     * Model tests for Operator
      */
     @Test
-    public void testOPERATOR() {
-        // TODO: test OPERATOR
+    public void testOperator() {
+        // TODO: test Operator
     }
 
 }
