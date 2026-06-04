@@ -14,113 +14,1590 @@
 package org.endeavourhealth.interfacemanager.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.endeavourhealth.interfacemanager.model.Entail;
+import org.endeavourhealth.interfacemanager.model.FunctionClause;
+import org.endeavourhealth.interfacemanager.model.GroupBy;
+import org.endeavourhealth.interfacemanager.model.Having;
+import org.endeavourhealth.interfacemanager.model.IMQType;
+import org.endeavourhealth.interfacemanager.model.Match;
+import org.endeavourhealth.interfacemanager.model.ModelReturn;
+import org.endeavourhealth.interfacemanager.model.Node;
+import org.endeavourhealth.interfacemanager.model.OrderLimit;
+import org.endeavourhealth.interfacemanager.model.Path;
+import org.endeavourhealth.interfacemanager.model.Prefix;
+import org.endeavourhealth.interfacemanager.model.RuleAction;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Where;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * Gets or Sets QUERY
+ * Query
  */
-@JsonAdapter(QUERY.Adapter.class)
-public enum QUERY {
-  
-  DOMAIN("http://endhealth.info/im#"),
-  
-  IS_ALLOWABLE_RANGE("http://endhealth.info/im#Query_IsAllowableRange"),
-  
-  ALLOWABLE_RANGE_SUGGESTIONS("http://endhealth.info/im#Query_AllowableRangeSuggestions"),
-  
-  GET_SUBCLASSES("http://endhealth.info/im#Query_GetSubClasses"),
-  
-  GET_DESCENDANTS("http://endhealth.info/im#Query_GetDescendants"),
-  
-  IS_VALID_DESCENDANT("http://endhealth.info/im#Query_IsValidDescendant"),
-  
-  GET_ANCESTORS("http://endhealth.info/im#Query_GetAncestors"),
-  
-  SEARCH_CONTAINED_IN("http://endhealth.info/im#Query_SearchContainedIn"),
-  
-  ALLOWABLE_CHILD_TYPES("http://endhealth.info/im#Query_AllowableChildTypes"),
-  
-  PROPERTY_RANGE("http://endhealth.info/im#Query_PropertyRange"),
-  
-  OBJECT_PROPERTY_RANGE_SUGGESTIONS("http://endhealth.info/im#Query_ObjectPropertyRangeSuggestions"),
-  
-  DATA_PROPERTY_RANGE_SUGGESTIONS("http://endhealth.info/im#Query_DataPropertyRangeSuggestions"),
-  
-  ALLOWABLE_PROPERTIES("http://endhealth.info/im#Query_AllowableProperties"),
-  
-  ALLOWABLE_PROPERTY_ANCESTORS("http://endhealth.info/im#Query_AllowablePropertyAncestors"),
-  
-  IS_VALID_PROPERTY("http://endhealth.info/im#Query_IsValidProperty"),
-  
-  IS_VALID_TYPE("http://endhealth.info/im#Query_IsValidType"),
-  
-  ENTITY_FILTER("http://endhealth.info/im#Query_EntityFilter"),
-  
-  SEARCH_ENTITIES("http://endhealth.info/im#Query_SearchEntities"),
-  
-  SEARCH_FOLDERS("http://endhealth.info/im#Query_SearchFolders"),
-  
-  SEARCH_ALLOWABLE_CONTAINED_IN("http://endhealth.info/im#Query_SearchAllowableContainedIn"),
-  
-  SEARCH_MAIN_TYPES("http://endhealth.info/im#Query_SearchmainTypes"),
-  
-  DM_PROPERTY("http://endhealth.info/im#Query_DataModelPropertyByShape"),
-  
-  SEARCH_ALLOWABLE_SUBCLASS("http://endhealth.info/im#Query_SearchAllowableSubclass"),
-  
-  SEARCH_ALLOWABLE_CHILD_OF("http://endhealth.info/im#Query_SearchAllowableChildOf"),
-  
-  GET_VALUES_FROM_PROPERTY_RANGE("http://endhealth.info/im#Query_GetValuesFromPropertyRange"),
-  
-  GET_SUBSETS("http://endhealth.info/im#Query_GetSubsets");
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+public class Query {
+  public static final String SERIALIZED_NAME_IRI = "iri";
+  @SerializedName(SERIALIZED_NAME_IRI)
+  @javax.annotation.Nullable
+  private String iri;
 
-  private String value;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
 
-  QUERY(String value) {
-    this.value = value;
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
+
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
+  private String uuid;
+
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nullable
+  private List<Path> path = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_NODE = "node";
+  @SerializedName(SERIALIZED_NAME_NODE)
+  @javax.annotation.Nullable
+  private String node;
+
+  public static final String SERIALIZED_NAME_RETURN = "return";
+  @SerializedName(SERIALIZED_NAME_RETURN)
+  @javax.annotation.Nullable
+  private List<ModelReturn> _return = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_NOT_EXISTS = "notExists";
+  @SerializedName(SERIALIZED_NAME_NOT_EXISTS)
+  @javax.annotation.Nullable
+  private Boolean notExists;
+
+  public static final String SERIALIZED_NAME_IF_TRUE = "ifTrue";
+  @SerializedName(SERIALIZED_NAME_IF_TRUE)
+  @javax.annotation.Nullable
+  private RuleAction ifTrue;
+
+  public static final String SERIALIZED_NAME_IF_FALSE = "ifFalse";
+  @SerializedName(SERIALIZED_NAME_IF_FALSE)
+  @javax.annotation.Nullable
+  private RuleAction ifFalse;
+
+  public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
+  @SerializedName(SERIALIZED_NAME_NODE_REF)
+  @javax.annotation.Nullable
+  private String nodeRef;
+
+  public static final String SERIALIZED_NAME_TYPE_OF = "typeOf";
+  @SerializedName(SERIALIZED_NAME_TYPE_OF)
+  @javax.annotation.Nullable
+  private Node typeOf;
+
+  public static final String SERIALIZED_NAME_IS = "is";
+  @SerializedName(SERIALIZED_NAME_IS)
+  @javax.annotation.Nullable
+  private Node is;
+
+  public static final String SERIALIZED_NAME_AND = "and";
+  @SerializedName(SERIALIZED_NAME_AND)
+  @javax.annotation.Nullable
+  private List<Match> and = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_OR = "or";
+  @SerializedName(SERIALIZED_NAME_OR)
+  @javax.annotation.Nullable
+  private List<Match> or = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_WHERE = "where";
+  @SerializedName(SERIALIZED_NAME_WHERE)
+  @javax.annotation.Nullable
+  private Where where;
+
+  public static final String SERIALIZED_NAME_THEN = "then";
+  @SerializedName(SERIALIZED_NAME_THEN)
+  @javax.annotation.Nullable
+  private Where then;
+
+  public static final String SERIALIZED_NAME_GRAPH = "graph";
+  @SerializedName(SERIALIZED_NAME_GRAPH)
+  @javax.annotation.Nullable
+  private Node graph;
+
+  public static final String SERIALIZED_NAME_OPTIONAL = "optional";
+  @SerializedName(SERIALIZED_NAME_OPTIONAL)
+  @javax.annotation.Nullable
+  private Boolean optional;
+
+  public static final String SERIALIZED_NAME_PARAMETER = "parameter";
+  @SerializedName(SERIALIZED_NAME_PARAMETER)
+  @javax.annotation.Nullable
+  private String parameter;
+
+  public static final String SERIALIZED_NAME_FUNCTION = "function";
+  @SerializedName(SERIALIZED_NAME_FUNCTION)
+  @javax.annotation.Nullable
+  private FunctionClause function;
+
+  public static final String SERIALIZED_NAME_ENTAILMENT = "entailment";
+  @SerializedName(SERIALIZED_NAME_ENTAILMENT)
+  @javax.annotation.Nullable
+  private Entail entailment;
+
+  public static final String SERIALIZED_NAME_BASE_RULE = "baseRule";
+  @SerializedName(SERIALIZED_NAME_BASE_RULE)
+  @javax.annotation.Nullable
+  private Boolean baseRule;
+
+  public static final String SERIALIZED_NAME_RULE_NUMBER = "ruleNumber";
+  @SerializedName(SERIALIZED_NAME_RULE_NUMBER)
+  @javax.annotation.Nullable
+  private Integer ruleNumber;
+
+  public static final String SERIALIZED_NAME_INVERSE = "inverse";
+  @SerializedName(SERIALIZED_NAME_INVERSE)
+  @javax.annotation.Nullable
+  private Boolean inverse;
+
+  public static final String SERIALIZED_NAME_ACTIVE_ONLY = "activeOnly";
+  @SerializedName(SERIALIZED_NAME_ACTIVE_ONLY)
+  @javax.annotation.Nullable
+  private Boolean activeOnly;
+
+  public static final String SERIALIZED_NAME_RULE = "rule";
+  @SerializedName(SERIALIZED_NAME_RULE)
+  @javax.annotation.Nullable
+  private List<Match> rule = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ANY = "any";
+  @SerializedName(SERIALIZED_NAME_ANY)
+  @javax.annotation.Nullable
+  private List<Match> any = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_LIBRARY_ITEM = "libraryItem";
+  @SerializedName(SERIALIZED_NAME_LIBRARY_ITEM)
+  @javax.annotation.Nullable
+  private String libraryItem;
+
+  public static final String SERIALIZED_NAME_INVALID = "invalid";
+  @SerializedName(SERIALIZED_NAME_INVALID)
+  @javax.annotation.Nullable
+  private Boolean invalid;
+
+  public static final String SERIALIZED_NAME_GROUP_BY = "groupBy";
+  @SerializedName(SERIALIZED_NAME_GROUP_BY)
+  @javax.annotation.Nullable
+  private List<GroupBy> groupBy = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
+  @SerializedName(SERIALIZED_NAME_ORDER_BY)
+  @javax.annotation.Nullable
+  private OrderLimit orderBy;
+
+  public static final String SERIALIZED_NAME_AS_DESCRIPTION = "asDescription";
+  @SerializedName(SERIALIZED_NAME_AS_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String asDescription;
+
+  public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
+  @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nullable
+  private String errorMessage;
+
+  public static final String SERIALIZED_NAME_DRAFT = "draft";
+  @SerializedName(SERIALIZED_NAME_DRAFT)
+  @javax.annotation.Nullable
+  private Boolean draft;
+
+  public static final String SERIALIZED_NAME_HAVING = "having";
+  @SerializedName(SERIALIZED_NAME_HAVING)
+  @javax.annotation.Nullable
+  private Having having;
+
+  public static final String SERIALIZED_NAME_PREFIXES = "prefixes";
+  @SerializedName(SERIALIZED_NAME_PREFIXES)
+  @javax.annotation.Nullable
+  private List<Prefix> prefixes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_COLUMN_GROUP = "columnGroup";
+  @SerializedName(SERIALIZED_NAME_COLUMN_GROUP)
+  @javax.annotation.Nullable
+  private List<Match> columnGroup = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_IM_QUERY = "imQuery";
+  @SerializedName(SERIALIZED_NAME_IM_QUERY)
+  @javax.annotation.Nullable
+  private String imQuery;
+
+  public static final String SERIALIZED_NAME_PARENT_RESULT = "parentResult";
+  @SerializedName(SERIALIZED_NAME_PARENT_RESULT)
+  @javax.annotation.Nullable
+  private Map<String, Object> parentResult = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_PERSISTENT_IRI = "persistentIri";
+  @SerializedName(SERIALIZED_NAME_PERSISTENT_IRI)
+  @javax.annotation.Nullable
+  private TTIriRef persistentIri;
+
+  public static final String SERIALIZED_NAME_BIND_AS = "bindAs";
+  @SerializedName(SERIALIZED_NAME_BIND_AS)
+  @javax.annotation.Nullable
+  private String bindAs;
+
+  public static final String SERIALIZED_NAME_QUERY_TYPE = "queryType";
+  @SerializedName(SERIALIZED_NAME_QUERY_TYPE)
+  @javax.annotation.Nullable
+  private IMQType queryType;
+
+  public Query() {
   }
 
-  public String getValue() {
-    return value;
+  public Query iri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
+    return this;
+  }
+
+  /**
+   * Get iri
+   * @return iri
+   */
+  @javax.annotation.Nullable
+  public String getIri() {
+    return iri;
+  }
+
+  public void setIri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
+  }
+
+
+  public Query name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public Query description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
+  }
+
+
+  public Query uuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+    return this;
+  }
+
+  /**
+   * Get uuid
+   * @return uuid
+   */
+  @javax.annotation.Nullable
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+  }
+
+
+  public Query path(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
+    return this;
+  }
+
+  public Query addPathItem(Path pathItem) {
+    if (this.path == null) {
+      this.path = new ArrayList<>();
+    }
+    this.path.add(pathItem);
+    return this;
+  }
+
+  /**
+   * Get path
+   * @return path
+   */
+  @javax.annotation.Nullable
+  public List<Path> getPath() {
+    return path;
+  }
+
+  public void setPath(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
+  }
+
+
+  public Query node(@javax.annotation.Nullable String node) {
+    this.node = node;
+    return this;
+  }
+
+  /**
+   * Get node
+   * @return node
+   */
+  @javax.annotation.Nullable
+  public String getNode() {
+    return node;
+  }
+
+  public void setNode(@javax.annotation.Nullable String node) {
+    this.node = node;
+  }
+
+
+  public Query _return(@javax.annotation.Nullable List<ModelReturn> _return) {
+    this._return = _return;
+    return this;
+  }
+
+  public Query addReturnItem(ModelReturn _returnItem) {
+    if (this._return == null) {
+      this._return = new ArrayList<>();
+    }
+    this._return.add(_returnItem);
+    return this;
+  }
+
+  /**
+   * Get _return
+   * @return _return
+   */
+  @javax.annotation.Nullable
+  public List<ModelReturn> getReturn() {
+    return _return;
+  }
+
+  public void setReturn(@javax.annotation.Nullable List<ModelReturn> _return) {
+    this._return = _return;
+  }
+
+
+  public Query notExists(@javax.annotation.Nullable Boolean notExists) {
+    this.notExists = notExists;
+    return this;
+  }
+
+  /**
+   * Get notExists
+   * @return notExists
+   */
+  @javax.annotation.Nullable
+  public Boolean getNotExists() {
+    return notExists;
+  }
+
+  public void setNotExists(@javax.annotation.Nullable Boolean notExists) {
+    this.notExists = notExists;
+  }
+
+
+  public Query ifTrue(@javax.annotation.Nullable RuleAction ifTrue) {
+    this.ifTrue = ifTrue;
+    return this;
+  }
+
+  /**
+   * Get ifTrue
+   * @return ifTrue
+   */
+  @javax.annotation.Nullable
+  public RuleAction getIfTrue() {
+    return ifTrue;
+  }
+
+  public void setIfTrue(@javax.annotation.Nullable RuleAction ifTrue) {
+    this.ifTrue = ifTrue;
+  }
+
+
+  public Query ifFalse(@javax.annotation.Nullable RuleAction ifFalse) {
+    this.ifFalse = ifFalse;
+    return this;
+  }
+
+  /**
+   * Get ifFalse
+   * @return ifFalse
+   */
+  @javax.annotation.Nullable
+  public RuleAction getIfFalse() {
+    return ifFalse;
+  }
+
+  public void setIfFalse(@javax.annotation.Nullable RuleAction ifFalse) {
+    this.ifFalse = ifFalse;
+  }
+
+
+  public Query nodeRef(@javax.annotation.Nullable String nodeRef) {
+    this.nodeRef = nodeRef;
+    return this;
+  }
+
+  /**
+   * Get nodeRef
+   * @return nodeRef
+   */
+  @javax.annotation.Nullable
+  public String getNodeRef() {
+    return nodeRef;
+  }
+
+  public void setNodeRef(@javax.annotation.Nullable String nodeRef) {
+    this.nodeRef = nodeRef;
+  }
+
+
+  public Query typeOf(@javax.annotation.Nullable Node typeOf) {
+    this.typeOf = typeOf;
+    return this;
+  }
+
+  /**
+   * Get typeOf
+   * @return typeOf
+   */
+  @javax.annotation.Nullable
+  public Node getTypeOf() {
+    return typeOf;
+  }
+
+  public void setTypeOf(@javax.annotation.Nullable Node typeOf) {
+    this.typeOf = typeOf;
+  }
+
+
+  public Query is(@javax.annotation.Nullable Node is) {
+    this.is = is;
+    return this;
+  }
+
+  /**
+   * Get is
+   * @return is
+   */
+  @javax.annotation.Nullable
+  public Node getIs() {
+    return is;
+  }
+
+  public void setIs(@javax.annotation.Nullable Node is) {
+    this.is = is;
+  }
+
+
+  public Query and(@javax.annotation.Nullable List<Match> and) {
+    this.and = and;
+    return this;
+  }
+
+  public Query addAndItem(Match andItem) {
+    if (this.and == null) {
+      this.and = new ArrayList<>();
+    }
+    this.and.add(andItem);
+    return this;
+  }
+
+  /**
+   * Get and
+   * @return and
+   */
+  @javax.annotation.Nullable
+  public List<Match> getAnd() {
+    return and;
+  }
+
+  public void setAnd(@javax.annotation.Nullable List<Match> and) {
+    this.and = and;
+  }
+
+
+  public Query or(@javax.annotation.Nullable List<Match> or) {
+    this.or = or;
+    return this;
+  }
+
+  public Query addOrItem(Match orItem) {
+    if (this.or == null) {
+      this.or = new ArrayList<>();
+    }
+    this.or.add(orItem);
+    return this;
+  }
+
+  /**
+   * Get or
+   * @return or
+   */
+  @javax.annotation.Nullable
+  public List<Match> getOr() {
+    return or;
+  }
+
+  public void setOr(@javax.annotation.Nullable List<Match> or) {
+    this.or = or;
+  }
+
+
+  public Query where(@javax.annotation.Nullable Where where) {
+    this.where = where;
+    return this;
+  }
+
+  /**
+   * Get where
+   * @return where
+   */
+  @javax.annotation.Nullable
+  public Where getWhere() {
+    return where;
+  }
+
+  public void setWhere(@javax.annotation.Nullable Where where) {
+    this.where = where;
+  }
+
+
+  public Query then(@javax.annotation.Nullable Where then) {
+    this.then = then;
+    return this;
+  }
+
+  /**
+   * Get then
+   * @return then
+   */
+  @javax.annotation.Nullable
+  public Where getThen() {
+    return then;
+  }
+
+  public void setThen(@javax.annotation.Nullable Where then) {
+    this.then = then;
+  }
+
+
+  public Query graph(@javax.annotation.Nullable Node graph) {
+    this.graph = graph;
+    return this;
+  }
+
+  /**
+   * Get graph
+   * @return graph
+   */
+  @javax.annotation.Nullable
+  public Node getGraph() {
+    return graph;
+  }
+
+  public void setGraph(@javax.annotation.Nullable Node graph) {
+    this.graph = graph;
+  }
+
+
+  public Query optional(@javax.annotation.Nullable Boolean optional) {
+    this.optional = optional;
+    return this;
+  }
+
+  /**
+   * Get optional
+   * @return optional
+   */
+  @javax.annotation.Nullable
+  public Boolean getOptional() {
+    return optional;
+  }
+
+  public void setOptional(@javax.annotation.Nullable Boolean optional) {
+    this.optional = optional;
+  }
+
+
+  public Query parameter(@javax.annotation.Nullable String parameter) {
+    this.parameter = parameter;
+    return this;
+  }
+
+  /**
+   * Get parameter
+   * @return parameter
+   */
+  @javax.annotation.Nullable
+  public String getParameter() {
+    return parameter;
+  }
+
+  public void setParameter(@javax.annotation.Nullable String parameter) {
+    this.parameter = parameter;
+  }
+
+
+  public Query function(@javax.annotation.Nullable FunctionClause function) {
+    this.function = function;
+    return this;
+  }
+
+  /**
+   * Get function
+   * @return function
+   */
+  @javax.annotation.Nullable
+  public FunctionClause getFunction() {
+    return function;
+  }
+
+  public void setFunction(@javax.annotation.Nullable FunctionClause function) {
+    this.function = function;
+  }
+
+
+  public Query entailment(@javax.annotation.Nullable Entail entailment) {
+    this.entailment = entailment;
+    return this;
+  }
+
+  /**
+   * Get entailment
+   * @return entailment
+   */
+  @javax.annotation.Nullable
+  public Entail getEntailment() {
+    return entailment;
+  }
+
+  public void setEntailment(@javax.annotation.Nullable Entail entailment) {
+    this.entailment = entailment;
+  }
+
+
+  public Query baseRule(@javax.annotation.Nullable Boolean baseRule) {
+    this.baseRule = baseRule;
+    return this;
+  }
+
+  /**
+   * Get baseRule
+   * @return baseRule
+   */
+  @javax.annotation.Nullable
+  public Boolean getBaseRule() {
+    return baseRule;
+  }
+
+  public void setBaseRule(@javax.annotation.Nullable Boolean baseRule) {
+    this.baseRule = baseRule;
+  }
+
+
+  public Query ruleNumber(@javax.annotation.Nullable Integer ruleNumber) {
+    this.ruleNumber = ruleNumber;
+    return this;
+  }
+
+  /**
+   * Get ruleNumber
+   * @return ruleNumber
+   */
+  @javax.annotation.Nullable
+  public Integer getRuleNumber() {
+    return ruleNumber;
+  }
+
+  public void setRuleNumber(@javax.annotation.Nullable Integer ruleNumber) {
+    this.ruleNumber = ruleNumber;
+  }
+
+
+  public Query inverse(@javax.annotation.Nullable Boolean inverse) {
+    this.inverse = inverse;
+    return this;
+  }
+
+  /**
+   * Get inverse
+   * @return inverse
+   */
+  @javax.annotation.Nullable
+  public Boolean getInverse() {
+    return inverse;
+  }
+
+  public void setInverse(@javax.annotation.Nullable Boolean inverse) {
+    this.inverse = inverse;
+  }
+
+
+  public Query activeOnly(@javax.annotation.Nullable Boolean activeOnly) {
+    this.activeOnly = activeOnly;
+    return this;
+  }
+
+  /**
+   * Get activeOnly
+   * @return activeOnly
+   */
+  @javax.annotation.Nullable
+  public Boolean getActiveOnly() {
+    return activeOnly;
+  }
+
+  public void setActiveOnly(@javax.annotation.Nullable Boolean activeOnly) {
+    this.activeOnly = activeOnly;
+  }
+
+
+  public Query rule(@javax.annotation.Nullable List<Match> rule) {
+    this.rule = rule;
+    return this;
+  }
+
+  public Query addRuleItem(Match ruleItem) {
+    if (this.rule == null) {
+      this.rule = new ArrayList<>();
+    }
+    this.rule.add(ruleItem);
+    return this;
+  }
+
+  /**
+   * Get rule
+   * @return rule
+   */
+  @javax.annotation.Nullable
+  public List<Match> getRule() {
+    return rule;
+  }
+
+  public void setRule(@javax.annotation.Nullable List<Match> rule) {
+    this.rule = rule;
+  }
+
+
+  public Query any(@javax.annotation.Nullable List<Match> any) {
+    this.any = any;
+    return this;
+  }
+
+  public Query addAnyItem(Match anyItem) {
+    if (this.any == null) {
+      this.any = new ArrayList<>();
+    }
+    this.any.add(anyItem);
+    return this;
+  }
+
+  /**
+   * Get any
+   * @return any
+   */
+  @javax.annotation.Nullable
+  public List<Match> getAny() {
+    return any;
+  }
+
+  public void setAny(@javax.annotation.Nullable List<Match> any) {
+    this.any = any;
+  }
+
+
+  public Query libraryItem(@javax.annotation.Nullable String libraryItem) {
+    this.libraryItem = libraryItem;
+    return this;
+  }
+
+  /**
+   * Get libraryItem
+   * @return libraryItem
+   */
+  @javax.annotation.Nullable
+  public String getLibraryItem() {
+    return libraryItem;
+  }
+
+  public void setLibraryItem(@javax.annotation.Nullable String libraryItem) {
+    this.libraryItem = libraryItem;
+  }
+
+
+  public Query invalid(@javax.annotation.Nullable Boolean invalid) {
+    this.invalid = invalid;
+    return this;
+  }
+
+  /**
+   * Get invalid
+   * @return invalid
+   */
+  @javax.annotation.Nullable
+  public Boolean getInvalid() {
+    return invalid;
+  }
+
+  public void setInvalid(@javax.annotation.Nullable Boolean invalid) {
+    this.invalid = invalid;
+  }
+
+
+  public Query groupBy(@javax.annotation.Nullable List<GroupBy> groupBy) {
+    this.groupBy = groupBy;
+    return this;
+  }
+
+  public Query addGroupByItem(GroupBy groupByItem) {
+    if (this.groupBy == null) {
+      this.groupBy = new ArrayList<>();
+    }
+    this.groupBy.add(groupByItem);
+    return this;
+  }
+
+  /**
+   * Get groupBy
+   * @return groupBy
+   */
+  @javax.annotation.Nullable
+  public List<GroupBy> getGroupBy() {
+    return groupBy;
+  }
+
+  public void setGroupBy(@javax.annotation.Nullable List<GroupBy> groupBy) {
+    this.groupBy = groupBy;
+  }
+
+
+  public Query orderBy(@javax.annotation.Nullable OrderLimit orderBy) {
+    this.orderBy = orderBy;
+    return this;
+  }
+
+  /**
+   * Get orderBy
+   * @return orderBy
+   */
+  @javax.annotation.Nullable
+  public OrderLimit getOrderBy() {
+    return orderBy;
+  }
+
+  public void setOrderBy(@javax.annotation.Nullable OrderLimit orderBy) {
+    this.orderBy = orderBy;
+  }
+
+
+  public Query asDescription(@javax.annotation.Nullable String asDescription) {
+    this.asDescription = asDescription;
+    return this;
+  }
+
+  /**
+   * Get asDescription
+   * @return asDescription
+   */
+  @javax.annotation.Nullable
+  public String getAsDescription() {
+    return asDescription;
+  }
+
+  public void setAsDescription(@javax.annotation.Nullable String asDescription) {
+    this.asDescription = asDescription;
+  }
+
+
+  public Query errorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+  /**
+   * Get errorMessage
+   * @return errorMessage
+   */
+  @javax.annotation.Nullable
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+
+  public Query draft(@javax.annotation.Nullable Boolean draft) {
+    this.draft = draft;
+    return this;
+  }
+
+  /**
+   * Get draft
+   * @return draft
+   */
+  @javax.annotation.Nullable
+  public Boolean getDraft() {
+    return draft;
+  }
+
+  public void setDraft(@javax.annotation.Nullable Boolean draft) {
+    this.draft = draft;
+  }
+
+
+  public Query having(@javax.annotation.Nullable Having having) {
+    this.having = having;
+    return this;
+  }
+
+  /**
+   * Get having
+   * @return having
+   */
+  @javax.annotation.Nullable
+  public Having getHaving() {
+    return having;
+  }
+
+  public void setHaving(@javax.annotation.Nullable Having having) {
+    this.having = having;
+  }
+
+
+  public Query prefixes(@javax.annotation.Nullable List<Prefix> prefixes) {
+    this.prefixes = prefixes;
+    return this;
+  }
+
+  public Query addPrefixesItem(Prefix prefixesItem) {
+    if (this.prefixes == null) {
+      this.prefixes = new ArrayList<>();
+    }
+    this.prefixes.add(prefixesItem);
+    return this;
+  }
+
+  /**
+   * Get prefixes
+   * @return prefixes
+   */
+  @javax.annotation.Nullable
+  public List<Prefix> getPrefixes() {
+    return prefixes;
+  }
+
+  public void setPrefixes(@javax.annotation.Nullable List<Prefix> prefixes) {
+    this.prefixes = prefixes;
+  }
+
+
+  public Query columnGroup(@javax.annotation.Nullable List<Match> columnGroup) {
+    this.columnGroup = columnGroup;
+    return this;
+  }
+
+  public Query addColumnGroupItem(Match columnGroupItem) {
+    if (this.columnGroup == null) {
+      this.columnGroup = new ArrayList<>();
+    }
+    this.columnGroup.add(columnGroupItem);
+    return this;
+  }
+
+  /**
+   * Get columnGroup
+   * @return columnGroup
+   */
+  @javax.annotation.Nullable
+  public List<Match> getColumnGroup() {
+    return columnGroup;
+  }
+
+  public void setColumnGroup(@javax.annotation.Nullable List<Match> columnGroup) {
+    this.columnGroup = columnGroup;
+  }
+
+
+  public Query imQuery(@javax.annotation.Nullable String imQuery) {
+    this.imQuery = imQuery;
+    return this;
+  }
+
+  /**
+   * Get imQuery
+   * @return imQuery
+   */
+  @javax.annotation.Nullable
+  public String getImQuery() {
+    return imQuery;
+  }
+
+  public void setImQuery(@javax.annotation.Nullable String imQuery) {
+    this.imQuery = imQuery;
+  }
+
+
+  public Query parentResult(@javax.annotation.Nullable Map<String, Object> parentResult) {
+    this.parentResult = parentResult;
+    return this;
+  }
+
+  public Query putParentResultItem(String key, Object parentResultItem) {
+    if (this.parentResult == null) {
+      this.parentResult = new HashMap<>();
+    }
+    this.parentResult.put(key, parentResultItem);
+    return this;
+  }
+
+  /**
+   * Get parentResult
+   * @return parentResult
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getParentResult() {
+    return parentResult;
+  }
+
+  public void setParentResult(@javax.annotation.Nullable Map<String, Object> parentResult) {
+    this.parentResult = parentResult;
+  }
+
+
+  public Query persistentIri(@javax.annotation.Nullable TTIriRef persistentIri) {
+    this.persistentIri = persistentIri;
+    return this;
+  }
+
+  /**
+   * Get persistentIri
+   * @return persistentIri
+   */
+  @javax.annotation.Nullable
+  public TTIriRef getPersistentIri() {
+    return persistentIri;
+  }
+
+  public void setPersistentIri(@javax.annotation.Nullable TTIriRef persistentIri) {
+    this.persistentIri = persistentIri;
+  }
+
+
+  public Query bindAs(@javax.annotation.Nullable String bindAs) {
+    this.bindAs = bindAs;
+    return this;
+  }
+
+  /**
+   * Get bindAs
+   * @return bindAs
+   */
+  @javax.annotation.Nullable
+  public String getBindAs() {
+    return bindAs;
+  }
+
+  public void setBindAs(@javax.annotation.Nullable String bindAs) {
+    this.bindAs = bindAs;
+  }
+
+
+  public Query queryType(@javax.annotation.Nullable IMQType queryType) {
+    this.queryType = queryType;
+    return this;
+  }
+
+  /**
+   * Get queryType
+   * @return queryType
+   */
+  @javax.annotation.Nullable
+  public IMQType getQueryType() {
+    return queryType;
+  }
+
+  public void setQueryType(@javax.annotation.Nullable IMQType queryType) {
+    this.queryType = queryType;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Query query = (Query) o;
+    return Objects.equals(this.iri, query.iri) &&
+        Objects.equals(this.name, query.name) &&
+        Objects.equals(this.description, query.description) &&
+        Objects.equals(this.uuid, query.uuid) &&
+        Objects.equals(this.path, query.path) &&
+        Objects.equals(this.node, query.node) &&
+        Objects.equals(this._return, query._return) &&
+        Objects.equals(this.notExists, query.notExists) &&
+        Objects.equals(this.ifTrue, query.ifTrue) &&
+        Objects.equals(this.ifFalse, query.ifFalse) &&
+        Objects.equals(this.nodeRef, query.nodeRef) &&
+        Objects.equals(this.typeOf, query.typeOf) &&
+        Objects.equals(this.is, query.is) &&
+        Objects.equals(this.and, query.and) &&
+        Objects.equals(this.or, query.or) &&
+        Objects.equals(this.where, query.where) &&
+        Objects.equals(this.then, query.then) &&
+        Objects.equals(this.graph, query.graph) &&
+        Objects.equals(this.optional, query.optional) &&
+        Objects.equals(this.parameter, query.parameter) &&
+        Objects.equals(this.function, query.function) &&
+        Objects.equals(this.entailment, query.entailment) &&
+        Objects.equals(this.baseRule, query.baseRule) &&
+        Objects.equals(this.ruleNumber, query.ruleNumber) &&
+        Objects.equals(this.inverse, query.inverse) &&
+        Objects.equals(this.activeOnly, query.activeOnly) &&
+        Objects.equals(this.rule, query.rule) &&
+        Objects.equals(this.any, query.any) &&
+        Objects.equals(this.libraryItem, query.libraryItem) &&
+        Objects.equals(this.invalid, query.invalid) &&
+        Objects.equals(this.groupBy, query.groupBy) &&
+        Objects.equals(this.orderBy, query.orderBy) &&
+        Objects.equals(this.asDescription, query.asDescription) &&
+        Objects.equals(this.errorMessage, query.errorMessage) &&
+        Objects.equals(this.draft, query.draft) &&
+        Objects.equals(this.having, query.having) &&
+        Objects.equals(this.prefixes, query.prefixes) &&
+        Objects.equals(this.columnGroup, query.columnGroup) &&
+        Objects.equals(this.imQuery, query.imQuery) &&
+        Objects.equals(this.parentResult, query.parentResult) &&
+        Objects.equals(this.persistentIri, query.persistentIri) &&
+        Objects.equals(this.bindAs, query.bindAs) &&
+        Objects.equals(this.queryType, query.queryType);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(iri, name, description, uuid, path, node, _return, notExists, ifTrue, ifFalse, nodeRef, typeOf, is, and, or, where, then, graph, optional, parameter, function, entailment, baseRule, ruleNumber, inverse, activeOnly, rule, any, libraryItem, invalid, groupBy, orderBy, asDescription, errorMessage, draft, having, prefixes, columnGroup, imQuery, parentResult, persistentIri, bindAs, queryType);
   }
 
   @Override
   public String toString() {
-    return String.valueOf(value);
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Query {\n");
+    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    node: ").append(toIndentedString(node)).append("\n");
+    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("    notExists: ").append(toIndentedString(notExists)).append("\n");
+    sb.append("    ifTrue: ").append(toIndentedString(ifTrue)).append("\n");
+    sb.append("    ifFalse: ").append(toIndentedString(ifFalse)).append("\n");
+    sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
+    sb.append("    typeOf: ").append(toIndentedString(typeOf)).append("\n");
+    sb.append("    is: ").append(toIndentedString(is)).append("\n");
+    sb.append("    and: ").append(toIndentedString(and)).append("\n");
+    sb.append("    or: ").append(toIndentedString(or)).append("\n");
+    sb.append("    where: ").append(toIndentedString(where)).append("\n");
+    sb.append("    then: ").append(toIndentedString(then)).append("\n");
+    sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
+    sb.append("    optional: ").append(toIndentedString(optional)).append("\n");
+    sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
+    sb.append("    function: ").append(toIndentedString(function)).append("\n");
+    sb.append("    entailment: ").append(toIndentedString(entailment)).append("\n");
+    sb.append("    baseRule: ").append(toIndentedString(baseRule)).append("\n");
+    sb.append("    ruleNumber: ").append(toIndentedString(ruleNumber)).append("\n");
+    sb.append("    inverse: ").append(toIndentedString(inverse)).append("\n");
+    sb.append("    activeOnly: ").append(toIndentedString(activeOnly)).append("\n");
+    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+    sb.append("    any: ").append(toIndentedString(any)).append("\n");
+    sb.append("    libraryItem: ").append(toIndentedString(libraryItem)).append("\n");
+    sb.append("    invalid: ").append(toIndentedString(invalid)).append("\n");
+    sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
+    sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
+    sb.append("    asDescription: ").append(toIndentedString(asDescription)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    draft: ").append(toIndentedString(draft)).append("\n");
+    sb.append("    having: ").append(toIndentedString(having)).append("\n");
+    sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
+    sb.append("    columnGroup: ").append(toIndentedString(columnGroup)).append("\n");
+    sb.append("    imQuery: ").append(toIndentedString(imQuery)).append("\n");
+    sb.append("    parentResult: ").append(toIndentedString(parentResult)).append("\n");
+    sb.append("    persistentIri: ").append(toIndentedString(persistentIri)).append("\n");
+    sb.append("    bindAs: ").append(toIndentedString(bindAs)).append("\n");
+    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("}");
+    return sb.toString();
   }
 
-  public static QUERY fromValue(String value) {
-    for (QUERY b : QUERY.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-  public static class Adapter extends TypeAdapter<QUERY> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final QUERY enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
 
-    @Override
-    public QUERY read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return QUERY.fromValue(value);
-    }
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "path", "node", "return", "notExists", "ifTrue", "ifFalse", "nodeRef", "typeOf", "is", "and", "or", "where", "then", "graph", "optional", "parameter", "function", "entailment", "baseRule", "ruleNumber", "inverse", "activeOnly", "rule", "any", "libraryItem", "invalid", "groupBy", "orderBy", "asDescription", "errorMessage", "draft", "having", "prefixes", "columnGroup", "imQuery", "parentResult", "persistentIri", "bindAs", "queryType"));
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Query
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    QUERY.fromValue(value);
+      if (jsonElement == null) {
+        if (!Query.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Query is not found in the empty JSON string", Query.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Query.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Query` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      if (jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) {
+        JsonArray jsonArraypath = jsonObj.getAsJsonArray("path");
+        if (jsonArraypath != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("path").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `path` to be an array in the JSON string but got `%s`", jsonObj.get("path").toString()));
+          }
+
+          // validate the optional field `path` (array)
+          for (int i = 0; i < jsonArraypath.size(); i++) {
+            Path.validateJsonElement(jsonArraypath.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
+      }
+      if (jsonObj.get("return") != null && !jsonObj.get("return").isJsonNull()) {
+        JsonArray jsonArray_return = jsonObj.getAsJsonArray("return");
+        if (jsonArray_return != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("return").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `return` to be an array in the JSON string but got `%s`", jsonObj.get("return").toString()));
+          }
+
+          // validate the optional field `return` (array)
+          for (int i = 0; i < jsonArray_return.size(); i++) {
+            ModelReturn.validateJsonElement(jsonArray_return.get(i));
+          };
+        }
+      }
+      // validate the optional field `ifTrue`
+      if (jsonObj.get("ifTrue") != null && !jsonObj.get("ifTrue").isJsonNull()) {
+        RuleAction.validateJsonElement(jsonObj.get("ifTrue"));
+      }
+      // validate the optional field `ifFalse`
+      if (jsonObj.get("ifFalse") != null && !jsonObj.get("ifFalse").isJsonNull()) {
+        RuleAction.validateJsonElement(jsonObj.get("ifFalse"));
+      }
+      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
+      }
+      // validate the optional field `typeOf`
+      if (jsonObj.get("typeOf") != null && !jsonObj.get("typeOf").isJsonNull()) {
+        Node.validateJsonElement(jsonObj.get("typeOf"));
+      }
+      // validate the optional field `is`
+      if (jsonObj.get("is") != null && !jsonObj.get("is").isJsonNull()) {
+        Node.validateJsonElement(jsonObj.get("is"));
+      }
+      if (jsonObj.get("and") != null && !jsonObj.get("and").isJsonNull()) {
+        JsonArray jsonArrayand = jsonObj.getAsJsonArray("and");
+        if (jsonArrayand != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("and").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `and` to be an array in the JSON string but got `%s`", jsonObj.get("and").toString()));
+          }
+
+          // validate the optional field `and` (array)
+          for (int i = 0; i < jsonArrayand.size(); i++) {
+            Match.validateJsonElement(jsonArrayand.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("or") != null && !jsonObj.get("or").isJsonNull()) {
+        JsonArray jsonArrayor = jsonObj.getAsJsonArray("or");
+        if (jsonArrayor != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("or").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
+          }
+
+          // validate the optional field `or` (array)
+          for (int i = 0; i < jsonArrayor.size(); i++) {
+            Match.validateJsonElement(jsonArrayor.get(i));
+          };
+        }
+      }
+      // validate the optional field `where`
+      if (jsonObj.get("where") != null && !jsonObj.get("where").isJsonNull()) {
+        Where.validateJsonElement(jsonObj.get("where"));
+      }
+      // validate the optional field `then`
+      if (jsonObj.get("then") != null && !jsonObj.get("then").isJsonNull()) {
+        Where.validateJsonElement(jsonObj.get("then"));
+      }
+      // validate the optional field `graph`
+      if (jsonObj.get("graph") != null && !jsonObj.get("graph").isJsonNull()) {
+        Node.validateJsonElement(jsonObj.get("graph"));
+      }
+      if ((jsonObj.get("parameter") != null && !jsonObj.get("parameter").isJsonNull()) && !jsonObj.get("parameter").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parameter").toString()));
+      }
+      // validate the optional field `function`
+      if (jsonObj.get("function") != null && !jsonObj.get("function").isJsonNull()) {
+        FunctionClause.validateJsonElement(jsonObj.get("function"));
+      }
+      // validate the optional field `entailment`
+      if (jsonObj.get("entailment") != null && !jsonObj.get("entailment").isJsonNull()) {
+        Entail.validateJsonElement(jsonObj.get("entailment"));
+      }
+      if (jsonObj.get("rule") != null && !jsonObj.get("rule").isJsonNull()) {
+        JsonArray jsonArrayrule = jsonObj.getAsJsonArray("rule");
+        if (jsonArrayrule != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("rule").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule` to be an array in the JSON string but got `%s`", jsonObj.get("rule").toString()));
+          }
+
+          // validate the optional field `rule` (array)
+          for (int i = 0; i < jsonArrayrule.size(); i++) {
+            Match.validateJsonElement(jsonArrayrule.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("any") != null && !jsonObj.get("any").isJsonNull()) {
+        JsonArray jsonArrayany = jsonObj.getAsJsonArray("any");
+        if (jsonArrayany != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("any").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `any` to be an array in the JSON string but got `%s`", jsonObj.get("any").toString()));
+          }
+
+          // validate the optional field `any` (array)
+          for (int i = 0; i < jsonArrayany.size(); i++) {
+            Match.validateJsonElement(jsonArrayany.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("libraryItem") != null && !jsonObj.get("libraryItem").isJsonNull()) && !jsonObj.get("libraryItem").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `libraryItem` to be a primitive type in the JSON string but got `%s`", jsonObj.get("libraryItem").toString()));
+      }
+      if (jsonObj.get("groupBy") != null && !jsonObj.get("groupBy").isJsonNull()) {
+        JsonArray jsonArraygroupBy = jsonObj.getAsJsonArray("groupBy");
+        if (jsonArraygroupBy != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("groupBy").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `groupBy` to be an array in the JSON string but got `%s`", jsonObj.get("groupBy").toString()));
+          }
+
+          // validate the optional field `groupBy` (array)
+          for (int i = 0; i < jsonArraygroupBy.size(); i++) {
+            GroupBy.validateJsonElement(jsonArraygroupBy.get(i));
+          };
+        }
+      }
+      // validate the optional field `orderBy`
+      if (jsonObj.get("orderBy") != null && !jsonObj.get("orderBy").isJsonNull()) {
+        OrderLimit.validateJsonElement(jsonObj.get("orderBy"));
+      }
+      if ((jsonObj.get("asDescription") != null && !jsonObj.get("asDescription").isJsonNull()) && !jsonObj.get("asDescription").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `asDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asDescription").toString()));
+      }
+      if ((jsonObj.get("errorMessage") != null && !jsonObj.get("errorMessage").isJsonNull()) && !jsonObj.get("errorMessage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `errorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorMessage").toString()));
+      }
+      // validate the optional field `having`
+      if (jsonObj.get("having") != null && !jsonObj.get("having").isJsonNull()) {
+        Having.validateJsonElement(jsonObj.get("having"));
+      }
+      if (jsonObj.get("prefixes") != null && !jsonObj.get("prefixes").isJsonNull()) {
+        JsonArray jsonArrayprefixes = jsonObj.getAsJsonArray("prefixes");
+        if (jsonArrayprefixes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("prefixes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefixes` to be an array in the JSON string but got `%s`", jsonObj.get("prefixes").toString()));
+          }
+
+          // validate the optional field `prefixes` (array)
+          for (int i = 0; i < jsonArrayprefixes.size(); i++) {
+            Prefix.validateJsonElement(jsonArrayprefixes.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("columnGroup") != null && !jsonObj.get("columnGroup").isJsonNull()) {
+        JsonArray jsonArraycolumnGroup = jsonObj.getAsJsonArray("columnGroup");
+        if (jsonArraycolumnGroup != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("columnGroup").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `columnGroup` to be an array in the JSON string but got `%s`", jsonObj.get("columnGroup").toString()));
+          }
+
+          // validate the optional field `columnGroup` (array)
+          for (int i = 0; i < jsonArraycolumnGroup.size(); i++) {
+            Match.validateJsonElement(jsonArraycolumnGroup.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("imQuery") != null && !jsonObj.get("imQuery").isJsonNull()) && !jsonObj.get("imQuery").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imQuery` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imQuery").toString()));
+      }
+      // validate the optional field `persistentIri`
+      if (jsonObj.get("persistentIri") != null && !jsonObj.get("persistentIri").isJsonNull()) {
+        TTIriRef.validateJsonElement(jsonObj.get("persistentIri"));
+      }
+      if ((jsonObj.get("bindAs") != null && !jsonObj.get("bindAs").isJsonNull()) && !jsonObj.get("bindAs").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bindAs` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bindAs").toString()));
+      }
+      // validate the optional field `queryType`
+      if (jsonObj.get("queryType") != null && !jsonObj.get("queryType").isJsonNull()) {
+        IMQType.validateJsonElement(jsonObj.get("queryType"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Query.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Query' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Query> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Query.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Query>() {
+           @Override
+           public void write(JsonWriter out, Query value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Query read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of Query given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Query
+   * @throws IOException if the JSON string is invalid with respect to Query
+   */
+  public static Query fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Query.class);
+  }
+
+  /**
+   * Convert an instance of Query to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

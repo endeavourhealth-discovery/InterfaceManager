@@ -1,0 +1,23 @@
+
+
+# ConceptSet
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**iri** | **String** |  |  [optional] |
+|**type** | [**List&lt;TTIriRef&gt;**](TTIriRef.md) |  |  [optional] |
+|**status** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
+|**scheme** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
+|**isContainedIn** | [**List&lt;TTEntity&gt;**](TTEntity.md) |  |  [optional] |
+|**name** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
+|**definition** | [**Query**](Query.md) |  |  [optional] |
+|**hasMember** | [**List&lt;TTIriRef&gt;**](TTIriRef.md) |  |  [optional] |
+|**usedIn** | [**List&lt;TTIriRef&gt;**](TTIriRef.md) |  |  [optional] |
+|**avoidReplacedBy** | **Boolean** |  |  [optional] |
+
+
+

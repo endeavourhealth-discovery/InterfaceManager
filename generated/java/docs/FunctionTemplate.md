@@ -8,14 +8,14 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**iri** | **String** |  |  [optional] |
-|**type** | [**List&lt;ITTIriRef&gt;**](ITTIriRef.md) |  |  [optional] |
-|**status** | [**ITTIriRef**](ITTIriRef.md) |  |  [optional] |
-|**scheme** | [**ITTIriRef**](ITTIriRef.md) |  |  [optional] |
-|**isContainedIn** | [**List&lt;ITTEntity&gt;**](ITTEntity.md) |  |  [optional] |
+|**type** | [**List&lt;TTIriRef&gt;**](TTIriRef.md) |  |  [optional] |
+|**status** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
+|**scheme** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
+|**isContainedIn** | [**List&lt;TTEntity&gt;**](TTEntity.md) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**function** | [**ITTIriRef**](ITTIriRef.md) |  |  [optional] |
-|**parameterTemplate** | [**List&lt;IParameterTemplate&gt;**](IParameterTemplate.md) |  |  [optional] |
+|**function** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
+|**parameterTemplate** | [**List&lt;ParameterTemplate&gt;**](ParameterTemplate.md) |  |  [optional] |
 
 
 

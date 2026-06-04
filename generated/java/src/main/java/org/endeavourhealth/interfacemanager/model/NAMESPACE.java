@@ -14,161 +14,247 @@
 package org.endeavourhealth.interfacemanager.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * Gets or Sets NAMESPACE
+ * Namespace
  */
-@JsonAdapter(NAMESPACE.Adapter.class)
-public enum NAMESPACE {
-  
-  LNWH_SY("http://endhealth.info/lnwhsy#"),
-  
-  LNWH_SL("http://endhealth.info/lnwhsl#"),
-  
-  THH_SL("http://endhealth.info/thhsl#"),
-  
-  KINGS_PIMS("http://endhealth.info/kingsp#"),
-  
-  IMPERIAL("http://endhealth.info/impc#"),
-  
-  CWH("http://endhealth.info/cwhcc#"),
-  
-  BHRUT("http://endhealth.info/bhrutm#"),
-  
-  ODS("http://endhealth.info/ods#"),
-  
-  CEG("http://endhealth.info/ceg#"),
-  
-  QOF("http://endhealth.info/qof#"),
-  
-  SMARTLIFE("http://smartlifehealth.info/smh#"),
-  
-  CONFIG("http://endhealth.info/config#"),
-  
-  IMQ("http://endhealth.info/imq#"),
-  
-  IM("http://endhealth.info/im#"),
-  
-  IM1("http://endhealth.info/im1#"),
-  
-  EMIS("http://endhealth.info/emis#"),
-  
-  FUNCTION("http://endhealth.info/im#Function_"),
-  
-  MAP("http://endhealth.info/map#"),
-  
-  OWL("http://www.w3.org/2002/07/owl#"),
-  
-  PRSB("http://prsb.info/rs#"),
-  
-  BNF("http://bnf.info/bnf#"),
-  
-  QR("http://apiqcodes.org/qcodes#"),
-  
-  RDF("http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
-  
-  RDFS("http://www.w3.org/2000/01/rdf-schema#"),
-  
-  SHACL("http://www.w3.org/ns/shacl#"),
-  
-  SNOMED("http://snomed.info/sct#"),
-  
-  USER("http://endhealth.info/user#"),
-  
-  WORKFLOW("http://endhealth.info/workflow#"),
-  
-  XSD("http://www.w3.org/2001/XMLSchema#"),
-  
-  IM_COMPONENT("http://endhealth.info/im#Component_"),
-  
-  IM_EDITOR("http://endhealth.info/im#Editor_"),
-  
-  IM_QUERY("http://endhealth.info/im#Query_"),
-  
-  IM_VALIDATION("http://endhealth.info/im#Validation_"),
-  
-  IM_CODE_TEMPLATE("http://endhealth.info/codeTemplate#"),
-  
-  TPP("http://endhealth.info/tpp#"),
-  
-  ENCOUNTERS("http://endhealth.info/enc#"),
-  
-  ICD10("http://endhealth.info/icd10#"),
-  
-  VISION("http://endhealth.info/vis#"),
-  
-  OPCS4("http://endhealth.info/opcs4#"),
-  
-  BARTS_CERNER("http://endhealth.info/bc#"),
-  
-  ORGANISATION("http://org.endhealth.info/im#"),
-  
-  LOCATION("http://loc.endhealth.info/im#"),
-  
-  FHIR("http://hl7.org/fhir/"),
-  
-  SYSTEM("http://sys.endhealth.info/im#"),
-  
-  KINGS_APEX("http://endhealth.info/kpax#"),
-  
-  NHSDD_ETHNIC_2001("http://endhealth.info/nhsethnic2001#"),
-  
-  CPRD_MED("http://endhealth.info/cprdm#"),
-  
-  CPRD_PROD("http://endhealth.info/cprdp#"),
-  
-  NHS_TFC("http://endhealth.info/nhstfc#"),
-  
-  KINGS_WINPATH("http://endhealth.info/kwp#");
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+public class Namespace {
+  public static final String SERIALIZED_NAME_IRI = "iri";
+  @SerializedName(SERIALIZED_NAME_IRI)
+  @javax.annotation.Nullable
+  private String iri;
 
-  private String value;
+  public static final String SERIALIZED_NAME_PREFIX = "prefix";
+  @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
+  private String prefix;
 
-  NAMESPACE(String value) {
-    this.value = value;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
+  public Namespace() {
   }
 
-  public String getValue() {
-    return value;
+  public Namespace iri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
+    return this;
+  }
+
+  /**
+   * Get iri
+   * @return iri
+   */
+  @javax.annotation.Nullable
+  public String getIri() {
+    return iri;
+  }
+
+  public void setIri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
+  }
+
+
+  public Namespace prefix(@javax.annotation.Nullable String prefix) {
+    this.prefix = prefix;
+    return this;
+  }
+
+  /**
+   * Get prefix
+   * @return prefix
+   */
+  @javax.annotation.Nullable
+  public String getPrefix() {
+    return prefix;
+  }
+
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
+    this.prefix = prefix;
+  }
+
+
+  public Namespace name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Namespace namespace = (Namespace) o;
+    return Objects.equals(this.iri, namespace.iri) &&
+        Objects.equals(this.prefix, namespace.prefix) &&
+        Objects.equals(this.name, namespace.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(iri, prefix, name);
   }
 
   @Override
   public String toString() {
-    return String.valueOf(value);
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Namespace {\n");
+    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
+    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("}");
+    return sb.toString();
   }
 
-  public static NAMESPACE fromValue(String value) {
-    for (NAMESPACE b : NAMESPACE.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-  public static class Adapter extends TypeAdapter<NAMESPACE> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final NAMESPACE enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
 
-    @Override
-    public NAMESPACE read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return NAMESPACE.fromValue(value);
-    }
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "prefix", "name"));
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Namespace
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    NAMESPACE.fromValue(value);
+      if (jsonElement == null) {
+        if (!Namespace.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Namespace is not found in the empty JSON string", Namespace.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Namespace.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Namespace` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
+      }
+      if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Namespace.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Namespace' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Namespace> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Namespace.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Namespace>() {
+           @Override
+           public void write(JsonWriter out, Namespace value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Namespace read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of Namespace given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Namespace
+   * @throws IOException if the JSON string is invalid with respect to Namespace
+   */
+  public static Namespace fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Namespace.class);
+  }
+
+  /**
+   * Convert an instance of Namespace to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

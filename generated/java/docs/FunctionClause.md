@@ -1,0 +1,17 @@
+
+
+# FunctionClause
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**iri** | **String** |  |  [optional] |
+|**name** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
+|**uuid** | **String** |  |  [optional] |
+|**argument** | [**List&lt;Argument&gt;**](Argument.md) |  |  [optional] |
+
+
+

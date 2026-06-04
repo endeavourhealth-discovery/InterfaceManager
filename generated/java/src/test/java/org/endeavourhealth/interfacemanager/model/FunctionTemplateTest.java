@@ -22,9 +22,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.endeavourhealth.interfacemanager.model.IParameterTemplate;
-import org.endeavourhealth.interfacemanager.model.ITTEntity;
-import org.endeavourhealth.interfacemanager.model.ITTIriRef;
+import org.endeavourhealth.interfacemanager.model.ParameterTemplate;
+import org.endeavourhealth.interfacemanager.model.TTEntity;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

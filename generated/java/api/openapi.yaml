@@ -225,13 +225,13 @@ components:
       - GRAPH_REQUEST
       - ENTITY_APPROVAL
       type: string
-    BNF:
+    BnfVocab:
       enum:
       - http://bnf.info
       type: string
       x-enum-varnames:
       - DOMAIN
-    CODE_TEMPLATE:
+    CodeTemplateVocab:
       enum:
       - http://endhealth.info/
       - cTemp
@@ -253,7 +253,7 @@ components:
       - DATATYPE_MAP
       - EXTENSION
       - INCLUDE_COMPLEX_TYPES
-    COMPONENT:
+    ComponentVocab:
       enum:
       - http://endhealth.info/im#
       - http://endhealth.info/im#Component_TabLayout
@@ -313,7 +313,7 @@ components:
       - AUTOCOMPLETE_SEARCH_BAR_WRAPPER
       - SUBSET_BUILDER
       - CHECKBOX_DISPLAY
-    CONFIG:
+    ConfigVocab:
       enum:
       - http://endhealth.info/
       - cfg
@@ -337,7 +337,7 @@ components:
       - IMQUERY_RUNNER_LATEST_RELEASE
       - IMQUERY_RUNNER_ALL_RELEASES
       - MONITORING
-    EDITOR:
+    EditorVocab:
       enum:
       - http://endhealth.info/im#
       - http://endhealth.info/im#Editor_ConceptShape
@@ -359,7 +359,7 @@ components:
       - COHORT_QUERY_SHAPE
       - PROPERTY_SHAPE
       - INDICATOR_SHAPE
-    EntityType:
+    EntityTypeVocab:
       enum:
       - http://endhealth.info/im#Query
       - http://www.w3.org/ns/shacl#NodeShape
@@ -367,7 +367,7 @@ components:
       x-enum-varnames:
       - QUERY
       - NODESHAPE
-    FHIR:
+    FhirVocab:
       enum:
       - fhir
       - http://hl7.org/2-0/fhir/StructureDefinition#
@@ -377,7 +377,7 @@ components:
       - PREFIX
       - DSTU2
       - VALUESET_FOLDER
-    GRAPH:
+    GraphVocab:
       enum:
       - http://endhealth.info/im#
       - http://endhealth.info/prov#
@@ -393,7 +393,7 @@ components:
       - WORKFLOW
       - CONFIG
       - SMARTLIFE
-    IM:
+    ImVocab:
       enum:
       - http://endhealth.info/
       - im
@@ -975,7 +975,7 @@ components:
       - TYPE_FILTER_DEFAULTS
       - SORT_FIELD_FILTER_DEFAULTS
       - SORT_DIRECTION_FILTER_DEFAULTS
-    IMPORT_TYPE:
+    ImportTypeVocab:
       enum:
       - snomed
       - tct
@@ -1037,7 +1037,7 @@ components:
       - DELTAS
       - QUERY
       - QR
-    IM_FUNCTION:
+    ImFunctionVocab:
       enum:
       - http://endhealth.info/
       - http://endhealth.info/im#Function_SnomedConceptGenerator
@@ -1067,7 +1067,7 @@ components:
       - ALLOWABLE_PROPERTIES
       - ALLOWABLE_RANGES
       - ALLOWABLE_PROPERTY_VALUES
-    MAP:
+    MapVocab:
       enum:
       - http://endhealth.info/
       - map
@@ -1075,7 +1075,7 @@ components:
       x-enum-varnames:
       - DOMAIN
       - PREFIX
-    NAMESPACE:
+    NamespaceVocab:
       enum:
       - http://endhealth.info/lnwhsy#
       - http://endhealth.info/lnwhsl#
@@ -1179,7 +1179,7 @@ components:
       - CPRD_PROD
       - NHS_TFC
       - KINGS_WINPATH
-    ODS:
+    OdsVocab:
       enum:
       - https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-
       - https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRole-1#ODS_RoleType
@@ -1191,7 +1191,7 @@ components:
       - ORGANISATION_ROLE_TYPE
       - ORGANISATION_RELATIONSHIP
       - ORGANISATION_RECORD_CLASS
-    OPEN_SEARCH:
+    OpenSearchVocab:
       enum:
       - http://www.w3.org/2000/01/rdf-schema#label
       - http://www.w3.org/2000/01/rdf-schema#comment
@@ -1217,7 +1217,7 @@ components:
       - BINDING
       - TERM_CODE
       - DOMAIN
-    ORG:
+    OrgVocab:
       enum:
       - http://endhealth.info/im#organisationRecordClass
       - http://endhealth.info/im#organisationRelationship
@@ -1231,7 +1231,7 @@ components:
       - TARGET
       - ROLE
       - ODS_CODE
-    OWL:
+    OwlVocab:
       enum:
       - owl
       - http://www.w3.org/2002/07/owl#Thing
@@ -1295,13 +1295,13 @@ components:
       - COMPLEMENT_OF
       - ONE_OF
       - NAMED_INDIVIDUAL
-    PRSB:
+    PrsbVocab:
       enum:
       - rs
       type: string
       x-enum-varnames:
       - PREFIX
-    QR:
+    QrVocab:
       enum:
       - http://apiqcodes.org/
       - qc
@@ -1309,7 +1309,7 @@ components:
       x-enum-varnames:
       - DOMAIN
       - PREFIX
-    QUERY:
+    QueryVocab:
       enum:
       - http://endhealth.info/im#
       - http://endhealth.info/im#Query_IsAllowableRange
@@ -1365,7 +1365,7 @@ components:
       - SEARCH_ALLOWABLE_CHILD_OF
       - GET_VALUES_FROM_PROPERTY_RANGE
       - GET_SUBSETS
-    RDF:
+    RdfVocab:
       enum:
       - rdf
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
@@ -1383,7 +1383,7 @@ components:
       - PREDICATE
       - SUBJECT
       - OBJECT
-    RDFS:
+    RdfsVocab:
       enum:
       - rdfs
       - http://www.w3.org/2000/01/rdf-schema#label
@@ -1409,7 +1409,7 @@ components:
       - CLASS
       - DATATYPE
       - IS_DEFINED_BY
-    SHACL:
+    ShaclVocab:
       enum:
       - sh
       - http://www.w3.org/ns/shacl#path
@@ -1491,7 +1491,7 @@ components:
       - NAME
       - EXPRESSION
       - HAS_VALUE
-    SNOMED:
+    SnomedVocab:
       description: SNOMED CT identifiers and concepts
       enum:
       - http://snomed.info/
@@ -1504,7 +1504,7 @@ components:
       - PREFIX
       - ATTRIBUTE
       - ANY
-    TransformFunction:
+    TransformFunctionVocab:
       description: Transformation function identifiers
       enum:
       - http://endhealth.info/im#Concatenate
@@ -1515,7 +1515,7 @@ components:
       - CONCATENATE
       - STRING_JOIN
       - SNOMED_CODE_CONCEPT_MAP
-    USER:
+    UserVocab:
       description: User configuration and preference identifiers
       enum:
       - http://endhealth.info/
@@ -1542,7 +1542,7 @@ components:
       - USER_FAVOURITES
       - ORGANISATIONS
       - GRAPHS
-    VALIDATION:
+    ValidationVocab:
       description: Validation rule identifiers
       enum:
       - http://endhealth.info/im#
@@ -1565,7 +1565,7 @@ components:
       - IS_SCHEME
       - IS_STATUS
       - IS_ROLE_GROUP
-    WORKFLOW:
+    WorkflowVocab:
       enum:
       - http://endhealth.info/
       - http://endhealth.info/workflow#bugReport
@@ -1625,7 +1625,7 @@ components:
       - HISTORY_NEW_OBJECT
       - HISTORY_CHANGE_DATE
       - MODIFIED_BY
-    XSD:
+    XsdVocab:
       enum:
       - xsd
       - http://www.w3.org/2001/XMLSchema#pattern
@@ -1732,26 +1732,19 @@ components:
       - MEDIUM
       - LARGE
       - XL
-    ITTIriRef:
-      allOf:
-      - $ref: "#/components/schemas/ITTValue"
-      - properties:
-          iri:
-            type: string
-          name:
-            nullable: true
-            type: string
-          description:
-            nullable: true
-            type: string
-        required:
-        - iri
-    ITTValue:
-      description: Base value type (extends Serializable)
+    TTIriRef:
       properties:
-        tests:
+        iri:
           type: string
-    IConceptContextMap:
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+      required:
+      - iri
+    ConceptContextMap:
       properties:
         id:
           type: string
@@ -1765,14 +1758,14 @@ components:
           type: string
         context:
           items:
-            $ref: "#/components/schemas/IContext"
+            $ref: "#/components/schemas/Context"
           type: array
-    IDataModelProperty:
+    DataModelProperty:
       properties:
         property:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         type:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         minInclusive:
           type: string
         minExclusive:
@@ -1784,11 +1777,11 @@ components:
         pattern:
           type: string
         inheritedFrom:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         order:
           format: int32
           type: integer
-    IDownloadEntityOptions:
+    DownloadEntityOptions:
       properties:
         entityIri:
           type: string
@@ -1814,17 +1807,17 @@ components:
           type: boolean
         includeInactive:
           type: boolean
-    IEntityReferenceNode:
+    EntityReferenceNode:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           parents:
             items:
-              $ref: "#/components/schemas/IEntityReferenceNode"
+              $ref: "#/components/schemas/EntityReferenceNode"
             type: array
           children:
             items:
-              $ref: "#/components/schemas/IEntityReferenceNode"
+              $ref: "#/components/schemas/EntityReferenceNode"
             type: array
           moduleId:
             type: string
@@ -1833,10 +1826,10 @@ components:
           hasGrandChildren:
             type: boolean
           type:
-            $ref: "#/components/schemas/ITTArray"
+            $ref: "#/components/schemas/TTArray"
           orderNumber:
             type: number
-    INamespace:
+    Namespace:
       properties:
         iri:
           type: string
@@ -1844,7 +1837,7 @@ components:
           type: string
         name:
           type: string
-    IPageable:
+    Pageable:
       properties:
         totalCount:
           format: int64
@@ -1858,7 +1851,7 @@ components:
         result:
           items: {}
           type: array
-    ICodeGenDto:
+    CodeGenDto:
       properties:
         name:
           type: string
@@ -1869,11 +1862,13 @@ components:
         datatypeMap:
           additionalProperties:
             type: string
+          default: {}
         template:
           type: string
         complexTypes:
+          default: false
           type: boolean
-    IArrayButtons:
+    ArrayButtons:
       properties:
         up:
           type: boolean
@@ -1885,21 +1880,21 @@ components:
           type: boolean
         addOnlyIfLast:
           type: boolean
-    IBinding:
+    Binding:
       properties:
         predicateBinding:
           additionalProperties:
             type: string
         predicateObject:
           additionalProperties:
-            $ref: "#/components/schemas/IBinding"
-    IConcept:
+            $ref: "#/components/schemas/Binding"
+    Concept:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           subClassOf:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           code:
             type: string
@@ -1907,7 +1902,7 @@ components:
             type: string
           matchedFrom:
             items:
-              $ref: "#/components/schemas/IConcept"
+              $ref: "#/components/schemas/Concept"
             type: array
           usage:
             format: int32
@@ -1918,83 +1913,83 @@ components:
             type: string
           subsumed:
             type: boolean
-    IConceptSet:
+    ConceptSet:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           definition:
-            $ref: "#/components/schemas/IQuery"
+            $ref: "#/components/schemas/Query"
           hasMember:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           usedIn:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           avoidReplacedBy:
             type: boolean
-    IEntity:
+    Entity:
       properties:
         iri:
           type: string
         type:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         status:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         scheme:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         isContainedIn:
           items:
-            $ref: "#/components/schemas/ITTEntity"
+            $ref: "#/components/schemas/TTEntity"
           type: array
         name:
           type: string
         description:
           type: string
-    IFormGenerator:
+    FormGenerator:
       properties:
         iri:
           type: string
         status:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         label:
           type: string
         comment:
           type: string
         targetShape:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         type:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         isContainedIn:
           items:
-            $ref: "#/components/schemas/ITTEntity"
+            $ref: "#/components/schemas/TTEntity"
           type: array
         subClassOf:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         scheme:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         property:
           items:
-            $ref: "#/components/schemas/IPropertyShape"
+            $ref: "#/components/schemas/PropertyShape"
           type: array
     FunctionTemplate:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           function:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           parameterTemplate:
             items:
-              $ref: "#/components/schemas/IParameterTemplate"
+              $ref: "#/components/schemas/ParameterTemplate"
             type: array
-    IIMLLanguage:
+    IMLLanguage:
       additionalProperties: {}
       properties:
         text:
@@ -2036,88 +2031,88 @@ components:
             items:
               type: string
           default: {}
-    IIndicator:
+    Indicator:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           isSubIndicatorOf:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           numerator:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           dataset:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           actionIfFalse:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           actionIfTrue:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           denominator:
-            $ref: "#/components/schemas/ITTIriRef"
-    IMapFunction:
+            $ref: "#/components/schemas/TTIriRef"
+    MapFunction:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           argument:
             default: []
             items:
-              $ref: "#/components/schemas/IArgument"
+              $ref: "#/components/schemas/Argument"
             type: array
           conceptMap:
             additionalProperties:
               type: string
             default: {}
           defaultValue:
-            $ref: "#/components/schemas/ITTIriRef"
-    IModelDocument:
+            $ref: "#/components/schemas/TTIriRef"
+    ModelDocument:
       properties:
         context:
-          $ref: "#/components/schemas/ITTContext"
+          $ref: "#/components/schemas/TTContext"
         query:
           items:
-            $ref: "#/components/schemas/IQueryEntity"
+            $ref: "#/components/schemas/QueryEntity"
           type: array
         folder:
           items:
-            $ref: "#/components/schemas/IEntity"
+            $ref: "#/components/schemas/Entity"
           type: array
         conceptSet:
           items:
-            $ref: "#/components/schemas/IConceptSet"
+            $ref: "#/components/schemas/ConceptSet"
           type: array
         function:
           items:
-            $ref: "#/components/schemas/IMapFunction"
+            $ref: "#/components/schemas/MapFunction"
           type: array
-    INodeShape:
+    NodeShape:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           property:
             items:
-              $ref: "#/components/schemas/IPropertyShape"
+              $ref: "#/components/schemas/PropertyShape"
             type: array
           subType:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           definingProperty:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           inverseProperty:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           folder:
             items:
-              $ref: "#/components/schemas/INodeShape"
+              $ref: "#/components/schemas/NodeShape"
             type: array
           type:
             items:
-              $ref: "#/components/schemas/INodeShape"
+              $ref: "#/components/schemas/NodeShape"
             type: array
-    IPage:
+    Page:
       properties:
         pageNumber:
           format: int32
@@ -2128,19 +2123,19 @@ components:
         offset:
           format: int64
           type: integer
-    IParameterShape:
+    ParameterShape:
       properties:
         label:
           type: string
         type:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         parameterSubType:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
-    IParameterTemplate:
+    ParameterTemplate:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           label:
             type: string
@@ -2149,29 +2144,29 @@ components:
             type: integer
           valueTemplate:
             items:
-              $ref: "#/components/schemas/IValueTemplate"
+              $ref: "#/components/schemas/ValueTemplate"
             type: array
-    IPropertyRange:
+    PropertyRange:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           pattern:
             type: string
           intervalUnit:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           qualifier:
             items:
-              $ref: "#/components/schemas/IPropertyRange"
+              $ref: "#/components/schemas/PropertyRange"
             type: array
           type:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           units:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           operator:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           relativeValue:
             type: boolean
-    IPropertyShape:
+    PropertyShape:
       properties:
         label:
           type: string
@@ -2189,29 +2184,29 @@ components:
           format: int32
           type: integer
         componentType:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         path:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         datatype:
-          $ref: "#/components/schemas/IPropertyRange"
+          $ref: "#/components/schemas/PropertyRange"
         node:
-          $ref: "#/components/schemas/IPropertyRange"
+          $ref: "#/components/schemas/PropertyRange"
         validation:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         search:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         select:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         argument:
           items:
-            $ref: "#/components/schemas/IArgument"
+            $ref: "#/components/schemas/Argument"
           type: array
         valueVariable:
           type: string
         isIri:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         isTextValue:
           type: string
         isNumericValue:
@@ -2223,32 +2218,32 @@ components:
         showTitle:
           type: boolean
         group:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         property:
           items:
-            $ref: "#/components/schemas/IPropertyShape"
+            $ref: "#/components/schemas/PropertyShape"
           type: array
         clazz:
-          $ref: "#/components/schemas/IPropertyRange"
+          $ref: "#/components/schemas/PropertyRange"
         validationErrorMessage:
           type: string
         function:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         parameter:
           items:
-            $ref: "#/components/schemas/IParameterShape"
+            $ref: "#/components/schemas/ParameterShape"
           type: array
         valueIri:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         expression:
-          $ref: "#/components/schemas/INodeShape"
+          $ref: "#/components/schemas/NodeShape"
         arrayButtons:
-          $ref: "#/components/schemas/IArrayButtons"
+          $ref: "#/components/schemas/ArrayButtons"
         hasValue:
           additionalProperties: true
           type: object
         hasValueType:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         definition:
           type: string
         ascending:
@@ -2258,26 +2253,26 @@ components:
         orderable:
           type: boolean
         hasValueSet:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         definingProperty:
           type: boolean
         isValidEntity:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         highCardinality:
           type: boolean
         isValidArguments:
           items:
-            $ref: "#/components/schemas/IArgument"
+            $ref: "#/components/schemas/Argument"
           type: array
         inversePath:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         generic:
           type: boolean
       required:
       - componentType
       - order
       - path
-    ISetContent:
+    SetContent:
       properties:
         name:
           type: string
@@ -2295,9 +2290,9 @@ components:
           type: array
         concepts:
           items:
-            $ref: "#/components/schemas/IConcept"
+            $ref: "#/components/schemas/Concept"
           type: array
-    IUIProperty:
+    UIProperty:
       properties:
         iri:
           type: string
@@ -2319,13 +2314,13 @@ components:
           type: string
         intervalUnitOptions:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         unitIri:
           type: string
         unitOptions:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         operatorIri:
           type: string
@@ -2335,14 +2330,14 @@ components:
           type: array
         qualifierOptions:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         setMemberCount:
           format: int32
           type: integer
-    IValueTemplate:
+    ValueTemplate:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           label:
             type: string
@@ -2352,7 +2347,7 @@ components:
             format: int32
             type: integer
           valueType:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           defaultValue:
             additionalProperties: true
             type: object
@@ -2361,7 +2356,7 @@ components:
               additionalProperties: true
               type: object
             type: array
-    IArgument:
+    Argument:
       properties:
         parameter:
           type: string
@@ -2370,101 +2365,83 @@ components:
         valueParameter:
           type: string
         valueIri:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         valueIriList:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         valueDataList:
           items:
             type: string
           type: array
         valuePath:
-          $ref: "#/components/schemas/IPath"
+          $ref: "#/components/schemas/Path"
         valueNodeRef:
           type: string
         dataType:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         valueObject:
           additionalProperties: true
           type: object
         valueVariable:
           type: string
         qualifier:
-          $ref: "#/components/schemas/ITTIriRef"
-    IArgumentReference:
+          $ref: "#/components/schemas/TTIriRef"
+    ArgumentReference:
       properties:
         parameter:
           type: string
         referenceIri:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         dataType:
-          $ref: "#/components/schemas/ITTIriRef"
-    IAssignable:
-      properties:
-        valueTerm:
-          type: string
-        valueLabel:
-          type: string
-        units:
-          $ref: "#/components/schemas/ITTIriRef"
-        compare:
-          $ref: "#/components/schemas/ICompare"
-        description:
-          type: string
-        operator:
-          $ref: "#/components/schemas/Operator"
-        value:
-          type: string
-        invalid:
-          type: boolean
-    ICase:
+          $ref: "#/components/schemas/TTIriRef"
+    Case:
       properties:
         when:
           items:
-            $ref: "#/components/schemas/IWhen"
+            $ref: "#/components/schemas/When"
           type: array
         else:
           type: string
-    ICompare:
+    Compare:
       properties:
         left:
-          $ref: "#/components/schemas/IValueSource"
+          $ref: "#/components/schemas/ValueSource"
         right:
-          $ref: "#/components/schemas/IValueSource"
+          $ref: "#/components/schemas/ValueSource"
         units:
-          $ref: "#/components/schemas/ITTIriRef"
-    IContextMap:
+          $ref: "#/components/schemas/TTIriRef"
+    ContextMap:
       properties:
         context:
           additionalProperties:
             type: string
-    IDelete:
+    Delete:
       properties:
         property:
-          $ref: "#/components/schemas/IWhere"
+          $ref: "#/components/schemas/Where"
         subject:
-          $ref: "#/components/schemas/INode"
+          $ref: "#/components/schemas/Node"
         inverse:
           type: boolean
         predicate:
-          $ref: "#/components/schemas/INode"
+          $ref: "#/components/schemas/Node"
         object:
-          $ref: "#/components/schemas/INode"
+          $ref: "#/components/schemas/Node"
         delete:
           items:
-            $ref: "#/components/schemas/IDelete"
+            $ref: "#/components/schemas/Delete"
           type: array
-    IECLQueryRequest:
+    ECLQueryRequest:
       properties:
         ecl:
           type: string
         query:
-          $ref: "#/components/schemas/IQuery"
+          $ref: "#/components/schemas/Query"
         showNames:
           type: boolean
         status:
-          $ref: "#/components/schemas/IECLStatus"
+          $ref: "#/components/schemas/ECLStatus"
         includeLegacy:
           type: boolean
         limit:
@@ -2472,7 +2449,7 @@ components:
           type: integer
         statusFilter:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         page:
           format: int32
@@ -2480,7 +2457,7 @@ components:
         size:
           format: int32
           type: integer
-    IECLStatus:
+    ECLStatus:
       properties:
         valid:
           type: boolean
@@ -2492,11 +2469,11 @@ components:
           type: integer
         message:
           type: string
-    IElement:
+    Element:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
-      - $ref: "#/components/schemas/IEntailment"
-    IEntailment:
+      - $ref: "#/components/schemas/IriLD"
+      - $ref: "#/components/schemas/Entailment"
+    Entailment:
       properties:
         memberOf:
           type: boolean
@@ -2506,17 +2483,17 @@ components:
           type: boolean
         descendantsOf:
           type: boolean
-    IFunctionClause:
+    FunctionClause:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IriLD"
       - properties:
           argument:
             items:
-              $ref: "#/components/schemas/IArgument"
+              $ref: "#/components/schemas/Argument"
             type: array
-    IGroupBy:
+    GroupBy:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IriLD"
       - properties:
           nodeRef:
             type: string
@@ -2524,43 +2501,43 @@ components:
             type: string
           propertyRef:
             type: string
-    IHasPaths:
+    HasPaths:
       properties:
         path:
           items:
-            $ref: "#/components/schemas/IPath"
+            $ref: "#/components/schemas/Path"
           type: array
         node:
           type: string
-    IHaving:
+    Having:
       properties:
         function:
           $ref: "#/components/schemas/Aggregate"
         identifier:
           type: string
         range:
-          $ref: "#/components/schemas/IRange"
+          $ref: "#/components/schemas/Range"
         operator:
           $ref: "#/components/schemas/Operator"
         value:
           type: string
         and:
           items:
-            $ref: "#/components/schemas/IHaving"
+            $ref: "#/components/schemas/Having"
           type: array
         or:
           items:
-            $ref: "#/components/schemas/IHaving"
+            $ref: "#/components/schemas/Having"
           type: array
         not:
           type: boolean
-    IInstance:
+    Instance:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IriLD"
       - properties:
           entailment:
-            $ref: "#/components/schemas/ITTIriRef"
-    IIriLD:
+            $ref: "#/components/schemas/TTIriRef"
+    IriLD:
       properties:
         iri:
           type: string
@@ -2570,11 +2547,11 @@ components:
           type: string
         uuid:
           type: string
-    IMatch:
+    Match:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
-      - $ref: "#/components/schemas/IHasPaths"
-      - $ref: "#/components/schemas/IReturnable"
+      - $ref: "#/components/schemas/IriLD"
+      - $ref: "#/components/schemas/HasPaths"
+      - $ref: "#/components/schemas/Returnable"
       - properties:
           notExists:
             type: boolean
@@ -2585,29 +2562,29 @@ components:
           nodeRef:
             type: string
           typeOf:
-            $ref: "#/components/schemas/INode"
+            $ref: "#/components/schemas/Node"
           is:
-            $ref: "#/components/schemas/INode"
+            $ref: "#/components/schemas/Node"
           and:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           or:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           where:
-            $ref: "#/components/schemas/IWhere"
+            $ref: "#/components/schemas/Where"
           then:
-            $ref: "#/components/schemas/IWhere"
+            $ref: "#/components/schemas/Where"
           graph:
-            $ref: "#/components/schemas/INode"
+            $ref: "#/components/schemas/Node"
           optional:
             type: boolean
           parameter:
             type: string
           function:
-            $ref: "#/components/schemas/IFunctionClause"
+            $ref: "#/components/schemas/FunctionClause"
           entailment:
             $ref: "#/components/schemas/Entail"
           baseRule:
@@ -2621,11 +2598,11 @@ components:
             type: boolean
           rule:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           any:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           libraryItem:
             type: string
@@ -2633,10 +2610,10 @@ components:
             type: boolean
           groupBy:
             items:
-              $ref: "#/components/schemas/IGroupBy"
+              $ref: "#/components/schemas/GroupBy"
             type: array
           orderBy:
-            $ref: "#/components/schemas/IOrderLimit"
+            $ref: "#/components/schemas/OrderLimit"
           asDescription:
             type: string
           errorMessage:
@@ -2644,10 +2621,10 @@ components:
           draft:
             type: boolean
           having:
-            $ref: "#/components/schemas/IHaving"
-    INode:
+            $ref: "#/components/schemas/Having"
+    Node:
       allOf:
-      - $ref: "#/components/schemas/IElement"
+      - $ref: "#/components/schemas/Element"
       - properties:
           parameter:
             type: string
@@ -2656,7 +2633,7 @@ components:
           qualifier:
             type: string
           match:
-            $ref: "#/components/schemas/IMatch"
+            $ref: "#/components/schemas/Match"
           childOrSelfOf:
             type: boolean
           childOf:
@@ -2681,33 +2658,33 @@ components:
             type: boolean
           isCohort:
             type: boolean
-    IOrderDirection:
+    OrderDirection:
       allOf:
-      - $ref: "#/components/schemas/IIriLD"
+      - $ref: "#/components/schemas/IriLD"
       - properties:
           direction:
             $ref: "#/components/schemas/Order"
           function:
-            $ref: "#/components/schemas/IFunctionClause"
+            $ref: "#/components/schemas/FunctionClause"
           nodeRef:
             type: string
           variable:
             type: string
-    IOrderLimit:
+    OrderLimit:
       properties:
         property:
           items:
-            $ref: "#/components/schemas/IOrderDirection"
+            $ref: "#/components/schemas/OrderDirection"
           type: array
         limit:
           format: int32
           type: integer
         description:
           type: string
-    IPath:
+    Path:
       allOf:
-      - $ref: "#/components/schemas/IElement"
-      - $ref: "#/components/schemas/IHasPaths"
+      - $ref: "#/components/schemas/Element"
+      - $ref: "#/components/schemas/HasPaths"
       - properties:
           parameter:
             type: string
@@ -2730,47 +2707,47 @@ components:
           pathVariable:
             type: string
           typeOf:
-            $ref: "#/components/schemas/INode"
+            $ref: "#/components/schemas/Node"
           qualifier:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           isResultSet:
             type: boolean
           isCohort:
             type: boolean
-    IPathDocument:
+    PathDocument:
       properties:
         match:
           items:
-            $ref: "#/components/schemas/IMatch"
+            $ref: "#/components/schemas/Match"
           type: array
-    IPathQuery:
+    PathQuery:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           source:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           target:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           depth:
             format: int32
             type: integer
-    IPrefix:
+    Prefix:
       properties:
         prefix:
           type: string
         namespace:
           type: string
-    IQuery:
+    Query:
       allOf:
-      - $ref: "#/components/schemas/IMatch"
+      - $ref: "#/components/schemas/Match"
       - properties:
           prefixes:
             items:
-              $ref: "#/components/schemas/IPrefix"
+              $ref: "#/components/schemas/Prefix"
             type: array
           columnGroup:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           imQuery:
             type: string
@@ -2778,45 +2755,42 @@ components:
             additionalProperties: true
             type: object
           persistentIri:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           bindAs:
             type: string
           queryType:
             $ref: "#/components/schemas/IMQType"
-    IQueryEntity:
+    QueryEntity:
       allOf:
-      - $ref: "#/components/schemas/IEntity"
+      - $ref: "#/components/schemas/Entity"
       - properties:
           definition:
-            $ref: "#/components/schemas/IQuery"
-    IQueryException:
-      allOf:
-      - $ref: "#/components/schemas/IException"
-    IRange:
+            $ref: "#/components/schemas/Query"
+    Range:
       properties:
         from:
-          $ref: "#/components/schemas/IValue"
+          $ref: "#/components/schemas/Value"
         to:
-          $ref: "#/components/schemas/IValue"
+          $ref: "#/components/schemas/Value"
       required:
       - from
       - to
-    IRequeueQueryRequest:
+    RequeueQueryRequest:
       properties:
         queueId:
           type: string
         queryRequest:
-          $ref: "#/components/schemas/IQueryRequest"
-    IReturn:
+          $ref: "#/components/schemas/QueryRequest"
+    Return:
       allOf:
-      - $ref: "#/components/schemas/IReturnable"
+      - $ref: "#/components/schemas/Returnable"
       - properties:
           iri:
             type: string
           name:
             type: string
           function:
-            $ref: "#/components/schemas/IFunctionClause"
+            $ref: "#/components/schemas/FunctionClause"
           as:
             type: string
           nodeRef:
@@ -2828,42 +2802,40 @@ components:
           inverse:
             type: boolean
           units:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           dataType:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           description:
             type: string
           case:
-            $ref: "#/components/schemas/ICase"
+            $ref: "#/components/schemas/Case"
           value:
             type: string
-    IReturnable:
+    Returnable:
       properties:
         return:
           items:
-            $ref: "#/components/schemas/IReturn"
+            $ref: "#/components/schemas/Return"
           type: array
-    IUpdate:
+    Update:
       allOf:
-      - $ref: "#/components/schemas/ITTIriRef"
+      - $ref: "#/components/schemas/TTIriRef"
       - properties:
           match:
             items:
-              $ref: "#/components/schemas/IMatch"
+              $ref: "#/components/schemas/Match"
             type: array
           delete:
             items:
-              $ref: "#/components/schemas/IDelete"
+              $ref: "#/components/schemas/Delete"
             type: array
-    IValue:
-      allOf:
-      - $ref: "#/components/schemas/IAssignable"
-      - properties:
-          valueParameter:
-            type: string
-          isInvalid:
-            type: boolean
-    IValueSource:
+    Value:
+      properties:
+        valueParameter:
+          type: string
+        isInvalid:
+          type: boolean
+    ValueSource:
       properties:
         parameter:
           type: string
@@ -2875,30 +2847,29 @@ components:
           type: string
         propertyRef:
           type: string
-    IWhen:
+    When:
       properties:
         where:
-          $ref: "#/components/schemas/IWhere"
+          $ref: "#/components/schemas/Where"
         then:
           type: string
         exists:
           type: boolean
         case:
-          $ref: "#/components/schemas/ICase"
-    IWhere:
+          $ref: "#/components/schemas/Case"
+    Where:
       allOf:
-      - $ref: "#/components/schemas/IElement"
-      - $ref: "#/components/schemas/IAssignable"
+      - $ref: "#/components/schemas/Element"
       - properties:
           nodeRef:
             type: string
           range:
-            $ref: "#/components/schemas/IRange"
+            $ref: "#/components/schemas/Range"
           isNull:
             type: boolean
           is:
             items:
-              $ref: "#/components/schemas/INode"
+              $ref: "#/components/schemas/Node"
             type: array
           anyRoleGroup:
             type: boolean
@@ -2915,7 +2886,7 @@ components:
           inverse:
             type: boolean
           typeOf:
-            $ref: "#/components/schemas/INode"
+            $ref: "#/components/schemas/Node"
           subjectVariable:
             type: string
           subjectParameter:
@@ -2928,21 +2899,21 @@ components:
             type: boolean
           or:
             items:
-              $ref: "#/components/schemas/IWhere"
+              $ref: "#/components/schemas/Where"
             type: array
           and:
             items:
-              $ref: "#/components/schemas/IWhere"
+              $ref: "#/components/schemas/Where"
             type: array
           propertyRef:
             type: string
           shortLabel:
             type: string
           qualifier:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           propertyList:
             items:
-              $ref: "#/components/schemas/INode"
+              $ref: "#/components/schemas/Node"
             type: array
           propertyVariable:
             type: string
@@ -2950,7 +2921,7 @@ components:
             type: string
           excludeProperty:
             items:
-              $ref: "#/components/schemas/IIriLD"
+              $ref: "#/components/schemas/IriLD"
             type: array
           exists:
             type: boolean
@@ -2964,82 +2935,82 @@ components:
             type: boolean
           isCohort:
             type: boolean
-    ICognitoGroupRequest:
+    CognitoGroupRequest:
       properties:
         username:
           type: string
         groupName:
           $ref: "#/components/schemas/UserRole"
-    IEditRequest:
+    EditRequest:
       properties:
         entity:
-          $ref: "#/components/schemas/ITTEntity"
+          $ref: "#/components/schemas/TTEntity"
         hostUrl:
           type: string
         namespace:
-          $ref: "#/components/schemas/NAMESPACE"
+          $ref: "#/components/schemas/NamespaceVocab"
         crud:
           type: string
-    IEntityValidationRequest:
+    EntityValidationRequest:
       properties:
         entity:
-          $ref: "#/components/schemas/ITTEntity"
+          $ref: "#/components/schemas/TTEntity"
         validationIri:
           type: string
         graph:
-          $ref: "#/components/schemas/GRAPH"
-    IFileDocumentRequest:
+          $ref: "#/components/schemas/GraphVocab"
+    FileDocumentRequest:
       properties:
         document:
-          $ref: "#/components/schemas/ITTDocument"
+          $ref: "#/components/schemas/TTDocument"
         insertNamespace:
-          $ref: "#/components/schemas/NAMESPACE"
-    IFunctionRequest:
+          $ref: "#/components/schemas/NamespaceVocab"
+    FunctionRequest:
       properties:
         functionIri:
           type: string
         arguments:
           items:
-            $ref: "#/components/schemas/IArgument"
+            $ref: "#/components/schemas/Argument"
           type: array
         page:
-          $ref: "#/components/schemas/IPage"
+          $ref: "#/components/schemas/Page"
         graph:
-          $ref: "#/components/schemas/GRAPH"
-    IMatchDisplayRequest:
+          $ref: "#/components/schemas/GraphVocab"
+    MatchDisplayRequest:
       properties:
         match:
-          $ref: "#/components/schemas/IMatch"
+          $ref: "#/components/schemas/Match"
         graph:
-          $ref: "#/components/schemas/GRAPH"
-    IQueryDisplayRequest:
+          $ref: "#/components/schemas/GraphVocab"
+    QueryDisplayRequest:
       properties:
         query:
-          $ref: "#/components/schemas/IQuery"
+          $ref: "#/components/schemas/Query"
         displayMode:
           $ref: "#/components/schemas/DisplayMode"
         graph:
-          $ref: "#/components/schemas/ITTIriRef"
-    IQueryRequest:
+          $ref: "#/components/schemas/TTIriRef"
+    QueryRequest:
       allOf:
-      - $ref: "#/components/schemas/IContextMap"
+      - $ref: "#/components/schemas/ContextMap"
       - properties:
           textSearch:
             type: string
           argument:
             items:
-              $ref: "#/components/schemas/IArgument"
+              $ref: "#/components/schemas/Argument"
             type: array
           query:
-            $ref: "#/components/schemas/IQuery"
+            $ref: "#/components/schemas/Query"
           pathQuery:
-            $ref: "#/components/schemas/IPathQuery"
+            $ref: "#/components/schemas/PathQuery"
           update:
-            $ref: "#/components/schemas/IUpdate"
+            $ref: "#/components/schemas/Update"
           name:
             type: string
           page:
-            $ref: "#/components/schemas/IPage"
+            $ref: "#/components/schemas/Page"
           queryStringDefinition:
             type: string
           askIri:
@@ -3051,7 +3022,7 @@ components:
             type: array
           cohort:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           includeNames:
             type: boolean
@@ -3061,7 +3032,7 @@ components:
             $ref: "#/components/schemas/DatabaseOption"
         required:
         - query
-    ISearchRequest:
+    SearchRequest:
       properties:
         termFilter:
           description: "Plain text, space separated list of terms"
@@ -3086,7 +3057,7 @@ components:
         bindingFilter:
           description: List of binding node and path IRI's
           items:
-            $ref: "#/components/schemas/ISearchBinding"
+            $ref: "#/components/schemas/SearchBinding"
           type: array
         markIfDescendentOf:
           description: "Marks the results if they are descendants of any of these\
@@ -3123,34 +3094,34 @@ components:
           type: array
         orderBy:
           items:
-            $ref: "#/components/schemas/IOrderBy"
+            $ref: "#/components/schemas/OrderBy"
           type: array
         filter:
           items:
-            $ref: "#/components/schemas/IFilter"
+            $ref: "#/components/schemas/Filter"
           type: array
         timings:
           items:
             additionalProperties:
               type: string
           type: array
-    ISetDistillationRequest:
+    SetDistillationRequest:
       properties:
         conceptList:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         graph:
-          $ref: "#/components/schemas/GRAPH"
-    ISetExportRequest:
+          $ref: "#/components/schemas/GraphVocab"
+    SetExportRequest:
       properties:
         ownRow:
           type: boolean
         format:
           type: string
         options:
-          $ref: "#/components/schemas/ISetOptions"
-    ISuperiorPropertiesBoolFocusPagedRequest:
+          $ref: "#/components/schemas/SetOptions"
+    SuperiorPropertiesBoolFocusPagedRequest:
       properties:
         ecl:
           type: string
@@ -3166,10 +3137,10 @@ components:
           type: array
         inactive:
           type: boolean
-    ITransformRequest:
+    TransformRequest:
       properties:
         transformMap:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         sourceFormat:
           type: string
         targetFormat:
@@ -3179,13 +3150,13 @@ components:
             items:
               additionalProperties: true
               type: object
-    IValidatedEntitiesRequest:
+    ValidatedEntitiesRequest:
       properties:
         snomedCodes:
           items:
             type: string
           type: array
-    IWorkflowRequest:
+    WorkflowRequest:
       properties:
         securityService:
           additionalProperties: true
@@ -3198,35 +3169,35 @@ components:
           type: integer
         userId:
           type: string
-    IEntityValidationResponse:
+    EntityValidationResponse:
       properties:
         valid:
           type: boolean
         message:
           type: string
-    ILoginResponse:
+    LoginResponse:
       properties:
         user:
-          $ref: "#/components/schemas/IUserJava"
+          $ref: "#/components/schemas/UserJava"
         state:
           type: string
-    ILoginResponseES:
+    LoginResponseES:
       properties:
         sessionId:
           type: string
         user:
-          $ref: "#/components/schemas/IUserJava"
+          $ref: "#/components/schemas/UserJava"
         state:
           type: string
-    IOdsResponse:
+    OdsResponse:
       properties:
         Organisation:
-          $ref: "#/components/schemas/IOrganisation"
+          $ref: "#/components/schemas/Organisation"
         Roles:
           items:
-            $ref: "#/components/schemas/IOrgRole"
+            $ref: "#/components/schemas/OrgRole"
           type: array
-    ISearchResponse:
+    SearchResponse:
       properties:
         page:
           format: int32
@@ -3244,11 +3215,11 @@ components:
           type: string
         entities:
           items:
-            $ref: "#/components/schemas/ISearchResultSummary"
+            $ref: "#/components/schemas/SearchResultSummary"
           type: array
         exactMatch:
           type: boolean
-    IWorkflowResponse:
+    WorkflowResponse:
       properties:
         page:
           format: int32
@@ -3258,14 +3229,14 @@ components:
           type: integer
         tasks:
           items:
-            $ref: "#/components/schemas/ITask"
+            $ref: "#/components/schemas/Task"
           type: array
-    IDownloadByQueryOptions:
+    DownloadByQueryOptions:
       properties:
         queryRequest:
-          $ref: "#/components/schemas/IQueryRequest"
+          $ref: "#/components/schemas/QueryRequest"
         eclSearchRequest:
-          $ref: "#/components/schemas/IECLQueryRequest"
+          $ref: "#/components/schemas/ECLQueryRequest"
         totalCount:
           format: int32
           type: integer
@@ -3283,10 +3254,10 @@ components:
           type: boolean
         im1id:
           type: boolean
-    IEntityDocument:
+    EntityDocument:
       properties:
         id:
-          format: int64
+          format: int32
           type: integer
         iri:
           type: string
@@ -3302,16 +3273,18 @@ components:
         alternativeCode:
           type: string
         scheme:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         type:
+          default: []
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         status:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         termCode:
+          default: []
           items:
-            $ref: "#/components/schemas/ISearchTermCode"
+            $ref: "#/components/schemas/SearchTermCode"
           type: array
         usageTotal:
           format: int32
@@ -3319,35 +3292,39 @@ components:
         match:
           type: string
         isA:
+          default: []
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         memberOf:
+          default: []
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         subsumptionCount:
           format: int32
           type: integer
         binding:
+          default: []
           items:
             type: string
           type: array
         isDescendentOf:
+          default: []
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
-    IFilter:
+    Filter:
       properties:
         field:
           type: string
         iriValue:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         and:
           items:
-            $ref: "#/components/schemas/IFilter"
+            $ref: "#/components/schemas/Filter"
           type: array
         not:
           type: boolean
@@ -3357,7 +3334,7 @@ components:
           type: array
         startsWithTerm:
           type: boolean
-    IOrderBy:
+    OrderBy:
       properties:
         field:
           type: string
@@ -3365,11 +3342,11 @@ components:
           $ref: "#/components/schemas/Order"
         iriValue:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         and:
           items:
-            $ref: "#/components/schemas/IOrderBy"
+            $ref: "#/components/schemas/OrderBy"
           type: array
         textValue:
           items:
@@ -3379,13 +3356,13 @@ components:
           type: boolean
         startsWithTerm:
           type: boolean
-    ISearchBinding:
+    SearchBinding:
       properties:
         path:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         node:
-          $ref: "#/components/schemas/ITTIriRef"
-    ISearchResultSummary:
+          $ref: "#/components/schemas/TTIriRef"
+    SearchResultSummary:
       properties:
         name:
           type: string
@@ -3394,12 +3371,12 @@ components:
         description:
           type: string
         status:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         scheme:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         type:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         usageTotal:
           format: int32
@@ -3414,19 +3391,19 @@ components:
           type: array
         isA:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         termCode:
           items:
-            $ref: "#/components/schemas/ISearchTermCode"
+            $ref: "#/components/schemas/SearchTermCode"
           type: array
         unit:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         qualifier:
           items:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           type: array
         iri:
           type: string
@@ -3435,20 +3412,20 @@ components:
       - scheme
       - status
       - type
-    ISearchTermCode:
+    SearchTermCode:
       properties:
         term:
           type: string
         code:
           type: string
         status:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         length:
           format: int32
           type: integer
         keyTerm:
           type: string
-    ISetOptions:
+    SetOptions:
       properties:
         setIri:
           type: string
@@ -3479,33 +3456,33 @@ components:
         depth:
           format: int32
           type: integer
-    ITTDocument:
+    TTDocument:
       allOf:
-      - $ref: "#/components/schemas/ITTNode"
+      - $ref: "#/components/schemas/TTNode"
       - properties:
           context:
-            $ref: "#/components/schemas/ITTContext"
+            $ref: "#/components/schemas/TTContext"
           entities:
             items:
-              $ref: "#/components/schemas/ITTEntity"
+              $ref: "#/components/schemas/TTEntity"
             type: array
           crud:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           predicates:
             additionalProperties:
               type: string
           prefixes:
             items:
-              $ref: "#/components/schemas/ITTPrefix"
+              $ref: "#/components/schemas/TTPrefix"
             type: array
-    ITTEntity:
+    TTEntity:
       allOf:
-      - $ref: "#/components/schemas/ITTNode"
+      - $ref: "#/components/schemas/TTNode"
       - properties:
           context:
-            $ref: "#/components/schemas/ITTContext"
+            $ref: "#/components/schemas/TTContext"
           crud:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           description:
             type: string
           version:
@@ -3513,25 +3490,25 @@ components:
             type: integer
           types:
             items:
-              $ref: "#/components/schemas/ITTIriRef"
+              $ref: "#/components/schemas/TTIriRef"
             type: array
           code:
             type: string
           prefixes:
             items:
-              $ref: "#/components/schemas/ITTPrefix"
+              $ref: "#/components/schemas/TTPrefix"
             type: array
           scheme:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           name:
             type: string
           type:
-            $ref: "#/components/schemas/ITTArray"
+            $ref: "#/components/schemas/TTArray"
           status:
-            $ref: "#/components/schemas/ITTIriRef"
-    IBugReport:
+            $ref: "#/components/schemas/TTIriRef"
+    BugReport:
       allOf:
-      - $ref: "#/components/schemas/ITask"
+      - $ref: "#/components/schemas/Task"
       - properties:
           product:
             type: string
@@ -3561,30 +3538,30 @@ components:
             type: string
           actualResult:
             type: string
-    IEntityApproval:
+    EntityApproval:
       allOf:
-      - $ref: "#/components/schemas/ITask"
+      - $ref: "#/components/schemas/Task"
       - properties:
           entityIri:
-            $ref: "#/components/schemas/ITTIriRef"
+            $ref: "#/components/schemas/TTIriRef"
           approvalType:
             $ref: "#/components/schemas/ApprovalType"
-    INamespaceRequest:
+    NamespaceRequest:
       allOf:
-      - $ref: "#/components/schemas/ITask"
+      - $ref: "#/components/schemas/Task"
       - properties:
           namespacePermission:
-            $ref: "#/components/schemas/INamespacePermissionJava"
-    IRoleRequest:
+            $ref: "#/components/schemas/NamespacePermissionJava"
+    RoleRequest:
       allOf:
-      - $ref: "#/components/schemas/ITask"
+      - $ref: "#/components/schemas/Task"
       - properties:
           role:
             $ref: "#/components/schemas/UserRole"
-    ITask:
+    Task:
       properties:
         id:
-          $ref: "#/components/schemas/ITTIriRef"
+          $ref: "#/components/schemas/TTIriRef"
         createdBy:
           type: string
         type:
@@ -3598,11 +3575,11 @@ components:
           type: string
         history:
           items:
-            $ref: "#/components/schemas/ITaskHistory"
+            $ref: "#/components/schemas/TaskHistory"
           type: array
         hostUrl:
           type: string
-    ITaskHistory:
+    TaskHistory:
       properties:
         predicate:
           type: string
@@ -3618,7 +3595,7 @@ components:
         dateTime:
           format: date-time
           type: string
-    IContext:
+    Context:
       properties:
         publisher:
           type: string
@@ -3630,41 +3607,42 @@ components:
           type: string
         field:
           type: string
-    ITTArray:
+    TTArray:
       properties:
         elements:
           items:
-            $ref: "#/components/schemas/ITTValue"
+            additionalProperties: true
+            type: object
           type: array
         list:
           type: boolean
-    ITTContext:
+    TTContext:
       properties:
         nameSpaces:
           items:
-            $ref: "#/components/schemas/ITTPrefix"
+            $ref: "#/components/schemas/TTPrefix"
           type: array
         prefixes:
           items:
-            $ref: "#/components/schemas/ITTPrefix"
+            $ref: "#/components/schemas/TTPrefix"
           type: array
-    IThrowable:
+    Throwable:
       properties:
         cause:
-          $ref: "#/components/schemas/IThrowable"
+          $ref: "#/components/schemas/Throwable"
         stackTrace:
           items:
-            $ref: "#/components/schemas/IStackTraceElement"
+            $ref: "#/components/schemas/StackTraceElement"
           type: array
         message:
           type: string
         suppressed:
           items:
-            $ref: "#/components/schemas/IThrowable"
+            $ref: "#/components/schemas/Throwable"
           type: array
         localizedMessage:
           type: string
-    IStackTraceElement:
+    StackTraceElement:
       properties:
         classLoaderName:
           type: string
@@ -3683,14 +3661,14 @@ components:
           type: string
         nativeMethod:
           type: boolean
-    IException:
+    Exception:
       allOf:
-      - $ref: "#/components/schemas/IThrowable"
+      - $ref: "#/components/schemas/Throwable"
       - type: object
-    ISecurityService:
+    SecurityService:
       additionalProperties: true
       type: object
-    IUserJava:
+    UserJava:
       properties:
         id:
           type: string
@@ -3728,29 +3706,29 @@ components:
           type: array
         recentActivity:
           items:
-            $ref: "#/components/schemas/IRecentActivityItemDto"
+            $ref: "#/components/schemas/RecentActivityItemDto"
           type: array
         namespaces:
           items:
-            $ref: "#/components/schemas/INamespacePermissionJava"
+            $ref: "#/components/schemas/NamespacePermissionJava"
           type: array
-    IOrganisation:
+    Organisation:
       properties:
         Name:
           type: string
         OrgId:
-          $ref: "#/components/schemas/IOrgId"
+          $ref: "#/components/schemas/OrgId"
         Status:
           type: string
         orgRecordClass:
           type: string
         GeoLoc:
-          $ref: "#/components/schemas/IOrgGeoLocation"
+          $ref: "#/components/schemas/OrgGeoLocation"
         Roles:
-          $ref: "#/components/schemas/IOrgRoles"
+          $ref: "#/components/schemas/OrgRoles"
         Rels:
-          $ref: "#/components/schemas/IOrgRelationships"
-    IOrgRole:
+          $ref: "#/components/schemas/OrgRelationships"
+    OrgRole:
       properties:
         id:
           type: string
@@ -3760,7 +3738,7 @@ components:
           type: string
         displayName:
           type: string
-    ITTPrefix:
+    TTPrefix:
       properties:
         iri:
           type: string
@@ -3768,24 +3746,22 @@ components:
           type: string
         name:
           type: string
-    ITTNode:
-      allOf:
-      - $ref: "#/components/schemas/ITTValue"
-      - properties:
-          iri:
-            type: string
-          predicateMap:
-            additionalProperties:
-              $ref: "#/components/schemas/ITTArray"
-    INamespacePermissionJava:
+    TTNode:
       properties:
         iri:
-          $ref: "#/components/schemas/NAMESPACE"
+          type: string
+        predicateMap:
+          additionalProperties:
+            $ref: "#/components/schemas/TTArray"
+    NamespacePermissionJava:
+      properties:
+        iri:
+          $ref: "#/components/schemas/NamespaceVocab"
         read:
           type: boolean
         write:
           type: boolean
-    IRecentActivityItemDto:
+    RecentActivityItemDto:
       properties:
         iri:
           type: string
@@ -3794,30 +3770,30 @@ components:
           type: string
         action:
           type: string
-    IOrgId:
+    OrgId:
       properties:
         extension:
           type: string
-    IOrgGeoLocation:
+    OrgGeoLocation:
       properties:
         Location:
-          $ref: "#/components/schemas/IOrgLocation"
-    IOrgRoles:
+          $ref: "#/components/schemas/OrgLocation"
+    OrgRoles:
       properties:
         Role:
           items:
-            $ref: "#/components/schemas/IOrgRole"
+            $ref: "#/components/schemas/OrgRole"
           type: array
-    IOrgRelationships:
+    OrgRelationships:
       properties:
         Rel:
           items:
-            $ref: "#/components/schemas/IOrgRelationship"
+            $ref: "#/components/schemas/OrgRelationship"
           type: array
-    IComparable:
+    Comparable:
       additionalProperties: {}
       description: Generic marker interface (not representable in OpenAPI)
-    IOrgLocation:
+    OrgLocation:
       properties:
         AddrLn1:
           type: string
@@ -3835,16 +3811,16 @@ components:
           type: string
         UPRN:
           type: string
-    IOrgRelationship:
+    OrgRelationship:
       properties:
         Status:
           type: string
         Target:
-          $ref: "#/components/schemas/IOrgRelTarget"
+          $ref: "#/components/schemas/OrgRelTarget"
         id:
           type: string
-    IOrgRelTarget:
+    OrgRelTarget:
       properties:
         OrgId:
-          $ref: "#/components/schemas/IOrgId"
+          $ref: "#/components/schemas/OrgId"
 

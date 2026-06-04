@@ -23,9 +23,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.endeavourhealth.interfacemanager.model.IParameterTemplate;
-import org.endeavourhealth.interfacemanager.model.ITTEntity;
-import org.endeavourhealth.interfacemanager.model.ITTIriRef;
+import org.endeavourhealth.interfacemanager.model.ParameterTemplate;
+import org.endeavourhealth.interfacemanager.model.TTEntity;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -63,22 +63,22 @@ public class FunctionTemplate {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private List<ITTIriRef> type = new ArrayList<>();
+  private List<TTIriRef> type = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private ITTIriRef status;
+  private TTIriRef status;
 
   public static final String SERIALIZED_NAME_SCHEME = "scheme";
   @SerializedName(SERIALIZED_NAME_SCHEME)
   @javax.annotation.Nullable
-  private ITTIriRef scheme;
+  private TTIriRef scheme;
 
   public static final String SERIALIZED_NAME_IS_CONTAINED_IN = "isContainedIn";
   @SerializedName(SERIALIZED_NAME_IS_CONTAINED_IN)
   @javax.annotation.Nullable
-  private List<ITTEntity> isContainedIn = new ArrayList<>();
+  private List<TTEntity> isContainedIn = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -93,12 +93,12 @@ public class FunctionTemplate {
   public static final String SERIALIZED_NAME_FUNCTION = "function";
   @SerializedName(SERIALIZED_NAME_FUNCTION)
   @javax.annotation.Nullable
-  private ITTIriRef function;
+  private TTIriRef function;
 
   public static final String SERIALIZED_NAME_PARAMETER_TEMPLATE = "parameterTemplate";
   @SerializedName(SERIALIZED_NAME_PARAMETER_TEMPLATE)
   @javax.annotation.Nullable
-  private List<IParameterTemplate> parameterTemplate = new ArrayList<>();
+  private List<ParameterTemplate> parameterTemplate = new ArrayList<>();
 
   public FunctionTemplate() {
   }
@@ -122,12 +122,12 @@ public class FunctionTemplate {
   }
 
 
-  public FunctionTemplate type(@javax.annotation.Nullable List<ITTIriRef> type) {
+  public FunctionTemplate type(@javax.annotation.Nullable List<TTIriRef> type) {
     this.type = type;
     return this;
   }
 
-  public FunctionTemplate addTypeItem(ITTIriRef typeItem) {
+  public FunctionTemplate addTypeItem(TTIriRef typeItem) {
     if (this.type == null) {
       this.type = new ArrayList<>();
     }
@@ -140,16 +140,16 @@ public class FunctionTemplate {
    * @return type
    */
   @javax.annotation.Nullable
-  public List<ITTIriRef> getType() {
+  public List<TTIriRef> getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable List<ITTIriRef> type) {
+  public void setType(@javax.annotation.Nullable List<TTIriRef> type) {
     this.type = type;
   }
 
 
-  public FunctionTemplate status(@javax.annotation.Nullable ITTIriRef status) {
+  public FunctionTemplate status(@javax.annotation.Nullable TTIriRef status) {
     this.status = status;
     return this;
   }
@@ -159,16 +159,16 @@ public class FunctionTemplate {
    * @return status
    */
   @javax.annotation.Nullable
-  public ITTIriRef getStatus() {
+  public TTIriRef getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable ITTIriRef status) {
+  public void setStatus(@javax.annotation.Nullable TTIriRef status) {
     this.status = status;
   }
 
 
-  public FunctionTemplate scheme(@javax.annotation.Nullable ITTIriRef scheme) {
+  public FunctionTemplate scheme(@javax.annotation.Nullable TTIriRef scheme) {
     this.scheme = scheme;
     return this;
   }
@@ -178,21 +178,21 @@ public class FunctionTemplate {
    * @return scheme
    */
   @javax.annotation.Nullable
-  public ITTIriRef getScheme() {
+  public TTIriRef getScheme() {
     return scheme;
   }
 
-  public void setScheme(@javax.annotation.Nullable ITTIriRef scheme) {
+  public void setScheme(@javax.annotation.Nullable TTIriRef scheme) {
     this.scheme = scheme;
   }
 
 
-  public FunctionTemplate isContainedIn(@javax.annotation.Nullable List<ITTEntity> isContainedIn) {
+  public FunctionTemplate isContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
     this.isContainedIn = isContainedIn;
     return this;
   }
 
-  public FunctionTemplate addIsContainedInItem(ITTEntity isContainedInItem) {
+  public FunctionTemplate addIsContainedInItem(TTEntity isContainedInItem) {
     if (this.isContainedIn == null) {
       this.isContainedIn = new ArrayList<>();
     }
@@ -205,11 +205,11 @@ public class FunctionTemplate {
    * @return isContainedIn
    */
   @javax.annotation.Nullable
-  public List<ITTEntity> getIsContainedIn() {
+  public List<TTEntity> getIsContainedIn() {
     return isContainedIn;
   }
 
-  public void setIsContainedIn(@javax.annotation.Nullable List<ITTEntity> isContainedIn) {
+  public void setIsContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
     this.isContainedIn = isContainedIn;
   }
 
@@ -252,7 +252,7 @@ public class FunctionTemplate {
   }
 
 
-  public FunctionTemplate function(@javax.annotation.Nullable ITTIriRef function) {
+  public FunctionTemplate function(@javax.annotation.Nullable TTIriRef function) {
     this.function = function;
     return this;
   }
@@ -262,21 +262,21 @@ public class FunctionTemplate {
    * @return function
    */
   @javax.annotation.Nullable
-  public ITTIriRef getFunction() {
+  public TTIriRef getFunction() {
     return function;
   }
 
-  public void setFunction(@javax.annotation.Nullable ITTIriRef function) {
+  public void setFunction(@javax.annotation.Nullable TTIriRef function) {
     this.function = function;
   }
 
 
-  public FunctionTemplate parameterTemplate(@javax.annotation.Nullable List<IParameterTemplate> parameterTemplate) {
+  public FunctionTemplate parameterTemplate(@javax.annotation.Nullable List<ParameterTemplate> parameterTemplate) {
     this.parameterTemplate = parameterTemplate;
     return this;
   }
 
-  public FunctionTemplate addParameterTemplateItem(IParameterTemplate parameterTemplateItem) {
+  public FunctionTemplate addParameterTemplateItem(ParameterTemplate parameterTemplateItem) {
     if (this.parameterTemplate == null) {
       this.parameterTemplate = new ArrayList<>();
     }
@@ -289,11 +289,11 @@ public class FunctionTemplate {
    * @return parameterTemplate
    */
   @javax.annotation.Nullable
-  public List<IParameterTemplate> getParameterTemplate() {
+  public List<ParameterTemplate> getParameterTemplate() {
     return parameterTemplate;
   }
 
-  public void setParameterTemplate(@javax.annotation.Nullable List<IParameterTemplate> parameterTemplate) {
+  public void setParameterTemplate(@javax.annotation.Nullable List<ParameterTemplate> parameterTemplate) {
     this.parameterTemplate = parameterTemplate;
   }
 
@@ -395,17 +395,17 @@ public class FunctionTemplate {
 
           // validate the optional field `type` (array)
           for (int i = 0; i < jsonArraytype.size(); i++) {
-            ITTIriRef.validateJsonElement(jsonArraytype.get(i));
+            TTIriRef.validateJsonElement(jsonArraytype.get(i));
           };
         }
       }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        ITTIriRef.validateJsonElement(jsonObj.get("status"));
+        TTIriRef.validateJsonElement(jsonObj.get("status"));
       }
       // validate the optional field `scheme`
       if (jsonObj.get("scheme") != null && !jsonObj.get("scheme").isJsonNull()) {
-        ITTIriRef.validateJsonElement(jsonObj.get("scheme"));
+        TTIriRef.validateJsonElement(jsonObj.get("scheme"));
       }
       if (jsonObj.get("isContainedIn") != null && !jsonObj.get("isContainedIn").isJsonNull()) {
         JsonArray jsonArrayisContainedIn = jsonObj.getAsJsonArray("isContainedIn");
@@ -417,7 +417,7 @@ public class FunctionTemplate {
 
           // validate the optional field `isContainedIn` (array)
           for (int i = 0; i < jsonArrayisContainedIn.size(); i++) {
-            ITTEntity.validateJsonElement(jsonArrayisContainedIn.get(i));
+            TTEntity.validateJsonElement(jsonArrayisContainedIn.get(i));
           };
         }
       }
@@ -429,7 +429,7 @@ public class FunctionTemplate {
       }
       // validate the optional field `function`
       if (jsonObj.get("function") != null && !jsonObj.get("function").isJsonNull()) {
-        ITTIriRef.validateJsonElement(jsonObj.get("function"));
+        TTIriRef.validateJsonElement(jsonObj.get("function"));
       }
       if (jsonObj.get("parameterTemplate") != null && !jsonObj.get("parameterTemplate").isJsonNull()) {
         JsonArray jsonArrayparameterTemplate = jsonObj.getAsJsonArray("parameterTemplate");
@@ -441,7 +441,7 @@ public class FunctionTemplate {
 
           // validate the optional field `parameterTemplate` (array)
           for (int i = 0; i < jsonArrayparameterTemplate.size(); i++) {
-            IParameterTemplate.validateJsonElement(jsonArrayparameterTemplate.get(i));
+            ParameterTemplate.validateJsonElement(jsonArrayparameterTemplate.get(i));
           };
         }
       }

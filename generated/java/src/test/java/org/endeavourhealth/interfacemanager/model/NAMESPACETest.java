@@ -13,20 +13,52 @@
 
 package org.endeavourhealth.interfacemanager.model;
 
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for NAMESPACE
+ * Model tests for Namespace
  */
-public class NAMESPACETest {
+public class NamespaceTest {
+    private final Namespace model = new Namespace();
+
     /**
-     * Model tests for NAMESPACE
+     * Model tests for Namespace
      */
     @Test
-    public void testNAMESPACE() {
-        // TODO: test NAMESPACE
+    public void testNamespace() {
+        // TODO: test Namespace
+    }
+
+    /**
+     * Test the property 'iri'
+     */
+    @Test
+    public void iriTest() {
+        // TODO: test iri
+    }
+
+    /**
+     * Test the property 'prefix'
+     */
+    @Test
+    public void prefixTest() {
+        // TODO: test prefix
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
 }
