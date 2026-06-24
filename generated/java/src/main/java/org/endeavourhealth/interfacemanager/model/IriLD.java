@@ -53,7 +53,7 @@ public class IriLD {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
-  private String iri;
+  protected String iri;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -71,6 +71,7 @@ public class IriLD {
   private String uuid;
 
   public IriLD() {
+    this.iri = this.getClass().getSimpleName();
   }
 
   public IriLD iri(@javax.annotation.Nullable String iri) {
@@ -215,56 +216,46 @@ public class IriLD {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!IriLD.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IriLD` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("iri").getAsString();
+      switch (discriminatorValue) {
+        case "Element":
+          Element.validateJsonElement(jsonElement);
+          break;
+        case "FunctionClause":
+          FunctionClause.validateJsonElement(jsonElement);
+          break;
+        case "GroupBy":
+          GroupBy.validateJsonElement(jsonElement);
+          break;
+        case "Instance":
+          Instance.validateJsonElement(jsonElement);
+          break;
+        case "Match":
+          Match.validateJsonElement(jsonElement);
+          break;
+        case "Node":
+          Node.validateJsonElement(jsonElement);
+          break;
+        case "OrderDirection":
+          OrderDirection.validateJsonElement(jsonElement);
+          break;
+        case "Path":
+          Path.validateJsonElement(jsonElement);
+          break;
+        case "Query":
+          Query.validateJsonElement(jsonElement);
+          break;
+        case "When":
+          When.validateJsonElement(jsonElement);
+          break;
+        case "Where":
+          Where.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `iri` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!IriLD.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'IriLD' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<IriLD> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(IriLD.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<IriLD>() {
-           @Override
-           public void write(JsonWriter out, IriLD value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public IriLD read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of IriLD given an JSON string

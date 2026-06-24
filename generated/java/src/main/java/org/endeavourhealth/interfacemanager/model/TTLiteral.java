@@ -20,10 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.endeavourhealth.interfacemanager.model.Path;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,66 +47,58 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * HasPaths
+ * TTLiteral
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class HasPaths {
-  public static final String SERIALIZED_NAME_PATH = "path";
-  @SerializedName(SERIALIZED_NAME_PATH)
+public class TTLiteral {
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
   @javax.annotation.Nullable
-  private List<Path> path = new ArrayList<>();
+  private String value;
 
-  public static final String SERIALIZED_NAME_NODE = "node";
-  @SerializedName(SERIALIZED_NAME_NODE)
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private String node;
+  private TTIriRef type;
 
-  public HasPaths() {
+  public TTLiteral() {
   }
 
-  public HasPaths path(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
-    return this;
-  }
-
-  public HasPaths addPathItem(Path pathItem) {
-    if (this.path == null) {
-      this.path = new ArrayList<>();
-    }
-    this.path.add(pathItem);
+  public TTLiteral value(@javax.annotation.Nullable String value) {
+    this.value = value;
     return this;
   }
 
   /**
-   * Get path
-   * @return path
+   * Get value
+   * @return value
    */
   @javax.annotation.Nullable
-  public List<Path> getPath() {
-    return path;
+  public String getValue() {
+    return value;
   }
 
-  public void setPath(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
+  public void setValue(@javax.annotation.Nullable String value) {
+    this.value = value;
   }
 
 
-  public HasPaths node(@javax.annotation.Nullable String node) {
-    this.node = node;
+  public TTLiteral type(@javax.annotation.Nullable TTIriRef type) {
+    this.type = type;
     return this;
   }
 
   /**
-   * Get node
-   * @return node
+   * Get type
+   * @return type
    */
   @javax.annotation.Nullable
-  public String getNode() {
-    return node;
+  public TTIriRef getType() {
+    return type;
   }
 
-  public void setNode(@javax.annotation.Nullable String node) {
-    this.node = node;
+  public void setType(@javax.annotation.Nullable TTIriRef type) {
+    this.type = type;
   }
 
 
@@ -121,22 +111,22 @@ public class HasPaths {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    HasPaths hasPaths = (HasPaths) o;
-    return Objects.equals(this.path, hasPaths.path) &&
-        Objects.equals(this.node, hasPaths.node);
+    TTLiteral ttLiteral = (TTLiteral) o;
+    return Objects.equals(this.value, ttLiteral.value) &&
+        Objects.equals(this.type, ttLiteral.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(path, node);
+    return Objects.hash(value, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class HasPaths {\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    node: ").append(toIndentedString(node)).append("\n");
+    sb.append("class TTLiteral {\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,7 +145,7 @@ public class HasPaths {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("path", "node"));
+    openapiFields = new HashSet<String>(Arrays.asList("value", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -165,39 +155,29 @@ public class HasPaths {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to HasPaths
+   * @throws IOException if the JSON Element is invalid with respect to TTLiteral
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!HasPaths.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in HasPaths is not found in the empty JSON string", HasPaths.openapiRequiredFields.toString()));
+        if (!TTLiteral.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in TTLiteral is not found in the empty JSON string", TTLiteral.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!HasPaths.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `HasPaths` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!TTLiteral.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TTLiteral` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) {
-        JsonArray jsonArraypath = jsonObj.getAsJsonArray("path");
-        if (jsonArraypath != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("path").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `path` to be an array in the JSON string but got `%s`", jsonObj.get("path").toString()));
-          }
-
-          // validate the optional field `path` (array)
-          for (int i = 0; i < jsonArraypath.size(); i++) {
-            Path.validateJsonElement(jsonArraypath.get(i));
-          };
-        }
+      if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
-      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TTIriRef.validateJsonElement(jsonObj.get("type"));
       }
   }
 
@@ -205,22 +185,22 @@ public class HasPaths {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!HasPaths.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'HasPaths' and its subtypes
+       if (!TTLiteral.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'TTLiteral' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<HasPaths> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(HasPaths.class));
+       final TypeAdapter<TTLiteral> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(TTLiteral.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<HasPaths>() {
+       return (TypeAdapter<T>) new TypeAdapter<TTLiteral>() {
            @Override
-           public void write(JsonWriter out, HasPaths value) throws IOException {
+           public void write(JsonWriter out, TTLiteral value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public HasPaths read(JsonReader in) throws IOException {
+           public TTLiteral read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -231,18 +211,18 @@ public class HasPaths {
   }
 
   /**
-   * Create an instance of HasPaths given an JSON string
+   * Create an instance of TTLiteral given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of HasPaths
-   * @throws IOException if the JSON string is invalid with respect to HasPaths
+   * @return An instance of TTLiteral
+   * @throws IOException if the JSON string is invalid with respect to TTLiteral
    */
-  public static HasPaths fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, HasPaths.class);
+  public static TTLiteral fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TTLiteral.class);
   }
 
   /**
-   * Convert an instance of HasPaths to an JSON string
+   * Convert an instance of TTLiteral to an JSON string
    *
    * @return JSON string
    */

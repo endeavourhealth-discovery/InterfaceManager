@@ -19,9 +19,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.junit.jupiter.api.Disabled;
@@ -74,11 +73,11 @@ public class PathTest {
     }
 
     /**
-     * Test the property 'memberOf'
+     * Test the property 'parameter'
      */
     @Test
-    public void memberOfTest() {
-        // TODO: test memberOf
+    public void parameterTest() {
+        // TODO: test parameter
     }
 
     /**
@@ -106,30 +105,6 @@ public class PathTest {
     }
 
     /**
-     * Test the property 'path'
-     */
-    @Test
-    public void pathTest() {
-        // TODO: test path
-    }
-
-    /**
-     * Test the property 'node'
-     */
-    @Test
-    public void nodeTest() {
-        // TODO: test node
-    }
-
-    /**
-     * Test the property 'parameter'
-     */
-    @Test
-    public void parameterTest() {
-        // TODO: test parameter
-    }
-
-    /**
      * Test the property 'childOrSelfOf'
      */
     @Test
@@ -143,6 +118,14 @@ public class PathTest {
     @Test
     public void childOfTest() {
         // TODO: test childOf
+    }
+
+    /**
+     * Test the property 'memberOf'
+     */
+    @Test
+    public void memberOfTest() {
+        // TODO: test memberOf
     }
 
     /**

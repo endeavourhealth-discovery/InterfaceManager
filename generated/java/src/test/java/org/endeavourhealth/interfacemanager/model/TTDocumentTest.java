@@ -28,6 +28,7 @@ import org.endeavourhealth.interfacemanager.model.TTArray;
 import org.endeavourhealth.interfacemanager.model.TTContext;
 import org.endeavourhealth.interfacemanager.model.TTEntity;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.TTNode;
 import org.endeavourhealth.interfacemanager.model.TTPrefix;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

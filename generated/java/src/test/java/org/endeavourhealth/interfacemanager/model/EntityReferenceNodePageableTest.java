@@ -19,46 +19,57 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.endeavourhealth.interfacemanager.model.EntityReferenceNode;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ISubQueryDependency
+ * Model tests for EntityReferenceNodePageable
  */
-public class ISubQueryDependencyTest {
-    private final ISubQueryDependency model = new ISubQueryDependency();
+public class EntityReferenceNodePageableTest {
+    private final EntityReferenceNodePageable model = new EntityReferenceNodePageable();
 
     /**
-     * Model tests for ISubQueryDependency
+     * Model tests for EntityReferenceNodePageable
      */
     @Test
-    public void testISubQueryDependency() {
-        // TODO: test ISubQueryDependency
+    public void testEntityReferenceNodePageable() {
+        // TODO: test EntityReferenceNodePageable
     }
 
     /**
-     * Test the property 'iri'
+     * Test the property 'totalCount'
      */
     @Test
-    public void iriTest() {
-        // TODO: test iri
+    public void totalCountTest() {
+        // TODO: test totalCount
     }
 
     /**
-     * Test the property 'label'
+     * Test the property 'currentPage'
      */
     @Test
-    public void labelTest() {
-        // TODO: test label
+    public void currentPageTest() {
+        // TODO: test currentPage
     }
 
     /**
-     * Test the property 'depth'
+     * Test the property 'pageSize'
      */
     @Test
-    public void depthTest() {
-        // TODO: test depth
+    public void pageSizeTest() {
+        // TODO: test pageSize
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
     }
 
 }

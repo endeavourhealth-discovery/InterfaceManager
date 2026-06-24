@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.endeavourhealth.interfacemanager.model.FunctionClause;
+import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.endeavourhealth.interfacemanager.model.Order;
 
 import com.google.gson.Gson;
@@ -51,27 +52,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * OrderDirection
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class OrderDirection {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
+public class OrderDirection extends IriLD {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
   @javax.annotation.Nullable
@@ -93,83 +74,8 @@ public class OrderDirection {
   private String variable;
 
   public OrderDirection() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public OrderDirection iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public OrderDirection name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public OrderDirection description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public OrderDirection uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
 
   public OrderDirection direction(@javax.annotation.Nullable Order direction) {
     this.direction = direction;
@@ -257,29 +163,23 @@ public class OrderDirection {
       return false;
     }
     OrderDirection orderDirection = (OrderDirection) o;
-    return Objects.equals(this.iri, orderDirection.iri) &&
-        Objects.equals(this.name, orderDirection.name) &&
-        Objects.equals(this.description, orderDirection.description) &&
-        Objects.equals(this.uuid, orderDirection.uuid) &&
-        Objects.equals(this.direction, orderDirection.direction) &&
+    return Objects.equals(this.direction, orderDirection.direction) &&
         Objects.equals(this.function, orderDirection.function) &&
         Objects.equals(this.nodeRef, orderDirection.nodeRef) &&
-        Objects.equals(this.variable, orderDirection.variable);
+        Objects.equals(this.variable, orderDirection.variable) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, direction, function, nodeRef, variable);
+    return Objects.hash(direction, function, nodeRef, variable, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrderDirection {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    function: ").append(toIndentedString(function)).append("\n");
     sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
@@ -327,33 +227,6 @@ public class OrderDirection {
         if (!OrderDirection.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OrderDirection` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      // validate the optional field `direction`
-      if (jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) {
-        Order.validateJsonElement(jsonObj.get("direction"));
-      }
-      // validate the optional field `function`
-      if (jsonObj.get("function") != null && !jsonObj.get("function").isJsonNull()) {
-        FunctionClause.validateJsonElement(jsonObj.get("function"));
-      }
-      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
-      }
-      if ((jsonObj.get("variable") != null && !jsonObj.get("variable").isJsonNull()) && !jsonObj.get("variable").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `variable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variable").toString()));
       }
   }
 

@@ -19,35 +19,25 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Case;
 import org.endeavourhealth.interfacemanager.model.FunctionClause;
-import org.endeavourhealth.interfacemanager.model.ModelCase;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelReturn
+ * Model tests for Return
  */
-public class ModelReturnTest {
-    private final ModelReturn model = new ModelReturn();
+public class ReturnTest {
+    private final Return model = new Return();
 
     /**
-     * Model tests for ModelReturn
+     * Model tests for Return
      */
     @Test
-    public void testModelReturn() {
-        // TODO: test ModelReturn
-    }
-
-    /**
-     * Test the property '_return'
-     */
-    @Test
-    public void _returnTest() {
-        // TODO: test _return
+    public void testReturn() {
+        // TODO: test Return
     }
 
     /**

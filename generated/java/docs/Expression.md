@@ -1,14 +1,15 @@
 
 
-# GroupBy
+# Expression
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**value** | **String** |  |  [optional] |
 |**nodeRef** | **String** |  |  [optional] |
-|**valueRef** | **String** |  |  [optional] |
+|**iri** | **String** |  |  [optional] |
 |**propertyRef** | **String** |  |  [optional] |
 
 

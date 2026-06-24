@@ -28,6 +28,7 @@ import java.util.Map;
 import org.endeavourhealth.interfacemanager.model.TTArray;
 import org.endeavourhealth.interfacemanager.model.TTContext;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.TTNode;
 import org.endeavourhealth.interfacemanager.model.TTPrefix;
 
 import com.google.gson.Gson;
@@ -57,17 +58,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * TTEntity
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class TTEntity {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_PREDICATE_MAP = "predicateMap";
-  @SerializedName(SERIALIZED_NAME_PREDICATE_MAP)
-  @javax.annotation.Nullable
-  private Map<String, TTArray> predicateMap = new HashMap<>();
-
+public class TTEntity extends TTNode {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
   @javax.annotation.Nullable
@@ -124,53 +115,8 @@ public class TTEntity {
   private TTIriRef status;
 
   public TTEntity() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public TTEntity iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public TTEntity predicateMap(@javax.annotation.Nullable Map<String, TTArray> predicateMap) {
-    this.predicateMap = predicateMap;
-    return this;
-  }
-
-  public TTEntity putPredicateMapItem(String key, TTArray predicateMapItem) {
-    if (this.predicateMap == null) {
-      this.predicateMap = new HashMap<>();
-    }
-    this.predicateMap.put(key, predicateMapItem);
-    return this;
-  }
-
-  /**
-   * Get predicateMap
-   * @return predicateMap
-   */
-  @javax.annotation.Nullable
-  public Map<String, TTArray> getPredicateMap() {
-    return predicateMap;
-  }
-
-  public void setPredicateMap(@javax.annotation.Nullable Map<String, TTArray> predicateMap) {
-    this.predicateMap = predicateMap;
-  }
-
 
   public TTEntity context(@javax.annotation.Nullable TTContext context) {
     this.context = context;
@@ -407,9 +353,7 @@ public class TTEntity {
       return false;
     }
     TTEntity ttEntity = (TTEntity) o;
-    return Objects.equals(this.iri, ttEntity.iri) &&
-        Objects.equals(this.predicateMap, ttEntity.predicateMap) &&
-        Objects.equals(this.context, ttEntity.context) &&
+    return Objects.equals(this.context, ttEntity.context) &&
         Objects.equals(this.crud, ttEntity.crud) &&
         Objects.equals(this.description, ttEntity.description) &&
         Objects.equals(this.version, ttEntity.version) &&
@@ -419,20 +363,20 @@ public class TTEntity {
         Objects.equals(this.scheme, ttEntity.scheme) &&
         Objects.equals(this.name, ttEntity.name) &&
         Objects.equals(this.type, ttEntity.type) &&
-        Objects.equals(this.status, ttEntity.status);
+        Objects.equals(this.status, ttEntity.status) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, predicateMap, context, crud, description, version, types, code, prefixes, scheme, name, type, status);
+    return Objects.hash(context, crud, description, version, types, code, prefixes, scheme, name, type, status, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TTEntity {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    predicateMap: ").append(toIndentedString(predicateMap)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    crud: ").append(toIndentedString(crud)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -487,67 +431,6 @@ public class TTEntity {
         if (!TTEntity.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TTEntity` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      // validate the optional field `context`
-      if (jsonObj.get("context") != null && !jsonObj.get("context").isJsonNull()) {
-        TTContext.validateJsonElement(jsonObj.get("context"));
-      }
-      // validate the optional field `crud`
-      if (jsonObj.get("crud") != null && !jsonObj.get("crud").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("crud"));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("types") != null && !jsonObj.get("types").isJsonNull()) {
-        JsonArray jsonArraytypes = jsonObj.getAsJsonArray("types");
-        if (jsonArraytypes != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("types").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `types` to be an array in the JSON string but got `%s`", jsonObj.get("types").toString()));
-          }
-
-          // validate the optional field `types` (array)
-          for (int i = 0; i < jsonArraytypes.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraytypes.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
-      }
-      if (jsonObj.get("prefixes") != null && !jsonObj.get("prefixes").isJsonNull()) {
-        JsonArray jsonArrayprefixes = jsonObj.getAsJsonArray("prefixes");
-        if (jsonArrayprefixes != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("prefixes").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefixes` to be an array in the JSON string but got `%s`", jsonObj.get("prefixes").toString()));
-          }
-
-          // validate the optional field `prefixes` (array)
-          for (int i = 0; i < jsonArrayprefixes.size(); i++) {
-            TTPrefix.validateJsonElement(jsonArrayprefixes.get(i));
-          };
-        }
-      }
-      // validate the optional field `scheme`
-      if (jsonObj.get("scheme") != null && !jsonObj.get("scheme").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("scheme"));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TTArray.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("status"));
       }
   }
 

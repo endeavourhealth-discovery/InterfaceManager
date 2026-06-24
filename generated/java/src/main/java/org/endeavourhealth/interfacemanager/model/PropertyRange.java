@@ -52,22 +52,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * PropertyRange
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class PropertyRange {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nonnull
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class PropertyRange extends TTIriRef {
   public static final String SERIALIZED_NAME_PATTERN = "pattern";
   @SerializedName(SERIALIZED_NAME_PATTERN)
   @javax.annotation.Nullable
@@ -104,64 +89,8 @@ public class PropertyRange {
   private Boolean relativeValue;
 
   public PropertyRange() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public PropertyRange iri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nonnull
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-  }
-
-
-  public PropertyRange name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public PropertyRange description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public PropertyRange pattern(@javax.annotation.Nullable String pattern) {
     this.pattern = pattern;
@@ -314,30 +243,26 @@ public class PropertyRange {
       return false;
     }
     PropertyRange propertyRange = (PropertyRange) o;
-    return Objects.equals(this.iri, propertyRange.iri) &&
-        Objects.equals(this.name, propertyRange.name) &&
-        Objects.equals(this.description, propertyRange.description) &&
-        Objects.equals(this.pattern, propertyRange.pattern) &&
+    return Objects.equals(this.pattern, propertyRange.pattern) &&
         Objects.equals(this.intervalUnit, propertyRange.intervalUnit) &&
         Objects.equals(this.qualifier, propertyRange.qualifier) &&
         Objects.equals(this.type, propertyRange.type) &&
         Objects.equals(this.units, propertyRange.units) &&
         Objects.equals(this.operator, propertyRange.operator) &&
-        Objects.equals(this.relativeValue, propertyRange.relativeValue);
+        Objects.equals(this.relativeValue, propertyRange.relativeValue) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, pattern, intervalUnit, qualifier, type, units, operator, relativeValue);
+    return Objects.hash(pattern, intervalUnit, qualifier, type, units, operator, relativeValue, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PropertyRange {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    intervalUnit: ").append(toIndentedString(intervalUnit)).append("\n");
     sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
@@ -395,49 +320,6 @@ public class PropertyRange {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("pattern") != null && !jsonObj.get("pattern").isJsonNull()) && !jsonObj.get("pattern").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pattern` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pattern").toString()));
-      }
-      // validate the optional field `intervalUnit`
-      if (jsonObj.get("intervalUnit") != null && !jsonObj.get("intervalUnit").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("intervalUnit"));
-      }
-      if (jsonObj.get("qualifier") != null && !jsonObj.get("qualifier").isJsonNull()) {
-        JsonArray jsonArrayqualifier = jsonObj.getAsJsonArray("qualifier");
-        if (jsonArrayqualifier != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("qualifier").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `qualifier` to be an array in the JSON string but got `%s`", jsonObj.get("qualifier").toString()));
-          }
-
-          // validate the optional field `qualifier` (array)
-          for (int i = 0; i < jsonArrayqualifier.size(); i++) {
-            PropertyRange.validateJsonElement(jsonArrayqualifier.get(i));
-          };
-        }
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `units`
-      if (jsonObj.get("units") != null && !jsonObj.get("units").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("units"));
-      }
-      // validate the optional field `operator`
-      if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("operator"));
       }
   }
 

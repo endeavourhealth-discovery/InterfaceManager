@@ -26,10 +26,11 @@ import org.endeavourhealth.interfacemanager.model.Entail;
 import org.endeavourhealth.interfacemanager.model.FunctionClause;
 import org.endeavourhealth.interfacemanager.model.GroupBy;
 import org.endeavourhealth.interfacemanager.model.Having;
-import org.endeavourhealth.interfacemanager.model.ModelReturn;
+import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.OrderLimit;
 import org.endeavourhealth.interfacemanager.model.Path;
+import org.endeavourhealth.interfacemanager.model.Return;
 import org.endeavourhealth.interfacemanager.model.RuleAction;
 import org.endeavourhealth.interfacemanager.model.Where;
 import org.junit.jupiter.api.Disabled;
@@ -79,30 +80,6 @@ public class MatchTest {
     @Test
     public void uuidTest() {
         // TODO: test uuid
-    }
-
-    /**
-     * Test the property 'path'
-     */
-    @Test
-    public void pathTest() {
-        // TODO: test path
-    }
-
-    /**
-     * Test the property 'node'
-     */
-    @Test
-    public void nodeTest() {
-        // TODO: test node
-    }
-
-    /**
-     * Test the property '_return'
-     */
-    @Test
-    public void _returnTest() {
-        // TODO: test _return
     }
 
     /**
@@ -335,6 +312,30 @@ public class MatchTest {
     @Test
     public void havingTest() {
         // TODO: test having
+    }
+
+    /**
+     * Test the property '_return'
+     */
+    @Test
+    public void _returnTest() {
+        // TODO: test _return
+    }
+
+    /**
+     * Test the property 'path'
+     */
+    @Test
+    public void pathTest() {
+        // TODO: test path
+    }
+
+    /**
+     * Test the property 'node'
+     */
+    @Test
+    public void nodeTest() {
+        // TODO: test node
     }
 
 }

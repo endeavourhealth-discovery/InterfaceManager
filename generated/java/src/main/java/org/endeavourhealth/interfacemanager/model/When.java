@@ -20,8 +20,14 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.endeavourhealth.interfacemanager.model.ModelCase;
+import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Case;
+import org.endeavourhealth.interfacemanager.model.IriLD;
+import org.endeavourhealth.interfacemanager.model.Node;
+import org.endeavourhealth.interfacemanager.model.Range;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.endeavourhealth.interfacemanager.model.Where;
 
 import com.google.gson.Gson;
@@ -51,7 +57,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * When
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class When {
+public class When extends Where {
   public static final String SERIALIZED_NAME_WHERE = "where";
   @SerializedName(SERIALIZED_NAME_WHERE)
   @javax.annotation.Nullable
@@ -70,9 +76,10 @@ public class When {
   public static final String SERIALIZED_NAME_CASE = "case";
   @SerializedName(SERIALIZED_NAME_CASE)
   @javax.annotation.Nullable
-  private ModelCase _case;
+  private Case _case;
 
   public When() {
+    this.nodeRef = this.getClass().getSimpleName();
   }
 
   public When where(@javax.annotation.Nullable Where where) {
@@ -132,7 +139,7 @@ public class When {
   }
 
 
-  public When _case(@javax.annotation.Nullable ModelCase _case) {
+  public When _case(@javax.annotation.Nullable Case _case) {
     this._case = _case;
     return this;
   }
@@ -142,11 +149,11 @@ public class When {
    * @return _case
    */
   @javax.annotation.Nullable
-  public ModelCase getCase() {
+  public Case getCase() {
     return _case;
   }
 
-  public void setCase(@javax.annotation.Nullable ModelCase _case) {
+  public void setCase(@javax.annotation.Nullable Case _case) {
     this._case = _case;
   }
 
@@ -164,18 +171,20 @@ public class When {
     return Objects.equals(this.where, when.where) &&
         Objects.equals(this.then, when.then) &&
         Objects.equals(this.exists, when.exists) &&
-        Objects.equals(this._case, when._case);
+        Objects.equals(this._case, when._case) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(where, then, exists, _case);
+    return Objects.hash(where, then, exists, _case, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class When {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    where: ").append(toIndentedString(where)).append("\n");
     sb.append("    then: ").append(toIndentedString(then)).append("\n");
     sb.append("    exists: ").append(toIndentedString(exists)).append("\n");
@@ -198,7 +207,7 @@ public class When {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("where", "then", "exists", "case"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "range", "isNull", "is", "anyRoleGroup", "inverse", "typeOf", "subjectVariable", "subjectParameter", "not", "roleGroup", "isNotNull", "or", "and", "propertyRef", "shortLabel", "qualifier", "propertyList", "propertyVariable", "node", "excludeProperty", "exists", "linked", "notNull", "isInvalid", "isResultSet", "isCohort", "where", "then", "case"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -223,18 +232,6 @@ public class When {
         if (!When.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `When` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `where`
-      if (jsonObj.get("where") != null && !jsonObj.get("where").isJsonNull()) {
-        Where.validateJsonElement(jsonObj.get("where"));
-      }
-      if ((jsonObj.get("then") != null && !jsonObj.get("then").isJsonNull()) && !jsonObj.get("then").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `then` to be a primitive type in the JSON string but got `%s`", jsonObj.get("then").toString()));
-      }
-      // validate the optional field `case`
-      if (jsonObj.get("case") != null && !jsonObj.get("case").isJsonNull()) {
-        ModelCase.validateJsonElement(jsonObj.get("case"));
       }
   }
 

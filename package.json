@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate-java": "rimraf ./generated/java && openapi-generator-cli generate -i openapi/api.yaml -g java -o ./generated/java --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,useBeanValidation=false,useOptional=false,hideGenerationTimestamp=true,useJsonNullable=false,openApiNullable=false,useBeanValidation=false,useFluentBuilders=false",
+    "generate-java": "rimraf ./generated/java && openapi-generator-cli generate -i openapi/api.yaml -g java -o ./generated/java --model-name-mappings Return=Return,Case=Case --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,useBeanValidation=false,useOptional=false,hideGenerationTimestamp=true,useJsonNullable=false,openApiNullable=false,useBeanValidation=false,useFluentBuilders=false,legacyDiscriminatorBehavior=false",
     "generate-kotlin": "rimraf ./generated/kotlin && openapi-generator-cli generate -i openapi/api.yaml -g kotlin -o ./generated/kotlin --additional-properties=groupId=org.endeavourhealth.interfacemanager,artifactId=interfacemanager,artifactVersion=0.0.0,apiPackage=org.endeavourhealth.interfacemanager.api,modelPackage=org.endeavourhealth.interfacemanager.model,enumPropertyNaming=original",
     "generate-typescript": "rimraf ./generated/typescript && openapi-generator-cli generate -i openapi/api.yaml -g typescript-fetch -o ./generated/typescript --additional-properties=stringEnums=true,enumPropertyNaming=original",
     "generate-typescript-alt": "rimraf ./generated/typescript-alt && npx openapi-typescript ./openapi/api.yaml -o generated/typescript-alt/schema.d.ts",
     "build-typescript": "tsup generated/typescript/models/index.ts --format esm --dts",
     "prepare": "pnpm build-typescript",
     "publish-java": "cd ./generated/java && mvn clean install",
-    "publish-kotlin": "cd ./generated/kotlin && gradlew publishToMavenLocal"
+    "publish-kotlin": "cd ./generated/kotlin && gradlew publishToMavenLocal",
+    "generate-templates": "openapi-generator-cli author template -g java -o ./templates"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.32.0",

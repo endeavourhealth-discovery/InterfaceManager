@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.endeavourhealth.interfacemanager.model.Argument;
+import org.endeavourhealth.interfacemanager.model.IriLD;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,110 +53,15 @@ import org.endeavourhealth.interfacemanager.JSON;
  * FunctionClause
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class FunctionClause {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
+public class FunctionClause extends IriLD {
   public static final String SERIALIZED_NAME_ARGUMENT = "argument";
   @SerializedName(SERIALIZED_NAME_ARGUMENT)
   @javax.annotation.Nullable
   private List<Argument> argument = new ArrayList<>();
 
   public FunctionClause() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public FunctionClause iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public FunctionClause name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public FunctionClause description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public FunctionClause uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
 
   public FunctionClause argument(@javax.annotation.Nullable List<Argument> argument) {
     this.argument = argument;
@@ -194,26 +100,20 @@ public class FunctionClause {
       return false;
     }
     FunctionClause functionClause = (FunctionClause) o;
-    return Objects.equals(this.iri, functionClause.iri) &&
-        Objects.equals(this.name, functionClause.name) &&
-        Objects.equals(this.description, functionClause.description) &&
-        Objects.equals(this.uuid, functionClause.uuid) &&
-        Objects.equals(this.argument, functionClause.argument);
+    return Objects.equals(this.argument, functionClause.argument) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, argument);
+    return Objects.hash(argument, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FunctionClause {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    argument: ").append(toIndentedString(argument)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -257,33 +157,6 @@ public class FunctionClause {
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!FunctionClause.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FunctionClause` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      if (jsonObj.get("argument") != null && !jsonObj.get("argument").isJsonNull()) {
-        JsonArray jsonArrayargument = jsonObj.getAsJsonArray("argument");
-        if (jsonArrayargument != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("argument").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `argument` to be an array in the JSON string but got `%s`", jsonObj.get("argument").toString()));
-          }
-
-          // validate the optional field `argument` (array)
-          for (int i = 0; i < jsonArrayargument.size(); i++) {
-            Argument.validateJsonElement(jsonArrayargument.get(i));
-          };
         }
       }
   }

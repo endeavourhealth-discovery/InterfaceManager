@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Match;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -71,11 +72,11 @@ public class NodeTest {
     }
 
     /**
-     * Test the property 'memberOf'
+     * Test the property 'parameter'
      */
     @Test
-    public void memberOfTest() {
-        // TODO: test memberOf
+    public void parameterTest() {
+        // TODO: test parameter
     }
 
     /**
@@ -103,38 +104,6 @@ public class NodeTest {
     }
 
     /**
-     * Test the property 'parameter'
-     */
-    @Test
-    public void parameterTest() {
-        // TODO: test parameter
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
-    }
-
-    /**
-     * Test the property 'qualifier'
-     */
-    @Test
-    public void qualifierTest() {
-        // TODO: test qualifier
-    }
-
-    /**
-     * Test the property 'match'
-     */
-    @Test
-    public void matchTest() {
-        // TODO: test match
-    }
-
-    /**
      * Test the property 'childOrSelfOf'
      */
     @Test
@@ -148,6 +117,14 @@ public class NodeTest {
     @Test
     public void childOfTest() {
         // TODO: test childOf
+    }
+
+    /**
+     * Test the property 'memberOf'
+     */
+    @Test
+    public void memberOfTest() {
+        // TODO: test memberOf
     }
 
     /**
@@ -183,6 +160,30 @@ public class NodeTest {
     }
 
     /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
+     * Test the property 'qualifier'
+     */
+    @Test
+    public void qualifierTest() {
+        // TODO: test qualifier
+    }
+
+    /**
+     * Test the property 'match'
+     */
+    @Test
+    public void matchTest() {
+        // TODO: test match
+    }
+
+    /**
      * Test the property 'exclude'
      */
     @Test
@@ -212,22 +213,6 @@ public class NodeTest {
     @Test
     public void nodeTest() {
         // TODO: test node
-    }
-
-    /**
-     * Test the property 'isResultSet'
-     */
-    @Test
-    public void isResultSetTest() {
-        // TODO: test isResultSet
-    }
-
-    /**
-     * Test the property 'isCohort'
-     */
-    @Test
-    public void isCohortTest() {
-        // TODO: test isCohort
     }
 
 }

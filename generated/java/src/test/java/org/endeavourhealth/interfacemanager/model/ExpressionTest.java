@@ -20,31 +20,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ContextMap
+ * Model tests for Expression
  */
-public class ContextMapTest {
-    private final ContextMap model = new ContextMap();
+public class ExpressionTest {
+    private final Expression model = new Expression();
 
     /**
-     * Model tests for ContextMap
+     * Model tests for Expression
      */
     @Test
-    public void testContextMap() {
-        // TODO: test ContextMap
+    public void testExpression() {
+        // TODO: test Expression
     }
 
     /**
-     * Test the property 'context'
+     * Test the property 'value'
      */
     @Test
-    public void contextTest() {
-        // TODO: test context
+    public void valueTest() {
+        // TODO: test value
+    }
+
+    /**
+     * Test the property 'nodeRef'
+     */
+    @Test
+    public void nodeRefTest() {
+        // TODO: test nodeRef
+    }
+
+    /**
+     * Test the property 'iri'
+     */
+    @Test
+    public void iriTest() {
+        // TODO: test iri
+    }
+
+    /**
+     * Test the property 'propertyRef'
+     */
+    @Test
+    public void propertyRefTest() {
+        // TODO: test propertyRef
     }
 
 }

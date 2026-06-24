@@ -19,41 +19,39 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.endeavourhealth.interfacemanager.model.Path;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for HasPaths
+ * Model tests for TTLiteral
  */
-public class HasPathsTest {
-    private final HasPaths model = new HasPaths();
+public class TTLiteralTest {
+    private final TTLiteral model = new TTLiteral();
 
     /**
-     * Model tests for HasPaths
+     * Model tests for TTLiteral
      */
     @Test
-    public void testHasPaths() {
-        // TODO: test HasPaths
+    public void testTTLiteral() {
+        // TODO: test TTLiteral
     }
 
     /**
-     * Test the property 'path'
+     * Test the property 'value'
      */
     @Test
-    public void pathTest() {
-        // TODO: test path
+    public void valueTest() {
+        // TODO: test value
     }
 
     /**
-     * Test the property 'node'
+     * Test the property 'type'
      */
     @Test
-    public void nodeTest() {
-        // TODO: test node
+    public void typeTest() {
+        // TODO: test type
     }
 
 }

@@ -22,63 +22,54 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.endeavourhealth.interfacemanager.model.StackTraceElement;
-import org.endeavourhealth.interfacemanager.model.Throwable;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Exception
+ * Model tests for TTIriRefPageable
  */
-public class ExceptionTest {
-    private final Exception model = new Exception();
+public class TTIriRefPageableTest {
+    private final TTIriRefPageable model = new TTIriRefPageable();
 
     /**
-     * Model tests for Exception
+     * Model tests for TTIriRefPageable
      */
     @Test
-    public void testException() {
-        // TODO: test Exception
+    public void testTTIriRefPageable() {
+        // TODO: test TTIriRefPageable
     }
 
     /**
-     * Test the property 'cause'
+     * Test the property 'totalCount'
      */
     @Test
-    public void causeTest() {
-        // TODO: test cause
+    public void totalCountTest() {
+        // TODO: test totalCount
     }
 
     /**
-     * Test the property 'stackTrace'
+     * Test the property 'currentPage'
      */
     @Test
-    public void stackTraceTest() {
-        // TODO: test stackTrace
+    public void currentPageTest() {
+        // TODO: test currentPage
     }
 
     /**
-     * Test the property 'message'
+     * Test the property 'pageSize'
      */
     @Test
-    public void messageTest() {
-        // TODO: test message
+    public void pageSizeTest() {
+        // TODO: test pageSize
     }
 
     /**
-     * Test the property 'suppressed'
+     * Test the property 'result'
      */
     @Test
-    public void suppressedTest() {
-        // TODO: test suppressed
-    }
-
-    /**
-     * Test the property 'localizedMessage'
-     */
-    @Test
-    public void localizedMessageTest() {
-        // TODO: test localizedMessage
+    public void resultTest() {
+        // TODO: test result
     }
 
 }

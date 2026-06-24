@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.endeavourhealth.interfacemanager.model.EntityReferenceNode;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,10 +49,10 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * Pageable
+ * EntityReferenceNodePageable
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Pageable {
+public class EntityReferenceNodePageable {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
   @javax.annotation.Nullable
@@ -65,10 +68,15 @@ public class Pageable {
   @javax.annotation.Nullable
   private Integer pageSize;
 
-  public Pageable() {
+  public static final String SERIALIZED_NAME_RESULT = "result";
+  @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
+  private List<EntityReferenceNode> result = new ArrayList<>();
+
+  public EntityReferenceNodePageable() {
   }
 
-  public Pageable totalCount(@javax.annotation.Nullable Integer totalCount) {
+  public EntityReferenceNodePageable totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
@@ -87,7 +95,7 @@ public class Pageable {
   }
 
 
-  public Pageable currentPage(@javax.annotation.Nullable Integer currentPage) {
+  public EntityReferenceNodePageable currentPage(@javax.annotation.Nullable Integer currentPage) {
     this.currentPage = currentPage;
     return this;
   }
@@ -106,7 +114,7 @@ public class Pageable {
   }
 
 
-  public Pageable pageSize(@javax.annotation.Nullable Integer pageSize) {
+  public EntityReferenceNodePageable pageSize(@javax.annotation.Nullable Integer pageSize) {
     this.pageSize = pageSize;
     return this;
   }
@@ -125,6 +133,33 @@ public class Pageable {
   }
 
 
+  public EntityReferenceNodePageable result(@javax.annotation.Nullable List<EntityReferenceNode> result) {
+    this.result = result;
+    return this;
+  }
+
+  public EntityReferenceNodePageable addResultItem(EntityReferenceNode resultItem) {
+    if (this.result == null) {
+      this.result = new ArrayList<>();
+    }
+    this.result.add(resultItem);
+    return this;
+  }
+
+  /**
+   * Get result
+   * @return result
+   */
+  @javax.annotation.Nullable
+  public List<EntityReferenceNode> getResult() {
+    return result;
+  }
+
+  public void setResult(@javax.annotation.Nullable List<EntityReferenceNode> result) {
+    this.result = result;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -134,24 +169,26 @@ public class Pageable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Pageable pageable = (Pageable) o;
-    return Objects.equals(this.totalCount, pageable.totalCount) &&
-        Objects.equals(this.currentPage, pageable.currentPage) &&
-        Objects.equals(this.pageSize, pageable.pageSize);
+    EntityReferenceNodePageable entityReferenceNodePageable = (EntityReferenceNodePageable) o;
+    return Objects.equals(this.totalCount, entityReferenceNodePageable.totalCount) &&
+        Objects.equals(this.currentPage, entityReferenceNodePageable.currentPage) &&
+        Objects.equals(this.pageSize, entityReferenceNodePageable.pageSize) &&
+        Objects.equals(this.result, entityReferenceNodePageable.result);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalCount, currentPage, pageSize);
+    return Objects.hash(totalCount, currentPage, pageSize, result);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Pageable {\n");
+    sb.append("class EntityReferenceNodePageable {\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
     sb.append("    currentPage: ").append(toIndentedString(currentPage)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,7 +207,7 @@ public class Pageable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("totalCount", "currentPage", "pageSize"));
+    openapiFields = new HashSet<String>(Arrays.asList("totalCount", "currentPage", "pageSize", "result"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -180,45 +217,59 @@ public class Pageable {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Pageable
+   * @throws IOException if the JSON Element is invalid with respect to EntityReferenceNodePageable
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Pageable.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Pageable is not found in the empty JSON string", Pageable.openapiRequiredFields.toString()));
+        if (!EntityReferenceNodePageable.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in EntityReferenceNodePageable is not found in the empty JSON string", EntityReferenceNodePageable.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Pageable.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Pageable` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!EntityReferenceNodePageable.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EntityReferenceNodePageable` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) {
+        JsonArray jsonArrayresult = jsonObj.getAsJsonArray("result");
+        if (jsonArrayresult != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("result").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `result` to be an array in the JSON string but got `%s`", jsonObj.get("result").toString()));
+          }
+
+          // validate the optional field `result` (array)
+          for (int i = 0; i < jsonArrayresult.size(); i++) {
+            EntityReferenceNode.validateJsonElement(jsonArrayresult.get(i));
+          };
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Pageable.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Pageable' and its subtypes
+       if (!EntityReferenceNodePageable.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'EntityReferenceNodePageable' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Pageable> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Pageable.class));
+       final TypeAdapter<EntityReferenceNodePageable> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(EntityReferenceNodePageable.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Pageable>() {
+       return (TypeAdapter<T>) new TypeAdapter<EntityReferenceNodePageable>() {
            @Override
-           public void write(JsonWriter out, Pageable value) throws IOException {
+           public void write(JsonWriter out, EntityReferenceNodePageable value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Pageable read(JsonReader in) throws IOException {
+           public EntityReferenceNodePageable read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -229,18 +280,18 @@ public class Pageable {
   }
 
   /**
-   * Create an instance of Pageable given an JSON string
+   * Create an instance of EntityReferenceNodePageable given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Pageable
-   * @throws IOException if the JSON string is invalid with respect to Pageable
+   * @return An instance of EntityReferenceNodePageable
+   * @throws IOException if the JSON string is invalid with respect to EntityReferenceNodePageable
    */
-  public static Pageable fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Pageable.class);
+  public static EntityReferenceNodePageable fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, EntityReferenceNodePageable.class);
   }
 
   /**
-   * Convert an instance of Pageable to an JSON string
+   * Convert an instance of EntityReferenceNodePageable to an JSON string
    *
    * @return JSON string
    */

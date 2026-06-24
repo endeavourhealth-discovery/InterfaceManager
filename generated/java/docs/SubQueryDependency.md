@@ -1,6 +1,6 @@
 
 
-# ISubQueryDependency
+# SubQueryDependency
 
 
 ## Properties

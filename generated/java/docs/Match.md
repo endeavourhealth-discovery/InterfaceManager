@@ -7,13 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**iri** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
-|**uuid** | **String** |  |  [optional] |
-|**path** | [**List&lt;Path&gt;**](Path.md) |  |  [optional] |
-|**node** | **String** |  |  [optional] |
-|**_return** | [**List&lt;ModelReturn&gt;**](ModelReturn.md) |  |  [optional] |
 |**notExists** | **Boolean** |  |  [optional] |
 |**ifTrue** | **RuleAction** |  |  [optional] |
 |**ifFalse** | **RuleAction** |  |  [optional] |
@@ -43,6 +36,9 @@
 |**errorMessage** | **String** |  |  [optional] |
 |**draft** | **Boolean** |  |  [optional] |
 |**having** | [**Having**](Having.md) |  |  [optional] |
+|**_return** | [**List&lt;Return&gt;**](Return.md) |  |  [optional] |
+|**path** | [**List&lt;Path&gt;**](Path.md) |  |  [optional] |
+|**node** | **String** |  |  [optional] |
 
 
 

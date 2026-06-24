@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.endeavourhealth.interfacemanager.model.ApprovalType;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Task;
 import org.endeavourhealth.interfacemanager.model.TaskHistory;
 import org.endeavourhealth.interfacemanager.model.TaskState;
 import org.endeavourhealth.interfacemanager.model.TaskType;
@@ -57,47 +58,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * EntityApproval
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class EntityApproval {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private TTIriRef id;
-
-  public static final String SERIALIZED_NAME_CREATED_BY = "createdBy";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  @javax.annotation.Nullable
-  private String createdBy;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private TaskType type;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private TaskState state;
-
-  public static final String SERIALIZED_NAME_ASSIGNED_TO = "assignedTo";
-  @SerializedName(SERIALIZED_NAME_ASSIGNED_TO)
-  @javax.annotation.Nullable
-  private String assignedTo;
-
-  public static final String SERIALIZED_NAME_DATE_CREATED = "dateCreated";
-  @SerializedName(SERIALIZED_NAME_DATE_CREATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime dateCreated;
-
-  public static final String SERIALIZED_NAME_HISTORY = "history";
-  @SerializedName(SERIALIZED_NAME_HISTORY)
-  @javax.annotation.Nullable
-  private List<TaskHistory> history = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_HOST_URL = "hostUrl";
-  @SerializedName(SERIALIZED_NAME_HOST_URL)
-  @javax.annotation.Nullable
-  private String hostUrl;
-
+public class EntityApproval extends Task {
   public static final String SERIALIZED_NAME_ENTITY_IRI = "entityIri";
   @SerializedName(SERIALIZED_NAME_ENTITY_IRI)
   @javax.annotation.Nullable
@@ -109,167 +70,8 @@ public class EntityApproval {
   private ApprovalType approvalType;
 
   public EntityApproval() {
+
   }
-
-  public EntityApproval id(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-  }
-
-
-  public EntityApproval createdBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-
-  /**
-   * Get createdBy
-   * @return createdBy
-   */
-  @javax.annotation.Nullable
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-  public void setCreatedBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-  }
-
-
-  public EntityApproval type(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public TaskType getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-  }
-
-
-  public EntityApproval state(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public TaskState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-  }
-
-
-  public EntityApproval assignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-    return this;
-  }
-
-  /**
-   * Get assignedTo
-   * @return assignedTo
-   */
-  @javax.annotation.Nullable
-  public String getAssignedTo() {
-    return assignedTo;
-  }
-
-  public void setAssignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-  }
-
-
-  public EntityApproval dateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-
-  /**
-   * Get dateCreated
-   * @return dateCreated
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getDateCreated() {
-    return dateCreated;
-  }
-
-  public void setDateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  public EntityApproval history(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-    return this;
-  }
-
-  public EntityApproval addHistoryItem(TaskHistory historyItem) {
-    if (this.history == null) {
-      this.history = new ArrayList<>();
-    }
-    this.history.add(historyItem);
-    return this;
-  }
-
-  /**
-   * Get history
-   * @return history
-   */
-  @javax.annotation.Nullable
-  public List<TaskHistory> getHistory() {
-    return history;
-  }
-
-  public void setHistory(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-  }
-
-
-  public EntityApproval hostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-    return this;
-  }
-
-  /**
-   * Get hostUrl
-   * @return hostUrl
-   */
-  @javax.annotation.Nullable
-  public String getHostUrl() {
-    return hostUrl;
-  }
-
-  public void setHostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-  }
-
 
   public EntityApproval entityIri(@javax.annotation.Nullable TTIriRef entityIri) {
     this.entityIri = entityIri;
@@ -319,35 +121,21 @@ public class EntityApproval {
       return false;
     }
     EntityApproval entityApproval = (EntityApproval) o;
-    return Objects.equals(this.id, entityApproval.id) &&
-        Objects.equals(this.createdBy, entityApproval.createdBy) &&
-        Objects.equals(this.type, entityApproval.type) &&
-        Objects.equals(this.state, entityApproval.state) &&
-        Objects.equals(this.assignedTo, entityApproval.assignedTo) &&
-        Objects.equals(this.dateCreated, entityApproval.dateCreated) &&
-        Objects.equals(this.history, entityApproval.history) &&
-        Objects.equals(this.hostUrl, entityApproval.hostUrl) &&
-        Objects.equals(this.entityIri, entityApproval.entityIri) &&
-        Objects.equals(this.approvalType, entityApproval.approvalType);
+    return Objects.equals(this.entityIri, entityApproval.entityIri) &&
+        Objects.equals(this.approvalType, entityApproval.approvalType) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdBy, type, state, assignedTo, dateCreated, history, hostUrl, entityIri, approvalType);
+    return Objects.hash(entityIri, approvalType, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EntityApproval {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    assignedTo: ").append(toIndentedString(assignedTo)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    history: ").append(toIndentedString(history)).append("\n");
-    sb.append("    hostUrl: ").append(toIndentedString(hostUrl)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    entityIri: ").append(toIndentedString(entityIri)).append("\n");
     sb.append("    approvalType: ").append(toIndentedString(approvalType)).append("\n");
     sb.append("}");
@@ -393,50 +181,6 @@ public class EntityApproval {
         if (!EntityApproval.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EntityApproval` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `id`
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("id"));
-      }
-      if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TaskType.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        TaskState.validateJsonElement(jsonObj.get("state"));
-      }
-      if ((jsonObj.get("assignedTo") != null && !jsonObj.get("assignedTo").isJsonNull()) && !jsonObj.get("assignedTo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assignedTo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assignedTo").toString()));
-      }
-      if (jsonObj.get("history") != null && !jsonObj.get("history").isJsonNull()) {
-        JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
-        if (jsonArrayhistory != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("history").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
-          }
-
-          // validate the optional field `history` (array)
-          for (int i = 0; i < jsonArrayhistory.size(); i++) {
-            TaskHistory.validateJsonElement(jsonArrayhistory.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("hostUrl") != null && !jsonObj.get("hostUrl").isJsonNull()) && !jsonObj.get("hostUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hostUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hostUrl").toString()));
-      }
-      // validate the optional field `entityIri`
-      if (jsonObj.get("entityIri") != null && !jsonObj.get("entityIri").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("entityIri"));
-      }
-      // validate the optional field `approvalType`
-      if (jsonObj.get("approvalType") != null && !jsonObj.get("approvalType").isJsonNull()) {
-        ApprovalType.validateJsonElement(jsonObj.get("approvalType"));
       }
   }
 

@@ -29,6 +29,7 @@ import org.endeavourhealth.interfacemanager.model.OperatingSystem;
 import org.endeavourhealth.interfacemanager.model.Severity;
 import org.endeavourhealth.interfacemanager.model.Status;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Task;
 import org.endeavourhealth.interfacemanager.model.TaskHistory;
 import org.endeavourhealth.interfacemanager.model.TaskModule;
 import org.endeavourhealth.interfacemanager.model.TaskState;
@@ -61,47 +62,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * BugReport
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class BugReport {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private TTIriRef id;
-
-  public static final String SERIALIZED_NAME_CREATED_BY = "createdBy";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  @javax.annotation.Nullable
-  private String createdBy;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private TaskType type;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private TaskState state;
-
-  public static final String SERIALIZED_NAME_ASSIGNED_TO = "assignedTo";
-  @SerializedName(SERIALIZED_NAME_ASSIGNED_TO)
-  @javax.annotation.Nullable
-  private String assignedTo;
-
-  public static final String SERIALIZED_NAME_DATE_CREATED = "dateCreated";
-  @SerializedName(SERIALIZED_NAME_DATE_CREATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime dateCreated;
-
-  public static final String SERIALIZED_NAME_HISTORY = "history";
-  @SerializedName(SERIALIZED_NAME_HISTORY)
-  @javax.annotation.Nullable
-  private List<TaskHistory> history = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_HOST_URL = "hostUrl";
-  @SerializedName(SERIALIZED_NAME_HOST_URL)
-  @javax.annotation.Nullable
-  private String hostUrl;
-
+public class BugReport extends Task {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
   @javax.annotation.Nullable
@@ -173,167 +134,8 @@ public class BugReport {
   private String actualResult;
 
   public BugReport() {
+
   }
-
-  public BugReport id(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-  }
-
-
-  public BugReport createdBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-
-  /**
-   * Get createdBy
-   * @return createdBy
-   */
-  @javax.annotation.Nullable
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-  public void setCreatedBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-  }
-
-
-  public BugReport type(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public TaskType getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-  }
-
-
-  public BugReport state(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public TaskState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-  }
-
-
-  public BugReport assignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-    return this;
-  }
-
-  /**
-   * Get assignedTo
-   * @return assignedTo
-   */
-  @javax.annotation.Nullable
-  public String getAssignedTo() {
-    return assignedTo;
-  }
-
-  public void setAssignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-  }
-
-
-  public BugReport dateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-
-  /**
-   * Get dateCreated
-   * @return dateCreated
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getDateCreated() {
-    return dateCreated;
-  }
-
-  public void setDateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  public BugReport history(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-    return this;
-  }
-
-  public BugReport addHistoryItem(TaskHistory historyItem) {
-    if (this.history == null) {
-      this.history = new ArrayList<>();
-    }
-    this.history.add(historyItem);
-    return this;
-  }
-
-  /**
-   * Get history
-   * @return history
-   */
-  @javax.annotation.Nullable
-  public List<TaskHistory> getHistory() {
-    return history;
-  }
-
-  public void setHistory(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-  }
-
-
-  public BugReport hostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-    return this;
-  }
-
-  /**
-   * Get hostUrl
-   * @return hostUrl
-   */
-  @javax.annotation.Nullable
-  public String getHostUrl() {
-    return hostUrl;
-  }
-
-  public void setHostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-  }
-
 
   public BugReport product(@javax.annotation.Nullable String product) {
     this.product = product;
@@ -611,15 +413,7 @@ public class BugReport {
       return false;
     }
     BugReport bugReport = (BugReport) o;
-    return Objects.equals(this.id, bugReport.id) &&
-        Objects.equals(this.createdBy, bugReport.createdBy) &&
-        Objects.equals(this.type, bugReport.type) &&
-        Objects.equals(this.state, bugReport.state) &&
-        Objects.equals(this.assignedTo, bugReport.assignedTo) &&
-        Objects.equals(this.dateCreated, bugReport.dateCreated) &&
-        Objects.equals(this.history, bugReport.history) &&
-        Objects.equals(this.hostUrl, bugReport.hostUrl) &&
-        Objects.equals(this.product, bugReport.product) &&
+    return Objects.equals(this.product, bugReport.product) &&
         Objects.equals(this.version, bugReport.version) &&
         Objects.equals(this.module, bugReport.module) &&
         Objects.equals(this.os, bugReport.os) &&
@@ -632,26 +426,20 @@ public class BugReport {
         Objects.equals(this.description, bugReport.description) &&
         Objects.equals(this.reproduceSteps, bugReport.reproduceSteps) &&
         Objects.equals(this.expectedResult, bugReport.expectedResult) &&
-        Objects.equals(this.actualResult, bugReport.actualResult);
+        Objects.equals(this.actualResult, bugReport.actualResult) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdBy, type, state, assignedTo, dateCreated, history, hostUrl, product, version, module, os, osOther, browser, browserOther, severity, status, error, description, reproduceSteps, expectedResult, actualResult);
+    return Objects.hash(product, version, module, os, osOther, browser, browserOther, severity, status, error, description, reproduceSteps, expectedResult, actualResult, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BugReport {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    assignedTo: ").append(toIndentedString(assignedTo)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    history: ").append(toIndentedString(history)).append("\n");
-    sb.append("    hostUrl: ").append(toIndentedString(hostUrl)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
@@ -709,89 +497,6 @@ public class BugReport {
         if (!BugReport.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BugReport` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `id`
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("id"));
-      }
-      if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TaskType.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        TaskState.validateJsonElement(jsonObj.get("state"));
-      }
-      if ((jsonObj.get("assignedTo") != null && !jsonObj.get("assignedTo").isJsonNull()) && !jsonObj.get("assignedTo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assignedTo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assignedTo").toString()));
-      }
-      if (jsonObj.get("history") != null && !jsonObj.get("history").isJsonNull()) {
-        JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
-        if (jsonArrayhistory != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("history").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
-          }
-
-          // validate the optional field `history` (array)
-          for (int i = 0; i < jsonArrayhistory.size(); i++) {
-            TaskHistory.validateJsonElement(jsonArrayhistory.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("hostUrl") != null && !jsonObj.get("hostUrl").isJsonNull()) && !jsonObj.get("hostUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hostUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hostUrl").toString()));
-      }
-      if ((jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) && !jsonObj.get("product").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `product` to be a primitive type in the JSON string but got `%s`", jsonObj.get("product").toString()));
-      }
-      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
-      }
-      // validate the optional field `module`
-      if (jsonObj.get("module") != null && !jsonObj.get("module").isJsonNull()) {
-        TaskModule.validateJsonElement(jsonObj.get("module"));
-      }
-      // validate the optional field `os`
-      if (jsonObj.get("os") != null && !jsonObj.get("os").isJsonNull()) {
-        OperatingSystem.validateJsonElement(jsonObj.get("os"));
-      }
-      if ((jsonObj.get("osOther") != null && !jsonObj.get("osOther").isJsonNull()) && !jsonObj.get("osOther").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `osOther` to be a primitive type in the JSON string but got `%s`", jsonObj.get("osOther").toString()));
-      }
-      // validate the optional field `browser`
-      if (jsonObj.get("browser") != null && !jsonObj.get("browser").isJsonNull()) {
-        Browser.validateJsonElement(jsonObj.get("browser"));
-      }
-      if ((jsonObj.get("browserOther") != null && !jsonObj.get("browserOther").isJsonNull()) && !jsonObj.get("browserOther").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `browserOther` to be a primitive type in the JSON string but got `%s`", jsonObj.get("browserOther").toString()));
-      }
-      // validate the optional field `severity`
-      if (jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) {
-        Severity.validateJsonElement(jsonObj.get("severity"));
-      }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        Status.validateJsonElement(jsonObj.get("status"));
-      }
-      if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("reproduceSteps") != null && !jsonObj.get("reproduceSteps").isJsonNull()) && !jsonObj.get("reproduceSteps").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `reproduceSteps` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reproduceSteps").toString()));
-      }
-      if ((jsonObj.get("expectedResult") != null && !jsonObj.get("expectedResult").isJsonNull()) && !jsonObj.get("expectedResult").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `expectedResult` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expectedResult").toString()));
-      }
-      if ((jsonObj.get("actualResult") != null && !jsonObj.get("actualResult").isJsonNull()) && !jsonObj.get("actualResult").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actualResult` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actualResult").toString()));
       }
   }
 

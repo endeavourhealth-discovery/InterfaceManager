@@ -83,7 +83,7 @@ public class ECLQueryRequest {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   @javax.annotation.Nullable
-  private Integer limit;
+  private Integer limit = 1000;
 
   public static final String SERIALIZED_NAME_STATUS_FILTER = "statusFilter";
   @SerializedName(SERIALIZED_NAME_STATUS_FILTER)
@@ -93,12 +93,12 @@ public class ECLQueryRequest {
   public static final String SERIALIZED_NAME_PAGE = "page";
   @SerializedName(SERIALIZED_NAME_PAGE)
   @javax.annotation.Nullable
-  private Integer page;
+  private Integer page = 1;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
   @javax.annotation.Nullable
-  private Integer size;
+  private Integer size = 20;
 
   public ECLQueryRequest() {
   }

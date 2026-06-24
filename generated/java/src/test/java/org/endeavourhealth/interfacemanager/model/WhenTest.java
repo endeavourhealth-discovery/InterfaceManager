@@ -19,8 +19,14 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.endeavourhealth.interfacemanager.model.ModelCase;
+import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Case;
+import org.endeavourhealth.interfacemanager.model.IriLD;
+import org.endeavourhealth.interfacemanager.model.Node;
+import org.endeavourhealth.interfacemanager.model.Range;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.endeavourhealth.interfacemanager.model.Where;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -40,6 +46,334 @@ public class WhenTest {
     }
 
     /**
+     * Test the property 'iri'
+     */
+    @Test
+    public void iriTest() {
+        // TODO: test iri
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
+     * Test the property 'description'
+     */
+    @Test
+    public void descriptionTest() {
+        // TODO: test description
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
+    }
+
+    /**
+     * Test the property 'parameter'
+     */
+    @Test
+    public void parameterTest() {
+        // TODO: test parameter
+    }
+
+    /**
+     * Test the property 'ancestorsOf'
+     */
+    @Test
+    public void ancestorsOfTest() {
+        // TODO: test ancestorsOf
+    }
+
+    /**
+     * Test the property 'descendantsOrSelfOf'
+     */
+    @Test
+    public void descendantsOrSelfOfTest() {
+        // TODO: test descendantsOrSelfOf
+    }
+
+    /**
+     * Test the property 'descendantsOf'
+     */
+    @Test
+    public void descendantsOfTest() {
+        // TODO: test descendantsOf
+    }
+
+    /**
+     * Test the property 'childOrSelfOf'
+     */
+    @Test
+    public void childOrSelfOfTest() {
+        // TODO: test childOrSelfOf
+    }
+
+    /**
+     * Test the property 'childOf'
+     */
+    @Test
+    public void childOfTest() {
+        // TODO: test childOf
+    }
+
+    /**
+     * Test the property 'memberOf'
+     */
+    @Test
+    public void memberOfTest() {
+        // TODO: test memberOf
+    }
+
+    /**
+     * Test the property 'cohort'
+     */
+    @Test
+    public void cohortTest() {
+        // TODO: test cohort
+    }
+
+    /**
+     * Test the property 'nodeRef'
+     */
+    @Test
+    public void nodeRefTest() {
+        // TODO: test nodeRef
+    }
+
+    /**
+     * Test the property 'invalid'
+     */
+    @Test
+    public void invalidTest() {
+        // TODO: test invalid
+    }
+
+    /**
+     * Test the property 'resultSet'
+     */
+    @Test
+    public void resultSetTest() {
+        // TODO: test resultSet
+    }
+
+    /**
+     * Test the property 'range'
+     */
+    @Test
+    public void rangeTest() {
+        // TODO: test range
+    }
+
+    /**
+     * Test the property 'isNull'
+     */
+    @Test
+    public void isNullTest() {
+        // TODO: test isNull
+    }
+
+    /**
+     * Test the property 'is'
+     */
+    @Test
+    public void isTest() {
+        // TODO: test is
+    }
+
+    /**
+     * Test the property 'anyRoleGroup'
+     */
+    @Test
+    public void anyRoleGroupTest() {
+        // TODO: test anyRoleGroup
+    }
+
+    /**
+     * Test the property 'inverse'
+     */
+    @Test
+    public void inverseTest() {
+        // TODO: test inverse
+    }
+
+    /**
+     * Test the property 'typeOf'
+     */
+    @Test
+    public void typeOfTest() {
+        // TODO: test typeOf
+    }
+
+    /**
+     * Test the property 'subjectVariable'
+     */
+    @Test
+    public void subjectVariableTest() {
+        // TODO: test subjectVariable
+    }
+
+    /**
+     * Test the property 'subjectParameter'
+     */
+    @Test
+    public void subjectParameterTest() {
+        // TODO: test subjectParameter
+    }
+
+    /**
+     * Test the property 'not'
+     */
+    @Test
+    public void notTest() {
+        // TODO: test not
+    }
+
+    /**
+     * Test the property 'roleGroup'
+     */
+    @Test
+    public void roleGroupTest() {
+        // TODO: test roleGroup
+    }
+
+    /**
+     * Test the property 'isNotNull'
+     */
+    @Test
+    public void isNotNullTest() {
+        // TODO: test isNotNull
+    }
+
+    /**
+     * Test the property 'or'
+     */
+    @Test
+    public void orTest() {
+        // TODO: test or
+    }
+
+    /**
+     * Test the property 'and'
+     */
+    @Test
+    public void andTest() {
+        // TODO: test and
+    }
+
+    /**
+     * Test the property 'propertyRef'
+     */
+    @Test
+    public void propertyRefTest() {
+        // TODO: test propertyRef
+    }
+
+    /**
+     * Test the property 'shortLabel'
+     */
+    @Test
+    public void shortLabelTest() {
+        // TODO: test shortLabel
+    }
+
+    /**
+     * Test the property 'qualifier'
+     */
+    @Test
+    public void qualifierTest() {
+        // TODO: test qualifier
+    }
+
+    /**
+     * Test the property 'propertyList'
+     */
+    @Test
+    public void propertyListTest() {
+        // TODO: test propertyList
+    }
+
+    /**
+     * Test the property 'propertyVariable'
+     */
+    @Test
+    public void propertyVariableTest() {
+        // TODO: test propertyVariable
+    }
+
+    /**
+     * Test the property 'node'
+     */
+    @Test
+    public void nodeTest() {
+        // TODO: test node
+    }
+
+    /**
+     * Test the property 'excludeProperty'
+     */
+    @Test
+    public void excludePropertyTest() {
+        // TODO: test excludeProperty
+    }
+
+    /**
+     * Test the property 'exists'
+     */
+    @Test
+    public void existsTest() {
+        // TODO: test exists
+    }
+
+    /**
+     * Test the property 'linked'
+     */
+    @Test
+    public void linkedTest() {
+        // TODO: test linked
+    }
+
+    /**
+     * Test the property 'notNull'
+     */
+    @Test
+    public void notNullTest() {
+        // TODO: test notNull
+    }
+
+    /**
+     * Test the property 'isInvalid'
+     */
+    @Test
+    public void isInvalidTest() {
+        // TODO: test isInvalid
+    }
+
+    /**
+     * Test the property 'isResultSet'
+     */
+    @Test
+    public void isResultSetTest() {
+        // TODO: test isResultSet
+    }
+
+    /**
+     * Test the property 'isCohort'
+     */
+    @Test
+    public void isCohortTest() {
+        // TODO: test isCohort
+    }
+
+    /**
      * Test the property 'where'
      */
     @Test
@@ -53,14 +387,6 @@ public class WhenTest {
     @Test
     public void thenTest() {
         // TODO: test then
-    }
-
-    /**
-     * Test the property 'exists'
-     */
-    @Test
-    public void existsTest() {
-        // TODO: test exists
     }
 
     /**

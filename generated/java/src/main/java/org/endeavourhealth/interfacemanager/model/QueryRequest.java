@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.endeavourhealth.interfacemanager.model.Argument;
@@ -62,11 +61,6 @@ import org.endeavourhealth.interfacemanager.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class QueryRequest {
-  public static final String SERIALIZED_NAME_CONTEXT = "context";
-  @SerializedName(SERIALIZED_NAME_CONTEXT)
-  @javax.annotation.Nullable
-  private Map<String, String> context = new HashMap<>();
-
   public static final String SERIALIZED_NAME_TEXT_SEARCH = "textSearch";
   @SerializedName(SERIALIZED_NAME_TEXT_SEARCH)
   @javax.annotation.Nullable
@@ -139,33 +133,6 @@ public class QueryRequest {
 
   public QueryRequest() {
   }
-
-  public QueryRequest context(@javax.annotation.Nullable Map<String, String> context) {
-    this.context = context;
-    return this;
-  }
-
-  public QueryRequest putContextItem(String key, String contextItem) {
-    if (this.context == null) {
-      this.context = new HashMap<>();
-    }
-    this.context.put(key, contextItem);
-    return this;
-  }
-
-  /**
-   * Get context
-   * @return context
-   */
-  @javax.annotation.Nullable
-  public Map<String, String> getContext() {
-    return context;
-  }
-
-  public void setContext(@javax.annotation.Nullable Map<String, String> context) {
-    this.context = context;
-  }
-
 
   public QueryRequest textSearch(@javax.annotation.Nullable String textSearch) {
     this.textSearch = textSearch;
@@ -467,8 +434,7 @@ public class QueryRequest {
       return false;
     }
     QueryRequest queryRequest = (QueryRequest) o;
-    return Objects.equals(this.context, queryRequest.context) &&
-        Objects.equals(this.textSearch, queryRequest.textSearch) &&
+    return Objects.equals(this.textSearch, queryRequest.textSearch) &&
         Objects.equals(this.argument, queryRequest.argument) &&
         Objects.equals(this.query, queryRequest.query) &&
         Objects.equals(this.pathQuery, queryRequest.pathQuery) &&
@@ -486,14 +452,13 @@ public class QueryRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(context, textSearch, argument, query, pathQuery, update, name, page, queryStringDefinition, askIri, timings, cohort, includeNames, textSearchStyle, language);
+    return Objects.hash(textSearch, argument, query, pathQuery, update, name, page, queryStringDefinition, askIri, timings, cohort, includeNames, textSearchStyle, language);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class QueryRequest {\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    textSearch: ").append(toIndentedString(textSearch)).append("\n");
     sb.append("    argument: ").append(toIndentedString(argument)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
@@ -526,7 +491,7 @@ public class QueryRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("context", "textSearch", "argument", "query", "pathQuery", "update", "name", "page", "queryStringDefinition", "askIri", "timings", "cohort", "includeNames", "textSearchStyle", "language"));
+    openapiFields = new HashSet<String>(Arrays.asList("textSearch", "argument", "query", "pathQuery", "update", "name", "page", "queryStringDefinition", "askIri", "timings", "cohort", "includeNames", "textSearchStyle", "language"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("query"));

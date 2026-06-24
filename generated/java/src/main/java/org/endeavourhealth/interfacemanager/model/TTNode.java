@@ -56,7 +56,7 @@ public class TTNode {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
-  private String iri;
+  protected String iri;
 
   public static final String SERIALIZED_NAME_PREDICATE_MAP = "predicateMap";
   @SerializedName(SERIALIZED_NAME_PREDICATE_MAP)
@@ -64,6 +64,7 @@ public class TTNode {
   private Map<String, TTArray> predicateMap = new HashMap<>();
 
   public TTNode() {
+    this.iri = this.getClass().getSimpleName();
   }
 
   public TTNode iri(@javax.annotation.Nullable String iri) {
@@ -174,47 +175,19 @@ public class TTNode {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!TTNode.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TTNode` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("iri").getAsString();
+      switch (discriminatorValue) {
+        case "TTDocument":
+          TTDocument.validateJsonElement(jsonElement);
+          break;
+        case "TTEntity":
+          TTEntity.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `iri` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!TTNode.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'TTNode' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<TTNode> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(TTNode.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<TTNode>() {
-           @Override
-           public void write(JsonWriter out, TTNode value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public TTNode read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of TTNode given an JSON string

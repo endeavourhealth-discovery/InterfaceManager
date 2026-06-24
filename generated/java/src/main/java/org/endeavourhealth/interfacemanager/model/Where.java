@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.Range;
@@ -55,51 +56,11 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Where
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Where {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
-  public static final String SERIALIZED_NAME_MEMBER_OF = "memberOf";
-  @SerializedName(SERIALIZED_NAME_MEMBER_OF)
-  @javax.annotation.Nullable
-  private Boolean memberOf;
-
-  public static final String SERIALIZED_NAME_ANCESTORS_OF = "ancestorsOf";
-  @SerializedName(SERIALIZED_NAME_ANCESTORS_OF)
-  @javax.annotation.Nullable
-  private Boolean ancestorsOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF = "descendantsOrSelfOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOrSelfOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OF = "descendantsOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOf;
-
+public class Where extends Element {
   public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
   @SerializedName(SERIALIZED_NAME_NODE_REF)
   @javax.annotation.Nullable
-  private String nodeRef;
+  protected String nodeRef;
 
   public static final String SERIALIZED_NAME_RANGE = "range";
   @SerializedName(SERIALIZED_NAME_RANGE)
@@ -257,159 +218,8 @@ public class Where {
   private Boolean isCohort;
 
   public Where() {
+    this.nodeRef = this.getClass().getSimpleName();
   }
-
-  public Where iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public Where name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Where description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Where uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
-
-  public Where memberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-    return this;
-  }
-
-  /**
-   * Get memberOf
-   * @return memberOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getMemberOf() {
-    return memberOf;
-  }
-
-  public void setMemberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-  }
-
-
-  public Where ancestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-    return this;
-  }
-
-  /**
-   * Get ancestorsOf
-   * @return ancestorsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getAncestorsOf() {
-    return ancestorsOf;
-  }
-
-  public void setAncestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-  }
-
-
-  public Where descendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOrSelfOf
-   * @return descendantsOrSelfOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOrSelfOf() {
-    return descendantsOrSelfOf;
-  }
-
-  public void setDescendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-  }
-
-
-  public Where descendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOf
-   * @return descendantsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOf() {
-    return descendantsOf;
-  }
-
-  public void setDescendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-  }
-
 
   public Where nodeRef(@javax.annotation.Nullable String nodeRef) {
     this.nodeRef = nodeRef;
@@ -1069,15 +879,7 @@ public class Where {
       return false;
     }
     Where where = (Where) o;
-    return Objects.equals(this.iri, where.iri) &&
-        Objects.equals(this.name, where.name) &&
-        Objects.equals(this.description, where.description) &&
-        Objects.equals(this.uuid, where.uuid) &&
-        Objects.equals(this.memberOf, where.memberOf) &&
-        Objects.equals(this.ancestorsOf, where.ancestorsOf) &&
-        Objects.equals(this.descendantsOrSelfOf, where.descendantsOrSelfOf) &&
-        Objects.equals(this.descendantsOf, where.descendantsOf) &&
-        Objects.equals(this.nodeRef, where.nodeRef) &&
+    return Objects.equals(this.nodeRef, where.nodeRef) &&
         Objects.equals(this.range, where.range) &&
         Objects.equals(this.isNull, where.isNull) &&
         Objects.equals(this.is, where.is) &&
@@ -1108,26 +910,20 @@ public class Where {
         Objects.equals(this.notNull, where.notNull) &&
         Objects.equals(this.isInvalid, where.isInvalid) &&
         Objects.equals(this.isResultSet, where.isResultSet) &&
-        Objects.equals(this.isCohort, where.isCohort);
+        Objects.equals(this.isCohort, where.isCohort) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, memberOf, ancestorsOf, descendantsOrSelfOf, descendantsOf, nodeRef, range, isNull, is, anyRoleGroup, parameter, childOrSelfOf, childOf, cohort, resultSet, inverse, typeOf, subjectVariable, subjectParameter, not, roleGroup, isNotNull, or, and, propertyRef, shortLabel, qualifier, propertyList, propertyVariable, node, excludeProperty, exists, linked, notNull, isInvalid, isResultSet, isCohort);
+    return Objects.hash(nodeRef, range, isNull, is, anyRoleGroup, parameter, childOrSelfOf, childOf, cohort, resultSet, inverse, typeOf, subjectVariable, subjectParameter, not, roleGroup, isNotNull, or, and, propertyRef, shortLabel, qualifier, propertyList, propertyVariable, node, excludeProperty, exists, linked, notNull, isInvalid, isResultSet, isCohort, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Where {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    memberOf: ").append(toIndentedString(memberOf)).append("\n");
-    sb.append("    ancestorsOf: ").append(toIndentedString(ancestorsOf)).append("\n");
-    sb.append("    descendantsOrSelfOf: ").append(toIndentedString(descendantsOrSelfOf)).append("\n");
-    sb.append("    descendantsOf: ").append(toIndentedString(descendantsOf)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
     sb.append("    isNull: ").append(toIndentedString(isNull)).append("\n");
@@ -1178,7 +974,7 @@ public class Where {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "memberOf", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "nodeRef", "range", "isNull", "is", "anyRoleGroup", "parameter", "childOrSelfOf", "childOf", "cohort", "resultSet", "inverse", "typeOf", "subjectVariable", "subjectParameter", "not", "roleGroup", "isNotNull", "or", "and", "propertyRef", "shortLabel", "qualifier", "propertyList", "propertyVariable", "node", "excludeProperty", "exists", "linked", "notNull", "isInvalid", "isResultSet", "isCohort"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "range", "isNull", "is", "anyRoleGroup", "inverse", "typeOf", "subjectVariable", "subjectParameter", "not", "roleGroup", "isNotNull", "or", "and", "propertyRef", "shortLabel", "qualifier", "propertyList", "propertyVariable", "node", "excludeProperty", "exists", "linked", "notNull", "isInvalid", "isResultSet", "isCohort"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1197,162 +993,16 @@ public class Where {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Where.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Where` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
-      }
-      // validate the optional field `range`
-      if (jsonObj.get("range") != null && !jsonObj.get("range").isJsonNull()) {
-        Range.validateJsonElement(jsonObj.get("range"));
-      }
-      if (jsonObj.get("is") != null && !jsonObj.get("is").isJsonNull()) {
-        JsonArray jsonArrayis = jsonObj.getAsJsonArray("is");
-        if (jsonArrayis != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("is").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `is` to be an array in the JSON string but got `%s`", jsonObj.get("is").toString()));
-          }
-
-          // validate the optional field `is` (array)
-          for (int i = 0; i < jsonArrayis.size(); i++) {
-            Node.validateJsonElement(jsonArrayis.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("parameter") != null && !jsonObj.get("parameter").isJsonNull()) && !jsonObj.get("parameter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parameter").toString()));
-      }
-      // validate the optional field `typeOf`
-      if (jsonObj.get("typeOf") != null && !jsonObj.get("typeOf").isJsonNull()) {
-        Node.validateJsonElement(jsonObj.get("typeOf"));
-      }
-      if ((jsonObj.get("subjectVariable") != null && !jsonObj.get("subjectVariable").isJsonNull()) && !jsonObj.get("subjectVariable").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subjectVariable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subjectVariable").toString()));
-      }
-      if ((jsonObj.get("subjectParameter") != null && !jsonObj.get("subjectParameter").isJsonNull()) && !jsonObj.get("subjectParameter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subjectParameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subjectParameter").toString()));
-      }
-      if (jsonObj.get("or") != null && !jsonObj.get("or").isJsonNull()) {
-        JsonArray jsonArrayor = jsonObj.getAsJsonArray("or");
-        if (jsonArrayor != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("or").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
-          }
-
-          // validate the optional field `or` (array)
-          for (int i = 0; i < jsonArrayor.size(); i++) {
-            Where.validateJsonElement(jsonArrayor.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("and") != null && !jsonObj.get("and").isJsonNull()) {
-        JsonArray jsonArrayand = jsonObj.getAsJsonArray("and");
-        if (jsonArrayand != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("and").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `and` to be an array in the JSON string but got `%s`", jsonObj.get("and").toString()));
-          }
-
-          // validate the optional field `and` (array)
-          for (int i = 0; i < jsonArrayand.size(); i++) {
-            Where.validateJsonElement(jsonArrayand.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("propertyRef") != null && !jsonObj.get("propertyRef").isJsonNull()) && !jsonObj.get("propertyRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propertyRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("propertyRef").toString()));
-      }
-      if ((jsonObj.get("shortLabel") != null && !jsonObj.get("shortLabel").isJsonNull()) && !jsonObj.get("shortLabel").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortLabel").toString()));
-      }
-      // validate the optional field `qualifier`
-      if (jsonObj.get("qualifier") != null && !jsonObj.get("qualifier").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("qualifier"));
-      }
-      if (jsonObj.get("propertyList") != null && !jsonObj.get("propertyList").isJsonNull()) {
-        JsonArray jsonArraypropertyList = jsonObj.getAsJsonArray("propertyList");
-        if (jsonArraypropertyList != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("propertyList").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propertyList` to be an array in the JSON string but got `%s`", jsonObj.get("propertyList").toString()));
-          }
-
-          // validate the optional field `propertyList` (array)
-          for (int i = 0; i < jsonArraypropertyList.size(); i++) {
-            Node.validateJsonElement(jsonArraypropertyList.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("propertyVariable") != null && !jsonObj.get("propertyVariable").isJsonNull()) && !jsonObj.get("propertyVariable").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propertyVariable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("propertyVariable").toString()));
-      }
-      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
-      }
-      if (jsonObj.get("excludeProperty") != null && !jsonObj.get("excludeProperty").isJsonNull()) {
-        JsonArray jsonArrayexcludeProperty = jsonObj.getAsJsonArray("excludeProperty");
-        if (jsonArrayexcludeProperty != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("excludeProperty").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `excludeProperty` to be an array in the JSON string but got `%s`", jsonObj.get("excludeProperty").toString()));
-          }
-
-          // validate the optional field `excludeProperty` (array)
-          for (int i = 0; i < jsonArrayexcludeProperty.size(); i++) {
-            IriLD.validateJsonElement(jsonArrayexcludeProperty.get(i));
-          };
-        }
+      String discriminatorValue = jsonElement.getAsJsonObject().get("nodeRef").getAsString();
+      switch (discriminatorValue) {
+        case "When":
+          When.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `nodeRef` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Where.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Where' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Where> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Where.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Where>() {
-           @Override
-           public void write(JsonWriter out, Where value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Where read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of Where given an JSON string

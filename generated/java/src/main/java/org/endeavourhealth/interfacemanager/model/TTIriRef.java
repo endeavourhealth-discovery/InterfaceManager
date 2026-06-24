@@ -53,7 +53,7 @@ public class TTIriRef {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nonnull
-  private String iri;
+  protected String iri;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -66,6 +66,7 @@ public class TTIriRef {
   private String description;
 
   public TTIriRef() {
+    this.iri = this.getClass().getSimpleName();
   }
 
   public TTIriRef iri(@javax.annotation.Nonnull String iri) {
@@ -189,60 +190,34 @@ public class TTIriRef {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!TTIriRef.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TTIriRef` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : TTIriRef.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("iri").getAsString();
+      switch (discriminatorValue) {
+        case "EntityReferenceNode":
+          EntityReferenceNode.validateJsonElement(jsonElement);
+          break;
+        case "Indicator":
+          Indicator.validateJsonElement(jsonElement);
+          break;
+        case "MapFunction":
+          MapFunction.validateJsonElement(jsonElement);
+          break;
+        case "NodeShape":
+          NodeShape.validateJsonElement(jsonElement);
+          break;
+        case "PathQuery":
+          PathQuery.validateJsonElement(jsonElement);
+          break;
+        case "PropertyRange":
+          PropertyRange.validateJsonElement(jsonElement);
+          break;
+        case "Update":
+          Update.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `iri` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!TTIriRef.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'TTIriRef' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<TTIriRef> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(TTIriRef.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<TTIriRef>() {
-           @Override
-           public void write(JsonWriter out, TTIriRef value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public TTIriRef read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of TTIriRef given an JSON string

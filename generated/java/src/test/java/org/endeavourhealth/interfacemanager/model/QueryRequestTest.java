@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.endeavourhealth.interfacemanager.model.Argument;
@@ -47,14 +46,6 @@ public class QueryRequestTest {
     @Test
     public void testQueryRequest() {
         // TODO: test QueryRequest
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    public void contextTest() {
-        // TODO: test context
     }
 
     /**

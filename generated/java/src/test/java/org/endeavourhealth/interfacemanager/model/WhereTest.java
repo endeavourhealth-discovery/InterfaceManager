@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.Range;
@@ -76,11 +77,11 @@ public class WhereTest {
     }
 
     /**
-     * Test the property 'memberOf'
+     * Test the property 'parameter'
      */
     @Test
-    public void memberOfTest() {
-        // TODO: test memberOf
+    public void parameterTest() {
+        // TODO: test parameter
     }
 
     /**
@@ -108,11 +109,59 @@ public class WhereTest {
     }
 
     /**
+     * Test the property 'childOrSelfOf'
+     */
+    @Test
+    public void childOrSelfOfTest() {
+        // TODO: test childOrSelfOf
+    }
+
+    /**
+     * Test the property 'childOf'
+     */
+    @Test
+    public void childOfTest() {
+        // TODO: test childOf
+    }
+
+    /**
+     * Test the property 'memberOf'
+     */
+    @Test
+    public void memberOfTest() {
+        // TODO: test memberOf
+    }
+
+    /**
+     * Test the property 'cohort'
+     */
+    @Test
+    public void cohortTest() {
+        // TODO: test cohort
+    }
+
+    /**
      * Test the property 'nodeRef'
      */
     @Test
     public void nodeRefTest() {
         // TODO: test nodeRef
+    }
+
+    /**
+     * Test the property 'invalid'
+     */
+    @Test
+    public void invalidTest() {
+        // TODO: test invalid
+    }
+
+    /**
+     * Test the property 'resultSet'
+     */
+    @Test
+    public void resultSetTest() {
+        // TODO: test resultSet
     }
 
     /**
@@ -145,46 +194,6 @@ public class WhereTest {
     @Test
     public void anyRoleGroupTest() {
         // TODO: test anyRoleGroup
-    }
-
-    /**
-     * Test the property 'parameter'
-     */
-    @Test
-    public void parameterTest() {
-        // TODO: test parameter
-    }
-
-    /**
-     * Test the property 'childOrSelfOf'
-     */
-    @Test
-    public void childOrSelfOfTest() {
-        // TODO: test childOrSelfOf
-    }
-
-    /**
-     * Test the property 'childOf'
-     */
-    @Test
-    public void childOfTest() {
-        // TODO: test childOf
-    }
-
-    /**
-     * Test the property 'cohort'
-     */
-    @Test
-    public void cohortTest() {
-        // TODO: test cohort
-    }
-
-    /**
-     * Test the property 'resultSet'
-     */
-    @Test
-    public void resultSetTest() {
-        // TODO: test resultSet
     }
 
     /**

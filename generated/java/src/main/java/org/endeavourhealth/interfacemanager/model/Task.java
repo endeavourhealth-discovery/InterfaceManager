@@ -70,7 +70,7 @@ public class Task {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private TaskType type;
+  protected TaskType type;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -98,6 +98,7 @@ public class Task {
   private String hostUrl;
 
   public Task() {
+
   }
 
   public Task id(@javax.annotation.Nullable TTIriRef id) {
@@ -334,79 +335,25 @@ public class Task {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Task.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Task` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `id`
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("id"));
-      }
-      if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TaskType.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        TaskState.validateJsonElement(jsonObj.get("state"));
-      }
-      if ((jsonObj.get("assignedTo") != null && !jsonObj.get("assignedTo").isJsonNull()) && !jsonObj.get("assignedTo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assignedTo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assignedTo").toString()));
-      }
-      if (jsonObj.get("history") != null && !jsonObj.get("history").isJsonNull()) {
-        JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
-        if (jsonArrayhistory != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("history").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
-          }
-
-          // validate the optional field `history` (array)
-          for (int i = 0; i < jsonArrayhistory.size(); i++) {
-            TaskHistory.validateJsonElement(jsonArrayhistory.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("hostUrl") != null && !jsonObj.get("hostUrl").isJsonNull()) && !jsonObj.get("hostUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hostUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hostUrl").toString()));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("type").getAsString();
+      switch (discriminatorValue) {
+        case "BugReport":
+          BugReport.validateJsonElement(jsonElement);
+          break;
+        case "EntityApproval":
+          EntityApproval.validateJsonElement(jsonElement);
+          break;
+        case "NamespaceRequest":
+          NamespaceRequest.validateJsonElement(jsonElement);
+          break;
+        case "RoleRequest":
+          RoleRequest.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `type` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Task.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Task' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Task> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Task.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Task>() {
-           @Override
-           public void write(JsonWriter out, Task value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Task read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of Task given an JSON string

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Match;
 
 import com.google.gson.Gson;
@@ -50,52 +51,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Node
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Node {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
-  public static final String SERIALIZED_NAME_MEMBER_OF = "memberOf";
-  @SerializedName(SERIALIZED_NAME_MEMBER_OF)
-  @javax.annotation.Nullable
-  private Boolean memberOf;
-
-  public static final String SERIALIZED_NAME_ANCESTORS_OF = "ancestorsOf";
-  @SerializedName(SERIALIZED_NAME_ANCESTORS_OF)
-  @javax.annotation.Nullable
-  private Boolean ancestorsOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF = "descendantsOrSelfOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOrSelfOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OF = "descendantsOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOf;
-
-  public static final String SERIALIZED_NAME_PARAMETER = "parameter";
-  @SerializedName(SERIALIZED_NAME_PARAMETER)
-  @javax.annotation.Nullable
-  private String parameter;
-
+public class Node extends Element {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -110,36 +66,6 @@ public class Node {
   @SerializedName(SERIALIZED_NAME_MATCH)
   @javax.annotation.Nullable
   private Match match;
-
-  public static final String SERIALIZED_NAME_CHILD_OR_SELF_OF = "childOrSelfOf";
-  @SerializedName(SERIALIZED_NAME_CHILD_OR_SELF_OF)
-  @javax.annotation.Nullable
-  private Boolean childOrSelfOf;
-
-  public static final String SERIALIZED_NAME_CHILD_OF = "childOf";
-  @SerializedName(SERIALIZED_NAME_CHILD_OF)
-  @javax.annotation.Nullable
-  private Boolean childOf;
-
-  public static final String SERIALIZED_NAME_COHORT = "cohort";
-  @SerializedName(SERIALIZED_NAME_COHORT)
-  @javax.annotation.Nullable
-  private Boolean cohort;
-
-  public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
-  @SerializedName(SERIALIZED_NAME_NODE_REF)
-  @javax.annotation.Nullable
-  private String nodeRef;
-
-  public static final String SERIALIZED_NAME_INVALID = "invalid";
-  @SerializedName(SERIALIZED_NAME_INVALID)
-  @javax.annotation.Nullable
-  private Boolean invalid;
-
-  public static final String SERIALIZED_NAME_RESULT_SET = "resultSet";
-  @SerializedName(SERIALIZED_NAME_RESULT_SET)
-  @javax.annotation.Nullable
-  private Boolean resultSet;
 
   public static final String SERIALIZED_NAME_EXCLUDE = "exclude";
   @SerializedName(SERIALIZED_NAME_EXCLUDE)
@@ -161,189 +87,9 @@ public class Node {
   @javax.annotation.Nullable
   private String node;
 
-  public static final String SERIALIZED_NAME_IS_RESULT_SET = "isResultSet";
-  @SerializedName(SERIALIZED_NAME_IS_RESULT_SET)
-  @javax.annotation.Nullable
-  private Boolean isResultSet;
-
-  public static final String SERIALIZED_NAME_IS_COHORT = "isCohort";
-  @SerializedName(SERIALIZED_NAME_IS_COHORT)
-  @javax.annotation.Nullable
-  private Boolean isCohort;
-
   public Node() {
+    this.parameter = this.getClass().getSimpleName();
   }
-
-  public Node iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public Node name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Node description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Node uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
-
-  public Node memberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-    return this;
-  }
-
-  /**
-   * Get memberOf
-   * @return memberOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getMemberOf() {
-    return memberOf;
-  }
-
-  public void setMemberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-  }
-
-
-  public Node ancestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-    return this;
-  }
-
-  /**
-   * Get ancestorsOf
-   * @return ancestorsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getAncestorsOf() {
-    return ancestorsOf;
-  }
-
-  public void setAncestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-  }
-
-
-  public Node descendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOrSelfOf
-   * @return descendantsOrSelfOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOrSelfOf() {
-    return descendantsOrSelfOf;
-  }
-
-  public void setDescendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-  }
-
-
-  public Node descendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOf
-   * @return descendantsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOf() {
-    return descendantsOf;
-  }
-
-  public void setDescendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-  }
-
-
-  public Node parameter(@javax.annotation.Nullable String parameter) {
-    this.parameter = parameter;
-    return this;
-  }
-
-  /**
-   * Get parameter
-   * @return parameter
-   */
-  @javax.annotation.Nullable
-  public String getParameter() {
-    return parameter;
-  }
-
-  public void setParameter(@javax.annotation.Nullable String parameter) {
-    this.parameter = parameter;
-  }
-
 
   public Node type(@javax.annotation.Nullable String type) {
     this.type = type;
@@ -399,120 +145,6 @@ public class Node {
 
   public void setMatch(@javax.annotation.Nullable Match match) {
     this.match = match;
-  }
-
-
-  public Node childOrSelfOf(@javax.annotation.Nullable Boolean childOrSelfOf) {
-    this.childOrSelfOf = childOrSelfOf;
-    return this;
-  }
-
-  /**
-   * Get childOrSelfOf
-   * @return childOrSelfOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getChildOrSelfOf() {
-    return childOrSelfOf;
-  }
-
-  public void setChildOrSelfOf(@javax.annotation.Nullable Boolean childOrSelfOf) {
-    this.childOrSelfOf = childOrSelfOf;
-  }
-
-
-  public Node childOf(@javax.annotation.Nullable Boolean childOf) {
-    this.childOf = childOf;
-    return this;
-  }
-
-  /**
-   * Get childOf
-   * @return childOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getChildOf() {
-    return childOf;
-  }
-
-  public void setChildOf(@javax.annotation.Nullable Boolean childOf) {
-    this.childOf = childOf;
-  }
-
-
-  public Node cohort(@javax.annotation.Nullable Boolean cohort) {
-    this.cohort = cohort;
-    return this;
-  }
-
-  /**
-   * Get cohort
-   * @return cohort
-   */
-  @javax.annotation.Nullable
-  public Boolean getCohort() {
-    return cohort;
-  }
-
-  public void setCohort(@javax.annotation.Nullable Boolean cohort) {
-    this.cohort = cohort;
-  }
-
-
-  public Node nodeRef(@javax.annotation.Nullable String nodeRef) {
-    this.nodeRef = nodeRef;
-    return this;
-  }
-
-  /**
-   * Get nodeRef
-   * @return nodeRef
-   */
-  @javax.annotation.Nullable
-  public String getNodeRef() {
-    return nodeRef;
-  }
-
-  public void setNodeRef(@javax.annotation.Nullable String nodeRef) {
-    this.nodeRef = nodeRef;
-  }
-
-
-  public Node invalid(@javax.annotation.Nullable Boolean invalid) {
-    this.invalid = invalid;
-    return this;
-  }
-
-  /**
-   * Get invalid
-   * @return invalid
-   */
-  @javax.annotation.Nullable
-  public Boolean getInvalid() {
-    return invalid;
-  }
-
-  public void setInvalid(@javax.annotation.Nullable Boolean invalid) {
-    this.invalid = invalid;
-  }
-
-
-  public Node resultSet(@javax.annotation.Nullable Boolean resultSet) {
-    this.resultSet = resultSet;
-    return this;
-  }
-
-  /**
-   * Get resultSet
-   * @return resultSet
-   */
-  @javax.annotation.Nullable
-  public Boolean getResultSet() {
-    return resultSet;
-  }
-
-  public void setResultSet(@javax.annotation.Nullable Boolean resultSet) {
-    this.resultSet = resultSet;
   }
 
 
@@ -592,44 +224,6 @@ public class Node {
   }
 
 
-  public Node isResultSet(@javax.annotation.Nullable Boolean isResultSet) {
-    this.isResultSet = isResultSet;
-    return this;
-  }
-
-  /**
-   * Get isResultSet
-   * @return isResultSet
-   */
-  @javax.annotation.Nullable
-  public Boolean getIsResultSet() {
-    return isResultSet;
-  }
-
-  public void setIsResultSet(@javax.annotation.Nullable Boolean isResultSet) {
-    this.isResultSet = isResultSet;
-  }
-
-
-  public Node isCohort(@javax.annotation.Nullable Boolean isCohort) {
-    this.isCohort = isCohort;
-    return this;
-  }
-
-  /**
-   * Get isCohort
-   * @return isCohort
-   */
-  @javax.annotation.Nullable
-  public Boolean getIsCohort() {
-    return isCohort;
-  }
-
-  public void setIsCohort(@javax.annotation.Nullable Boolean isCohort) {
-    this.isCohort = isCohort;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -640,65 +234,33 @@ public class Node {
       return false;
     }
     Node node = (Node) o;
-    return Objects.equals(this.iri, node.iri) &&
-        Objects.equals(this.name, node.name) &&
-        Objects.equals(this.description, node.description) &&
-        Objects.equals(this.uuid, node.uuid) &&
-        Objects.equals(this.memberOf, node.memberOf) &&
-        Objects.equals(this.ancestorsOf, node.ancestorsOf) &&
-        Objects.equals(this.descendantsOrSelfOf, node.descendantsOrSelfOf) &&
-        Objects.equals(this.descendantsOf, node.descendantsOf) &&
-        Objects.equals(this.parameter, node.parameter) &&
-        Objects.equals(this.type, node.type) &&
+    return Objects.equals(this.type, node.type) &&
         Objects.equals(this.qualifier, node.qualifier) &&
         Objects.equals(this.match, node.match) &&
-        Objects.equals(this.childOrSelfOf, node.childOrSelfOf) &&
-        Objects.equals(this.childOf, node.childOf) &&
-        Objects.equals(this.cohort, node.cohort) &&
-        Objects.equals(this.nodeRef, node.nodeRef) &&
-        Objects.equals(this.invalid, node.invalid) &&
-        Objects.equals(this.resultSet, node.resultSet) &&
         Objects.equals(this.exclude, node.exclude) &&
         Objects.equals(this.code, node.code) &&
         Objects.equals(this.inverse, node.inverse) &&
         Objects.equals(this.node, node.node) &&
-        Objects.equals(this.isResultSet, node.isResultSet) &&
-        Objects.equals(this.isCohort, node.isCohort);
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, memberOf, ancestorsOf, descendantsOrSelfOf, descendantsOf, parameter, type, qualifier, match, childOrSelfOf, childOf, cohort, nodeRef, invalid, resultSet, exclude, code, inverse, node, isResultSet, isCohort);
+    return Objects.hash(type, qualifier, match, exclude, code, inverse, node, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Node {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    memberOf: ").append(toIndentedString(memberOf)).append("\n");
-    sb.append("    ancestorsOf: ").append(toIndentedString(ancestorsOf)).append("\n");
-    sb.append("    descendantsOrSelfOf: ").append(toIndentedString(descendantsOrSelfOf)).append("\n");
-    sb.append("    descendantsOf: ").append(toIndentedString(descendantsOf)).append("\n");
-    sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
     sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    childOrSelfOf: ").append(toIndentedString(childOrSelfOf)).append("\n");
-    sb.append("    childOf: ").append(toIndentedString(childOf)).append("\n");
-    sb.append("    cohort: ").append(toIndentedString(cohort)).append("\n");
-    sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
-    sb.append("    invalid: ").append(toIndentedString(invalid)).append("\n");
-    sb.append("    resultSet: ").append(toIndentedString(resultSet)).append("\n");
     sb.append("    exclude: ").append(toIndentedString(exclude)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    inverse: ").append(toIndentedString(inverse)).append("\n");
     sb.append("    node: ").append(toIndentedString(node)).append("\n");
-    sb.append("    isResultSet: ").append(toIndentedString(isResultSet)).append("\n");
-    sb.append("    isCohort: ").append(toIndentedString(isCohort)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -717,7 +279,7 @@ public class Node {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "memberOf", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "parameter", "type", "qualifier", "match", "childOrSelfOf", "childOf", "cohort", "nodeRef", "invalid", "resultSet", "exclude", "code", "inverse", "node", "isResultSet", "isCohort"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "type", "qualifier", "match", "exclude", "code", "inverse", "node"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -742,41 +304,6 @@ public class Node {
         if (!Node.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Node` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      if ((jsonObj.get("parameter") != null && !jsonObj.get("parameter").isJsonNull()) && !jsonObj.get("parameter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parameter").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if ((jsonObj.get("qualifier") != null && !jsonObj.get("qualifier").isJsonNull()) && !jsonObj.get("qualifier").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `qualifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("qualifier").toString()));
-      }
-      // validate the optional field `match`
-      if (jsonObj.get("match") != null && !jsonObj.get("match").isJsonNull()) {
-        Match.validateJsonElement(jsonObj.get("match"));
-      }
-      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
-      }
-      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
-      }
-      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
       }
   }
 

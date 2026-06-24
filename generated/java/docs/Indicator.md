@@ -7,9 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**iri** | **String** |  |  |
-|**name** | **String** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
 |**isSubIndicatorOf** | [**List&lt;TTIriRef&gt;**](TTIriRef.md) |  |  [optional] |
 |**numerator** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
 |**dataset** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |

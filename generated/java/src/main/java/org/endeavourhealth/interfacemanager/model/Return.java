@@ -20,11 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Case;
 import org.endeavourhealth.interfacemanager.model.FunctionClause;
-import org.endeavourhealth.interfacemanager.model.ModelCase;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
 import com.google.gson.Gson;
@@ -51,15 +49,10 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * ModelReturn
+ * Return
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class ModelReturn {
-  public static final String SERIALIZED_NAME_RETURN = "return";
-  @SerializedName(SERIALIZED_NAME_RETURN)
-  @javax.annotation.Nullable
-  private List<ModelReturn> _return = new ArrayList<>();
-
+public class Return {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
@@ -118,44 +111,17 @@ public class ModelReturn {
   public static final String SERIALIZED_NAME_CASE = "case";
   @SerializedName(SERIALIZED_NAME_CASE)
   @javax.annotation.Nullable
-  private ModelCase _case;
+  private Case _case;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   @javax.annotation.Nullable
   private String value;
 
-  public ModelReturn() {
+  public Return() {
   }
 
-  public ModelReturn _return(@javax.annotation.Nullable List<ModelReturn> _return) {
-    this._return = _return;
-    return this;
-  }
-
-  public ModelReturn addReturnItem(ModelReturn _returnItem) {
-    if (this._return == null) {
-      this._return = new ArrayList<>();
-    }
-    this._return.add(_returnItem);
-    return this;
-  }
-
-  /**
-   * Get _return
-   * @return _return
-   */
-  @javax.annotation.Nullable
-  public List<ModelReturn> getReturn() {
-    return _return;
-  }
-
-  public void setReturn(@javax.annotation.Nullable List<ModelReturn> _return) {
-    this._return = _return;
-  }
-
-
-  public ModelReturn iri(@javax.annotation.Nullable String iri) {
+  public Return iri(@javax.annotation.Nullable String iri) {
     this.iri = iri;
     return this;
   }
@@ -174,7 +140,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn name(@javax.annotation.Nullable String name) {
+  public Return name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -193,7 +159,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn function(@javax.annotation.Nullable FunctionClause function) {
+  public Return function(@javax.annotation.Nullable FunctionClause function) {
     this.function = function;
     return this;
   }
@@ -212,7 +178,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn as(@javax.annotation.Nullable String as) {
+  public Return as(@javax.annotation.Nullable String as) {
     this.as = as;
     return this;
   }
@@ -231,7 +197,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn nodeRef(@javax.annotation.Nullable String nodeRef) {
+  public Return nodeRef(@javax.annotation.Nullable String nodeRef) {
     this.nodeRef = nodeRef;
     return this;
   }
@@ -250,7 +216,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn propertyRef(@javax.annotation.Nullable String propertyRef) {
+  public Return propertyRef(@javax.annotation.Nullable String propertyRef) {
     this.propertyRef = propertyRef;
     return this;
   }
@@ -269,7 +235,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn pathRef(@javax.annotation.Nullable String pathRef) {
+  public Return pathRef(@javax.annotation.Nullable String pathRef) {
     this.pathRef = pathRef;
     return this;
   }
@@ -288,7 +254,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn inverse(@javax.annotation.Nullable Boolean inverse) {
+  public Return inverse(@javax.annotation.Nullable Boolean inverse) {
     this.inverse = inverse;
     return this;
   }
@@ -307,7 +273,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn units(@javax.annotation.Nullable TTIriRef units) {
+  public Return units(@javax.annotation.Nullable TTIriRef units) {
     this.units = units;
     return this;
   }
@@ -326,7 +292,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn dataType(@javax.annotation.Nullable TTIriRef dataType) {
+  public Return dataType(@javax.annotation.Nullable TTIriRef dataType) {
     this.dataType = dataType;
     return this;
   }
@@ -345,7 +311,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn description(@javax.annotation.Nullable String description) {
+  public Return description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -364,7 +330,7 @@ public class ModelReturn {
   }
 
 
-  public ModelReturn _case(@javax.annotation.Nullable ModelCase _case) {
+  public Return _case(@javax.annotation.Nullable Case _case) {
     this._case = _case;
     return this;
   }
@@ -374,16 +340,16 @@ public class ModelReturn {
    * @return _case
    */
   @javax.annotation.Nullable
-  public ModelCase getCase() {
+  public Case getCase() {
     return _case;
   }
 
-  public void setCase(@javax.annotation.Nullable ModelCase _case) {
+  public void setCase(@javax.annotation.Nullable Case _case) {
     this._case = _case;
   }
 
 
-  public ModelReturn value(@javax.annotation.Nullable String value) {
+  public Return value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -411,9 +377,8 @@ public class ModelReturn {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelReturn _return = (ModelReturn) o;
-    return Objects.equals(this._return, _return._return) &&
-        Objects.equals(this.iri, _return.iri) &&
+    Return _return = (Return) o;
+    return Objects.equals(this.iri, _return.iri) &&
         Objects.equals(this.name, _return.name) &&
         Objects.equals(this.function, _return.function) &&
         Objects.equals(this.as, _return.as) &&
@@ -430,14 +395,13 @@ public class ModelReturn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(_return, iri, name, function, as, nodeRef, propertyRef, pathRef, inverse, units, dataType, description, _case, value);
+    return Objects.hash(iri, name, function, as, nodeRef, propertyRef, pathRef, inverse, units, dataType, description, _case, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelReturn {\n");
-    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("class Return {\n");
     sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    function: ").append(toIndentedString(function)).append("\n");
@@ -469,7 +433,7 @@ public class ModelReturn {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("return", "iri", "name", "function", "as", "nodeRef", "propertyRef", "pathRef", "inverse", "units", "dataType", "description", "case", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "function", "as", "nodeRef", "propertyRef", "pathRef", "inverse", "units", "dataType", "description", "case", "value"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -479,37 +443,23 @@ public class ModelReturn {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelReturn
+   * @throws IOException if the JSON Element is invalid with respect to Return
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelReturn.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelReturn is not found in the empty JSON string", ModelReturn.openapiRequiredFields.toString()));
+        if (!Return.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Return is not found in the empty JSON string", Return.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelReturn.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelReturn` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Return.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Return` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("return") != null && !jsonObj.get("return").isJsonNull()) {
-        JsonArray jsonArray_return = jsonObj.getAsJsonArray("return");
-        if (jsonArray_return != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("return").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `return` to be an array in the JSON string but got `%s`", jsonObj.get("return").toString()));
-          }
-
-          // validate the optional field `return` (array)
-          for (int i = 0; i < jsonArray_return.size(); i++) {
-            ModelReturn.validateJsonElement(jsonArray_return.get(i));
-          };
-        }
-      }
       if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
       }
@@ -545,7 +495,7 @@ public class ModelReturn {
       }
       // validate the optional field `case`
       if (jsonObj.get("case") != null && !jsonObj.get("case").isJsonNull()) {
-        ModelCase.validateJsonElement(jsonObj.get("case"));
+        Case.validateJsonElement(jsonObj.get("case"));
       }
       if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
@@ -556,22 +506,22 @@ public class ModelReturn {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelReturn.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelReturn' and its subtypes
+       if (!Return.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Return' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelReturn> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelReturn.class));
+       final TypeAdapter<Return> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Return.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelReturn>() {
+       return (TypeAdapter<T>) new TypeAdapter<Return>() {
            @Override
-           public void write(JsonWriter out, ModelReturn value) throws IOException {
+           public void write(JsonWriter out, Return value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelReturn read(JsonReader in) throws IOException {
+           public Return read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -582,18 +532,18 @@ public class ModelReturn {
   }
 
   /**
-   * Create an instance of ModelReturn given an JSON string
+   * Create an instance of Return given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelReturn
-   * @throws IOException if the JSON string is invalid with respect to ModelReturn
+   * @return An instance of Return
+   * @throws IOException if the JSON string is invalid with respect to Return
    */
-  public static ModelReturn fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelReturn.class);
+  public static Return fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Return.class);
   }
 
   /**
-   * Convert an instance of ModelReturn to an JSON string
+   * Convert an instance of Return to an JSON string
    *
    * @return JSON string
    */

@@ -46,10 +46,10 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * ISubQueryDependency
+ * SubQueryDependency
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class ISubQueryDependency {
+public class SubQueryDependency {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
@@ -65,10 +65,10 @@ public class ISubQueryDependency {
   @javax.annotation.Nullable
   private Integer depth;
 
-  public ISubQueryDependency() {
+  public SubQueryDependency() {
   }
 
-  public ISubQueryDependency iri(@javax.annotation.Nullable String iri) {
+  public SubQueryDependency iri(@javax.annotation.Nullable String iri) {
     this.iri = iri;
     return this;
   }
@@ -87,7 +87,7 @@ public class ISubQueryDependency {
   }
 
 
-  public ISubQueryDependency label(@javax.annotation.Nullable String label) {
+  public SubQueryDependency label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -106,7 +106,7 @@ public class ISubQueryDependency {
   }
 
 
-  public ISubQueryDependency depth(@javax.annotation.Nullable Integer depth) {
+  public SubQueryDependency depth(@javax.annotation.Nullable Integer depth) {
     this.depth = depth;
     return this;
   }
@@ -134,10 +134,10 @@ public class ISubQueryDependency {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ISubQueryDependency isubQueryDependency = (ISubQueryDependency) o;
-    return Objects.equals(this.iri, isubQueryDependency.iri) &&
-        Objects.equals(this.label, isubQueryDependency.label) &&
-        Objects.equals(this.depth, isubQueryDependency.depth);
+    SubQueryDependency subQueryDependency = (SubQueryDependency) o;
+    return Objects.equals(this.iri, subQueryDependency.iri) &&
+        Objects.equals(this.label, subQueryDependency.label) &&
+        Objects.equals(this.depth, subQueryDependency.depth);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class ISubQueryDependency {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ISubQueryDependency {\n");
+    sb.append("class SubQueryDependency {\n");
     sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    depth: ").append(toIndentedString(depth)).append("\n");
@@ -180,20 +180,20 @@ public class ISubQueryDependency {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ISubQueryDependency
+   * @throws IOException if the JSON Element is invalid with respect to SubQueryDependency
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ISubQueryDependency.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ISubQueryDependency is not found in the empty JSON string", ISubQueryDependency.openapiRequiredFields.toString()));
+        if (!SubQueryDependency.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SubQueryDependency is not found in the empty JSON string", SubQueryDependency.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ISubQueryDependency.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ISubQueryDependency` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!SubQueryDependency.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SubQueryDependency` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -209,22 +209,22 @@ public class ISubQueryDependency {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ISubQueryDependency.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ISubQueryDependency' and its subtypes
+       if (!SubQueryDependency.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SubQueryDependency' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ISubQueryDependency> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ISubQueryDependency.class));
+       final TypeAdapter<SubQueryDependency> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SubQueryDependency.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ISubQueryDependency>() {
+       return (TypeAdapter<T>) new TypeAdapter<SubQueryDependency>() {
            @Override
-           public void write(JsonWriter out, ISubQueryDependency value) throws IOException {
+           public void write(JsonWriter out, SubQueryDependency value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ISubQueryDependency read(JsonReader in) throws IOException {
+           public SubQueryDependency read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -235,18 +235,18 @@ public class ISubQueryDependency {
   }
 
   /**
-   * Create an instance of ISubQueryDependency given an JSON string
+   * Create an instance of SubQueryDependency given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ISubQueryDependency
-   * @throws IOException if the JSON string is invalid with respect to ISubQueryDependency
+   * @return An instance of SubQueryDependency
+   * @throws IOException if the JSON string is invalid with respect to SubQueryDependency
    */
-  public static ISubQueryDependency fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ISubQueryDependency.class);
+  public static SubQueryDependency fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SubQueryDependency.class);
   }
 
   /**
-   * Convert an instance of ISubQueryDependency to an JSON string
+   * Convert an instance of SubQueryDependency to an JSON string
    *
    * @return JSON string
    */

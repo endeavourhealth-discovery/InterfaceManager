@@ -61,6 +61,357 @@ public class JSON {
     @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.BugReport.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.BugReport>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.BugReport> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("BugReport", org.endeavourhealth.interfacemanager.model.BugReport.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "type"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Concept.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Concept>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Concept> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Concept", org.endeavourhealth.interfacemanager.model.Concept.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.ConceptSet.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.ConceptSet>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.ConceptSet> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("ConceptSet", org.endeavourhealth.interfacemanager.model.ConceptSet.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Element.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Element>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Element> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Node", org.endeavourhealth.interfacemanager.model.Node.class);
+                        classByDiscriminatorValue.put("Path", org.endeavourhealth.interfacemanager.model.Path.class);
+                        classByDiscriminatorValue.put("When", org.endeavourhealth.interfacemanager.model.When.class);
+                        classByDiscriminatorValue.put("Where", org.endeavourhealth.interfacemanager.model.Where.class);
+                        classByDiscriminatorValue.put("Element", org.endeavourhealth.interfacemanager.model.Element.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "parameter"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Entity.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Entity>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Entity> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Concept", org.endeavourhealth.interfacemanager.model.Concept.class);
+                        classByDiscriminatorValue.put("ConceptSet", org.endeavourhealth.interfacemanager.model.ConceptSet.class);
+                        classByDiscriminatorValue.put("FunctionTemplate", org.endeavourhealth.interfacemanager.model.FunctionTemplate.class);
+                        classByDiscriminatorValue.put("ParameterTemplate", org.endeavourhealth.interfacemanager.model.ParameterTemplate.class);
+                        classByDiscriminatorValue.put("QueryEntity", org.endeavourhealth.interfacemanager.model.QueryEntity.class);
+                        classByDiscriminatorValue.put("ValueTemplate", org.endeavourhealth.interfacemanager.model.ValueTemplate.class);
+                        classByDiscriminatorValue.put("Entity", org.endeavourhealth.interfacemanager.model.Entity.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.EntityApproval.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.EntityApproval>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.EntityApproval> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("EntityApproval", org.endeavourhealth.interfacemanager.model.EntityApproval.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "type"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.EntityReferenceNode.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.EntityReferenceNode>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.EntityReferenceNode> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("EntityReferenceNode", org.endeavourhealth.interfacemanager.model.EntityReferenceNode.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.FunctionClause.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.FunctionClause>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.FunctionClause> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("FunctionClause", org.endeavourhealth.interfacemanager.model.FunctionClause.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.FunctionTemplate.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.FunctionTemplate>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.FunctionTemplate> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("FunctionTemplate", org.endeavourhealth.interfacemanager.model.FunctionTemplate.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.GroupBy.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.GroupBy>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.GroupBy> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("GroupBy", org.endeavourhealth.interfacemanager.model.GroupBy.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Indicator.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Indicator>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Indicator> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Indicator", org.endeavourhealth.interfacemanager.model.Indicator.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Instance.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Instance>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Instance> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Instance", org.endeavourhealth.interfacemanager.model.Instance.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.IriLD.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.IriLD>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.IriLD> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Element", org.endeavourhealth.interfacemanager.model.Element.class);
+                        classByDiscriminatorValue.put("FunctionClause", org.endeavourhealth.interfacemanager.model.FunctionClause.class);
+                        classByDiscriminatorValue.put("GroupBy", org.endeavourhealth.interfacemanager.model.GroupBy.class);
+                        classByDiscriminatorValue.put("Instance", org.endeavourhealth.interfacemanager.model.Instance.class);
+                        classByDiscriminatorValue.put("Match", org.endeavourhealth.interfacemanager.model.Match.class);
+                        classByDiscriminatorValue.put("Node", org.endeavourhealth.interfacemanager.model.Node.class);
+                        classByDiscriminatorValue.put("OrderDirection", org.endeavourhealth.interfacemanager.model.OrderDirection.class);
+                        classByDiscriminatorValue.put("Path", org.endeavourhealth.interfacemanager.model.Path.class);
+                        classByDiscriminatorValue.put("Query", org.endeavourhealth.interfacemanager.model.Query.class);
+                        classByDiscriminatorValue.put("When", org.endeavourhealth.interfacemanager.model.When.class);
+                        classByDiscriminatorValue.put("Where", org.endeavourhealth.interfacemanager.model.Where.class);
+                        classByDiscriminatorValue.put("IriLD", org.endeavourhealth.interfacemanager.model.IriLD.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.MapFunction.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.MapFunction>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.MapFunction> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("MapFunction", org.endeavourhealth.interfacemanager.model.MapFunction.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Match.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Match>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Match> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Query", org.endeavourhealth.interfacemanager.model.Query.class);
+                        classByDiscriminatorValue.put("Match", org.endeavourhealth.interfacemanager.model.Match.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.NamespaceRequest.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.NamespaceRequest>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.NamespaceRequest> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("NamespaceRequest", org.endeavourhealth.interfacemanager.model.NamespaceRequest.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "type"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Node.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Node>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Node> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Node", org.endeavourhealth.interfacemanager.model.Node.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "parameter"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.NodeShape.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.NodeShape>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.NodeShape> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("NodeShape", org.endeavourhealth.interfacemanager.model.NodeShape.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.OrderDirection.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.OrderDirection>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.OrderDirection> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("OrderDirection", org.endeavourhealth.interfacemanager.model.OrderDirection.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.ParameterTemplate.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.ParameterTemplate>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.ParameterTemplate> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("ParameterTemplate", org.endeavourhealth.interfacemanager.model.ParameterTemplate.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Path.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Path>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Path> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Path", org.endeavourhealth.interfacemanager.model.Path.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "parameter"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.PathQuery.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.PathQuery>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.PathQuery> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("PathQuery", org.endeavourhealth.interfacemanager.model.PathQuery.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.PropertyRange.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.PropertyRange>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.PropertyRange> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("PropertyRange", org.endeavourhealth.interfacemanager.model.PropertyRange.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Query.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Query>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Query> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Query", org.endeavourhealth.interfacemanager.model.Query.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.QueryEntity.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.QueryEntity>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.QueryEntity> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("QueryEntity", org.endeavourhealth.interfacemanager.model.QueryEntity.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.RoleRequest.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.RoleRequest>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.RoleRequest> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("RoleRequest", org.endeavourhealth.interfacemanager.model.RoleRequest.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "type"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.TTDocument.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.TTDocument>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.TTDocument> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("TTDocument", org.endeavourhealth.interfacemanager.model.TTDocument.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.TTEntity.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.TTEntity>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.TTEntity> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("TTEntity", org.endeavourhealth.interfacemanager.model.TTEntity.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.TTIriRef.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.TTIriRef>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.TTIriRef> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("EntityReferenceNode", org.endeavourhealth.interfacemanager.model.EntityReferenceNode.class);
+                        classByDiscriminatorValue.put("Indicator", org.endeavourhealth.interfacemanager.model.Indicator.class);
+                        classByDiscriminatorValue.put("MapFunction", org.endeavourhealth.interfacemanager.model.MapFunction.class);
+                        classByDiscriminatorValue.put("NodeShape", org.endeavourhealth.interfacemanager.model.NodeShape.class);
+                        classByDiscriminatorValue.put("PathQuery", org.endeavourhealth.interfacemanager.model.PathQuery.class);
+                        classByDiscriminatorValue.put("PropertyRange", org.endeavourhealth.interfacemanager.model.PropertyRange.class);
+                        classByDiscriminatorValue.put("Update", org.endeavourhealth.interfacemanager.model.Update.class);
+                        classByDiscriminatorValue.put("TTIriRef", org.endeavourhealth.interfacemanager.model.TTIriRef.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.TTNode.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.TTNode>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.TTNode> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("TTDocument", org.endeavourhealth.interfacemanager.model.TTDocument.class);
+                        classByDiscriminatorValue.put("TTEntity", org.endeavourhealth.interfacemanager.model.TTEntity.class);
+                        classByDiscriminatorValue.put("TTNode", org.endeavourhealth.interfacemanager.model.TTNode.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Task.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Task>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Task> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("BugReport", org.endeavourhealth.interfacemanager.model.BugReport.class);
+                        classByDiscriminatorValue.put("EntityApproval", org.endeavourhealth.interfacemanager.model.EntityApproval.class);
+                        classByDiscriminatorValue.put("NamespaceRequest", org.endeavourhealth.interfacemanager.model.NamespaceRequest.class);
+                        classByDiscriminatorValue.put("RoleRequest", org.endeavourhealth.interfacemanager.model.RoleRequest.class);
+                        classByDiscriminatorValue.put("Task", org.endeavourhealth.interfacemanager.model.Task.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "type"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Update.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Update>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Update> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("Update", org.endeavourhealth.interfacemanager.model.Update.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.ValueTemplate.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.ValueTemplate>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.ValueTemplate> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("ValueTemplate", org.endeavourhealth.interfacemanager.model.ValueTemplate.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "iri"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.When.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.When>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.When> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("When", org.endeavourhealth.interfacemanager.model.When.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "nodeRef"));
+                    }
+          })
+                .registerTypeSelector(org.endeavourhealth.interfacemanager.model.Where.class, new TypeSelector<org.endeavourhealth.interfacemanager.model.Where>() {
+                    @Override
+                    public Class<? extends org.endeavourhealth.interfacemanager.model.Where> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("When", org.endeavourhealth.interfacemanager.model.When.class);
+                        classByDiscriminatorValue.put("Where", org.endeavourhealth.interfacemanager.model.Where.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "nodeRef"));
+                    }
+          })
         ;
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;
@@ -101,6 +452,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ArrayButtons.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Binding.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.BugReport.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Case.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.CodeGenDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.CognitoGroupRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Compare.CustomTypeAdapterFactory());
@@ -108,7 +460,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ConceptContextMap.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ConceptSet.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Context.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ContextMap.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.DataModelProperty.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Delete.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.DownloadByQueryOptions.CustomTypeAdapterFactory());
@@ -116,15 +467,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ECLQueryRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ECLStatus.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EditRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Element.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Entailment.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Entity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityApproval.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityDocument.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityReferenceNode.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityReferenceNodePageable.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityValidationRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.EntityValidationResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Exception.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Expression.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.FileDocumentRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Filter.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.FormGenerator.CustomTypeAdapterFactory());
@@ -132,25 +481,20 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.FunctionRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.FunctionTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.GroupBy.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.HasPaths.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Having.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.IMLLanguage.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ISubQueryDependency.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Indicator.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Instance.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.IriLD.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.LoginResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.LoginResponseES.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.MapFunction.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Match.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.MatchDisplayRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ModelCase.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ModelDocument.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ModelReturn.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Namespace.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.NamespacePermissionJava.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.NamespaceRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Node.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.NodePageable.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.NodeShape.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.OdsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.OrderBy.CustomTypeAdapterFactory());
@@ -182,7 +526,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Range.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.RecentActivityItemDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.RequeueQueryRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Returnable.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Return.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.RoleRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SearchBinding.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SearchRequest.CustomTypeAdapterFactory());
@@ -194,15 +538,15 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SetExportRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SetOptions.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.StackTraceElement.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SubQueryDependency.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SuperiorPropertiesBoolFocusPagedRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTArray.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTContext.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTDocument.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTEntity.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTIriRef.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTNode.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTIriRefPageable.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTLiteral.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTPrefix.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Task.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TaskHistory.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Throwable.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TransformRequest.CustomTypeAdapterFactory());
@@ -214,7 +558,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ValueSource.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.ValueTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.When.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Where.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.WorkflowRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.WorkflowResponse.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();

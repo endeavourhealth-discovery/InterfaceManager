@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Entity;
 import org.endeavourhealth.interfacemanager.model.TTEntity;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.endeavourhealth.interfacemanager.model.ValueTemplate;
@@ -54,42 +55,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * ParameterTemplate
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class ParameterTemplate {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private List<TTIriRef> type = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
-  private TTIriRef status;
-
-  public static final String SERIALIZED_NAME_SCHEME = "scheme";
-  @SerializedName(SERIALIZED_NAME_SCHEME)
-  @javax.annotation.Nullable
-  private TTIriRef scheme;
-
-  public static final String SERIALIZED_NAME_IS_CONTAINED_IN = "isContainedIn";
-  @SerializedName(SERIALIZED_NAME_IS_CONTAINED_IN)
-  @javax.annotation.Nullable
-  private List<TTEntity> isContainedIn = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class ParameterTemplate extends Entity {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
   @javax.annotation.Nullable
@@ -106,156 +72,8 @@ public class ParameterTemplate {
   private List<ValueTemplate> valueTemplate = new ArrayList<>();
 
   public ParameterTemplate() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public ParameterTemplate iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public ParameterTemplate type(@javax.annotation.Nullable List<TTIriRef> type) {
-    this.type = type;
-    return this;
-  }
-
-  public ParameterTemplate addTypeItem(TTIriRef typeItem) {
-    if (this.type == null) {
-      this.type = new ArrayList<>();
-    }
-    this.type.add(typeItem);
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public List<TTIriRef> getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable List<TTIriRef> type) {
-    this.type = type;
-  }
-
-
-  public ParameterTemplate status(@javax.annotation.Nullable TTIriRef status) {
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Get status
-   * @return status
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nullable TTIriRef status) {
-    this.status = status;
-  }
-
-
-  public ParameterTemplate scheme(@javax.annotation.Nullable TTIriRef scheme) {
-    this.scheme = scheme;
-    return this;
-  }
-
-  /**
-   * Get scheme
-   * @return scheme
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getScheme() {
-    return scheme;
-  }
-
-  public void setScheme(@javax.annotation.Nullable TTIriRef scheme) {
-    this.scheme = scheme;
-  }
-
-
-  public ParameterTemplate isContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
-    this.isContainedIn = isContainedIn;
-    return this;
-  }
-
-  public ParameterTemplate addIsContainedInItem(TTEntity isContainedInItem) {
-    if (this.isContainedIn == null) {
-      this.isContainedIn = new ArrayList<>();
-    }
-    this.isContainedIn.add(isContainedInItem);
-    return this;
-  }
-
-  /**
-   * Get isContainedIn
-   * @return isContainedIn
-   */
-  @javax.annotation.Nullable
-  public List<TTEntity> getIsContainedIn() {
-    return isContainedIn;
-  }
-
-  public void setIsContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
-    this.isContainedIn = isContainedIn;
-  }
-
-
-  public ParameterTemplate name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public ParameterTemplate description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public ParameterTemplate label(@javax.annotation.Nullable String label) {
     this.label = label;
@@ -332,34 +150,22 @@ public class ParameterTemplate {
       return false;
     }
     ParameterTemplate parameterTemplate = (ParameterTemplate) o;
-    return Objects.equals(this.iri, parameterTemplate.iri) &&
-        Objects.equals(this.type, parameterTemplate.type) &&
-        Objects.equals(this.status, parameterTemplate.status) &&
-        Objects.equals(this.scheme, parameterTemplate.scheme) &&
-        Objects.equals(this.isContainedIn, parameterTemplate.isContainedIn) &&
-        Objects.equals(this.name, parameterTemplate.name) &&
-        Objects.equals(this.description, parameterTemplate.description) &&
-        Objects.equals(this.label, parameterTemplate.label) &&
+    return Objects.equals(this.label, parameterTemplate.label) &&
         Objects.equals(this.order, parameterTemplate.order) &&
-        Objects.equals(this.valueTemplate, parameterTemplate.valueTemplate);
+        Objects.equals(this.valueTemplate, parameterTemplate.valueTemplate) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, type, status, scheme, isContainedIn, name, description, label, order, valueTemplate);
+    return Objects.hash(label, order, valueTemplate, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ParameterTemplate {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
-    sb.append("    isContainedIn: ").append(toIndentedString(isContainedIn)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    valueTemplate: ").append(toIndentedString(valueTemplate)).append("\n");
@@ -405,69 +211,6 @@ public class ParameterTemplate {
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ParameterTemplate.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ParameterTemplate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        JsonArray jsonArraytype = jsonObj.getAsJsonArray("type");
-        if (jsonArraytype != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("type").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be an array in the JSON string but got `%s`", jsonObj.get("type").toString()));
-          }
-
-          // validate the optional field `type` (array)
-          for (int i = 0; i < jsonArraytype.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraytype.get(i));
-          };
-        }
-      }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("status"));
-      }
-      // validate the optional field `scheme`
-      if (jsonObj.get("scheme") != null && !jsonObj.get("scheme").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("scheme"));
-      }
-      if (jsonObj.get("isContainedIn") != null && !jsonObj.get("isContainedIn").isJsonNull()) {
-        JsonArray jsonArrayisContainedIn = jsonObj.getAsJsonArray("isContainedIn");
-        if (jsonArrayisContainedIn != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("isContainedIn").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `isContainedIn` to be an array in the JSON string but got `%s`", jsonObj.get("isContainedIn").toString()));
-          }
-
-          // validate the optional field `isContainedIn` (array)
-          for (int i = 0; i < jsonArrayisContainedIn.size(); i++) {
-            TTEntity.validateJsonElement(jsonArrayisContainedIn.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
-      }
-      if (jsonObj.get("valueTemplate") != null && !jsonObj.get("valueTemplate").isJsonNull()) {
-        JsonArray jsonArrayvalueTemplate = jsonObj.getAsJsonArray("valueTemplate");
-        if (jsonArrayvalueTemplate != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("valueTemplate").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `valueTemplate` to be an array in the JSON string but got `%s`", jsonObj.get("valueTemplate").toString()));
-          }
-
-          // validate the optional field `valueTemplate` (array)
-          for (int i = 0; i < jsonArrayvalueTemplate.size(); i++) {
-            ValueTemplate.validateJsonElement(jsonArrayvalueTemplate.get(i));
-          };
         }
       }
   }

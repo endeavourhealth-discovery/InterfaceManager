@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Task;
 import org.endeavourhealth.interfacemanager.model.TaskHistory;
 import org.endeavourhealth.interfacemanager.model.TaskState;
 import org.endeavourhealth.interfacemanager.model.TaskType;
@@ -57,214 +58,15 @@ import org.endeavourhealth.interfacemanager.JSON;
  * RoleRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class RoleRequest {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private TTIriRef id;
-
-  public static final String SERIALIZED_NAME_CREATED_BY = "createdBy";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  @javax.annotation.Nullable
-  private String createdBy;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private TaskType type;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private TaskState state;
-
-  public static final String SERIALIZED_NAME_ASSIGNED_TO = "assignedTo";
-  @SerializedName(SERIALIZED_NAME_ASSIGNED_TO)
-  @javax.annotation.Nullable
-  private String assignedTo;
-
-  public static final String SERIALIZED_NAME_DATE_CREATED = "dateCreated";
-  @SerializedName(SERIALIZED_NAME_DATE_CREATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime dateCreated;
-
-  public static final String SERIALIZED_NAME_HISTORY = "history";
-  @SerializedName(SERIALIZED_NAME_HISTORY)
-  @javax.annotation.Nullable
-  private List<TaskHistory> history = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_HOST_URL = "hostUrl";
-  @SerializedName(SERIALIZED_NAME_HOST_URL)
-  @javax.annotation.Nullable
-  private String hostUrl;
-
+public class RoleRequest extends Task {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
   private UserRole role;
 
   public RoleRequest() {
+
   }
-
-  public RoleRequest id(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable TTIriRef id) {
-    this.id = id;
-  }
-
-
-  public RoleRequest createdBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-
-  /**
-   * Get createdBy
-   * @return createdBy
-   */
-  @javax.annotation.Nullable
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-  public void setCreatedBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-  }
-
-
-  public RoleRequest type(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public TaskType getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable TaskType type) {
-    this.type = type;
-  }
-
-
-  public RoleRequest state(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public TaskState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable TaskState state) {
-    this.state = state;
-  }
-
-
-  public RoleRequest assignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-    return this;
-  }
-
-  /**
-   * Get assignedTo
-   * @return assignedTo
-   */
-  @javax.annotation.Nullable
-  public String getAssignedTo() {
-    return assignedTo;
-  }
-
-  public void setAssignedTo(@javax.annotation.Nullable String assignedTo) {
-    this.assignedTo = assignedTo;
-  }
-
-
-  public RoleRequest dateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-
-  /**
-   * Get dateCreated
-   * @return dateCreated
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getDateCreated() {
-    return dateCreated;
-  }
-
-  public void setDateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  public RoleRequest history(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-    return this;
-  }
-
-  public RoleRequest addHistoryItem(TaskHistory historyItem) {
-    if (this.history == null) {
-      this.history = new ArrayList<>();
-    }
-    this.history.add(historyItem);
-    return this;
-  }
-
-  /**
-   * Get history
-   * @return history
-   */
-  @javax.annotation.Nullable
-  public List<TaskHistory> getHistory() {
-    return history;
-  }
-
-  public void setHistory(@javax.annotation.Nullable List<TaskHistory> history) {
-    this.history = history;
-  }
-
-
-  public RoleRequest hostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-    return this;
-  }
-
-  /**
-   * Get hostUrl
-   * @return hostUrl
-   */
-  @javax.annotation.Nullable
-  public String getHostUrl() {
-    return hostUrl;
-  }
-
-  public void setHostUrl(@javax.annotation.Nullable String hostUrl) {
-    this.hostUrl = hostUrl;
-  }
-
 
   public RoleRequest role(@javax.annotation.Nullable UserRole role) {
     this.role = role;
@@ -295,34 +97,20 @@ public class RoleRequest {
       return false;
     }
     RoleRequest roleRequest = (RoleRequest) o;
-    return Objects.equals(this.id, roleRequest.id) &&
-        Objects.equals(this.createdBy, roleRequest.createdBy) &&
-        Objects.equals(this.type, roleRequest.type) &&
-        Objects.equals(this.state, roleRequest.state) &&
-        Objects.equals(this.assignedTo, roleRequest.assignedTo) &&
-        Objects.equals(this.dateCreated, roleRequest.dateCreated) &&
-        Objects.equals(this.history, roleRequest.history) &&
-        Objects.equals(this.hostUrl, roleRequest.hostUrl) &&
-        Objects.equals(this.role, roleRequest.role);
+    return Objects.equals(this.role, roleRequest.role) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdBy, type, state, assignedTo, dateCreated, history, hostUrl, role);
+    return Objects.hash(role, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoleRequest {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    assignedTo: ").append(toIndentedString(assignedTo)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    history: ").append(toIndentedString(history)).append("\n");
-    sb.append("    hostUrl: ").append(toIndentedString(hostUrl)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -367,46 +155,6 @@ public class RoleRequest {
         if (!RoleRequest.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoleRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `id`
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("id"));
-      }
-      if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TaskType.validateJsonElement(jsonObj.get("type"));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        TaskState.validateJsonElement(jsonObj.get("state"));
-      }
-      if ((jsonObj.get("assignedTo") != null && !jsonObj.get("assignedTo").isJsonNull()) && !jsonObj.get("assignedTo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assignedTo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assignedTo").toString()));
-      }
-      if (jsonObj.get("history") != null && !jsonObj.get("history").isJsonNull()) {
-        JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
-        if (jsonArrayhistory != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("history").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
-          }
-
-          // validate the optional field `history` (array)
-          for (int i = 0; i < jsonArrayhistory.size(); i++) {
-            TaskHistory.validateJsonElement(jsonArrayhistory.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("hostUrl") != null && !jsonObj.get("hostUrl").isJsonNull()) && !jsonObj.get("hostUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hostUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hostUrl").toString()));
-      }
-      // validate the optional field `role`
-      if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
-        UserRole.validateJsonElement(jsonObj.get("role"));
       }
   }
 

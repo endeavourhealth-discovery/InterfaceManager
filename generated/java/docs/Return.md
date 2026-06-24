@@ -1,13 +1,12 @@
 
 
-# ModelReturn
+# Return
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**_return** | [**List&lt;ModelReturn&gt;**](ModelReturn.md) |  |  [optional] |
 |**iri** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**function** | [**FunctionClause**](FunctionClause.md) |  |  [optional] |
@@ -19,7 +18,7 @@
 |**units** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
 |**dataType** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**_case** | [**ModelCase**](ModelCase.md) |  |  [optional] |
+|**_case** | [**Case**](Case.md) |  |  [optional] |
 |**value** | **String** |  |  [optional] |
 
 

@@ -20,11 +20,11 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.endeavourhealth.interfacemanager.model.TTArray;
+import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,22 +53,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * EntityReferenceNode
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class EntityReferenceNode {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nonnull
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class EntityReferenceNode extends TTIriRef {
   public static final String SERIALIZED_NAME_PARENTS = "parents";
   @SerializedName(SERIALIZED_NAME_PARENTS)
   @javax.annotation.Nullable
@@ -102,67 +87,11 @@ public class EntityReferenceNode {
   public static final String SERIALIZED_NAME_ORDER_NUMBER = "orderNumber";
   @SerializedName(SERIALIZED_NAME_ORDER_NUMBER)
   @javax.annotation.Nullable
-  private BigDecimal orderNumber;
+  private Integer orderNumber;
 
   public EntityReferenceNode() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public EntityReferenceNode iri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nonnull
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-  }
-
-
-  public EntityReferenceNode name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public EntityReferenceNode description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public EntityReferenceNode parents(@javax.annotation.Nullable List<EntityReferenceNode> parents) {
     this.parents = parents;
@@ -294,7 +223,7 @@ public class EntityReferenceNode {
   }
 
 
-  public EntityReferenceNode orderNumber(@javax.annotation.Nullable BigDecimal orderNumber) {
+  public EntityReferenceNode orderNumber(@javax.annotation.Nullable Integer orderNumber) {
     this.orderNumber = orderNumber;
     return this;
   }
@@ -304,11 +233,11 @@ public class EntityReferenceNode {
    * @return orderNumber
    */
   @javax.annotation.Nullable
-  public BigDecimal getOrderNumber() {
+  public Integer getOrderNumber() {
     return orderNumber;
   }
 
-  public void setOrderNumber(@javax.annotation.Nullable BigDecimal orderNumber) {
+  public void setOrderNumber(@javax.annotation.Nullable Integer orderNumber) {
     this.orderNumber = orderNumber;
   }
 
@@ -323,30 +252,26 @@ public class EntityReferenceNode {
       return false;
     }
     EntityReferenceNode entityReferenceNode = (EntityReferenceNode) o;
-    return Objects.equals(this.iri, entityReferenceNode.iri) &&
-        Objects.equals(this.name, entityReferenceNode.name) &&
-        Objects.equals(this.description, entityReferenceNode.description) &&
-        Objects.equals(this.parents, entityReferenceNode.parents) &&
+    return Objects.equals(this.parents, entityReferenceNode.parents) &&
         Objects.equals(this.children, entityReferenceNode.children) &&
         Objects.equals(this.moduleId, entityReferenceNode.moduleId) &&
         Objects.equals(this.hasChildren, entityReferenceNode.hasChildren) &&
         Objects.equals(this.hasGrandChildren, entityReferenceNode.hasGrandChildren) &&
         Objects.equals(this.type, entityReferenceNode.type) &&
-        Objects.equals(this.orderNumber, entityReferenceNode.orderNumber);
+        Objects.equals(this.orderNumber, entityReferenceNode.orderNumber) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, parents, children, moduleId, hasChildren, hasGrandChildren, type, orderNumber);
+    return Objects.hash(parents, children, moduleId, hasChildren, hasGrandChildren, type, orderNumber, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EntityReferenceNode {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
     sb.append("    children: ").append(toIndentedString(children)).append("\n");
     sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
@@ -404,51 +329,6 @@ public class EntityReferenceNode {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("parents") != null && !jsonObj.get("parents").isJsonNull()) {
-        JsonArray jsonArrayparents = jsonObj.getAsJsonArray("parents");
-        if (jsonArrayparents != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("parents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parents` to be an array in the JSON string but got `%s`", jsonObj.get("parents").toString()));
-          }
-
-          // validate the optional field `parents` (array)
-          for (int i = 0; i < jsonArrayparents.size(); i++) {
-            EntityReferenceNode.validateJsonElement(jsonArrayparents.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("children") != null && !jsonObj.get("children").isJsonNull()) {
-        JsonArray jsonArraychildren = jsonObj.getAsJsonArray("children");
-        if (jsonArraychildren != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("children").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `children` to be an array in the JSON string but got `%s`", jsonObj.get("children").toString()));
-          }
-
-          // validate the optional field `children` (array)
-          for (int i = 0; i < jsonArraychildren.size(); i++) {
-            EntityReferenceNode.validateJsonElement(jsonArraychildren.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("moduleId") != null && !jsonObj.get("moduleId").isJsonNull()) && !jsonObj.get("moduleId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `moduleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("moduleId").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TTArray.validateJsonElement(jsonObj.get("type"));
       }
   }
 

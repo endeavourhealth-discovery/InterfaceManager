@@ -19,33 +19,46 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.endeavourhealth.interfacemanager.model.ModelReturn;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Returnable
+ * Model tests for SubQueryDependency
  */
-public class ReturnableTest {
-    private final Returnable model = new Returnable();
+public class SubQueryDependencyTest {
+    private final SubQueryDependency model = new SubQueryDependency();
 
     /**
-     * Model tests for Returnable
+     * Model tests for SubQueryDependency
      */
     @Test
-    public void testReturnable() {
-        // TODO: test Returnable
+    public void testSubQueryDependency() {
+        // TODO: test SubQueryDependency
     }
 
     /**
-     * Test the property '_return'
+     * Test the property 'iri'
      */
     @Test
-    public void _returnTest() {
-        // TODO: test _return
+    public void iriTest() {
+        // TODO: test iri
+    }
+
+    /**
+     * Test the property 'label'
+     */
+    @Test
+    public void labelTest() {
+        // TODO: test label
+    }
+
+    /**
+     * Test the property 'depth'
+     */
+    @Test
+    public void depthTest() {
+        // TODO: test depth
     }
 
 }

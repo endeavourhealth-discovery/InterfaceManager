@@ -22,38 +22,54 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.endeavourhealth.interfacemanager.model.When;
+import org.endeavourhealth.interfacemanager.model.Node;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelCase
+ * Model tests for NodePageable
  */
-public class ModelCaseTest {
-    private final ModelCase model = new ModelCase();
+public class NodePageableTest {
+    private final NodePageable model = new NodePageable();
 
     /**
-     * Model tests for ModelCase
+     * Model tests for NodePageable
      */
     @Test
-    public void testModelCase() {
-        // TODO: test ModelCase
+    public void testNodePageable() {
+        // TODO: test NodePageable
     }
 
     /**
-     * Test the property 'when'
+     * Test the property 'totalCount'
      */
     @Test
-    public void whenTest() {
-        // TODO: test when
+    public void totalCountTest() {
+        // TODO: test totalCount
     }
 
     /**
-     * Test the property '_else'
+     * Test the property 'currentPage'
      */
     @Test
-    public void _elseTest() {
-        // TODO: test _else
+    public void currentPageTest() {
+        // TODO: test currentPage
+    }
+
+    /**
+     * Test the property 'pageSize'
+     */
+    @Test
+    public void pageSizeTest() {
+        // TODO: test pageSize
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
     }
 
 }

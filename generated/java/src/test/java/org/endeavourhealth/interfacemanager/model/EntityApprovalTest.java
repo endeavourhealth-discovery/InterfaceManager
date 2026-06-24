@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.endeavourhealth.interfacemanager.model.ApprovalType;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Task;
 import org.endeavourhealth.interfacemanager.model.TaskHistory;
 import org.endeavourhealth.interfacemanager.model.TaskState;
 import org.endeavourhealth.interfacemanager.model.TaskType;

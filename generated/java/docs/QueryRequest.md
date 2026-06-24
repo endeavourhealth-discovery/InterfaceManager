@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**context** | **Map&lt;String, String&gt;** |  |  [optional] |
 |**textSearch** | **String** |  |  [optional] |
 |**argument** | [**List&lt;Argument&gt;**](Argument.md) |  |  [optional] |
 |**query** | [**Query**](Query.md) |  |  |

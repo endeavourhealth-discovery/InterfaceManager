@@ -27,10 +27,11 @@ import org.endeavourhealth.interfacemanager.model.Entail;
 import org.endeavourhealth.interfacemanager.model.FunctionClause;
 import org.endeavourhealth.interfacemanager.model.GroupBy;
 import org.endeavourhealth.interfacemanager.model.Having;
-import org.endeavourhealth.interfacemanager.model.ModelReturn;
+import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.OrderLimit;
 import org.endeavourhealth.interfacemanager.model.Path;
+import org.endeavourhealth.interfacemanager.model.Return;
 import org.endeavourhealth.interfacemanager.model.RuleAction;
 import org.endeavourhealth.interfacemanager.model.Where;
 
@@ -61,42 +62,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Match
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Match {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
-  public static final String SERIALIZED_NAME_PATH = "path";
-  @SerializedName(SERIALIZED_NAME_PATH)
-  @javax.annotation.Nullable
-  private List<Path> path = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_NODE = "node";
-  @SerializedName(SERIALIZED_NAME_NODE)
-  @javax.annotation.Nullable
-  private String node;
-
-  public static final String SERIALIZED_NAME_RETURN = "return";
-  @SerializedName(SERIALIZED_NAME_RETURN)
-  @javax.annotation.Nullable
-  private List<ModelReturn> _return = new ArrayList<>();
-
+public class Match extends IriLD {
   public static final String SERIALIZED_NAME_NOT_EXISTS = "notExists";
   @SerializedName(SERIALIZED_NAME_NOT_EXISTS)
   @javax.annotation.Nullable
@@ -242,157 +208,24 @@ public class Match {
   @javax.annotation.Nullable
   private Having having;
 
+  public static final String SERIALIZED_NAME_RETURN = "return";
+  @SerializedName(SERIALIZED_NAME_RETURN)
+  @javax.annotation.Nullable
+  private List<Return> _return = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nullable
+  private List<Path> path = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_NODE = "node";
+  @SerializedName(SERIALIZED_NAME_NODE)
+  @javax.annotation.Nullable
+  private String node;
+
   public Match() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public Match iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public Match name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Match description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Match uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
-
-  public Match path(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
-    return this;
-  }
-
-  public Match addPathItem(Path pathItem) {
-    if (this.path == null) {
-      this.path = new ArrayList<>();
-    }
-    this.path.add(pathItem);
-    return this;
-  }
-
-  /**
-   * Get path
-   * @return path
-   */
-  @javax.annotation.Nullable
-  public List<Path> getPath() {
-    return path;
-  }
-
-  public void setPath(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
-  }
-
-
-  public Match node(@javax.annotation.Nullable String node) {
-    this.node = node;
-    return this;
-  }
-
-  /**
-   * Get node
-   * @return node
-   */
-  @javax.annotation.Nullable
-  public String getNode() {
-    return node;
-  }
-
-  public void setNode(@javax.annotation.Nullable String node) {
-    this.node = node;
-  }
-
-
-  public Match _return(@javax.annotation.Nullable List<ModelReturn> _return) {
-    this._return = _return;
-    return this;
-  }
-
-  public Match addReturnItem(ModelReturn _returnItem) {
-    if (this._return == null) {
-      this._return = new ArrayList<>();
-    }
-    this._return.add(_returnItem);
-    return this;
-  }
-
-  /**
-   * Get _return
-   * @return _return
-   */
-  @javax.annotation.Nullable
-  public List<ModelReturn> getReturn() {
-    return _return;
-  }
-
-  public void setReturn(@javax.annotation.Nullable List<ModelReturn> _return) {
-    this._return = _return;
-  }
-
 
   public Match notExists(@javax.annotation.Nullable Boolean notExists) {
     this.notExists = notExists;
@@ -985,6 +818,79 @@ public class Match {
   }
 
 
+  public Match _return(@javax.annotation.Nullable List<Return> _return) {
+    this._return = _return;
+    return this;
+  }
+
+  public Match addReturnItem(Return _returnItem) {
+    if (this._return == null) {
+      this._return = new ArrayList<>();
+    }
+    this._return.add(_returnItem);
+    return this;
+  }
+
+  /**
+   * Get _return
+   * @return _return
+   */
+  @javax.annotation.Nullable
+  public List<Return> getReturn() {
+    return _return;
+  }
+
+  public void setReturn(@javax.annotation.Nullable List<Return> _return) {
+    this._return = _return;
+  }
+
+
+  public Match path(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
+    return this;
+  }
+
+  public Match addPathItem(Path pathItem) {
+    if (this.path == null) {
+      this.path = new ArrayList<>();
+    }
+    this.path.add(pathItem);
+    return this;
+  }
+
+  /**
+   * Get path
+   * @return path
+   */
+  @javax.annotation.Nullable
+  public List<Path> getPath() {
+    return path;
+  }
+
+  public void setPath(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
+  }
+
+
+  public Match node(@javax.annotation.Nullable String node) {
+    this.node = node;
+    return this;
+  }
+
+  /**
+   * Get node
+   * @return node
+   */
+  @javax.annotation.Nullable
+  public String getNode() {
+    return node;
+  }
+
+  public void setNode(@javax.annotation.Nullable String node) {
+    this.node = node;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -995,14 +901,7 @@ public class Match {
       return false;
     }
     Match match = (Match) o;
-    return Objects.equals(this.iri, match.iri) &&
-        Objects.equals(this.name, match.name) &&
-        Objects.equals(this.description, match.description) &&
-        Objects.equals(this.uuid, match.uuid) &&
-        Objects.equals(this.path, match.path) &&
-        Objects.equals(this.node, match.node) &&
-        Objects.equals(this._return, match._return) &&
-        Objects.equals(this.notExists, match.notExists) &&
+    return Objects.equals(this.notExists, match.notExists) &&
         Objects.equals(this.ifTrue, match.ifTrue) &&
         Objects.equals(this.ifFalse, match.ifFalse) &&
         Objects.equals(this.nodeRef, match.nodeRef) &&
@@ -1030,25 +929,23 @@ public class Match {
         Objects.equals(this.asDescription, match.asDescription) &&
         Objects.equals(this.errorMessage, match.errorMessage) &&
         Objects.equals(this.draft, match.draft) &&
-        Objects.equals(this.having, match.having);
+        Objects.equals(this.having, match.having) &&
+        Objects.equals(this._return, match._return) &&
+        Objects.equals(this.path, match.path) &&
+        Objects.equals(this.node, match.node) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, path, node, _return, notExists, ifTrue, ifFalse, nodeRef, typeOf, is, and, or, where, then, graph, optional, parameter, function, entailment, baseRule, ruleNumber, inverse, activeOnly, rule, any, libraryItem, invalid, groupBy, orderBy, asDescription, errorMessage, draft, having);
+    return Objects.hash(notExists, ifTrue, ifFalse, nodeRef, typeOf, is, and, or, where, then, graph, optional, parameter, function, entailment, baseRule, ruleNumber, inverse, activeOnly, rule, any, libraryItem, invalid, groupBy, orderBy, asDescription, errorMessage, draft, having, _return, path, node, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Match {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    node: ").append(toIndentedString(node)).append("\n");
-    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    notExists: ").append(toIndentedString(notExists)).append("\n");
     sb.append("    ifTrue: ").append(toIndentedString(ifTrue)).append("\n");
     sb.append("    ifFalse: ").append(toIndentedString(ifFalse)).append("\n");
@@ -1078,6 +975,9 @@ public class Match {
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    draft: ").append(toIndentedString(draft)).append("\n");
     sb.append("    having: ").append(toIndentedString(having)).append("\n");
+    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    node: ").append(toIndentedString(node)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1096,7 +996,7 @@ public class Match {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "path", "node", "return", "notExists", "ifTrue", "ifFalse", "nodeRef", "typeOf", "is", "and", "or", "where", "then", "graph", "optional", "parameter", "function", "entailment", "baseRule", "ruleNumber", "inverse", "activeOnly", "rule", "any", "libraryItem", "invalid", "groupBy", "orderBy", "asDescription", "errorMessage", "draft", "having"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "notExists", "ifTrue", "ifFalse", "nodeRef", "typeOf", "is", "and", "or", "where", "then", "graph", "optional", "parameter", "function", "entailment", "baseRule", "ruleNumber", "inverse", "activeOnly", "rule", "any", "libraryItem", "invalid", "groupBy", "orderBy", "asDescription", "errorMessage", "draft", "having", "return", "path", "node"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1115,216 +1015,16 @@ public class Match {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Match.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Match` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      if (jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) {
-        JsonArray jsonArraypath = jsonObj.getAsJsonArray("path");
-        if (jsonArraypath != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("path").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `path` to be an array in the JSON string but got `%s`", jsonObj.get("path").toString()));
-          }
-
-          // validate the optional field `path` (array)
-          for (int i = 0; i < jsonArraypath.size(); i++) {
-            Path.validateJsonElement(jsonArraypath.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
-      }
-      if (jsonObj.get("return") != null && !jsonObj.get("return").isJsonNull()) {
-        JsonArray jsonArray_return = jsonObj.getAsJsonArray("return");
-        if (jsonArray_return != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("return").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `return` to be an array in the JSON string but got `%s`", jsonObj.get("return").toString()));
-          }
-
-          // validate the optional field `return` (array)
-          for (int i = 0; i < jsonArray_return.size(); i++) {
-            ModelReturn.validateJsonElement(jsonArray_return.get(i));
-          };
-        }
-      }
-      // validate the optional field `ifTrue`
-      if (jsonObj.get("ifTrue") != null && !jsonObj.get("ifTrue").isJsonNull()) {
-        RuleAction.validateJsonElement(jsonObj.get("ifTrue"));
-      }
-      // validate the optional field `ifFalse`
-      if (jsonObj.get("ifFalse") != null && !jsonObj.get("ifFalse").isJsonNull()) {
-        RuleAction.validateJsonElement(jsonObj.get("ifFalse"));
-      }
-      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
-      }
-      // validate the optional field `typeOf`
-      if (jsonObj.get("typeOf") != null && !jsonObj.get("typeOf").isJsonNull()) {
-        Node.validateJsonElement(jsonObj.get("typeOf"));
-      }
-      // validate the optional field `is`
-      if (jsonObj.get("is") != null && !jsonObj.get("is").isJsonNull()) {
-        Node.validateJsonElement(jsonObj.get("is"));
-      }
-      if (jsonObj.get("and") != null && !jsonObj.get("and").isJsonNull()) {
-        JsonArray jsonArrayand = jsonObj.getAsJsonArray("and");
-        if (jsonArrayand != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("and").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `and` to be an array in the JSON string but got `%s`", jsonObj.get("and").toString()));
-          }
-
-          // validate the optional field `and` (array)
-          for (int i = 0; i < jsonArrayand.size(); i++) {
-            Match.validateJsonElement(jsonArrayand.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("or") != null && !jsonObj.get("or").isJsonNull()) {
-        JsonArray jsonArrayor = jsonObj.getAsJsonArray("or");
-        if (jsonArrayor != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("or").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
-          }
-
-          // validate the optional field `or` (array)
-          for (int i = 0; i < jsonArrayor.size(); i++) {
-            Match.validateJsonElement(jsonArrayor.get(i));
-          };
-        }
-      }
-      // validate the optional field `where`
-      if (jsonObj.get("where") != null && !jsonObj.get("where").isJsonNull()) {
-        Where.validateJsonElement(jsonObj.get("where"));
-      }
-      // validate the optional field `then`
-      if (jsonObj.get("then") != null && !jsonObj.get("then").isJsonNull()) {
-        Where.validateJsonElement(jsonObj.get("then"));
-      }
-      // validate the optional field `graph`
-      if (jsonObj.get("graph") != null && !jsonObj.get("graph").isJsonNull()) {
-        Node.validateJsonElement(jsonObj.get("graph"));
-      }
-      if ((jsonObj.get("parameter") != null && !jsonObj.get("parameter").isJsonNull()) && !jsonObj.get("parameter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parameter").toString()));
-      }
-      // validate the optional field `function`
-      if (jsonObj.get("function") != null && !jsonObj.get("function").isJsonNull()) {
-        FunctionClause.validateJsonElement(jsonObj.get("function"));
-      }
-      // validate the optional field `entailment`
-      if (jsonObj.get("entailment") != null && !jsonObj.get("entailment").isJsonNull()) {
-        Entail.validateJsonElement(jsonObj.get("entailment"));
-      }
-      if (jsonObj.get("rule") != null && !jsonObj.get("rule").isJsonNull()) {
-        JsonArray jsonArrayrule = jsonObj.getAsJsonArray("rule");
-        if (jsonArrayrule != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("rule").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule` to be an array in the JSON string but got `%s`", jsonObj.get("rule").toString()));
-          }
-
-          // validate the optional field `rule` (array)
-          for (int i = 0; i < jsonArrayrule.size(); i++) {
-            Match.validateJsonElement(jsonArrayrule.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("any") != null && !jsonObj.get("any").isJsonNull()) {
-        JsonArray jsonArrayany = jsonObj.getAsJsonArray("any");
-        if (jsonArrayany != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("any").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `any` to be an array in the JSON string but got `%s`", jsonObj.get("any").toString()));
-          }
-
-          // validate the optional field `any` (array)
-          for (int i = 0; i < jsonArrayany.size(); i++) {
-            Match.validateJsonElement(jsonArrayany.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("libraryItem") != null && !jsonObj.get("libraryItem").isJsonNull()) && !jsonObj.get("libraryItem").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `libraryItem` to be a primitive type in the JSON string but got `%s`", jsonObj.get("libraryItem").toString()));
-      }
-      if (jsonObj.get("groupBy") != null && !jsonObj.get("groupBy").isJsonNull()) {
-        JsonArray jsonArraygroupBy = jsonObj.getAsJsonArray("groupBy");
-        if (jsonArraygroupBy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("groupBy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `groupBy` to be an array in the JSON string but got `%s`", jsonObj.get("groupBy").toString()));
-          }
-
-          // validate the optional field `groupBy` (array)
-          for (int i = 0; i < jsonArraygroupBy.size(); i++) {
-            GroupBy.validateJsonElement(jsonArraygroupBy.get(i));
-          };
-        }
-      }
-      // validate the optional field `orderBy`
-      if (jsonObj.get("orderBy") != null && !jsonObj.get("orderBy").isJsonNull()) {
-        OrderLimit.validateJsonElement(jsonObj.get("orderBy"));
-      }
-      if ((jsonObj.get("asDescription") != null && !jsonObj.get("asDescription").isJsonNull()) && !jsonObj.get("asDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `asDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asDescription").toString()));
-      }
-      if ((jsonObj.get("errorMessage") != null && !jsonObj.get("errorMessage").isJsonNull()) && !jsonObj.get("errorMessage").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `errorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorMessage").toString()));
-      }
-      // validate the optional field `having`
-      if (jsonObj.get("having") != null && !jsonObj.get("having").isJsonNull()) {
-        Having.validateJsonElement(jsonObj.get("having"));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("iri").getAsString();
+      switch (discriminatorValue) {
+        case "Query":
+          Query.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `iri` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Match.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Match' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Match> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Match.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Match>() {
-           @Override
-           public void write(JsonWriter out, Match value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Match read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of Match given an JSON string

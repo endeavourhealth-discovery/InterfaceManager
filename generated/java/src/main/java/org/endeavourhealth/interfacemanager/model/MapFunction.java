@@ -55,22 +55,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * MapFunction
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class MapFunction {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nonnull
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class MapFunction extends TTIriRef {
   public static final String SERIALIZED_NAME_ARGUMENT = "argument";
   @SerializedName(SERIALIZED_NAME_ARGUMENT)
   @javax.annotation.Nullable
@@ -87,64 +72,8 @@ public class MapFunction {
   private TTIriRef defaultValue;
 
   public MapFunction() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public MapFunction iri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nonnull
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-  }
-
-
-  public MapFunction name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public MapFunction description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public MapFunction argument(@javax.annotation.Nullable List<Argument> argument) {
     this.argument = argument;
@@ -229,26 +158,22 @@ public class MapFunction {
       return false;
     }
     MapFunction mapFunction = (MapFunction) o;
-    return Objects.equals(this.iri, mapFunction.iri) &&
-        Objects.equals(this.name, mapFunction.name) &&
-        Objects.equals(this.description, mapFunction.description) &&
-        Objects.equals(this.argument, mapFunction.argument) &&
+    return Objects.equals(this.argument, mapFunction.argument) &&
         Objects.equals(this.conceptMap, mapFunction.conceptMap) &&
-        Objects.equals(this.defaultValue, mapFunction.defaultValue);
+        Objects.equals(this.defaultValue, mapFunction.defaultValue) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, argument, conceptMap, defaultValue);
+    return Objects.hash(argument, conceptMap, defaultValue, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MapFunction {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    argument: ").append(toIndentedString(argument)).append("\n");
     sb.append("    conceptMap: ").append(toIndentedString(conceptMap)).append("\n");
     sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
@@ -302,34 +227,6 @@ public class MapFunction {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("argument") != null && !jsonObj.get("argument").isJsonNull()) {
-        JsonArray jsonArrayargument = jsonObj.getAsJsonArray("argument");
-        if (jsonArrayargument != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("argument").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `argument` to be an array in the JSON string but got `%s`", jsonObj.get("argument").toString()));
-          }
-
-          // validate the optional field `argument` (array)
-          for (int i = 0; i < jsonArrayargument.size(); i++) {
-            Argument.validateJsonElement(jsonArrayargument.get(i));
-          };
-        }
-      }
-      // validate the optional field `defaultValue`
-      if (jsonObj.get("defaultValue") != null && !jsonObj.get("defaultValue").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("defaultValue"));
       }
   }
 

@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.endeavourhealth.interfacemanager.model.IriLD;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -70,11 +71,11 @@ public class ElementTest {
     }
 
     /**
-     * Test the property 'memberOf'
+     * Test the property 'parameter'
      */
     @Test
-    public void memberOfTest() {
-        // TODO: test memberOf
+    public void parameterTest() {
+        // TODO: test parameter
     }
 
     /**
@@ -99,6 +100,62 @@ public class ElementTest {
     @Test
     public void descendantsOfTest() {
         // TODO: test descendantsOf
+    }
+
+    /**
+     * Test the property 'childOrSelfOf'
+     */
+    @Test
+    public void childOrSelfOfTest() {
+        // TODO: test childOrSelfOf
+    }
+
+    /**
+     * Test the property 'childOf'
+     */
+    @Test
+    public void childOfTest() {
+        // TODO: test childOf
+    }
+
+    /**
+     * Test the property 'memberOf'
+     */
+    @Test
+    public void memberOfTest() {
+        // TODO: test memberOf
+    }
+
+    /**
+     * Test the property 'cohort'
+     */
+    @Test
+    public void cohortTest() {
+        // TODO: test cohort
+    }
+
+    /**
+     * Test the property 'nodeRef'
+     */
+    @Test
+    public void nodeRefTest() {
+        // TODO: test nodeRef
+    }
+
+    /**
+     * Test the property 'invalid'
+     */
+    @Test
+    public void invalidTest() {
+        // TODO: test invalid
+    }
+
+    /**
+     * Test the property 'resultSet'
+     */
+    @Test
+    public void resultSetTest() {
+        // TODO: test resultSet
     }
 
 }

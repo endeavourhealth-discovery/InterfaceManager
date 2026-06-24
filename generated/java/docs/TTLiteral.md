@@ -1,14 +1,14 @@
 
 
-# HasPaths
+# TTLiteral
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**path** | [**List&lt;Path&gt;**](Path.md) |  |  [optional] |
-|**node** | **String** |  |  [optional] |
+|**value** | **String** |  |  [optional] |
+|**type** | [**TTIriRef**](TTIriRef.md) |  |  [optional] |
 
 
 

@@ -53,22 +53,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * NodeShape
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class NodeShape {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nonnull
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class NodeShape extends TTIriRef {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
@@ -100,64 +85,8 @@ public class NodeShape {
   private List<NodeShape> type = new ArrayList<>();
 
   public NodeShape() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public NodeShape iri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nonnull
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-  }
-
-
-  public NodeShape name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public NodeShape description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public NodeShape property(@javax.annotation.Nullable List<PropertyShape> property) {
     this.property = property;
@@ -315,29 +244,25 @@ public class NodeShape {
       return false;
     }
     NodeShape nodeShape = (NodeShape) o;
-    return Objects.equals(this.iri, nodeShape.iri) &&
-        Objects.equals(this.name, nodeShape.name) &&
-        Objects.equals(this.description, nodeShape.description) &&
-        Objects.equals(this.property, nodeShape.property) &&
+    return Objects.equals(this.property, nodeShape.property) &&
         Objects.equals(this.subType, nodeShape.subType) &&
         Objects.equals(this.definingProperty, nodeShape.definingProperty) &&
         Objects.equals(this.inverseProperty, nodeShape.inverseProperty) &&
         Objects.equals(this.folder, nodeShape.folder) &&
-        Objects.equals(this.type, nodeShape.type);
+        Objects.equals(this.type, nodeShape.type) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, property, subType, definingProperty, inverseProperty, folder, type);
+    return Objects.hash(property, subType, definingProperty, inverseProperty, folder, type, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NodeShape {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
     sb.append("    definingProperty: ").append(toIndentedString(definingProperty)).append("\n");
@@ -393,80 +318,6 @@ public class NodeShape {
       for (String requiredField : NodeShape.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) {
-        JsonArray jsonArrayproperty = jsonObj.getAsJsonArray("property");
-        if (jsonArrayproperty != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("property").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `property` to be an array in the JSON string but got `%s`", jsonObj.get("property").toString()));
-          }
-
-          // validate the optional field `property` (array)
-          for (int i = 0; i < jsonArrayproperty.size(); i++) {
-            PropertyShape.validateJsonElement(jsonArrayproperty.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("subType") != null && !jsonObj.get("subType").isJsonNull()) {
-        JsonArray jsonArraysubType = jsonObj.getAsJsonArray("subType");
-        if (jsonArraysubType != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("subType").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subType` to be an array in the JSON string but got `%s`", jsonObj.get("subType").toString()));
-          }
-
-          // validate the optional field `subType` (array)
-          for (int i = 0; i < jsonArraysubType.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraysubType.get(i));
-          };
-        }
-      }
-      // validate the optional field `definingProperty`
-      if (jsonObj.get("definingProperty") != null && !jsonObj.get("definingProperty").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("definingProperty"));
-      }
-      // validate the optional field `inverseProperty`
-      if (jsonObj.get("inverseProperty") != null && !jsonObj.get("inverseProperty").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("inverseProperty"));
-      }
-      if (jsonObj.get("folder") != null && !jsonObj.get("folder").isJsonNull()) {
-        JsonArray jsonArrayfolder = jsonObj.getAsJsonArray("folder");
-        if (jsonArrayfolder != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("folder").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `folder` to be an array in the JSON string but got `%s`", jsonObj.get("folder").toString()));
-          }
-
-          // validate the optional field `folder` (array)
-          for (int i = 0; i < jsonArrayfolder.size(); i++) {
-            NodeShape.validateJsonElement(jsonArrayfolder.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        JsonArray jsonArraytype = jsonObj.getAsJsonArray("type");
-        if (jsonArraytype != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("type").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be an array in the JSON string but got `%s`", jsonObj.get("type").toString()));
-          }
-
-          // validate the optional field `type` (array)
-          for (int i = 0; i < jsonArraytype.size(); i++) {
-            NodeShape.validateJsonElement(jsonArraytype.get(i));
-          };
         }
       }
   }

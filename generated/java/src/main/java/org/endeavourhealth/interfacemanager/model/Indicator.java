@@ -52,22 +52,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Indicator
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Indicator {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nonnull
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class Indicator extends TTIriRef {
   public static final String SERIALIZED_NAME_IS_SUB_INDICATOR_OF = "isSubIndicatorOf";
   @SerializedName(SERIALIZED_NAME_IS_SUB_INDICATOR_OF)
   @javax.annotation.Nullable
@@ -99,64 +84,8 @@ public class Indicator {
   private TTIriRef denominator;
 
   public Indicator() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public Indicator iri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nonnull
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nonnull String iri) {
-    this.iri = iri;
-  }
-
-
-  public Indicator name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Indicator description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public Indicator isSubIndicatorOf(@javax.annotation.Nullable List<TTIriRef> isSubIndicatorOf) {
     this.isSubIndicatorOf = isSubIndicatorOf;
@@ -306,29 +235,25 @@ public class Indicator {
       return false;
     }
     Indicator indicator = (Indicator) o;
-    return Objects.equals(this.iri, indicator.iri) &&
-        Objects.equals(this.name, indicator.name) &&
-        Objects.equals(this.description, indicator.description) &&
-        Objects.equals(this.isSubIndicatorOf, indicator.isSubIndicatorOf) &&
+    return Objects.equals(this.isSubIndicatorOf, indicator.isSubIndicatorOf) &&
         Objects.equals(this.numerator, indicator.numerator) &&
         Objects.equals(this.dataset, indicator.dataset) &&
         Objects.equals(this.actionIfFalse, indicator.actionIfFalse) &&
         Objects.equals(this.actionIfTrue, indicator.actionIfTrue) &&
-        Objects.equals(this.denominator, indicator.denominator);
+        Objects.equals(this.denominator, indicator.denominator) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, isSubIndicatorOf, numerator, dataset, actionIfFalse, actionIfTrue, denominator);
+    return Objects.hash(isSubIndicatorOf, numerator, dataset, actionIfFalse, actionIfTrue, denominator, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Indicator {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    isSubIndicatorOf: ").append(toIndentedString(isSubIndicatorOf)).append("\n");
     sb.append("    numerator: ").append(toIndentedString(numerator)).append("\n");
     sb.append("    dataset: ").append(toIndentedString(dataset)).append("\n");
@@ -385,70 +310,6 @@ public class Indicator {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("isSubIndicatorOf") != null && !jsonObj.get("isSubIndicatorOf").isJsonNull()) {
-        JsonArray jsonArrayisSubIndicatorOf = jsonObj.getAsJsonArray("isSubIndicatorOf");
-        if (jsonArrayisSubIndicatorOf != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("isSubIndicatorOf").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `isSubIndicatorOf` to be an array in the JSON string but got `%s`", jsonObj.get("isSubIndicatorOf").toString()));
-          }
-
-          // validate the optional field `isSubIndicatorOf` (array)
-          for (int i = 0; i < jsonArrayisSubIndicatorOf.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArrayisSubIndicatorOf.get(i));
-          };
-        }
-      }
-      // validate the optional field `numerator`
-      if (jsonObj.get("numerator") != null && !jsonObj.get("numerator").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("numerator"));
-      }
-      // validate the optional field `dataset`
-      if (jsonObj.get("dataset") != null && !jsonObj.get("dataset").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("dataset"));
-      }
-      if (jsonObj.get("actionIfFalse") != null && !jsonObj.get("actionIfFalse").isJsonNull()) {
-        JsonArray jsonArrayactionIfFalse = jsonObj.getAsJsonArray("actionIfFalse");
-        if (jsonArrayactionIfFalse != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("actionIfFalse").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actionIfFalse` to be an array in the JSON string but got `%s`", jsonObj.get("actionIfFalse").toString()));
-          }
-
-          // validate the optional field `actionIfFalse` (array)
-          for (int i = 0; i < jsonArrayactionIfFalse.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArrayactionIfFalse.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("actionIfTrue") != null && !jsonObj.get("actionIfTrue").isJsonNull()) {
-        JsonArray jsonArrayactionIfTrue = jsonObj.getAsJsonArray("actionIfTrue");
-        if (jsonArrayactionIfTrue != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("actionIfTrue").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actionIfTrue` to be an array in the JSON string but got `%s`", jsonObj.get("actionIfTrue").toString()));
-          }
-
-          // validate the optional field `actionIfTrue` (array)
-          for (int i = 0; i < jsonArrayactionIfTrue.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArrayactionIfTrue.get(i));
-          };
-        }
-      }
-      // validate the optional field `denominator`
-      if (jsonObj.get("denominator") != null && !jsonObj.get("denominator").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("denominator"));
       }
   }
 

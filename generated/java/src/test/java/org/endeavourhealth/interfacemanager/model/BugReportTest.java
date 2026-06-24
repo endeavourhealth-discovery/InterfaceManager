@@ -28,6 +28,7 @@ import org.endeavourhealth.interfacemanager.model.OperatingSystem;
 import org.endeavourhealth.interfacemanager.model.Severity;
 import org.endeavourhealth.interfacemanager.model.Status;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.Task;
 import org.endeavourhealth.interfacemanager.model.TaskHistory;
 import org.endeavourhealth.interfacemanager.model.TaskModule;
 import org.endeavourhealth.interfacemanager.model.TaskState;

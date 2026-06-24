@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Entity;
 import org.endeavourhealth.interfacemanager.model.TTEntity;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 import org.endeavourhealth.interfacemanager.model.ValueTemplate;

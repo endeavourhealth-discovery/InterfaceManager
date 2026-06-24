@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.endeavourhealth.interfacemanager.model.IriLD;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,30 +46,53 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * GroupBy
+ * Expression
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class GroupBy extends IriLD {
+public class Expression {
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
+  private String value;
+
   public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
   @SerializedName(SERIALIZED_NAME_NODE_REF)
   @javax.annotation.Nullable
   private String nodeRef;
 
-  public static final String SERIALIZED_NAME_VALUE_REF = "valueRef";
-  @SerializedName(SERIALIZED_NAME_VALUE_REF)
+  public static final String SERIALIZED_NAME_IRI = "iri";
+  @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
-  private String valueRef;
+  private String iri;
 
   public static final String SERIALIZED_NAME_PROPERTY_REF = "propertyRef";
   @SerializedName(SERIALIZED_NAME_PROPERTY_REF)
   @javax.annotation.Nullable
   private String propertyRef;
 
-  public GroupBy() {
-    this.iri = this.getClass().getSimpleName();
+  public Expression() {
   }
 
-  public GroupBy nodeRef(@javax.annotation.Nullable String nodeRef) {
+  public Expression value(@javax.annotation.Nullable String value) {
+    this.value = value;
+    return this;
+  }
+
+  /**
+   * Get value
+   * @return value
+   */
+  @javax.annotation.Nullable
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(@javax.annotation.Nullable String value) {
+    this.value = value;
+  }
+
+
+  public Expression nodeRef(@javax.annotation.Nullable String nodeRef) {
     this.nodeRef = nodeRef;
     return this;
   }
@@ -89,26 +111,26 @@ public class GroupBy extends IriLD {
   }
 
 
-  public GroupBy valueRef(@javax.annotation.Nullable String valueRef) {
-    this.valueRef = valueRef;
+  public Expression iri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
     return this;
   }
 
   /**
-   * Get valueRef
-   * @return valueRef
+   * Get iri
+   * @return iri
    */
   @javax.annotation.Nullable
-  public String getValueRef() {
-    return valueRef;
+  public String getIri() {
+    return iri;
   }
 
-  public void setValueRef(@javax.annotation.Nullable String valueRef) {
-    this.valueRef = valueRef;
+  public void setIri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
   }
 
 
-  public GroupBy propertyRef(@javax.annotation.Nullable String propertyRef) {
+  public Expression propertyRef(@javax.annotation.Nullable String propertyRef) {
     this.propertyRef = propertyRef;
     return this;
   }
@@ -136,25 +158,25 @@ public class GroupBy extends IriLD {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupBy groupBy = (GroupBy) o;
-    return Objects.equals(this.nodeRef, groupBy.nodeRef) &&
-        Objects.equals(this.valueRef, groupBy.valueRef) &&
-        Objects.equals(this.propertyRef, groupBy.propertyRef) &&
-        super.equals(o);
+    Expression expression = (Expression) o;
+    return Objects.equals(this.value, expression.value) &&
+        Objects.equals(this.nodeRef, expression.nodeRef) &&
+        Objects.equals(this.iri, expression.iri) &&
+        Objects.equals(this.propertyRef, expression.propertyRef);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nodeRef, valueRef, propertyRef, super.hashCode());
+    return Objects.hash(value, nodeRef, iri, propertyRef);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupBy {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class Expression {\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
-    sb.append("    valueRef: ").append(toIndentedString(valueRef)).append("\n");
+    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
     sb.append("    propertyRef: ").append(toIndentedString(propertyRef)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -174,7 +196,7 @@ public class GroupBy extends IriLD {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "nodeRef", "valueRef", "propertyRef"));
+    openapiFields = new HashSet<String>(Arrays.asList("value", "nodeRef", "iri", "propertyRef"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -184,21 +206,34 @@ public class GroupBy extends IriLD {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GroupBy
+   * @throws IOException if the JSON Element is invalid with respect to Expression
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!GroupBy.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GroupBy is not found in the empty JSON string", GroupBy.openapiRequiredFields.toString()));
+        if (!Expression.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Expression is not found in the empty JSON string", Expression.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!GroupBy.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GroupBy` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Expression.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Expression` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
+      }
+      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
+      }
+      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
+      }
+      if ((jsonObj.get("propertyRef") != null && !jsonObj.get("propertyRef").isJsonNull()) && !jsonObj.get("propertyRef").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propertyRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("propertyRef").toString()));
       }
   }
 
@@ -206,22 +241,22 @@ public class GroupBy extends IriLD {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GroupBy.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GroupBy' and its subtypes
+       if (!Expression.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Expression' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GroupBy> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GroupBy.class));
+       final TypeAdapter<Expression> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Expression.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<GroupBy>() {
+       return (TypeAdapter<T>) new TypeAdapter<Expression>() {
            @Override
-           public void write(JsonWriter out, GroupBy value) throws IOException {
+           public void write(JsonWriter out, Expression value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public GroupBy read(JsonReader in) throws IOException {
+           public Expression read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -232,18 +267,18 @@ public class GroupBy extends IriLD {
   }
 
   /**
-   * Create an instance of GroupBy given an JSON string
+   * Create an instance of Expression given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GroupBy
-   * @throws IOException if the JSON string is invalid with respect to GroupBy
+   * @return An instance of Expression
+   * @throws IOException if the JSON string is invalid with respect to Expression
    */
-  public static GroupBy fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GroupBy.class);
+  public static Expression fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Expression.class);
   }
 
   /**
-   * Convert an instance of GroupBy to an JSON string
+   * Convert an instance of Expression to an JSON string
    *
    * @return JSON string
    */

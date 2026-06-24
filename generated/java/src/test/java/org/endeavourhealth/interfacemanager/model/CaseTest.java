@@ -19,54 +19,58 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Expression;
+import org.endeavourhealth.interfacemanager.model.When;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Entailment
+ * Model tests for Case
  */
-public class EntailmentTest {
-    private final Entailment model = new Entailment();
+public class CaseTest {
+    private final Case model = new Case();
 
     /**
-     * Model tests for Entailment
+     * Model tests for Case
      */
     @Test
-    public void testEntailment() {
-        // TODO: test Entailment
+    public void testCase() {
+        // TODO: test Case
     }
 
     /**
-     * Test the property 'memberOf'
+     * Test the property 'when'
      */
     @Test
-    public void memberOfTest() {
-        // TODO: test memberOf
+    public void whenTest() {
+        // TODO: test when
     }
 
     /**
-     * Test the property 'ancestorsOf'
+     * Test the property '_else'
      */
     @Test
-    public void ancestorsOfTest() {
-        // TODO: test ancestorsOf
+    public void _elseTest() {
+        // TODO: test _else
     }
 
     /**
-     * Test the property 'descendantsOrSelfOf'
+     * Test the property 'nodeRef'
      */
     @Test
-    public void descendantsOrSelfOfTest() {
-        // TODO: test descendantsOrSelfOf
+    public void nodeRefTest() {
+        // TODO: test nodeRef
     }
 
     /**
-     * Test the property 'descendantsOf'
+     * Test the property 'iri'
      */
     @Test
-    public void descendantsOfTest() {
-        // TODO: test descendantsOf
+    public void iriTest() {
+        // TODO: test iri
     }
 
 }

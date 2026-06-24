@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Entity;
 import org.endeavourhealth.interfacemanager.model.TTEntity;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
@@ -53,42 +54,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Concept
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Concept {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private List<TTIriRef> type = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
-  private TTIriRef status;
-
-  public static final String SERIALIZED_NAME_SCHEME = "scheme";
-  @SerializedName(SERIALIZED_NAME_SCHEME)
-  @javax.annotation.Nullable
-  private TTIriRef scheme;
-
-  public static final String SERIALIZED_NAME_IS_CONTAINED_IN = "isContainedIn";
-  @SerializedName(SERIALIZED_NAME_IS_CONTAINED_IN)
-  @javax.annotation.Nullable
-  private List<TTEntity> isContainedIn = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
+public class Concept extends Entity {
   public static final String SERIALIZED_NAME_SUB_CLASS_OF = "subClassOf";
   @SerializedName(SERIALIZED_NAME_SUB_CLASS_OF)
   @javax.annotation.Nullable
@@ -130,156 +96,8 @@ public class Concept {
   private Boolean subsumed;
 
   public Concept() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public Concept iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public Concept type(@javax.annotation.Nullable List<TTIriRef> type) {
-    this.type = type;
-    return this;
-  }
-
-  public Concept addTypeItem(TTIriRef typeItem) {
-    if (this.type == null) {
-      this.type = new ArrayList<>();
-    }
-    this.type.add(typeItem);
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public List<TTIriRef> getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable List<TTIriRef> type) {
-    this.type = type;
-  }
-
-
-  public Concept status(@javax.annotation.Nullable TTIriRef status) {
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Get status
-   * @return status
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nullable TTIriRef status) {
-    this.status = status;
-  }
-
-
-  public Concept scheme(@javax.annotation.Nullable TTIriRef scheme) {
-    this.scheme = scheme;
-    return this;
-  }
-
-  /**
-   * Get scheme
-   * @return scheme
-   */
-  @javax.annotation.Nullable
-  public TTIriRef getScheme() {
-    return scheme;
-  }
-
-  public void setScheme(@javax.annotation.Nullable TTIriRef scheme) {
-    this.scheme = scheme;
-  }
-
-
-  public Concept isContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
-    this.isContainedIn = isContainedIn;
-    return this;
-  }
-
-  public Concept addIsContainedInItem(TTEntity isContainedInItem) {
-    if (this.isContainedIn == null) {
-      this.isContainedIn = new ArrayList<>();
-    }
-    this.isContainedIn.add(isContainedInItem);
-    return this;
-  }
-
-  /**
-   * Get isContainedIn
-   * @return isContainedIn
-   */
-  @javax.annotation.Nullable
-  public List<TTEntity> getIsContainedIn() {
-    return isContainedIn;
-  }
-
-  public void setIsContainedIn(@javax.annotation.Nullable List<TTEntity> isContainedIn) {
-    this.isContainedIn = isContainedIn;
-  }
-
-
-  public Concept name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Concept description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
 
   public Concept subClassOf(@javax.annotation.Nullable List<TTIriRef> subClassOf) {
     this.subClassOf = subClassOf;
@@ -459,39 +277,27 @@ public class Concept {
       return false;
     }
     Concept concept = (Concept) o;
-    return Objects.equals(this.iri, concept.iri) &&
-        Objects.equals(this.type, concept.type) &&
-        Objects.equals(this.status, concept.status) &&
-        Objects.equals(this.scheme, concept.scheme) &&
-        Objects.equals(this.isContainedIn, concept.isContainedIn) &&
-        Objects.equals(this.name, concept.name) &&
-        Objects.equals(this.description, concept.description) &&
-        Objects.equals(this.subClassOf, concept.subClassOf) &&
+    return Objects.equals(this.subClassOf, concept.subClassOf) &&
         Objects.equals(this.code, concept.code) &&
         Objects.equals(this.im1Id, concept.im1Id) &&
         Objects.equals(this.matchedFrom, concept.matchedFrom) &&
         Objects.equals(this.usage, concept.usage) &&
         Objects.equals(this.codeId, concept.codeId) &&
         Objects.equals(this.alternativeCode, concept.alternativeCode) &&
-        Objects.equals(this.subsumed, concept.subsumed);
+        Objects.equals(this.subsumed, concept.subsumed) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, type, status, scheme, isContainedIn, name, description, subClassOf, code, im1Id, matchedFrom, usage, codeId, alternativeCode, subsumed);
+    return Objects.hash(subClassOf, code, im1Id, matchedFrom, usage, codeId, alternativeCode, subsumed, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Concept {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
-    sb.append("    isContainedIn: ").append(toIndentedString(isContainedIn)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    subClassOf: ").append(toIndentedString(subClassOf)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    im1Id: ").append(toIndentedString(im1Id)).append("\n");
@@ -543,92 +349,6 @@ public class Concept {
         if (!Concept.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Concept` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        JsonArray jsonArraytype = jsonObj.getAsJsonArray("type");
-        if (jsonArraytype != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("type").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be an array in the JSON string but got `%s`", jsonObj.get("type").toString()));
-          }
-
-          // validate the optional field `type` (array)
-          for (int i = 0; i < jsonArraytype.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraytype.get(i));
-          };
-        }
-      }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("status"));
-      }
-      // validate the optional field `scheme`
-      if (jsonObj.get("scheme") != null && !jsonObj.get("scheme").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("scheme"));
-      }
-      if (jsonObj.get("isContainedIn") != null && !jsonObj.get("isContainedIn").isJsonNull()) {
-        JsonArray jsonArrayisContainedIn = jsonObj.getAsJsonArray("isContainedIn");
-        if (jsonArrayisContainedIn != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("isContainedIn").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `isContainedIn` to be an array in the JSON string but got `%s`", jsonObj.get("isContainedIn").toString()));
-          }
-
-          // validate the optional field `isContainedIn` (array)
-          for (int i = 0; i < jsonArrayisContainedIn.size(); i++) {
-            TTEntity.validateJsonElement(jsonArrayisContainedIn.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("subClassOf") != null && !jsonObj.get("subClassOf").isJsonNull()) {
-        JsonArray jsonArraysubClassOf = jsonObj.getAsJsonArray("subClassOf");
-        if (jsonArraysubClassOf != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("subClassOf").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subClassOf` to be an array in the JSON string but got `%s`", jsonObj.get("subClassOf").toString()));
-          }
-
-          // validate the optional field `subClassOf` (array)
-          for (int i = 0; i < jsonArraysubClassOf.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraysubClassOf.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
-      }
-      if ((jsonObj.get("im1Id") != null && !jsonObj.get("im1Id").isJsonNull()) && !jsonObj.get("im1Id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `im1Id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("im1Id").toString()));
-      }
-      if (jsonObj.get("matchedFrom") != null && !jsonObj.get("matchedFrom").isJsonNull()) {
-        JsonArray jsonArraymatchedFrom = jsonObj.getAsJsonArray("matchedFrom");
-        if (jsonArraymatchedFrom != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("matchedFrom").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `matchedFrom` to be an array in the JSON string but got `%s`", jsonObj.get("matchedFrom").toString()));
-          }
-
-          // validate the optional field `matchedFrom` (array)
-          for (int i = 0; i < jsonArraymatchedFrom.size(); i++) {
-            Concept.validateJsonElement(jsonArraymatchedFrom.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("codeId") != null && !jsonObj.get("codeId").isJsonNull()) && !jsonObj.get("codeId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `codeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codeId").toString()));
-      }
-      if ((jsonObj.get("alternativeCode") != null && !jsonObj.get("alternativeCode").isJsonNull()) && !jsonObj.get("alternativeCode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `alternativeCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alternativeCode").toString()));
       }
   }
 

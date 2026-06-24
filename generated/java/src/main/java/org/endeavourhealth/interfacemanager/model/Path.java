@@ -20,9 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
 
@@ -53,61 +52,11 @@ import org.endeavourhealth.interfacemanager.JSON;
  * Path
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class Path {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private String uuid;
-
-  public static final String SERIALIZED_NAME_MEMBER_OF = "memberOf";
-  @SerializedName(SERIALIZED_NAME_MEMBER_OF)
-  @javax.annotation.Nullable
-  private Boolean memberOf;
-
-  public static final String SERIALIZED_NAME_ANCESTORS_OF = "ancestorsOf";
-  @SerializedName(SERIALIZED_NAME_ANCESTORS_OF)
-  @javax.annotation.Nullable
-  private Boolean ancestorsOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF = "descendantsOrSelfOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OR_SELF_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOrSelfOf;
-
-  public static final String SERIALIZED_NAME_DESCENDANTS_OF = "descendantsOf";
-  @SerializedName(SERIALIZED_NAME_DESCENDANTS_OF)
-  @javax.annotation.Nullable
-  private Boolean descendantsOf;
-
-  public static final String SERIALIZED_NAME_PATH = "path";
-  @SerializedName(SERIALIZED_NAME_PATH)
-  @javax.annotation.Nullable
-  private List<Path> path = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_NODE = "node";
-  @SerializedName(SERIALIZED_NAME_NODE)
-  @javax.annotation.Nullable
-  private String node;
-
+public class Path extends Element {
   public static final String SERIALIZED_NAME_PARAMETER = "parameter";
   @SerializedName(SERIALIZED_NAME_PARAMETER)
   @javax.annotation.Nullable
-  private String parameter;
+  protected String parameter;
 
   public static final String SERIALIZED_NAME_CHILD_OR_SELF_OF = "childOrSelfOf";
   @SerializedName(SERIALIZED_NAME_CHILD_OR_SELF_OF)
@@ -175,205 +124,8 @@ public class Path {
   private Boolean isCohort;
 
   public Path() {
+    this.parameter = this.getClass().getSimpleName();
   }
-
-  public Path iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public Path name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public Path description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Path uuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Get uuid
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public String getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable String uuid) {
-    this.uuid = uuid;
-  }
-
-
-  public Path memberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-    return this;
-  }
-
-  /**
-   * Get memberOf
-   * @return memberOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getMemberOf() {
-    return memberOf;
-  }
-
-  public void setMemberOf(@javax.annotation.Nullable Boolean memberOf) {
-    this.memberOf = memberOf;
-  }
-
-
-  public Path ancestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-    return this;
-  }
-
-  /**
-   * Get ancestorsOf
-   * @return ancestorsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getAncestorsOf() {
-    return ancestorsOf;
-  }
-
-  public void setAncestorsOf(@javax.annotation.Nullable Boolean ancestorsOf) {
-    this.ancestorsOf = ancestorsOf;
-  }
-
-
-  public Path descendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOrSelfOf
-   * @return descendantsOrSelfOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOrSelfOf() {
-    return descendantsOrSelfOf;
-  }
-
-  public void setDescendantsOrSelfOf(@javax.annotation.Nullable Boolean descendantsOrSelfOf) {
-    this.descendantsOrSelfOf = descendantsOrSelfOf;
-  }
-
-
-  public Path descendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-    return this;
-  }
-
-  /**
-   * Get descendantsOf
-   * @return descendantsOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescendantsOf() {
-    return descendantsOf;
-  }
-
-  public void setDescendantsOf(@javax.annotation.Nullable Boolean descendantsOf) {
-    this.descendantsOf = descendantsOf;
-  }
-
-
-  public Path path(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
-    return this;
-  }
-
-  public Path addPathItem(Path pathItem) {
-    if (this.path == null) {
-      this.path = new ArrayList<>();
-    }
-    this.path.add(pathItem);
-    return this;
-  }
-
-  /**
-   * Get path
-   * @return path
-   */
-  @javax.annotation.Nullable
-  public List<Path> getPath() {
-    return path;
-  }
-
-  public void setPath(@javax.annotation.Nullable List<Path> path) {
-    this.path = path;
-  }
-
-
-  public Path node(@javax.annotation.Nullable String node) {
-    this.node = node;
-    return this;
-  }
-
-  /**
-   * Get node
-   * @return node
-   */
-  @javax.annotation.Nullable
-  public String getNode() {
-    return node;
-  }
-
-  public void setNode(@javax.annotation.Nullable String node) {
-    this.node = node;
-  }
-
 
   public Path parameter(@javax.annotation.Nullable String parameter) {
     this.parameter = parameter;
@@ -651,17 +403,7 @@ public class Path {
       return false;
     }
     Path path = (Path) o;
-    return Objects.equals(this.iri, path.iri) &&
-        Objects.equals(this.name, path.name) &&
-        Objects.equals(this.description, path.description) &&
-        Objects.equals(this.uuid, path.uuid) &&
-        Objects.equals(this.memberOf, path.memberOf) &&
-        Objects.equals(this.ancestorsOf, path.ancestorsOf) &&
-        Objects.equals(this.descendantsOrSelfOf, path.descendantsOrSelfOf) &&
-        Objects.equals(this.descendantsOf, path.descendantsOf) &&
-        Objects.equals(this.path, path.path) &&
-        Objects.equals(this.node, path.node) &&
-        Objects.equals(this.parameter, path.parameter) &&
+    return Objects.equals(this.parameter, path.parameter) &&
         Objects.equals(this.childOrSelfOf, path.childOrSelfOf) &&
         Objects.equals(this.childOf, path.childOf) &&
         Objects.equals(this.cohort, path.cohort) &&
@@ -674,28 +416,20 @@ public class Path {
         Objects.equals(this.typeOf, path.typeOf) &&
         Objects.equals(this.qualifier, path.qualifier) &&
         Objects.equals(this.isResultSet, path.isResultSet) &&
-        Objects.equals(this.isCohort, path.isCohort);
+        Objects.equals(this.isCohort, path.isCohort) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, name, description, uuid, memberOf, ancestorsOf, descendantsOrSelfOf, descendantsOf, path, node, parameter, childOrSelfOf, childOf, cohort, nodeRef, invalid, resultSet, inverse, optional, pathVariable, typeOf, qualifier, isResultSet, isCohort);
+    return Objects.hash(parameter, childOrSelfOf, childOf, cohort, nodeRef, invalid, resultSet, inverse, optional, pathVariable, typeOf, qualifier, isResultSet, isCohort, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Path {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    memberOf: ").append(toIndentedString(memberOf)).append("\n");
-    sb.append("    ancestorsOf: ").append(toIndentedString(ancestorsOf)).append("\n");
-    sb.append("    descendantsOrSelfOf: ").append(toIndentedString(descendantsOrSelfOf)).append("\n");
-    sb.append("    descendantsOf: ").append(toIndentedString(descendantsOf)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    node: ").append(toIndentedString(node)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
     sb.append("    childOrSelfOf: ").append(toIndentedString(childOrSelfOf)).append("\n");
     sb.append("    childOf: ").append(toIndentedString(childOf)).append("\n");
@@ -728,7 +462,7 @@ public class Path {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "memberOf", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "path", "node", "parameter", "childOrSelfOf", "childOf", "cohort", "nodeRef", "invalid", "resultSet", "inverse", "optional", "pathVariable", "typeOf", "qualifier", "isResultSet", "isCohort"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "inverse", "optional", "pathVariable", "typeOf", "qualifier", "isResultSet", "isCohort"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -753,53 +487,6 @@ public class Path {
         if (!Path.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Path` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
-      if (jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) {
-        JsonArray jsonArraypath = jsonObj.getAsJsonArray("path");
-        if (jsonArraypath != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("path").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `path` to be an array in the JSON string but got `%s`", jsonObj.get("path").toString()));
-          }
-
-          // validate the optional field `path` (array)
-          for (int i = 0; i < jsonArraypath.size(); i++) {
-            Path.validateJsonElement(jsonArraypath.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("node") != null && !jsonObj.get("node").isJsonNull()) && !jsonObj.get("node").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node").toString()));
-      }
-      if ((jsonObj.get("parameter") != null && !jsonObj.get("parameter").isJsonNull()) && !jsonObj.get("parameter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parameter").toString()));
-      }
-      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
-      }
-      if ((jsonObj.get("pathVariable") != null && !jsonObj.get("pathVariable").isJsonNull()) && !jsonObj.get("pathVariable").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pathVariable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pathVariable").toString()));
-      }
-      // validate the optional field `typeOf`
-      if (jsonObj.get("typeOf") != null && !jsonObj.get("typeOf").isJsonNull()) {
-        Node.validateJsonElement(jsonObj.get("typeOf"));
-      }
-      // validate the optional field `qualifier`
-      if (jsonObj.get("qualifier") != null && !jsonObj.get("qualifier").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("qualifier"));
       }
   }
 

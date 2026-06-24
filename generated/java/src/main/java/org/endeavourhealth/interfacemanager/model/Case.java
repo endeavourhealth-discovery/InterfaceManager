@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.endeavourhealth.interfacemanager.model.Expression;
 import org.endeavourhealth.interfacemanager.model.When;
 
 import com.google.gson.Gson;
@@ -49,10 +50,10 @@ import java.util.Set;
 import org.endeavourhealth.interfacemanager.JSON;
 
 /**
- * ModelCase
+ * Case
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class ModelCase {
+public class Case {
   public static final String SERIALIZED_NAME_WHEN = "when";
   @SerializedName(SERIALIZED_NAME_WHEN)
   @javax.annotation.Nullable
@@ -61,17 +62,27 @@ public class ModelCase {
   public static final String SERIALIZED_NAME_ELSE = "else";
   @SerializedName(SERIALIZED_NAME_ELSE)
   @javax.annotation.Nullable
-  private String _else;
+  private Expression _else;
 
-  public ModelCase() {
+  public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
+  @SerializedName(SERIALIZED_NAME_NODE_REF)
+  @javax.annotation.Nullable
+  private String nodeRef;
+
+  public static final String SERIALIZED_NAME_IRI = "iri";
+  @SerializedName(SERIALIZED_NAME_IRI)
+  @javax.annotation.Nullable
+  private String iri;
+
+  public Case() {
   }
 
-  public ModelCase when(@javax.annotation.Nullable List<When> when) {
+  public Case when(@javax.annotation.Nullable List<When> when) {
     this.when = when;
     return this;
   }
 
-  public ModelCase addWhenItem(When whenItem) {
+  public Case addWhenItem(When whenItem) {
     if (this.when == null) {
       this.when = new ArrayList<>();
     }
@@ -93,7 +104,7 @@ public class ModelCase {
   }
 
 
-  public ModelCase _else(@javax.annotation.Nullable String _else) {
+  public Case _else(@javax.annotation.Nullable Expression _else) {
     this._else = _else;
     return this;
   }
@@ -103,12 +114,50 @@ public class ModelCase {
    * @return _else
    */
   @javax.annotation.Nullable
-  public String getElse() {
+  public Expression getElse() {
     return _else;
   }
 
-  public void setElse(@javax.annotation.Nullable String _else) {
+  public void setElse(@javax.annotation.Nullable Expression _else) {
     this._else = _else;
+  }
+
+
+  public Case nodeRef(@javax.annotation.Nullable String nodeRef) {
+    this.nodeRef = nodeRef;
+    return this;
+  }
+
+  /**
+   * Get nodeRef
+   * @return nodeRef
+   */
+  @javax.annotation.Nullable
+  public String getNodeRef() {
+    return nodeRef;
+  }
+
+  public void setNodeRef(@javax.annotation.Nullable String nodeRef) {
+    this.nodeRef = nodeRef;
+  }
+
+
+  public Case iri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
+    return this;
+  }
+
+  /**
+   * Get iri
+   * @return iri
+   */
+  @javax.annotation.Nullable
+  public String getIri() {
+    return iri;
+  }
+
+  public void setIri(@javax.annotation.Nullable String iri) {
+    this.iri = iri;
   }
 
 
@@ -121,22 +170,26 @@ public class ModelCase {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelCase _case = (ModelCase) o;
+    Case _case = (Case) o;
     return Objects.equals(this.when, _case.when) &&
-        Objects.equals(this._else, _case._else);
+        Objects.equals(this._else, _case._else) &&
+        Objects.equals(this.nodeRef, _case.nodeRef) &&
+        Objects.equals(this.iri, _case.iri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(when, _else);
+    return Objects.hash(when, _else, nodeRef, iri);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelCase {\n");
+    sb.append("class Case {\n");
     sb.append("    when: ").append(toIndentedString(when)).append("\n");
     sb.append("    _else: ").append(toIndentedString(_else)).append("\n");
+    sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
+    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,7 +208,7 @@ public class ModelCase {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("when", "else"));
+    openapiFields = new HashSet<String>(Arrays.asList("when", "else", "nodeRef", "iri"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -165,20 +218,20 @@ public class ModelCase {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelCase
+   * @throws IOException if the JSON Element is invalid with respect to Case
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelCase.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelCase is not found in the empty JSON string", ModelCase.openapiRequiredFields.toString()));
+        if (!Case.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Case is not found in the empty JSON string", Case.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelCase.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelCase` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Case.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Case` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -196,8 +249,15 @@ public class ModelCase {
           };
         }
       }
-      if ((jsonObj.get("else") != null && !jsonObj.get("else").isJsonNull()) && !jsonObj.get("else").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `else` to be a primitive type in the JSON string but got `%s`", jsonObj.get("else").toString()));
+      // validate the optional field `else`
+      if (jsonObj.get("else") != null && !jsonObj.get("else").isJsonNull()) {
+        Expression.validateJsonElement(jsonObj.get("else"));
+      }
+      if ((jsonObj.get("nodeRef") != null && !jsonObj.get("nodeRef").isJsonNull()) && !jsonObj.get("nodeRef").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodeRef` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nodeRef").toString()));
+      }
+      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
       }
   }
 
@@ -205,22 +265,22 @@ public class ModelCase {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelCase.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelCase' and its subtypes
+       if (!Case.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Case' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelCase> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelCase.class));
+       final TypeAdapter<Case> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Case.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelCase>() {
+       return (TypeAdapter<T>) new TypeAdapter<Case>() {
            @Override
-           public void write(JsonWriter out, ModelCase value) throws IOException {
+           public void write(JsonWriter out, Case value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelCase read(JsonReader in) throws IOException {
+           public Case read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -231,18 +291,18 @@ public class ModelCase {
   }
 
   /**
-   * Create an instance of ModelCase given an JSON string
+   * Create an instance of Case given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelCase
-   * @throws IOException if the JSON string is invalid with respect to ModelCase
+   * @return An instance of Case
+   * @throws IOException if the JSON string is invalid with respect to Case
    */
-  public static ModelCase fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelCase.class);
+  public static Case fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Case.class);
   }
 
   /**
-   * Convert an instance of ModelCase to an JSON string
+   * Convert an instance of Case to an JSON string
    *
    * @return JSON string
    */

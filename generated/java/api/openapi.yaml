@@ -1733,6 +1733,8 @@ components:
       - LARGE
       - XL
     TTIriRef:
+      discriminator:
+        propertyName: iri
       properties:
         iri:
           type: string
@@ -1744,6 +1746,12 @@ components:
           type: string
       required:
       - iri
+    TTLiteral:
+      properties:
+        value:
+          type: string
+        type:
+          $ref: "#/components/schemas/TTIriRef"
     ConceptContextMap:
       properties:
         id:
@@ -1828,7 +1836,8 @@ components:
           type:
             $ref: "#/components/schemas/TTArray"
           orderNumber:
-            type: number
+            format: int32
+            type: integer
     Namespace:
       properties:
         iri:
@@ -1840,7 +1849,7 @@ components:
     Pageable:
       properties:
         totalCount:
-          format: int64
+          format: int32
           type: integer
         currentPage:
           format: int32
@@ -1848,9 +1857,6 @@ components:
         pageSize:
           format: int32
           type: integer
-        result:
-          items: {}
-          type: array
     CodeGenDto:
       properties:
         name:
@@ -1930,6 +1936,8 @@ components:
           avoidReplacedBy:
             type: boolean
     Entity:
+      discriminator:
+        propertyName: iri
       properties:
         iri:
           type: string
@@ -2402,6 +2410,10 @@ components:
             $ref: "#/components/schemas/When"
           type: array
         else:
+          $ref: "#/components/schemas/Expression"
+        nodeRef:
+          type: string
+        iri:
           type: string
     Compare:
       properties:
@@ -2411,11 +2423,6 @@ components:
           $ref: "#/components/schemas/ValueSource"
         units:
           $ref: "#/components/schemas/TTIriRef"
-    ContextMap:
-      properties:
-        context:
-          additionalProperties:
-            type: string
     Delete:
       properties:
         property:
@@ -2445,6 +2452,7 @@ components:
         includeLegacy:
           type: boolean
         limit:
+          default: 1000
           format: int32
           type: integer
         statusFilter:
@@ -2452,9 +2460,11 @@ components:
             $ref: "#/components/schemas/TTIriRef"
           type: array
         page:
+          default: 1
           format: int32
           type: integer
         size:
+          default: 20
           format: int32
           type: integer
     ECLStatus:
@@ -2472,17 +2482,31 @@ components:
     Element:
       allOf:
       - $ref: "#/components/schemas/IriLD"
-      - $ref: "#/components/schemas/Entailment"
-    Entailment:
-      properties:
-        memberOf:
-          type: boolean
-        ancestorsOf:
-          type: boolean
-        descendantsOrSelfOf:
-          type: boolean
-        descendantsOf:
-          type: boolean
+      - properties:
+          parameter:
+            type: string
+          ancestorsOf:
+            type: boolean
+          descendantsOrSelfOf:
+            type: boolean
+          descendantsOf:
+            type: boolean
+          childOrSelfOf:
+            type: boolean
+          childOf:
+            type: boolean
+          memberOf:
+            type: boolean
+          cohort:
+            type: boolean
+          nodeRef:
+            type: string
+          invalid:
+            type: boolean
+          resultSet:
+            type: boolean
+      discriminator:
+        propertyName: parameter
     FunctionClause:
       allOf:
       - $ref: "#/components/schemas/IriLD"
@@ -2501,14 +2525,6 @@ components:
             type: string
           propertyRef:
             type: string
-    HasPaths:
-      properties:
-        path:
-          items:
-            $ref: "#/components/schemas/Path"
-          type: array
-        node:
-          type: string
     Having:
       properties:
         function:
@@ -2538,6 +2554,8 @@ components:
           entailment:
             $ref: "#/components/schemas/TTIriRef"
     IriLD:
+      discriminator:
+        propertyName: iri
       properties:
         iri:
           type: string
@@ -2550,8 +2568,6 @@ components:
     Match:
       allOf:
       - $ref: "#/components/schemas/IriLD"
-      - $ref: "#/components/schemas/HasPaths"
-      - $ref: "#/components/schemas/Returnable"
       - properties:
           notExists:
             type: boolean
@@ -2622,30 +2638,28 @@ components:
             type: boolean
           having:
             $ref: "#/components/schemas/Having"
+          return:
+            items:
+              $ref: "#/components/schemas/Return"
+            type: array
+          path:
+            items:
+              $ref: "#/components/schemas/Path"
+            type: array
+          node:
+            type: string
+      discriminator:
+        propertyName: iri
     Node:
       allOf:
       - $ref: "#/components/schemas/Element"
       - properties:
-          parameter:
-            type: string
           type:
             type: string
           qualifier:
             type: string
           match:
             $ref: "#/components/schemas/Match"
-          childOrSelfOf:
-            type: boolean
-          childOf:
-            type: boolean
-          cohort:
-            type: boolean
-          nodeRef:
-            type: string
-          invalid:
-            type: boolean
-          resultSet:
-            type: boolean
           exclude:
             type: boolean
           code:
@@ -2654,10 +2668,6 @@ components:
             type: boolean
           node:
             type: string
-          isResultSet:
-            type: boolean
-          isCohort:
-            type: boolean
     OrderDirection:
       allOf:
       - $ref: "#/components/schemas/IriLD"
@@ -2684,7 +2694,6 @@ components:
     Path:
       allOf:
       - $ref: "#/components/schemas/Element"
-      - $ref: "#/components/schemas/HasPaths"
       - properties:
           parameter:
             type: string
@@ -2782,41 +2791,33 @@ components:
         queryRequest:
           $ref: "#/components/schemas/QueryRequest"
     Return:
-      allOf:
-      - $ref: "#/components/schemas/Returnable"
-      - properties:
-          iri:
-            type: string
-          name:
-            type: string
-          function:
-            $ref: "#/components/schemas/FunctionClause"
-          as:
-            type: string
-          nodeRef:
-            type: string
-          propertyRef:
-            type: string
-          pathRef:
-            type: string
-          inverse:
-            type: boolean
-          units:
-            $ref: "#/components/schemas/TTIriRef"
-          dataType:
-            $ref: "#/components/schemas/TTIriRef"
-          description:
-            type: string
-          case:
-            $ref: "#/components/schemas/Case"
-          value:
-            type: string
-    Returnable:
       properties:
-        return:
-          items:
-            $ref: "#/components/schemas/Return"
-          type: array
+        iri:
+          type: string
+        name:
+          type: string
+        function:
+          $ref: "#/components/schemas/FunctionClause"
+        as:
+          type: string
+        nodeRef:
+          type: string
+        propertyRef:
+          type: string
+        pathRef:
+          type: string
+        inverse:
+          type: boolean
+        units:
+          $ref: "#/components/schemas/TTIriRef"
+        dataType:
+          $ref: "#/components/schemas/TTIriRef"
+        description:
+          type: string
+        case:
+          $ref: "#/components/schemas/Case"
+        value:
+          type: string
     Update:
       allOf:
       - $ref: "#/components/schemas/TTIriRef"
@@ -2848,15 +2849,17 @@ components:
         propertyRef:
           type: string
     When:
-      properties:
-        where:
-          $ref: "#/components/schemas/Where"
-        then:
-          type: string
-        exists:
-          type: boolean
-        case:
-          $ref: "#/components/schemas/Case"
+      allOf:
+      - $ref: "#/components/schemas/Where"
+      - properties:
+          where:
+            $ref: "#/components/schemas/Where"
+          then:
+            type: string
+          exists:
+            type: boolean
+          case:
+            $ref: "#/components/schemas/Case"
     Where:
       allOf:
       - $ref: "#/components/schemas/Element"
@@ -2935,6 +2938,8 @@ components:
             type: boolean
           isCohort:
             type: boolean
+      discriminator:
+        propertyName: nodeRef
     CognitoGroupRequest:
       properties:
         username:
@@ -2992,46 +2997,44 @@ components:
         graph:
           $ref: "#/components/schemas/TTIriRef"
     QueryRequest:
-      allOf:
-      - $ref: "#/components/schemas/ContextMap"
-      - properties:
-          textSearch:
-            type: string
-          argument:
-            items:
-              $ref: "#/components/schemas/Argument"
-            type: array
-          query:
-            $ref: "#/components/schemas/Query"
-          pathQuery:
-            $ref: "#/components/schemas/PathQuery"
-          update:
-            $ref: "#/components/schemas/Update"
-          name:
-            type: string
-          page:
-            $ref: "#/components/schemas/Page"
-          queryStringDefinition:
-            type: string
-          askIri:
-            type: string
-          timings:
-            items:
-              additionalProperties:
-                type: string
-            type: array
-          cohort:
-            items:
-              $ref: "#/components/schemas/TTIriRef"
-            type: array
-          includeNames:
-            type: boolean
-          textSearchStyle:
-            $ref: "#/components/schemas/TextSearchStyle"
-          language:
-            $ref: "#/components/schemas/DatabaseOption"
-        required:
-        - query
+      properties:
+        textSearch:
+          type: string
+        argument:
+          items:
+            $ref: "#/components/schemas/Argument"
+          type: array
+        query:
+          $ref: "#/components/schemas/Query"
+        pathQuery:
+          $ref: "#/components/schemas/PathQuery"
+        update:
+          $ref: "#/components/schemas/Update"
+        name:
+          type: string
+        page:
+          $ref: "#/components/schemas/Page"
+        queryStringDefinition:
+          type: string
+        askIri:
+          type: string
+        timings:
+          items:
+            additionalProperties:
+              type: string
+          type: array
+        cohort:
+          items:
+            $ref: "#/components/schemas/TTIriRef"
+          type: array
+        includeNames:
+          type: boolean
+        textSearchStyle:
+          $ref: "#/components/schemas/TextSearchStyle"
+        language:
+          $ref: "#/components/schemas/DatabaseOption"
+      required:
+      - query
     SearchRequest:
       properties:
         termFilter:
@@ -3447,7 +3450,7 @@ components:
           type: boolean
         includeSubsets:
           type: boolean
-    ISubQueryDependency:
+    SubQueryDependency:
       properties:
         iri:
           type: string
@@ -3559,6 +3562,8 @@ components:
           role:
             $ref: "#/components/schemas/UserRole"
     Task:
+      discriminator:
+        propertyName: type
       properties:
         id:
           $ref: "#/components/schemas/TTIriRef"
@@ -3661,10 +3666,6 @@ components:
           type: string
         nativeMethod:
           type: boolean
-    Exception:
-      allOf:
-      - $ref: "#/components/schemas/Throwable"
-      - type: object
     SecurityService:
       additionalProperties: true
       type: object
@@ -3747,6 +3748,8 @@ components:
         name:
           type: string
     TTNode:
+      discriminator:
+        propertyName: iri
       properties:
         iri:
           type: string
@@ -3823,4 +3826,38 @@ components:
       properties:
         OrgId:
           $ref: "#/components/schemas/OrgId"
+    Expression:
+      properties:
+        value:
+          type: string
+        nodeRef:
+          type: string
+        iri:
+          type: string
+        propertyRef:
+          type: string
+    TTIriRefPageable:
+      allOf:
+      - $ref: "#/components/schemas/Pageable"
+      - properties:
+          result:
+            items:
+              $ref: "#/components/schemas/TTIriRef"
+            type: array
+    EntityReferenceNodePageable:
+      allOf:
+      - $ref: "#/components/schemas/Pageable"
+      - properties:
+          result:
+            items:
+              $ref: "#/components/schemas/EntityReferenceNode"
+            type: array
+    NodePageable:
+      allOf:
+      - $ref: "#/components/schemas/Pageable"
+      - properties:
+          result:
+            items:
+              $ref: "#/components/schemas/Node"
+            type: array
 

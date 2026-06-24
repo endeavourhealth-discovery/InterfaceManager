@@ -29,6 +29,7 @@ import org.endeavourhealth.interfacemanager.model.TTArray;
 import org.endeavourhealth.interfacemanager.model.TTContext;
 import org.endeavourhealth.interfacemanager.model.TTEntity;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
+import org.endeavourhealth.interfacemanager.model.TTNode;
 import org.endeavourhealth.interfacemanager.model.TTPrefix;
 
 import com.google.gson.Gson;
@@ -58,17 +59,7 @@ import org.endeavourhealth.interfacemanager.JSON;
  * TTDocument
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
-public class TTDocument {
-  public static final String SERIALIZED_NAME_IRI = "iri";
-  @SerializedName(SERIALIZED_NAME_IRI)
-  @javax.annotation.Nullable
-  private String iri;
-
-  public static final String SERIALIZED_NAME_PREDICATE_MAP = "predicateMap";
-  @SerializedName(SERIALIZED_NAME_PREDICATE_MAP)
-  @javax.annotation.Nullable
-  private Map<String, TTArray> predicateMap = new HashMap<>();
-
+public class TTDocument extends TTNode {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
   @javax.annotation.Nullable
@@ -95,53 +86,8 @@ public class TTDocument {
   private List<TTPrefix> prefixes = new ArrayList<>();
 
   public TTDocument() {
+    this.iri = this.getClass().getSimpleName();
   }
-
-  public TTDocument iri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-    return this;
-  }
-
-  /**
-   * Get iri
-   * @return iri
-   */
-  @javax.annotation.Nullable
-  public String getIri() {
-    return iri;
-  }
-
-  public void setIri(@javax.annotation.Nullable String iri) {
-    this.iri = iri;
-  }
-
-
-  public TTDocument predicateMap(@javax.annotation.Nullable Map<String, TTArray> predicateMap) {
-    this.predicateMap = predicateMap;
-    return this;
-  }
-
-  public TTDocument putPredicateMapItem(String key, TTArray predicateMapItem) {
-    if (this.predicateMap == null) {
-      this.predicateMap = new HashMap<>();
-    }
-    this.predicateMap.put(key, predicateMapItem);
-    return this;
-  }
-
-  /**
-   * Get predicateMap
-   * @return predicateMap
-   */
-  @javax.annotation.Nullable
-  public Map<String, TTArray> getPredicateMap() {
-    return predicateMap;
-  }
-
-  public void setPredicateMap(@javax.annotation.Nullable Map<String, TTArray> predicateMap) {
-    this.predicateMap = predicateMap;
-  }
-
 
   public TTDocument context(@javax.annotation.Nullable TTContext context) {
     this.context = context;
@@ -272,26 +218,24 @@ public class TTDocument {
       return false;
     }
     TTDocument ttDocument = (TTDocument) o;
-    return Objects.equals(this.iri, ttDocument.iri) &&
-        Objects.equals(this.predicateMap, ttDocument.predicateMap) &&
-        Objects.equals(this.context, ttDocument.context) &&
+    return Objects.equals(this.context, ttDocument.context) &&
         Objects.equals(this.entities, ttDocument.entities) &&
         Objects.equals(this.crud, ttDocument.crud) &&
         Objects.equals(this.predicates, ttDocument.predicates) &&
-        Objects.equals(this.prefixes, ttDocument.prefixes);
+        Objects.equals(this.prefixes, ttDocument.prefixes) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iri, predicateMap, context, entities, crud, predicates, prefixes);
+    return Objects.hash(context, entities, crud, predicates, prefixes, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TTDocument {\n");
-    sb.append("    iri: ").append(toIndentedString(iri)).append("\n");
-    sb.append("    predicateMap: ").append(toIndentedString(predicateMap)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    crud: ").append(toIndentedString(crud)).append("\n");
@@ -339,46 +283,6 @@ public class TTDocument {
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!TTDocument.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TTDocument` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      // validate the optional field `context`
-      if (jsonObj.get("context") != null && !jsonObj.get("context").isJsonNull()) {
-        TTContext.validateJsonElement(jsonObj.get("context"));
-      }
-      if (jsonObj.get("entities") != null && !jsonObj.get("entities").isJsonNull()) {
-        JsonArray jsonArrayentities = jsonObj.getAsJsonArray("entities");
-        if (jsonArrayentities != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("entities").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `entities` to be an array in the JSON string but got `%s`", jsonObj.get("entities").toString()));
-          }
-
-          // validate the optional field `entities` (array)
-          for (int i = 0; i < jsonArrayentities.size(); i++) {
-            TTEntity.validateJsonElement(jsonArrayentities.get(i));
-          };
-        }
-      }
-      // validate the optional field `crud`
-      if (jsonObj.get("crud") != null && !jsonObj.get("crud").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("crud"));
-      }
-      if (jsonObj.get("prefixes") != null && !jsonObj.get("prefixes").isJsonNull()) {
-        JsonArray jsonArrayprefixes = jsonObj.getAsJsonArray("prefixes");
-        if (jsonArrayprefixes != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("prefixes").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefixes` to be an array in the JSON string but got `%s`", jsonObj.get("prefixes").toString()));
-          }
-
-          // validate the optional field `prefixes` (array)
-          for (int i = 0; i < jsonArrayprefixes.size(); i++) {
-            TTPrefix.validateJsonElement(jsonArrayprefixes.get(i));
-          };
         }
       }
   }

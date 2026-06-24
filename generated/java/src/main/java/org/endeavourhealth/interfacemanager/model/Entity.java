@@ -57,7 +57,7 @@ public class Entity {
   public static final String SERIALIZED_NAME_IRI = "iri";
   @SerializedName(SERIALIZED_NAME_IRI)
   @javax.annotation.Nullable
-  private String iri;
+  protected String iri;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -90,6 +90,7 @@ public class Entity {
   private String description;
 
   public Entity() {
+    this.iri = this.getClass().getSimpleName();
   }
 
   public Entity iri(@javax.annotation.Nullable String iri) {
@@ -313,89 +314,31 @@ public class Entity {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Entity.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Entity` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("iri") != null && !jsonObj.get("iri").isJsonNull()) && !jsonObj.get("iri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iri").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        JsonArray jsonArraytype = jsonObj.getAsJsonArray("type");
-        if (jsonArraytype != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("type").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be an array in the JSON string but got `%s`", jsonObj.get("type").toString()));
-          }
-
-          // validate the optional field `type` (array)
-          for (int i = 0; i < jsonArraytype.size(); i++) {
-            TTIriRef.validateJsonElement(jsonArraytype.get(i));
-          };
-        }
-      }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("status"));
-      }
-      // validate the optional field `scheme`
-      if (jsonObj.get("scheme") != null && !jsonObj.get("scheme").isJsonNull()) {
-        TTIriRef.validateJsonElement(jsonObj.get("scheme"));
-      }
-      if (jsonObj.get("isContainedIn") != null && !jsonObj.get("isContainedIn").isJsonNull()) {
-        JsonArray jsonArrayisContainedIn = jsonObj.getAsJsonArray("isContainedIn");
-        if (jsonArrayisContainedIn != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("isContainedIn").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `isContainedIn` to be an array in the JSON string but got `%s`", jsonObj.get("isContainedIn").toString()));
-          }
-
-          // validate the optional field `isContainedIn` (array)
-          for (int i = 0; i < jsonArrayisContainedIn.size(); i++) {
-            TTEntity.validateJsonElement(jsonArrayisContainedIn.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      String discriminatorValue = jsonElement.getAsJsonObject().get("iri").getAsString();
+      switch (discriminatorValue) {
+        case "Concept":
+          Concept.validateJsonElement(jsonElement);
+          break;
+        case "ConceptSet":
+          ConceptSet.validateJsonElement(jsonElement);
+          break;
+        case "FunctionTemplate":
+          FunctionTemplate.validateJsonElement(jsonElement);
+          break;
+        case "ParameterTemplate":
+          ParameterTemplate.validateJsonElement(jsonElement);
+          break;
+        case "QueryEntity":
+          QueryEntity.validateJsonElement(jsonElement);
+          break;
+        case "ValueTemplate":
+          ValueTemplate.validateJsonElement(jsonElement);
+          break;
+        default:
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The value of the `iri` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
   }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Entity.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Entity' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Entity> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Entity.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Entity>() {
-           @Override
-           public void write(JsonWriter out, Entity value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Entity read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
-    }
-  }
 
   /**
    * Create an instance of Entity given an JSON string
