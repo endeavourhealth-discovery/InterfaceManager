@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**pageNumber** | **Integer** |  |  [optional] |
 |**pageSize** | **Integer** |  |  [optional] |
-|**offset** | **Long** |  |  [optional] |
+|**offset** | **Integer** |  |  [optional] |
 
 
 

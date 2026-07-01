@@ -147,7 +147,6 @@ docs/SetOptions.md
 docs/Severity.md
 docs/ShaclVocab.md
 docs/SnomedVocab.md
-docs/StackTraceElement.md
 docs/Status.md
 docs/SubQueryDependency.md
 docs/SuperiorPropertiesBoolFocusPagedRequest.md
@@ -160,6 +159,7 @@ docs/TTIriRefPageable.md
 docs/TTLiteral.md
 docs/TTNode.md
 docs/TTPrefix.md
+docs/TTValue.md
 docs/TargetUpdateMode.md
 docs/Task.md
 docs/TaskHistory.md
@@ -167,7 +167,6 @@ docs/TaskModule.md
 docs/TaskState.md
 docs/TaskType.md
 docs/TextSearchStyle.md
-docs/Throwable.md
 docs/TransformFunctionVocab.md
 docs/TransformRequest.md
 docs/UIProperty.md
@@ -356,7 +355,6 @@ src/main/java/org/endeavourhealth/interfacemanager/model/SetOptions.java
 src/main/java/org/endeavourhealth/interfacemanager/model/Severity.java
 src/main/java/org/endeavourhealth/interfacemanager/model/ShaclVocab.java
 src/main/java/org/endeavourhealth/interfacemanager/model/SnomedVocab.java
-src/main/java/org/endeavourhealth/interfacemanager/model/StackTraceElement.java
 src/main/java/org/endeavourhealth/interfacemanager/model/Status.java
 src/main/java/org/endeavourhealth/interfacemanager/model/SubQueryDependency.java
 src/main/java/org/endeavourhealth/interfacemanager/model/SuperiorPropertiesBoolFocusPagedRequest.java
@@ -369,6 +367,7 @@ src/main/java/org/endeavourhealth/interfacemanager/model/TTIriRefPageable.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TTLiteral.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TTNode.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TTPrefix.java
+src/main/java/org/endeavourhealth/interfacemanager/model/TTValue.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TargetUpdateMode.java
 src/main/java/org/endeavourhealth/interfacemanager/model/Task.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TaskHistory.java
@@ -376,7 +375,6 @@ src/main/java/org/endeavourhealth/interfacemanager/model/TaskModule.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TaskState.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TaskType.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TextSearchStyle.java
-src/main/java/org/endeavourhealth/interfacemanager/model/Throwable.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TransformFunctionVocab.java
 src/main/java/org/endeavourhealth/interfacemanager/model/TransformRequest.java
 src/main/java/org/endeavourhealth/interfacemanager/model/UIProperty.java
@@ -538,7 +536,6 @@ src/test/java/org/endeavourhealth/interfacemanager/model/SetOptionsTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/SeverityTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/ShaclVocabTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/SnomedVocabTest.java
-src/test/java/org/endeavourhealth/interfacemanager/model/StackTraceElementTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/StatusTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/SubQueryDependencyTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/SuperiorPropertiesBoolFocusPagedRequestTest.java
@@ -551,6 +548,7 @@ src/test/java/org/endeavourhealth/interfacemanager/model/TTIriRefTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TTLiteralTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TTNodeTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TTPrefixTest.java
+src/test/java/org/endeavourhealth/interfacemanager/model/TTValueTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TargetUpdateModeTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TaskHistoryTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TaskModuleTest.java
@@ -558,7 +556,6 @@ src/test/java/org/endeavourhealth/interfacemanager/model/TaskStateTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TaskTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TaskTypeTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TextSearchStyleTest.java
-src/test/java/org/endeavourhealth/interfacemanager/model/ThrowableTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TransformFunctionVocabTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/TransformRequestTest.java
 src/test/java/org/endeavourhealth/interfacemanager/model/UIPropertyTest.java

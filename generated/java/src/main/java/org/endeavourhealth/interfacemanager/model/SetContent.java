@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,7 +71,7 @@ public class SetContent {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
-  private BigDecimal version;
+  private Integer version;
 
   public static final String SERIALIZED_NAME_SET_DEFINITION = "setDefinition";
   @SerializedName(SERIALIZED_NAME_SET_DEFINITION)
@@ -149,7 +148,7 @@ public class SetContent {
   }
 
 
-  public SetContent version(@javax.annotation.Nullable BigDecimal version) {
+  public SetContent version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
@@ -159,11 +158,11 @@ public class SetContent {
    * @return version
    */
   @javax.annotation.Nullable
-  public BigDecimal getVersion() {
+  public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(@javax.annotation.Nullable BigDecimal version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 

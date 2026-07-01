@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+import org.endeavourhealth.interfacemanager.model.TTValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +56,7 @@ public class TTArray {
   public static final String SERIALIZED_NAME_ELEMENTS = "elements";
   @SerializedName(SERIALIZED_NAME_ELEMENTS)
   @javax.annotation.Nullable
-  private List<Map<String, Object>> elements = new ArrayList<>();
+  private List<TTValue> elements = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIST = "list";
   @SerializedName(SERIALIZED_NAME_LIST)
@@ -66,12 +66,12 @@ public class TTArray {
   public TTArray() {
   }
 
-  public TTArray elements(@javax.annotation.Nullable List<Map<String, Object>> elements) {
+  public TTArray elements(@javax.annotation.Nullable List<TTValue> elements) {
     this.elements = elements;
     return this;
   }
 
-  public TTArray addElementsItem(Map<String, Object> elementsItem) {
+  public TTArray addElementsItem(TTValue elementsItem) {
     if (this.elements == null) {
       this.elements = new ArrayList<>();
     }
@@ -84,11 +84,11 @@ public class TTArray {
    * @return elements
    */
   @javax.annotation.Nullable
-  public List<Map<String, Object>> getElements() {
+  public List<TTValue> getElements() {
     return elements;
   }
 
-  public void setElements(@javax.annotation.Nullable List<Map<String, Object>> elements) {
+  public void setElements(@javax.annotation.Nullable List<TTValue> elements) {
     this.elements = elements;
   }
 
@@ -182,9 +182,19 @@ public class TTArray {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("elements") != null && !jsonObj.get("elements").isJsonNull() && !jsonObj.get("elements").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `elements` to be an array in the JSON string but got `%s`", jsonObj.get("elements").toString()));
+      if (jsonObj.get("elements") != null && !jsonObj.get("elements").isJsonNull()) {
+        JsonArray jsonArrayelements = jsonObj.getAsJsonArray("elements");
+        if (jsonArrayelements != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("elements").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `elements` to be an array in the JSON string but got `%s`", jsonObj.get("elements").toString()));
+          }
+
+          // validate the optional field `elements` (array)
+          for (int i = 0; i < jsonArrayelements.size(); i++) {
+            TTValue.validateJsonElement(jsonArrayelements.get(i));
+          };
+        }
       }
   }
 

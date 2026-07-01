@@ -537,7 +537,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SetDistillationRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SetExportRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SetOptions.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.StackTraceElement.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SubQueryDependency.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.SuperiorPropertiesBoolFocusPagedRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTArray.CustomTypeAdapterFactory());
@@ -547,8 +546,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTIriRefPageable.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTLiteral.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTPrefix.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TTValue.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TaskHistory.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Throwable.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.TransformRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.UIProperty.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.endeavourhealth.interfacemanager.model.Update.CustomTypeAdapterFactory());

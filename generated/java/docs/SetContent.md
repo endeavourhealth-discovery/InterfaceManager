@@ -10,7 +10,7 @@
 |**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
-|**version** | **BigDecimal** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 |**setDefinition** | **String** |  |  [optional] |
 |**subsets** | **List&lt;String&gt;** |  |  [optional] |
 |**concepts** | [**List&lt;Concept&gt;**](Concept.md) |  |  [optional] |

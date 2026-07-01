@@ -2192,7 +2192,7 @@ components:
           format: int32
         offset:
           type: integer
-          format: int64
+          format: int32
     ParameterShape:
       type: object
       properties:
@@ -2388,7 +2388,8 @@ components:
         status:
           type: string
         version:
-          type: number
+          type: integer
+          format: int32
         setDefinition:
           type: string
         subsets:
@@ -2854,47 +2855,23 @@ components:
         - $ref: "#/components/schemas/Element"
         - type: object
           properties:
-            parameter:
-              type: string
-
-            childOrSelfOf:
-              type: boolean
-
-            childOf:
-              type: boolean
-
-            cohort:
-              type: boolean
-
-            nodeRef:
-              type: string
-
-            invalid:
-              type: boolean
-
-            resultSet:
-              type: boolean
-
             inverse:
               type: boolean
-
             optional:
               type: boolean
-
+            path:
+              type: array
+              items:
+                $ref: "#/components/schemas/Path"
             pathVariable:
               type: string
-
             typeOf:
               $ref: "#/components/schemas/Node"
-
             qualifier:
               $ref: "#/components/schemas/TTIriRef"
+            node:
+              type: string
 
-            isResultSet:
-              type: boolean
-
-            isCohort:
-              type: boolean
     PathDocument:
       type: object
       properties:
@@ -4074,11 +4051,14 @@ components:
         elements:
           type: array
           items:
-            type: object
-            additionalProperties: true
+            $ref: "#/components/schemas/TTValue"
         list:
           type: boolean
-
+    TTValue:
+      oneOf:
+        - $ref: "#/components/schemas/TTLiteral"
+        - $ref: "#/components/schemas/TTNode"
+        - $ref: "#/components/schemas/TTIriRef"
     TTContext:
       type: object
       properties:
@@ -4091,50 +4071,6 @@ components:
           items:
             $ref: "#/components/schemas/TTPrefix"
 
-    Throwable:
-      type: object
-      properties:
-        cause:
-          $ref: "#/components/schemas/Throwable"
-        stackTrace:
-          type: array
-          items:
-            $ref: "#/components/schemas/StackTraceElement"
-        message:
-          type: string
-        suppressed:
-          type: array
-          items:
-            $ref: "#/components/schemas/Throwable"
-        localizedMessage:
-          type: string
-    StackTraceElement:
-      type: object
-      properties:
-        classLoaderName:
-          type: string
-
-        moduleName:
-          type: string
-
-        moduleVersion:
-          type: string
-
-        methodName:
-          type: string
-
-        fileName:
-          type: string
-
-        lineNumber:
-          type: integer
-          format: int32
-
-        className:
-          type: string
-
-        nativeMethod:
-          type: boolean
     SecurityService:
       type: object
       additionalProperties: true

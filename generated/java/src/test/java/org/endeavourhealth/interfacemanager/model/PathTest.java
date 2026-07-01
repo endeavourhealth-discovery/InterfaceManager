@@ -19,7 +19,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
@@ -177,6 +179,14 @@ public class PathTest {
     }
 
     /**
+     * Test the property 'path'
+     */
+    @Test
+    public void pathTest() {
+        // TODO: test path
+    }
+
+    /**
      * Test the property 'pathVariable'
      */
     @Test
@@ -201,19 +211,11 @@ public class PathTest {
     }
 
     /**
-     * Test the property 'isResultSet'
+     * Test the property 'node'
      */
     @Test
-    public void isResultSetTest() {
-        // TODO: test isResultSet
-    }
-
-    /**
-     * Test the property 'isCohort'
-     */
-    @Test
-    public void isCohortTest() {
-        // TODO: test isCohort
+    public void nodeTest() {
+        // TODO: test node
     }
 
 }

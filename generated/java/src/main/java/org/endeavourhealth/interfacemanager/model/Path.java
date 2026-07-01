@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.endeavourhealth.interfacemanager.model.Element;
 import org.endeavourhealth.interfacemanager.model.Node;
 import org.endeavourhealth.interfacemanager.model.TTIriRef;
@@ -53,41 +55,6 @@ import org.endeavourhealth.interfacemanager.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Path extends Element {
-  public static final String SERIALIZED_NAME_PARAMETER = "parameter";
-  @SerializedName(SERIALIZED_NAME_PARAMETER)
-  @javax.annotation.Nullable
-  protected String parameter;
-
-  public static final String SERIALIZED_NAME_CHILD_OR_SELF_OF = "childOrSelfOf";
-  @SerializedName(SERIALIZED_NAME_CHILD_OR_SELF_OF)
-  @javax.annotation.Nullable
-  private Boolean childOrSelfOf;
-
-  public static final String SERIALIZED_NAME_CHILD_OF = "childOf";
-  @SerializedName(SERIALIZED_NAME_CHILD_OF)
-  @javax.annotation.Nullable
-  private Boolean childOf;
-
-  public static final String SERIALIZED_NAME_COHORT = "cohort";
-  @SerializedName(SERIALIZED_NAME_COHORT)
-  @javax.annotation.Nullable
-  private Boolean cohort;
-
-  public static final String SERIALIZED_NAME_NODE_REF = "nodeRef";
-  @SerializedName(SERIALIZED_NAME_NODE_REF)
-  @javax.annotation.Nullable
-  private String nodeRef;
-
-  public static final String SERIALIZED_NAME_INVALID = "invalid";
-  @SerializedName(SERIALIZED_NAME_INVALID)
-  @javax.annotation.Nullable
-  private Boolean invalid;
-
-  public static final String SERIALIZED_NAME_RESULT_SET = "resultSet";
-  @SerializedName(SERIALIZED_NAME_RESULT_SET)
-  @javax.annotation.Nullable
-  private Boolean resultSet;
-
   public static final String SERIALIZED_NAME_INVERSE = "inverse";
   @SerializedName(SERIALIZED_NAME_INVERSE)
   @javax.annotation.Nullable
@@ -97,6 +64,11 @@ public class Path extends Element {
   @SerializedName(SERIALIZED_NAME_OPTIONAL)
   @javax.annotation.Nullable
   private Boolean optional;
+
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nullable
+  private List<Path> path = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PATH_VARIABLE = "pathVariable";
   @SerializedName(SERIALIZED_NAME_PATH_VARIABLE)
@@ -113,152 +85,14 @@ public class Path extends Element {
   @javax.annotation.Nullable
   private TTIriRef qualifier;
 
-  public static final String SERIALIZED_NAME_IS_RESULT_SET = "isResultSet";
-  @SerializedName(SERIALIZED_NAME_IS_RESULT_SET)
+  public static final String SERIALIZED_NAME_NODE = "node";
+  @SerializedName(SERIALIZED_NAME_NODE)
   @javax.annotation.Nullable
-  private Boolean isResultSet;
-
-  public static final String SERIALIZED_NAME_IS_COHORT = "isCohort";
-  @SerializedName(SERIALIZED_NAME_IS_COHORT)
-  @javax.annotation.Nullable
-  private Boolean isCohort;
+  private String node;
 
   public Path() {
     this.parameter = this.getClass().getSimpleName();
   }
-
-  public Path parameter(@javax.annotation.Nullable String parameter) {
-    this.parameter = parameter;
-    return this;
-  }
-
-  /**
-   * Get parameter
-   * @return parameter
-   */
-  @javax.annotation.Nullable
-  public String getParameter() {
-    return parameter;
-  }
-
-  public void setParameter(@javax.annotation.Nullable String parameter) {
-    this.parameter = parameter;
-  }
-
-
-  public Path childOrSelfOf(@javax.annotation.Nullable Boolean childOrSelfOf) {
-    this.childOrSelfOf = childOrSelfOf;
-    return this;
-  }
-
-  /**
-   * Get childOrSelfOf
-   * @return childOrSelfOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getChildOrSelfOf() {
-    return childOrSelfOf;
-  }
-
-  public void setChildOrSelfOf(@javax.annotation.Nullable Boolean childOrSelfOf) {
-    this.childOrSelfOf = childOrSelfOf;
-  }
-
-
-  public Path childOf(@javax.annotation.Nullable Boolean childOf) {
-    this.childOf = childOf;
-    return this;
-  }
-
-  /**
-   * Get childOf
-   * @return childOf
-   */
-  @javax.annotation.Nullable
-  public Boolean getChildOf() {
-    return childOf;
-  }
-
-  public void setChildOf(@javax.annotation.Nullable Boolean childOf) {
-    this.childOf = childOf;
-  }
-
-
-  public Path cohort(@javax.annotation.Nullable Boolean cohort) {
-    this.cohort = cohort;
-    return this;
-  }
-
-  /**
-   * Get cohort
-   * @return cohort
-   */
-  @javax.annotation.Nullable
-  public Boolean getCohort() {
-    return cohort;
-  }
-
-  public void setCohort(@javax.annotation.Nullable Boolean cohort) {
-    this.cohort = cohort;
-  }
-
-
-  public Path nodeRef(@javax.annotation.Nullable String nodeRef) {
-    this.nodeRef = nodeRef;
-    return this;
-  }
-
-  /**
-   * Get nodeRef
-   * @return nodeRef
-   */
-  @javax.annotation.Nullable
-  public String getNodeRef() {
-    return nodeRef;
-  }
-
-  public void setNodeRef(@javax.annotation.Nullable String nodeRef) {
-    this.nodeRef = nodeRef;
-  }
-
-
-  public Path invalid(@javax.annotation.Nullable Boolean invalid) {
-    this.invalid = invalid;
-    return this;
-  }
-
-  /**
-   * Get invalid
-   * @return invalid
-   */
-  @javax.annotation.Nullable
-  public Boolean getInvalid() {
-    return invalid;
-  }
-
-  public void setInvalid(@javax.annotation.Nullable Boolean invalid) {
-    this.invalid = invalid;
-  }
-
-
-  public Path resultSet(@javax.annotation.Nullable Boolean resultSet) {
-    this.resultSet = resultSet;
-    return this;
-  }
-
-  /**
-   * Get resultSet
-   * @return resultSet
-   */
-  @javax.annotation.Nullable
-  public Boolean getResultSet() {
-    return resultSet;
-  }
-
-  public void setResultSet(@javax.annotation.Nullable Boolean resultSet) {
-    this.resultSet = resultSet;
-  }
-
 
   public Path inverse(@javax.annotation.Nullable Boolean inverse) {
     this.inverse = inverse;
@@ -295,6 +129,33 @@ public class Path extends Element {
 
   public void setOptional(@javax.annotation.Nullable Boolean optional) {
     this.optional = optional;
+  }
+
+
+  public Path path(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
+    return this;
+  }
+
+  public Path addPathItem(Path pathItem) {
+    if (this.path == null) {
+      this.path = new ArrayList<>();
+    }
+    this.path.add(pathItem);
+    return this;
+  }
+
+  /**
+   * Get path
+   * @return path
+   */
+  @javax.annotation.Nullable
+  public List<Path> getPath() {
+    return path;
+  }
+
+  public void setPath(@javax.annotation.Nullable List<Path> path) {
+    this.path = path;
   }
 
 
@@ -355,41 +216,22 @@ public class Path extends Element {
   }
 
 
-  public Path isResultSet(@javax.annotation.Nullable Boolean isResultSet) {
-    this.isResultSet = isResultSet;
+  public Path node(@javax.annotation.Nullable String node) {
+    this.node = node;
     return this;
   }
 
   /**
-   * Get isResultSet
-   * @return isResultSet
+   * Get node
+   * @return node
    */
   @javax.annotation.Nullable
-  public Boolean getIsResultSet() {
-    return isResultSet;
+  public String getNode() {
+    return node;
   }
 
-  public void setIsResultSet(@javax.annotation.Nullable Boolean isResultSet) {
-    this.isResultSet = isResultSet;
-  }
-
-
-  public Path isCohort(@javax.annotation.Nullable Boolean isCohort) {
-    this.isCohort = isCohort;
-    return this;
-  }
-
-  /**
-   * Get isCohort
-   * @return isCohort
-   */
-  @javax.annotation.Nullable
-  public Boolean getIsCohort() {
-    return isCohort;
-  }
-
-  public void setIsCohort(@javax.annotation.Nullable Boolean isCohort) {
-    this.isCohort = isCohort;
+  public void setNode(@javax.annotation.Nullable String node) {
+    this.node = node;
   }
 
 
@@ -403,26 +245,19 @@ public class Path extends Element {
       return false;
     }
     Path path = (Path) o;
-    return Objects.equals(this.parameter, path.parameter) &&
-        Objects.equals(this.childOrSelfOf, path.childOrSelfOf) &&
-        Objects.equals(this.childOf, path.childOf) &&
-        Objects.equals(this.cohort, path.cohort) &&
-        Objects.equals(this.nodeRef, path.nodeRef) &&
-        Objects.equals(this.invalid, path.invalid) &&
-        Objects.equals(this.resultSet, path.resultSet) &&
-        Objects.equals(this.inverse, path.inverse) &&
+    return Objects.equals(this.inverse, path.inverse) &&
         Objects.equals(this.optional, path.optional) &&
+        Objects.equals(this.path, path.path) &&
         Objects.equals(this.pathVariable, path.pathVariable) &&
         Objects.equals(this.typeOf, path.typeOf) &&
         Objects.equals(this.qualifier, path.qualifier) &&
-        Objects.equals(this.isResultSet, path.isResultSet) &&
-        Objects.equals(this.isCohort, path.isCohort) &&
+        Objects.equals(this.node, path.node) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parameter, childOrSelfOf, childOf, cohort, nodeRef, invalid, resultSet, inverse, optional, pathVariable, typeOf, qualifier, isResultSet, isCohort, super.hashCode());
+    return Objects.hash(inverse, optional, path, pathVariable, typeOf, qualifier, node, super.hashCode());
   }
 
   @Override
@@ -430,20 +265,13 @@ public class Path extends Element {
     StringBuilder sb = new StringBuilder();
     sb.append("class Path {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
-    sb.append("    childOrSelfOf: ").append(toIndentedString(childOrSelfOf)).append("\n");
-    sb.append("    childOf: ").append(toIndentedString(childOf)).append("\n");
-    sb.append("    cohort: ").append(toIndentedString(cohort)).append("\n");
-    sb.append("    nodeRef: ").append(toIndentedString(nodeRef)).append("\n");
-    sb.append("    invalid: ").append(toIndentedString(invalid)).append("\n");
-    sb.append("    resultSet: ").append(toIndentedString(resultSet)).append("\n");
     sb.append("    inverse: ").append(toIndentedString(inverse)).append("\n");
     sb.append("    optional: ").append(toIndentedString(optional)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    pathVariable: ").append(toIndentedString(pathVariable)).append("\n");
     sb.append("    typeOf: ").append(toIndentedString(typeOf)).append("\n");
     sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
-    sb.append("    isResultSet: ").append(toIndentedString(isResultSet)).append("\n");
-    sb.append("    isCohort: ").append(toIndentedString(isCohort)).append("\n");
+    sb.append("    node: ").append(toIndentedString(node)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -462,7 +290,7 @@ public class Path extends Element {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "inverse", "optional", "pathVariable", "typeOf", "qualifier", "isResultSet", "isCohort"));
+    openapiFields = new HashSet<String>(Arrays.asList("iri", "name", "description", "uuid", "parameter", "ancestorsOf", "descendantsOrSelfOf", "descendantsOf", "childOrSelfOf", "childOf", "memberOf", "cohort", "nodeRef", "invalid", "resultSet", "inverse", "optional", "path", "pathVariable", "typeOf", "qualifier", "node"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

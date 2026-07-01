@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**elements** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  [optional] |
+|**elements** | [**List&lt;TTValue&gt;**](TTValue.md) |  |  [optional] |
 |**_list** | **Boolean** |  |  [optional] |
 
 

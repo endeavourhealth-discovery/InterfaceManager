@@ -63,7 +63,7 @@ public class Page {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
   @javax.annotation.Nullable
-  private Long offset;
+  private Integer offset;
 
   public Page() {
   }
@@ -106,7 +106,7 @@ public class Page {
   }
 
 
-  public Page offset(@javax.annotation.Nullable Long offset) {
+  public Page offset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -116,11 +116,11 @@ public class Page {
    * @return offset
    */
   @javax.annotation.Nullable
-  public Long getOffset() {
+  public Integer getOffset() {
     return offset;
   }
 
-  public void setOffset(@javax.annotation.Nullable Long offset) {
+  public void setOffset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
   }
 
